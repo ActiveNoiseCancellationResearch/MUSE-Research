@@ -1,1 +1,1 @@
-mic_coeffs = [0.5,1,3,5,7,8];
+mic_coeffs = [1,0];

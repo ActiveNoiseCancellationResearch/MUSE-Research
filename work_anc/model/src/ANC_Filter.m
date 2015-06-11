@@ -1,8 +1,8 @@
 classdef ANC_Filter < handle
   properties
-     current_output = 0;
-     model_coeffs;
-     recent_samps;
+        %current_output;
+        model_coeffs;
+        recent_samps;
   end
   methods
         function my_constructor = ANC_Filter(coeffs)

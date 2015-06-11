@@ -6,3 +6,5 @@ ls_cfg_1;                       % config file #1 for loudspeaker, sets array coe
 hs_cfg_1;                       % config file #1 for headphone, sets array coeffs
 ra_cfg_1;                       % config file #1 to set values that are fed into room_acoustics_to_coeffs
 room_acoustics_to_coeffs(Qi, ri, fs);       % sets array of coeffs for room acoustics 
+canceller_cfg_1;
+
