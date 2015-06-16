@@ -1,0 +1,26 @@
+(DELAYFILE
+ (SDFVERSION "IEEE 1497 4.0")
+ (DATE "2015-06-16T15:50:51Z")
+ (DESIGN "WaveGenerator1")
+ (VENDOR "Cypress Semiconductor")
+ (PROGRAM "PSoC Creator")
+ (VERSION " 3.2")
+ (DIVIDER .)
+ (TIMESCALE 1 ns)
+ (CELL
+  (CELLTYPE "WaveGenerator1")
+  (INSTANCE *)
+  (DELAY
+   (ABSOLUTE
+    (INTERCONNECT ClockBlock.clk_bus_glb \\ADC_SAR\:IRQ\\.clock (0.000:0.000:0.000))
+    (INTERCONNECT ClockBlock.clk_bus_glb isr.clock (0.000:0.000:0.000))
+    (INTERCONNECT ClockBlock.dclk_1 \\ADC_SAR\:ADC_SAR\\.sof_udb (8.959:8.959:8.959))
+    (INTERCONNECT ClockBlock.dclk_1 \\VDAC8\:viDAC8\\.strobe_udb (9.690:9.690:9.690))
+    (INTERCONNECT ClockBlock.dclk_1 \\VDAC8_1\:viDAC8\\.strobe_udb (11.521:11.521:11.521))
+    (INTERCONNECT ClockBlock.dclk_1 isr.interrupt (5.697:5.697:5.697))
+    (INTERCONNECT \\ADC_SAR\:ADC_SAR\\.eof_udb \\ADC_SAR\:IRQ\\.interrupt (8.345:8.345:8.345))
+    (INTERCONNECT ClockBlock.dclk_0 \\ADC_SAR\:ADC_SAR\\.clk_udb (8.308:8.308:8.308))
+   )
+  )
+ )
+)

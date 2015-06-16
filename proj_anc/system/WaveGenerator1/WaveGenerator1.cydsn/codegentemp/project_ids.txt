@@ -1,0 +1,5 @@
+C:\Users\shubhamt\Documents\PSoC Creator\WaveGenerator1\WaveGenerator1.cydsn\WaveGenerator1.cyprj|0e796f0d-6f6b-4d33-bc6a-a6de1db5909c
+C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|762dbb2f-464a-4b86-8a0e-6c81b621f621
+C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|b221ca41-83c4-4cf7-a2ec-3e5570449f38
+C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|4f18a939-6894-45ae-ac75-65e46c994300
+C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|20583721-7c95-453d-b3fd-ecb0fa952065

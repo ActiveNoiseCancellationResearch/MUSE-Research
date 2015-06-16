@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CyXmlSerializer>
+<!--This file is machine generated and read. It is not intended to be edited by hand.-->
+<!--Due to this, there is no schema for this file.-->
+<CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtWrkspcCustomData" version="4">
+<CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997 type_name="CyDesigner.Common.Base.CyCustomData" version="2">
+<userData>
+<dataGuid v="1b906a0f-a7b6-4e4d-a428-82f98b53cb35">
+<CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35 type_name="CyDesigner.Common.ProjMgmt.GUI.CyExplorerWindow+CyExplorerWindowState" version="3" SelectedTab="Source">
+<TreeKeys>
+<v>Source</v>
+<v>Components</v>
+<v>Output</v>
+</TreeKeys>
+<TreeStates>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="WaveGenerator1\WaveGenerator1\Generated_Source\PSoC5\isr\isr.c">
+<ExpandedNodeIds>
+<v>WaveGenerator1</v>
+<v>WaveGenerator1\WaveGenerator1</v>
+<v>WaveGenerator1\WaveGenerator1\TopDesign</v>
+<v>WaveGenerator1\WaveGenerator1\Generated_Source</v>
+<v>WaveGenerator1\WaveGenerator1\Generated_Source\PSoC5</v>
+<v>WaveGenerator1\WaveGenerator1\Generated_Source\PSoC5\Clock</v>
+<v>WaveGenerator1\WaveGenerator1\Generated_Source\PSoC5\Clock\Clock.c</v>
+<v>WaveGenerator1\WaveGenerator1\Generated_Source\PSoC5\Clock\Clock.h</v>
+<v>WaveGenerator1\WaveGenerator1\Generated_Source\PSoC5\isr</v>
+<v>WaveGenerator1\WaveGenerator1\Generated_Source\PSoC5\isr\isr.c</v>
+<v>WaveGenerator1\WaveGenerator1\Generated_Source\PSoC5\isr\isr.h</v>
+</ExpandedNodeIds>
+<VisibleNodeIds />
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>WaveGenerator1</v>
+<v>WaveGenerator1\WaveGenerator1</v>
+<v>WaveGenerator1\WaveGenerator1\TopDesign</v>
+<v>WaveGenerator1\WaveGenerator1\TopDesign\TopDesign.cysch</v>
+</ExpandedNodeIds>
+<VisibleNodeIds />
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>WaveGenerator1</v>
+<v>WaveGenerator1\WaveGenerator1</v>
+<v>WaveGenerator1\WaveGenerator1\CortexM3</v>
+<v>WaveGenerator1\WaveGenerator1\CortexM3\ARM_GCC_484</v>
+<v>WaveGenerator1\WaveGenerator1\CortexM3\ARM_GCC_484\Debug</v>
+<v>WaveGenerator1\WaveGenerator1\CortexM3\ARM_GCC_484\Debug\Listing Files</v>
+<v>WaveGenerator1\WaveGenerator1\CortexM3\ARM_GCC_484\Debug\Listing Files\Clock.lst</v>
+<v>WaveGenerator1\WaveGenerator1\CortexM3\ARM_GCC_484\Debug\Listing Files\Cm3Start.lst</v>
+<v>WaveGenerator1\WaveGenerator1\CortexM3\ARM_GCC_484\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>WaveGenerator1\WaveGenerator1\CortexM3\ARM_GCC_484\Debug\Listing Files\CyDmac.lst</v>
+<v>WaveGenerator1\WaveGenerator1\CortexM3\ARM_GCC_484\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>WaveGenerator1\WaveGenerator1\CortexM3\ARM_GCC_484\Debug\Listing Files\CyFlash.lst</v>
+<v>WaveGenerator1\WaveGenerator1\CortexM3\ARM_GCC_484\Debug\Listing Files\CyLib.lst</v>
+<v>WaveGenerator1\WaveGenerator1\CortexM3\ARM_GCC_484\Debug\Listing Files\cymetadata.lst</v>
+<v>WaveGenerator1\WaveGenerator1\CortexM3\ARM_GCC_484\Debug\Listing Files\cyPm.lst</v>
+<v>WaveGenerator1\WaveGenerator1\CortexM3\ARM_GCC_484\Debug\Listing Files\CySpc.lst</v>
+<v>WaveGenerator1\WaveGenerator1\CortexM3\ARM_GCC_484\Debug\Listing Files\cyutils.lst</v>
+<v>WaveGenerator1\WaveGenerator1\CortexM3\ARM_GCC_484\Debug\Listing Files\isr.lst</v>
+<v>WaveGenerator1\WaveGenerator1\CortexM3\ARM_GCC_484\Debug\Listing Files\main.lst</v>
+<v>WaveGenerator1\WaveGenerator1\CortexM3\ARM_GCC_484\Debug\Listing Files\Pin_1.lst</v>
+<v>WaveGenerator1\WaveGenerator1\CortexM3\ARM_GCC_484\Debug\Listing Files\VDAC8.lst</v>
+<v>WaveGenerator1\WaveGenerator1\CortexM3\ARM_GCC_484\Debug\Listing Files\VDAC8_PM.lst</v>
+<v>WaveGenerator1\WaveGenerator1\CortexM3\ARM_GCC_484\Debug\WaveGenerator1.elf</v>
+<v>WaveGenerator1\WaveGenerator1\CortexM3\ARM_GCC_484\Debug\WaveGenerator1.hex</v>
+<v>WaveGenerator1\WaveGenerator1\CortexM3\ARM_GCC_484\Debug\WaveGenerator1.map</v>
+<v>WaveGenerator1\WaveGenerator1\WaveGenerator1.gpdsc</v>
+<v>WaveGenerator1\WaveGenerator1\WaveGenerator1.rpt</v>
+<v>WaveGenerator1\WaveGenerator1\WaveGenerator1_timing.html</v>
+</ExpandedNodeIds>
+<VisibleNodeIds />
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStates>
+<TreeKeysV2>
+<v>Datasheet</v>
+</TreeKeysV2>
+<TreeStatesV2>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>WaveGenerator1</v>
+<v>WaveGenerator1\WaveGenerator1</v>
+<v>WaveGenerator1\WaveGenerator1\PSoC 5 Architecture TRM</v>
+<v>WaveGenerator1\WaveGenerator1\CY8C58LP Family Datasheet</v>
+<v>WaveGenerator1\WaveGenerator1\System Reference Guides</v>
+<v>WaveGenerator1\WaveGenerator1\System Reference Guides\cy_boot_v4_11</v>
+<v>WaveGenerator1\WaveGenerator1\cy_clock_v2_20</v>
+<v>WaveGenerator1\WaveGenerator1\cy_isr_v1_70</v>
+<v>WaveGenerator1\WaveGenerator1\cy_pins_v2_5</v>
+<v>WaveGenerator1\WaveGenerator1\VDAC8_v1_90</v>
+</ExpandedNodeIds>
+<VisibleNodeIds />
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStatesV2>
+</CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35>
+</dataGuid>
+</userData>
+</CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
+<Unloaded />
+<OpenDocs>
+<name v=".\WaveGenerator1.cydsn\TopDesign\TopDesign.cysch" />
+<name v=".\WaveGenerator1.cydsn\main.c" />
+<name v=".\WaveGenerator1.cydsn\Generated_Source\PSoC5\VDAC8.h" />
+<name v=".\WaveGenerator1.cydsn\Generated_Source\PSoC5\VDAC8.c" />
+<name v=".\WaveGenerator1.cydsn\WaveGenerator1.cydwr" />
+<name v=".\WaveGenerator1.cydsn\Generated_Source\PSoC5\isr.c" />
+</OpenDocs>
+<config v="" />
+<AutoUpdate v="true" />
+</CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
+</CyXmlSerializer>

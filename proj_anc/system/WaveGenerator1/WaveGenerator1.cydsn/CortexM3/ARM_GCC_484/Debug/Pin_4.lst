@@ -1,0 +1,803 @@
+ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\cck8Qx2a.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"Pin_4.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.section	.text.Pin_4_Write,"ax",%progbits
+  19              		.align	2
+  20              		.global	Pin_4_Write
+  21              		.thumb
+  22              		.thumb_func
+  23              		.type	Pin_4_Write, %function
+  24              	Pin_4_Write:
+  25              	.LFB0:
+  26              		.file 1 ".\\Generated_Source\\PSoC5\\Pin_4.c"
+   1:.\Generated_Source\PSoC5/Pin_4.c **** /*******************************************************************************
+   2:.\Generated_Source\PSoC5/Pin_4.c **** * File Name: Pin_4.c  
+   3:.\Generated_Source\PSoC5/Pin_4.c **** * Version 2.10
+   4:.\Generated_Source\PSoC5/Pin_4.c **** *
+   5:.\Generated_Source\PSoC5/Pin_4.c **** * Description:
+   6:.\Generated_Source\PSoC5/Pin_4.c **** *  This file contains API to enable firmware control of a Pins component.
+   7:.\Generated_Source\PSoC5/Pin_4.c **** *
+   8:.\Generated_Source\PSoC5/Pin_4.c **** * Note:
+   9:.\Generated_Source\PSoC5/Pin_4.c **** *
+  10:.\Generated_Source\PSoC5/Pin_4.c **** ********************************************************************************
+  11:.\Generated_Source\PSoC5/Pin_4.c **** * Copyright 2008-2014, Cypress Semiconductor Corporation.  All rights reserved.
+  12:.\Generated_Source\PSoC5/Pin_4.c **** * You may use this file only in accordance with the license, terms, conditions, 
+  13:.\Generated_Source\PSoC5/Pin_4.c **** * disclaimers, and limitations in the end user license agreement accompanying 
+  14:.\Generated_Source\PSoC5/Pin_4.c **** * the software package with which this file was provided.
+  15:.\Generated_Source\PSoC5/Pin_4.c **** *******************************************************************************/
+  16:.\Generated_Source\PSoC5/Pin_4.c **** 
+  17:.\Generated_Source\PSoC5/Pin_4.c **** #include "cytypes.h"
+  18:.\Generated_Source\PSoC5/Pin_4.c **** #include "Pin_4.h"
+  19:.\Generated_Source\PSoC5/Pin_4.c **** 
+  20:.\Generated_Source\PSoC5/Pin_4.c **** /* APIs are not generated for P15[7:6] on PSoC 5 */
+  21:.\Generated_Source\PSoC5/Pin_4.c **** #if !(CY_PSOC5A &&\
+  22:.\Generated_Source\PSoC5/Pin_4.c **** 	 Pin_4__PORT == 15 && ((Pin_4__MASK & 0xC0) != 0))
+  23:.\Generated_Source\PSoC5/Pin_4.c **** 
+  24:.\Generated_Source\PSoC5/Pin_4.c **** 
+  25:.\Generated_Source\PSoC5/Pin_4.c **** /*******************************************************************************
+  26:.\Generated_Source\PSoC5/Pin_4.c **** * Function Name: Pin_4_Write
+  27:.\Generated_Source\PSoC5/Pin_4.c **** ********************************************************************************
+  28:.\Generated_Source\PSoC5/Pin_4.c **** *
+  29:.\Generated_Source\PSoC5/Pin_4.c **** * Summary:
+  30:.\Generated_Source\PSoC5/Pin_4.c **** *  Assign a new value to the digital port's data output register.  
+  31:.\Generated_Source\PSoC5/Pin_4.c **** *
+ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\cck8Qx2a.s 			page 2
+
+
+  32:.\Generated_Source\PSoC5/Pin_4.c **** * Parameters:  
+  33:.\Generated_Source\PSoC5/Pin_4.c **** *  prtValue:  The value to be assigned to the Digital Port. 
+  34:.\Generated_Source\PSoC5/Pin_4.c **** *
+  35:.\Generated_Source\PSoC5/Pin_4.c **** * Return: 
+  36:.\Generated_Source\PSoC5/Pin_4.c **** *  None
+  37:.\Generated_Source\PSoC5/Pin_4.c **** *  
+  38:.\Generated_Source\PSoC5/Pin_4.c **** *******************************************************************************/
+  39:.\Generated_Source\PSoC5/Pin_4.c **** void Pin_4_Write(uint8 value) 
+  40:.\Generated_Source\PSoC5/Pin_4.c **** {
+  27              		.loc 1 40 0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 16
+  30              		@ frame_needed = 1, uses_anonymous_args = 0
+  31              		@ link register save eliminated.
+  32 0000 80B4     		push	{r7}
+  33              		.cfi_def_cfa_offset 4
+  34              		.cfi_offset 7, -4
+  35 0002 85B0     		sub	sp, sp, #20
+  36              		.cfi_def_cfa_offset 24
+  37 0004 00AF     		add	r7, sp, #0
+  38              		.cfi_def_cfa_register 7
+  39 0006 0346     		mov	r3, r0
+  40 0008 FB71     		strb	r3, [r7, #7]
+  41:.\Generated_Source\PSoC5/Pin_4.c ****     uint8 staticBits = (Pin_4_DR & (uint8)(~Pin_4_MASK));
+  41              		.loc 1 41 0
+  42 000a 0B4B     		ldr	r3, .L2
+  43 000c 1B78     		ldrb	r3, [r3]
+  44 000e DBB2     		uxtb	r3, r3
+  45 0010 23F00803 		bic	r3, r3, #8
+  46 0014 FB73     		strb	r3, [r7, #15]
+  42:.\Generated_Source\PSoC5/Pin_4.c ****     Pin_4_DR = staticBits | ((uint8)(value << Pin_4_SHIFT) & Pin_4_MASK);
+  47              		.loc 1 42 0
+  48 0016 084B     		ldr	r3, .L2
+  49 0018 FA79     		ldrb	r2, [r7, #7]
+  50 001a D200     		lsls	r2, r2, #3
+  51 001c D2B2     		uxtb	r2, r2
+  52 001e 02F00802 		and	r2, r2, #8
+  53 0022 D1B2     		uxtb	r1, r2
+  54 0024 FA7B     		ldrb	r2, [r7, #15]
+  55 0026 0A43     		orrs	r2, r2, r1
+  56 0028 D2B2     		uxtb	r2, r2
+  57 002a 1A70     		strb	r2, [r3]
+  43:.\Generated_Source\PSoC5/Pin_4.c **** }
+  58              		.loc 1 43 0
+  59 002c 1437     		adds	r7, r7, #20
+  60 002e BD46     		mov	sp, r7
+  61              		@ sp needed
+  62 0030 5DF8047B 		ldr	r7, [sp], #4
+  63 0034 7047     		bx	lr
+  64              	.L3:
+  65 0036 00BF     		.align	2
+  66              	.L2:
+  67 0038 00510040 		.word	1073762560
+  68              		.cfi_endproc
+  69              	.LFE0:
+  70              		.size	Pin_4_Write, .-Pin_4_Write
+  71              		.section	.text.Pin_4_SetDriveMode,"ax",%progbits
+ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\cck8Qx2a.s 			page 3
+
+
+  72              		.align	2
+  73              		.global	Pin_4_SetDriveMode
+  74              		.thumb
+  75              		.thumb_func
+  76              		.type	Pin_4_SetDriveMode, %function
+  77              	Pin_4_SetDriveMode:
+  78              	.LFB1:
+  44:.\Generated_Source\PSoC5/Pin_4.c **** 
+  45:.\Generated_Source\PSoC5/Pin_4.c **** 
+  46:.\Generated_Source\PSoC5/Pin_4.c **** /*******************************************************************************
+  47:.\Generated_Source\PSoC5/Pin_4.c **** * Function Name: Pin_4_SetDriveMode
+  48:.\Generated_Source\PSoC5/Pin_4.c **** ********************************************************************************
+  49:.\Generated_Source\PSoC5/Pin_4.c **** *
+  50:.\Generated_Source\PSoC5/Pin_4.c **** * Summary:
+  51:.\Generated_Source\PSoC5/Pin_4.c **** *  Change the drive mode on the pins of the port.
+  52:.\Generated_Source\PSoC5/Pin_4.c **** * 
+  53:.\Generated_Source\PSoC5/Pin_4.c **** * Parameters:  
+  54:.\Generated_Source\PSoC5/Pin_4.c **** *  mode:  Change the pins to one of the following drive modes.
+  55:.\Generated_Source\PSoC5/Pin_4.c **** *
+  56:.\Generated_Source\PSoC5/Pin_4.c **** *  Pin_4_DM_STRONG     Strong Drive 
+  57:.\Generated_Source\PSoC5/Pin_4.c **** *  Pin_4_DM_OD_HI      Open Drain, Drives High 
+  58:.\Generated_Source\PSoC5/Pin_4.c **** *  Pin_4_DM_OD_LO      Open Drain, Drives Low 
+  59:.\Generated_Source\PSoC5/Pin_4.c **** *  Pin_4_DM_RES_UP     Resistive Pull Up 
+  60:.\Generated_Source\PSoC5/Pin_4.c **** *  Pin_4_DM_RES_DWN    Resistive Pull Down 
+  61:.\Generated_Source\PSoC5/Pin_4.c **** *  Pin_4_DM_RES_UPDWN  Resistive Pull Up/Down 
+  62:.\Generated_Source\PSoC5/Pin_4.c **** *  Pin_4_DM_DIG_HIZ    High Impedance Digital 
+  63:.\Generated_Source\PSoC5/Pin_4.c **** *  Pin_4_DM_ALG_HIZ    High Impedance Analog 
+  64:.\Generated_Source\PSoC5/Pin_4.c **** *
+  65:.\Generated_Source\PSoC5/Pin_4.c **** * Return: 
+  66:.\Generated_Source\PSoC5/Pin_4.c **** *  None
+  67:.\Generated_Source\PSoC5/Pin_4.c **** *
+  68:.\Generated_Source\PSoC5/Pin_4.c **** *******************************************************************************/
+  69:.\Generated_Source\PSoC5/Pin_4.c **** void Pin_4_SetDriveMode(uint8 mode) 
+  70:.\Generated_Source\PSoC5/Pin_4.c **** {
+  79              		.loc 1 70 0
+  80              		.cfi_startproc
+  81              		@ args = 0, pretend = 0, frame = 8
+  82              		@ frame_needed = 1, uses_anonymous_args = 0
+  83              		@ link register save eliminated.
+  84 0000 80B4     		push	{r7}
+  85              		.cfi_def_cfa_offset 4
+  86              		.cfi_offset 7, -4
+  87 0002 83B0     		sub	sp, sp, #12
+  88              		.cfi_def_cfa_offset 16
+  89 0004 00AF     		add	r7, sp, #0
+  90              		.cfi_def_cfa_register 7
+  91 0006 0346     		mov	r3, r0
+  92 0008 FB71     		strb	r3, [r7, #7]
+  71:.\Generated_Source\PSoC5/Pin_4.c **** 	CyPins_SetPinDriveMode(Pin_4_0, mode);
+  93              		.loc 1 71 0
+  94 000a 0A4B     		ldr	r3, .L5
+  95 000c 094A     		ldr	r2, .L5
+  96 000e 1278     		ldrb	r2, [r2]
+  97 0010 D2B2     		uxtb	r2, r2
+  98 0012 D2B2     		uxtb	r2, r2
+  99 0014 22F00E02 		bic	r2, r2, #14
+ 100 0018 D1B2     		uxtb	r1, r2
+ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\cck8Qx2a.s 			page 4
+
+
+ 101 001a FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 102 001c 02F00E02 		and	r2, r2, #14
+ 103 0020 D2B2     		uxtb	r2, r2
+ 104 0022 0A43     		orrs	r2, r2, r1
+ 105 0024 D2B2     		uxtb	r2, r2
+ 106 0026 D2B2     		uxtb	r2, r2
+ 107 0028 1A70     		strb	r2, [r3]
+  72:.\Generated_Source\PSoC5/Pin_4.c **** }
+ 108              		.loc 1 72 0
+ 109 002a 0C37     		adds	r7, r7, #12
+ 110 002c BD46     		mov	sp, r7
+ 111              		@ sp needed
+ 112 002e 5DF8047B 		ldr	r7, [sp], #4
+ 113 0032 7047     		bx	lr
+ 114              	.L6:
+ 115              		.align	2
+ 116              	.L5:
+ 117 0034 03500040 		.word	1073762307
+ 118              		.cfi_endproc
+ 119              	.LFE1:
+ 120              		.size	Pin_4_SetDriveMode, .-Pin_4_SetDriveMode
+ 121              		.section	.text.Pin_4_Read,"ax",%progbits
+ 122              		.align	2
+ 123              		.global	Pin_4_Read
+ 124              		.thumb
+ 125              		.thumb_func
+ 126              		.type	Pin_4_Read, %function
+ 127              	Pin_4_Read:
+ 128              	.LFB2:
+  73:.\Generated_Source\PSoC5/Pin_4.c **** 
+  74:.\Generated_Source\PSoC5/Pin_4.c **** 
+  75:.\Generated_Source\PSoC5/Pin_4.c **** /*******************************************************************************
+  76:.\Generated_Source\PSoC5/Pin_4.c **** * Function Name: Pin_4_Read
+  77:.\Generated_Source\PSoC5/Pin_4.c **** ********************************************************************************
+  78:.\Generated_Source\PSoC5/Pin_4.c **** *
+  79:.\Generated_Source\PSoC5/Pin_4.c **** * Summary:
+  80:.\Generated_Source\PSoC5/Pin_4.c **** *  Read the current value on the pins of the Digital Port in right justified 
+  81:.\Generated_Source\PSoC5/Pin_4.c **** *  form.
+  82:.\Generated_Source\PSoC5/Pin_4.c **** *
+  83:.\Generated_Source\PSoC5/Pin_4.c **** * Parameters:  
+  84:.\Generated_Source\PSoC5/Pin_4.c **** *  None
+  85:.\Generated_Source\PSoC5/Pin_4.c **** *
+  86:.\Generated_Source\PSoC5/Pin_4.c **** * Return: 
+  87:.\Generated_Source\PSoC5/Pin_4.c **** *  Returns the current value of the Digital Port as a right justified number
+  88:.\Generated_Source\PSoC5/Pin_4.c **** *  
+  89:.\Generated_Source\PSoC5/Pin_4.c **** * Note:
+  90:.\Generated_Source\PSoC5/Pin_4.c **** *  Macro Pin_4_ReadPS calls this function. 
+  91:.\Generated_Source\PSoC5/Pin_4.c **** *  
+  92:.\Generated_Source\PSoC5/Pin_4.c **** *******************************************************************************/
+  93:.\Generated_Source\PSoC5/Pin_4.c **** uint8 Pin_4_Read(void) 
+  94:.\Generated_Source\PSoC5/Pin_4.c **** {
+ 129              		.loc 1 94 0
+ 130              		.cfi_startproc
+ 131              		@ args = 0, pretend = 0, frame = 0
+ 132              		@ frame_needed = 1, uses_anonymous_args = 0
+ 133              		@ link register save eliminated.
+ 134 0000 80B4     		push	{r7}
+ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\cck8Qx2a.s 			page 5
+
+
+ 135              		.cfi_def_cfa_offset 4
+ 136              		.cfi_offset 7, -4
+ 137 0002 00AF     		add	r7, sp, #0
+ 138              		.cfi_def_cfa_register 7
+  95:.\Generated_Source\PSoC5/Pin_4.c ****     return (Pin_4_PS & Pin_4_MASK) >> Pin_4_SHIFT;
+ 139              		.loc 1 95 0
+ 140 0004 054B     		ldr	r3, .L9
+ 141 0006 1B78     		ldrb	r3, [r3]
+ 142 0008 DBB2     		uxtb	r3, r3
+ 143 000a 03F00803 		and	r3, r3, #8
+ 144 000e DB08     		lsrs	r3, r3, #3
+ 145 0010 DBB2     		uxtb	r3, r3
+  96:.\Generated_Source\PSoC5/Pin_4.c **** }
+ 146              		.loc 1 96 0
+ 147 0012 1846     		mov	r0, r3
+ 148 0014 BD46     		mov	sp, r7
+ 149              		@ sp needed
+ 150 0016 5DF8047B 		ldr	r7, [sp], #4
+ 151 001a 7047     		bx	lr
+ 152              	.L10:
+ 153              		.align	2
+ 154              	.L9:
+ 155 001c 01510040 		.word	1073762561
+ 156              		.cfi_endproc
+ 157              	.LFE2:
+ 158              		.size	Pin_4_Read, .-Pin_4_Read
+ 159              		.section	.text.Pin_4_ReadDataReg,"ax",%progbits
+ 160              		.align	2
+ 161              		.global	Pin_4_ReadDataReg
+ 162              		.thumb
+ 163              		.thumb_func
+ 164              		.type	Pin_4_ReadDataReg, %function
+ 165              	Pin_4_ReadDataReg:
+ 166              	.LFB3:
+  97:.\Generated_Source\PSoC5/Pin_4.c **** 
+  98:.\Generated_Source\PSoC5/Pin_4.c **** 
+  99:.\Generated_Source\PSoC5/Pin_4.c **** /*******************************************************************************
+ 100:.\Generated_Source\PSoC5/Pin_4.c **** * Function Name: Pin_4_ReadDataReg
+ 101:.\Generated_Source\PSoC5/Pin_4.c **** ********************************************************************************
+ 102:.\Generated_Source\PSoC5/Pin_4.c **** *
+ 103:.\Generated_Source\PSoC5/Pin_4.c **** * Summary:
+ 104:.\Generated_Source\PSoC5/Pin_4.c **** *  Read the current value assigned to a Digital Port's data output register
+ 105:.\Generated_Source\PSoC5/Pin_4.c **** *
+ 106:.\Generated_Source\PSoC5/Pin_4.c **** * Parameters:  
+ 107:.\Generated_Source\PSoC5/Pin_4.c **** *  None 
+ 108:.\Generated_Source\PSoC5/Pin_4.c **** *
+ 109:.\Generated_Source\PSoC5/Pin_4.c **** * Return: 
+ 110:.\Generated_Source\PSoC5/Pin_4.c **** *  Returns the current value assigned to the Digital Port's data output register
+ 111:.\Generated_Source\PSoC5/Pin_4.c **** *  
+ 112:.\Generated_Source\PSoC5/Pin_4.c **** *******************************************************************************/
+ 113:.\Generated_Source\PSoC5/Pin_4.c **** uint8 Pin_4_ReadDataReg(void) 
+ 114:.\Generated_Source\PSoC5/Pin_4.c **** {
+ 167              		.loc 1 114 0
+ 168              		.cfi_startproc
+ 169              		@ args = 0, pretend = 0, frame = 0
+ 170              		@ frame_needed = 1, uses_anonymous_args = 0
+ 171              		@ link register save eliminated.
+ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\cck8Qx2a.s 			page 6
+
+
+ 172 0000 80B4     		push	{r7}
+ 173              		.cfi_def_cfa_offset 4
+ 174              		.cfi_offset 7, -4
+ 175 0002 00AF     		add	r7, sp, #0
+ 176              		.cfi_def_cfa_register 7
+ 115:.\Generated_Source\PSoC5/Pin_4.c ****     return (Pin_4_DR & Pin_4_MASK) >> Pin_4_SHIFT;
+ 177              		.loc 1 115 0
+ 178 0004 054B     		ldr	r3, .L13
+ 179 0006 1B78     		ldrb	r3, [r3]
+ 180 0008 DBB2     		uxtb	r3, r3
+ 181 000a 03F00803 		and	r3, r3, #8
+ 182 000e DB08     		lsrs	r3, r3, #3
+ 183 0010 DBB2     		uxtb	r3, r3
+ 116:.\Generated_Source\PSoC5/Pin_4.c **** }
+ 184              		.loc 1 116 0
+ 185 0012 1846     		mov	r0, r3
+ 186 0014 BD46     		mov	sp, r7
+ 187              		@ sp needed
+ 188 0016 5DF8047B 		ldr	r7, [sp], #4
+ 189 001a 7047     		bx	lr
+ 190              	.L14:
+ 191              		.align	2
+ 192              	.L13:
+ 193 001c 00510040 		.word	1073762560
+ 194              		.cfi_endproc
+ 195              	.LFE3:
+ 196              		.size	Pin_4_ReadDataReg, .-Pin_4_ReadDataReg
+ 197              		.text
+ 198              	.Letext0:
+ 199              		.file 2 ".\\Generated_Source\\PSoC5\\cytypes.h"
+ 200              		.section	.debug_info,"",%progbits
+ 201              	.Ldebug_info0:
+ 202 0000 18010000 		.4byte	0x118
+ 203 0004 0400     		.2byte	0x4
+ 204 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 205 000a 04       		.byte	0x4
+ 206 000b 01       		.uleb128 0x1
+ 207 000c B2000000 		.4byte	.LASF20
+ 208 0010 01       		.byte	0x1
+ 209 0011 9E010000 		.4byte	.LASF21
+ 210 0015 4B010000 		.4byte	.LASF22
+ 211 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 212 001d 00000000 		.4byte	0
+ 213 0021 00000000 		.4byte	.Ldebug_line0
+ 214 0025 02       		.uleb128 0x2
+ 215 0026 01       		.byte	0x1
+ 216 0027 06       		.byte	0x6
+ 217 0028 D1010000 		.4byte	.LASF0
+ 218 002c 02       		.uleb128 0x2
+ 219 002d 01       		.byte	0x1
+ 220 002e 08       		.byte	0x8
+ 221 002f 3F000000 		.4byte	.LASF1
+ 222 0033 02       		.uleb128 0x2
+ 223 0034 02       		.byte	0x2
+ 224 0035 05       		.byte	0x5
+ 225 0036 41010000 		.4byte	.LASF2
+ 226 003a 02       		.uleb128 0x2
+ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\cck8Qx2a.s 			page 7
+
+
+ 227 003b 02       		.byte	0x2
+ 228 003c 07       		.byte	0x7
+ 229 003d 64000000 		.4byte	.LASF3
+ 230 0041 02       		.uleb128 0x2
+ 231 0042 04       		.byte	0x4
+ 232 0043 05       		.byte	0x5
+ 233 0044 11000000 		.4byte	.LASF4
+ 234 0048 02       		.uleb128 0x2
+ 235 0049 04       		.byte	0x4
+ 236 004a 07       		.byte	0x7
+ 237 004b 52000000 		.4byte	.LASF5
+ 238 004f 02       		.uleb128 0x2
+ 239 0050 08       		.byte	0x8
+ 240 0051 05       		.byte	0x5
+ 241 0052 2E010000 		.4byte	.LASF6
+ 242 0056 02       		.uleb128 0x2
+ 243 0057 08       		.byte	0x8
+ 244 0058 07       		.byte	0x7
+ 245 0059 8B000000 		.4byte	.LASF7
+ 246 005d 03       		.uleb128 0x3
+ 247 005e 04       		.byte	0x4
+ 248 005f 05       		.byte	0x5
+ 249 0060 696E7400 		.ascii	"int\000"
+ 250 0064 02       		.uleb128 0x2
+ 251 0065 04       		.byte	0x4
+ 252 0066 07       		.byte	0x7
+ 253 0067 7E000000 		.4byte	.LASF8
+ 254 006b 04       		.uleb128 0x4
+ 255 006c 98010000 		.4byte	.LASF12
+ 256 0070 02       		.byte	0x2
+ 257 0071 5B       		.byte	0x5b
+ 258 0072 2C000000 		.4byte	0x2c
+ 259 0076 02       		.uleb128 0x2
+ 260 0077 04       		.byte	0x4
+ 261 0078 04       		.byte	0x4
+ 262 0079 39000000 		.4byte	.LASF9
+ 263 007d 02       		.uleb128 0x2
+ 264 007e 08       		.byte	0x8
+ 265 007f 04       		.byte	0x4
+ 266 0080 77000000 		.4byte	.LASF10
+ 267 0084 02       		.uleb128 0x2
+ 268 0085 01       		.byte	0x1
+ 269 0086 08       		.byte	0x8
+ 270 0087 3C010000 		.4byte	.LASF11
+ 271 008b 04       		.uleb128 0x4
+ 272 008c 4D000000 		.4byte	.LASF13
+ 273 0090 02       		.byte	0x2
+ 274 0091 F0       		.byte	0xf0
+ 275 0092 96000000 		.4byte	0x96
+ 276 0096 05       		.uleb128 0x5
+ 277 0097 6B000000 		.4byte	0x6b
+ 278 009b 06       		.uleb128 0x6
+ 279 009c 2D000000 		.4byte	.LASF14
+ 280 00a0 01       		.byte	0x1
+ 281 00a1 27       		.byte	0x27
+ 282 00a2 00000000 		.4byte	.LFB0
+ 283 00a6 3C000000 		.4byte	.LFE0-.LFB0
+ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\cck8Qx2a.s 			page 8
+
+
+ 284 00aa 01       		.uleb128 0x1
+ 285 00ab 9C       		.byte	0x9c
+ 286 00ac CD000000 		.4byte	0xcd
+ 287 00b0 07       		.uleb128 0x7
+ 288 00b1 00000000 		.4byte	.LASF16
+ 289 00b5 01       		.byte	0x1
+ 290 00b6 27       		.byte	0x27
+ 291 00b7 6B000000 		.4byte	0x6b
+ 292 00bb 02       		.uleb128 0x2
+ 293 00bc 91       		.byte	0x91
+ 294 00bd 6F       		.sleb128 -17
+ 295 00be 08       		.uleb128 0x8
+ 296 00bf 06000000 		.4byte	.LASF23
+ 297 00c3 01       		.byte	0x1
+ 298 00c4 29       		.byte	0x29
+ 299 00c5 6B000000 		.4byte	0x6b
+ 300 00c9 02       		.uleb128 0x2
+ 301 00ca 91       		.byte	0x91
+ 302 00cb 77       		.sleb128 -9
+ 303 00cc 00       		.byte	0
+ 304 00cd 06       		.uleb128 0x6
+ 305 00ce 1A000000 		.4byte	.LASF15
+ 306 00d2 01       		.byte	0x1
+ 307 00d3 45       		.byte	0x45
+ 308 00d4 00000000 		.4byte	.LFB1
+ 309 00d8 38000000 		.4byte	.LFE1-.LFB1
+ 310 00dc 01       		.uleb128 0x1
+ 311 00dd 9C       		.byte	0x9c
+ 312 00de F1000000 		.4byte	0xf1
+ 313 00e2 07       		.uleb128 0x7
+ 314 00e3 A2000000 		.4byte	.LASF17
+ 315 00e7 01       		.byte	0x1
+ 316 00e8 45       		.byte	0x45
+ 317 00e9 6B000000 		.4byte	0x6b
+ 318 00ed 02       		.uleb128 0x2
+ 319 00ee 91       		.byte	0x91
+ 320 00ef 77       		.sleb128 -9
+ 321 00f0 00       		.byte	0
+ 322 00f1 09       		.uleb128 0x9
+ 323 00f2 A7000000 		.4byte	.LASF18
+ 324 00f6 01       		.byte	0x1
+ 325 00f7 5D       		.byte	0x5d
+ 326 00f8 6B000000 		.4byte	0x6b
+ 327 00fc 00000000 		.4byte	.LFB2
+ 328 0100 20000000 		.4byte	.LFE2-.LFB2
+ 329 0104 01       		.uleb128 0x1
+ 330 0105 9C       		.byte	0x9c
+ 331 0106 09       		.uleb128 0x9
+ 332 0107 BF010000 		.4byte	.LASF19
+ 333 010b 01       		.byte	0x1
+ 334 010c 71       		.byte	0x71
+ 335 010d 6B000000 		.4byte	0x6b
+ 336 0111 00000000 		.4byte	.LFB3
+ 337 0115 20000000 		.4byte	.LFE3-.LFB3
+ 338 0119 01       		.uleb128 0x1
+ 339 011a 9C       		.byte	0x9c
+ 340 011b 00       		.byte	0
+ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\cck8Qx2a.s 			page 9
+
+
+ 341              		.section	.debug_abbrev,"",%progbits
+ 342              	.Ldebug_abbrev0:
+ 343 0000 01       		.uleb128 0x1
+ 344 0001 11       		.uleb128 0x11
+ 345 0002 01       		.byte	0x1
+ 346 0003 25       		.uleb128 0x25
+ 347 0004 0E       		.uleb128 0xe
+ 348 0005 13       		.uleb128 0x13
+ 349 0006 0B       		.uleb128 0xb
+ 350 0007 03       		.uleb128 0x3
+ 351 0008 0E       		.uleb128 0xe
+ 352 0009 1B       		.uleb128 0x1b
+ 353 000a 0E       		.uleb128 0xe
+ 354 000b 55       		.uleb128 0x55
+ 355 000c 17       		.uleb128 0x17
+ 356 000d 11       		.uleb128 0x11
+ 357 000e 01       		.uleb128 0x1
+ 358 000f 10       		.uleb128 0x10
+ 359 0010 17       		.uleb128 0x17
+ 360 0011 00       		.byte	0
+ 361 0012 00       		.byte	0
+ 362 0013 02       		.uleb128 0x2
+ 363 0014 24       		.uleb128 0x24
+ 364 0015 00       		.byte	0
+ 365 0016 0B       		.uleb128 0xb
+ 366 0017 0B       		.uleb128 0xb
+ 367 0018 3E       		.uleb128 0x3e
+ 368 0019 0B       		.uleb128 0xb
+ 369 001a 03       		.uleb128 0x3
+ 370 001b 0E       		.uleb128 0xe
+ 371 001c 00       		.byte	0
+ 372 001d 00       		.byte	0
+ 373 001e 03       		.uleb128 0x3
+ 374 001f 24       		.uleb128 0x24
+ 375 0020 00       		.byte	0
+ 376 0021 0B       		.uleb128 0xb
+ 377 0022 0B       		.uleb128 0xb
+ 378 0023 3E       		.uleb128 0x3e
+ 379 0024 0B       		.uleb128 0xb
+ 380 0025 03       		.uleb128 0x3
+ 381 0026 08       		.uleb128 0x8
+ 382 0027 00       		.byte	0
+ 383 0028 00       		.byte	0
+ 384 0029 04       		.uleb128 0x4
+ 385 002a 16       		.uleb128 0x16
+ 386 002b 00       		.byte	0
+ 387 002c 03       		.uleb128 0x3
+ 388 002d 0E       		.uleb128 0xe
+ 389 002e 3A       		.uleb128 0x3a
+ 390 002f 0B       		.uleb128 0xb
+ 391 0030 3B       		.uleb128 0x3b
+ 392 0031 0B       		.uleb128 0xb
+ 393 0032 49       		.uleb128 0x49
+ 394 0033 13       		.uleb128 0x13
+ 395 0034 00       		.byte	0
+ 396 0035 00       		.byte	0
+ 397 0036 05       		.uleb128 0x5
+ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\cck8Qx2a.s 			page 10
+
+
+ 398 0037 35       		.uleb128 0x35
+ 399 0038 00       		.byte	0
+ 400 0039 49       		.uleb128 0x49
+ 401 003a 13       		.uleb128 0x13
+ 402 003b 00       		.byte	0
+ 403 003c 00       		.byte	0
+ 404 003d 06       		.uleb128 0x6
+ 405 003e 2E       		.uleb128 0x2e
+ 406 003f 01       		.byte	0x1
+ 407 0040 3F       		.uleb128 0x3f
+ 408 0041 19       		.uleb128 0x19
+ 409 0042 03       		.uleb128 0x3
+ 410 0043 0E       		.uleb128 0xe
+ 411 0044 3A       		.uleb128 0x3a
+ 412 0045 0B       		.uleb128 0xb
+ 413 0046 3B       		.uleb128 0x3b
+ 414 0047 0B       		.uleb128 0xb
+ 415 0048 27       		.uleb128 0x27
+ 416 0049 19       		.uleb128 0x19
+ 417 004a 11       		.uleb128 0x11
+ 418 004b 01       		.uleb128 0x1
+ 419 004c 12       		.uleb128 0x12
+ 420 004d 06       		.uleb128 0x6
+ 421 004e 40       		.uleb128 0x40
+ 422 004f 18       		.uleb128 0x18
+ 423 0050 9742     		.uleb128 0x2117
+ 424 0052 19       		.uleb128 0x19
+ 425 0053 01       		.uleb128 0x1
+ 426 0054 13       		.uleb128 0x13
+ 427 0055 00       		.byte	0
+ 428 0056 00       		.byte	0
+ 429 0057 07       		.uleb128 0x7
+ 430 0058 05       		.uleb128 0x5
+ 431 0059 00       		.byte	0
+ 432 005a 03       		.uleb128 0x3
+ 433 005b 0E       		.uleb128 0xe
+ 434 005c 3A       		.uleb128 0x3a
+ 435 005d 0B       		.uleb128 0xb
+ 436 005e 3B       		.uleb128 0x3b
+ 437 005f 0B       		.uleb128 0xb
+ 438 0060 49       		.uleb128 0x49
+ 439 0061 13       		.uleb128 0x13
+ 440 0062 02       		.uleb128 0x2
+ 441 0063 18       		.uleb128 0x18
+ 442 0064 00       		.byte	0
+ 443 0065 00       		.byte	0
+ 444 0066 08       		.uleb128 0x8
+ 445 0067 34       		.uleb128 0x34
+ 446 0068 00       		.byte	0
+ 447 0069 03       		.uleb128 0x3
+ 448 006a 0E       		.uleb128 0xe
+ 449 006b 3A       		.uleb128 0x3a
+ 450 006c 0B       		.uleb128 0xb
+ 451 006d 3B       		.uleb128 0x3b
+ 452 006e 0B       		.uleb128 0xb
+ 453 006f 49       		.uleb128 0x49
+ 454 0070 13       		.uleb128 0x13
+ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\cck8Qx2a.s 			page 11
+
+
+ 455 0071 02       		.uleb128 0x2
+ 456 0072 18       		.uleb128 0x18
+ 457 0073 00       		.byte	0
+ 458 0074 00       		.byte	0
+ 459 0075 09       		.uleb128 0x9
+ 460 0076 2E       		.uleb128 0x2e
+ 461 0077 00       		.byte	0
+ 462 0078 3F       		.uleb128 0x3f
+ 463 0079 19       		.uleb128 0x19
+ 464 007a 03       		.uleb128 0x3
+ 465 007b 0E       		.uleb128 0xe
+ 466 007c 3A       		.uleb128 0x3a
+ 467 007d 0B       		.uleb128 0xb
+ 468 007e 3B       		.uleb128 0x3b
+ 469 007f 0B       		.uleb128 0xb
+ 470 0080 27       		.uleb128 0x27
+ 471 0081 19       		.uleb128 0x19
+ 472 0082 49       		.uleb128 0x49
+ 473 0083 13       		.uleb128 0x13
+ 474 0084 11       		.uleb128 0x11
+ 475 0085 01       		.uleb128 0x1
+ 476 0086 12       		.uleb128 0x12
+ 477 0087 06       		.uleb128 0x6
+ 478 0088 40       		.uleb128 0x40
+ 479 0089 18       		.uleb128 0x18
+ 480 008a 9742     		.uleb128 0x2117
+ 481 008c 19       		.uleb128 0x19
+ 482 008d 00       		.byte	0
+ 483 008e 00       		.byte	0
+ 484 008f 00       		.byte	0
+ 485              		.section	.debug_aranges,"",%progbits
+ 486 0000 34000000 		.4byte	0x34
+ 487 0004 0200     		.2byte	0x2
+ 488 0006 00000000 		.4byte	.Ldebug_info0
+ 489 000a 04       		.byte	0x4
+ 490 000b 00       		.byte	0
+ 491 000c 0000     		.2byte	0
+ 492 000e 0000     		.2byte	0
+ 493 0010 00000000 		.4byte	.LFB0
+ 494 0014 3C000000 		.4byte	.LFE0-.LFB0
+ 495 0018 00000000 		.4byte	.LFB1
+ 496 001c 38000000 		.4byte	.LFE1-.LFB1
+ 497 0020 00000000 		.4byte	.LFB2
+ 498 0024 20000000 		.4byte	.LFE2-.LFB2
+ 499 0028 00000000 		.4byte	.LFB3
+ 500 002c 20000000 		.4byte	.LFE3-.LFB3
+ 501 0030 00000000 		.4byte	0
+ 502 0034 00000000 		.4byte	0
+ 503              		.section	.debug_ranges,"",%progbits
+ 504              	.Ldebug_ranges0:
+ 505 0000 00000000 		.4byte	.LFB0
+ 506 0004 3C000000 		.4byte	.LFE0
+ 507 0008 00000000 		.4byte	.LFB1
+ 508 000c 38000000 		.4byte	.LFE1
+ 509 0010 00000000 		.4byte	.LFB2
+ 510 0014 20000000 		.4byte	.LFE2
+ 511 0018 00000000 		.4byte	.LFB3
+ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\cck8Qx2a.s 			page 12
+
+
+ 512 001c 20000000 		.4byte	.LFE3
+ 513 0020 00000000 		.4byte	0
+ 514 0024 00000000 		.4byte	0
+ 515              		.section	.debug_line,"",%progbits
+ 516              	.Ldebug_line0:
+ 517 0000 92000000 		.section	.debug_str,"MS",%progbits,1
+ 517      02004400 
+ 517      00000201 
+ 517      FB0E0D00 
+ 517      01010101 
+ 518              	.LASF16:
+ 519 0000 76616C75 		.ascii	"value\000"
+ 519      6500
+ 520              	.LASF23:
+ 521 0006 73746174 		.ascii	"staticBits\000"
+ 521      69634269 
+ 521      747300
+ 522              	.LASF4:
+ 523 0011 6C6F6E67 		.ascii	"long int\000"
+ 523      20696E74 
+ 523      00
+ 524              	.LASF15:
+ 525 001a 50696E5F 		.ascii	"Pin_4_SetDriveMode\000"
+ 525      345F5365 
+ 525      74447269 
+ 525      76654D6F 
+ 525      646500
+ 526              	.LASF14:
+ 527 002d 50696E5F 		.ascii	"Pin_4_Write\000"
+ 527      345F5772 
+ 527      69746500 
+ 528              	.LASF9:
+ 529 0039 666C6F61 		.ascii	"float\000"
+ 529      7400
+ 530              	.LASF1:
+ 531 003f 756E7369 		.ascii	"unsigned char\000"
+ 531      676E6564 
+ 531      20636861 
+ 531      7200
+ 532              	.LASF13:
+ 533 004d 72656738 		.ascii	"reg8\000"
+ 533      00
+ 534              	.LASF5:
+ 535 0052 6C6F6E67 		.ascii	"long unsigned int\000"
+ 535      20756E73 
+ 535      69676E65 
+ 535      6420696E 
+ 535      7400
+ 536              	.LASF3:
+ 537 0064 73686F72 		.ascii	"short unsigned int\000"
+ 537      7420756E 
+ 537      7369676E 
+ 537      65642069 
+ 537      6E7400
+ 538              	.LASF10:
+ 539 0077 646F7562 		.ascii	"double\000"
+ 539      6C6500
+ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\cck8Qx2a.s 			page 13
+
+
+ 540              	.LASF8:
+ 541 007e 756E7369 		.ascii	"unsigned int\000"
+ 541      676E6564 
+ 541      20696E74 
+ 541      00
+ 542              	.LASF7:
+ 543 008b 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 543      206C6F6E 
+ 543      6720756E 
+ 543      7369676E 
+ 543      65642069 
+ 544              	.LASF17:
+ 545 00a2 6D6F6465 		.ascii	"mode\000"
+ 545      00
+ 546              	.LASF18:
+ 547 00a7 50696E5F 		.ascii	"Pin_4_Read\000"
+ 547      345F5265 
+ 547      616400
+ 548              	.LASF20:
+ 549 00b2 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 549      4320342E 
+ 549      382E3420 
+ 549      32303134 
+ 549      30353236 
+ 550 00e5 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m3 -mthumb -g -O"
+ 550      20726576 
+ 550      6973696F 
+ 550      6E203231 
+ 550      31333538 
+ 551 0118 30202D66 		.ascii	"0 -ffunction-sections\000"
+ 551      66756E63 
+ 551      74696F6E 
+ 551      2D736563 
+ 551      74696F6E 
+ 552              	.LASF6:
+ 553 012e 6C6F6E67 		.ascii	"long long int\000"
+ 553      206C6F6E 
+ 553      6720696E 
+ 553      7400
+ 554              	.LASF11:
+ 555 013c 63686172 		.ascii	"char\000"
+ 555      00
+ 556              	.LASF2:
+ 557 0141 73686F72 		.ascii	"short int\000"
+ 557      7420696E 
+ 557      7400
+ 558              	.LASF22:
+ 559 014b 433A5C55 		.ascii	"C:\\Users\\shubhamt\\Documents\\PSoC Creator\\WaveG"
+ 559      73657273 
+ 559      5C736875 
+ 559      6268616D 
+ 559      745C446F 
+ 560 0179 656E6572 		.ascii	"enerator1\\WaveGenerator1.cydsn\000"
+ 560      61746F72 
+ 560      315C5761 
+ 560      76654765 
+ 560      6E657261 
+ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\cck8Qx2a.s 			page 14
+
+
+ 561              	.LASF12:
+ 562 0198 75696E74 		.ascii	"uint8\000"
+ 562      3800
+ 563              	.LASF21:
+ 564 019e 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\Pin_4.c\000"
+ 564      6E657261 
+ 564      7465645F 
+ 564      536F7572 
+ 564      63655C50 
+ 565              	.LASF19:
+ 566 01bf 50696E5F 		.ascii	"Pin_4_ReadDataReg\000"
+ 566      345F5265 
+ 566      61644461 
+ 566      74615265 
+ 566      6700
+ 567              	.LASF0:
+ 568 01d1 7369676E 		.ascii	"signed char\000"
+ 568      65642063 
+ 568      68617200 
+ 569              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br
