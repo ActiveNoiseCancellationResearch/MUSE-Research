@@ -27,6 +27,8 @@
 ********************************************************************************/
 /* `#START isr_intc` */
 #include <project.h>
+#include "canceller.h"
+#include "ANC.h"
 /* `#END` */
 
 #ifndef CYINT_IRQ_BASE
@@ -156,6 +158,7 @@ void isr_Stop(void)
 *   None
 *
 *******************************************************************************/
+extern int wave_table[WAVESIZE]; 
 CY_ISR(isr_Interrupt)
 {
     /*  Place your Interrupt code here. */
@@ -163,6 +166,7 @@ CY_ISR(isr_Interrupt)
    
 #define NUM_TONES (1)                         // number of tones to be generated
         static int n=0;                       // Discrete time index
+        static int wave_idx=0;
         int freqs[] = { 256 };                // Array of tone frequencies, in Hz
         int ampls[] = { 16000 };              // Array of tone amplitudes, C1.0.15, roughly 0.5 for now
         int T       = (1<<20)/20000;          // Samping period, in 1/2^20) seconds //16*1024 (would be nicer)
@@ -170,35 +174,43 @@ CY_ISR(isr_Interrupt)
         int value;
         int x=0;
         int e_;
-       for (k = 0 ; k<NUM_TONES ; ++k)
-        {
-            value = n*T*freqs[k]/(1<<5);
-            value=value&0x7fff;
-            value=(value*ampls[k])>>15;
-            x+=value;                   //15 bit unsigned number
-        }
+//        for (k = 0 ; k<NUM_TONES ; ++k)
+//            {
+//                value = n*T*freqs[k]/(1<<5);
+//                value=value&0x7fff;
+//                value=(value*ampls[k])>>15;
+//                x+=value;                   //15 bit unsigned number
+//            }
+//            
+//       
+//        x = (x>>4);             //now a 8bit 2's comp value
+//        x+=128;                         //Offset binary. VDAC wants this
+        x = wave_table[wave_idx];
         
-       
-        x = (x>>4);             //now a 8bit 2's comp value
-        x+=128;                         //Offset binary. VDAC wants this
         VDAC8_1_SetValue(x);  
         
-        
+        //fixed point -1 to 1             double(x)/2^31(2 bill)
         
         e_ =  ADC_SAR_GetResult16();     //Set's value to the ADC output (16bit 2's comp value)
         
-        canceller_new_sample (x)
-        canceller_coeff_update (e_)
+        canceller_new_sample (x);
+        canceller_coeff_update (e_);
         //canceller code goes here
        
         //end canceller code    
         VDAC8_SetValue(x);              
        
+        ++wave_idx;
+        if (wave_idx == WAVESIZE)
+        {
+            wave_idx=0;
+        }
+        
         
         ++n;
-        
+}        
     /* `#END` */
-}
+
 
 
 /*******************************************************************************
