@@ -27,6 +27,9 @@
 ********************************************************************************/
 /* `#START isr_intc` */
 #include <project.h>
+#include "canceller.h"
+#include "ANC.h"
+extern int16_t *cap_array;
 /* `#END` */
 
 #ifndef CYINT_IRQ_BASE
@@ -160,48 +163,72 @@ CY_ISR(isr_Interrupt)
 {
     /*  Place your Interrupt code here. */
     /* `#START isr_Interrupt` */
-   
-#define NUM_TONES (1)                         // number of tones to be generated
-#define NUM_TONES1 (1)
-        static int n=0;                       // Discrete time index
-        int freqs[] = { 256 };                // Array of tone frequencies, in Hz
-        int ampls[] = { 16000 };              // Array of tone amplitudes, C1.0.15, roughly 0.5 for now
-        int T       = (1<<20)/20000;          // Samping period, in 1/2^20) seconds
-        int k;
-        int k1;
-        int value;
-        int value1;
-        int tones_sum=0;
-        int tones_sum1=0;
-        for (k = 0 ; k<NUM_TONES ; ++k)
-        {
-            value = n*T*freqs[k]/(1<<5);
-            value=value&0x7fff;
-            value=(value*ampls[k])>>15;
-            tones_sum+=value;                   //15 bit unsigned number
-        }
+    
+    #define NUM_TONES (1)                         // number of tones to be generated
+    static int n=0;                       // Discrete time index
+    static int wave_idx=0;
+    int freqs[] = { 256 };                // Array of tone frequencies, in Hz
+    int ampls[] = { 16000 };              // Array of tone amplitudes, C1.0.15, roughly 0.5 for now
+    int T       = (1<<20)/20000;          // Samping period, in 1/2^20) seconds //16*1024 (would be nicer)
+    int k;
+    int value;
+    int x=0;
+    int e_;
+    extern int wave_table[WAVESIZE];
+    Pin_6_Write(n);
+//  for (k = 0 ; k<NUM_TONES ; ++k)
+//  {
+//      value = n*T*freqs[k]/(1<<5);
+//      value=value&0x7fff;
+//      value=(value*ampls[k])>>15;
+//      x+=value;                         //15 bit unsigned number
+//  }
+//            
+//              
+//  x = (x>>4);                           //now a 8bit 2's comp value
+//  x+=128;                               //Offset binary. VDAC wants this
+     
+    x = wave_table[wave_idx];
+    x=(x)>>5;                             // rounds to an 8 bit number
+    x=x+128;                              // converts from 2's comp to offset binary
+    VDAC8_2_ls_SetValue(x);  
         
-        tones_sum =  ADC_SAR_GetResult16();     //Set's value to the ADC output (16bit 2's comp value)
-        tones_sum = (tones_sum>>4);             //now a 8bit 2's comp value
-        tones_sum+=128;                         //Offset binary. VDAC wants this
-        VDAC8_SetValue(tones_sum);              
+    //fixed point -1 to 1                   double(x)/2^31(2 billion)
+        
+    e_ =  ADC_SAR_GetResult16();          //Set's value to the ADC output (16bit 2's comp value)
+        
        
-        for (k1 = 0 ; k<NUM_TONES1 ; ++k1)
-        {
-            value1 = n*T*freqs[k1]/(1<<5);
-            value1=value1&0x7fff;
-            value1=(value1*ampls[k1])>>15;
-            tones_sum1+=value1;                   //15 bit unsigned number
-        }
+    //canceller code goes here
+    canceller_new_sample (x);
+    canceller_coeff_update (e_);
+    //end canceller code  
         
-        tones_sum1 =  ADC_SAR_GetResult16();     //Set's value to the ADC output (16bit 2's comp value)
-        tones_sum1 = (tones_sum1>>4);             //now a 8bit 2's comp value
-        tones_sum1+=128;                         //Offset binary. VDAC wants this
-        VDAC8_1_SetValue(tones_sum1);  
+    VDAC8_1_hs_SetValue(x);              
+       
+    ++wave_idx;
         
+    if (wave_idx == WAVESIZE)
+    {
+        wave_idx=0;
+    }
         
-        ++n;
-        
+//    if (n < NUM_SAMPS_TO_CAPTURE)
+//    {
+//        cap_array[n] = e_;
+//    }
+//    else
+//    {
+//    // Add dummy line here, to enable breakpoint
+//    n = n;
+//    }
+    
+    
+   
+    
+    ++n;
+    Pin_5_Write(n);
+}        
+
     /* `#END` */
 }
 

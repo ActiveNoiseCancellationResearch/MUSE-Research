@@ -1,0 +1,898 @@
+ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\ccXhnitI.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"canceller.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.bss
+  19              		.align	2
+  20              	recent_samps_in:
+  21 0000 00000000 		.space	64
+  21      00000000 
+  21      00000000 
+  21      00000000 
+  21      00000000 
+  22              		.align	2
+  23              	model_coeffs:
+  24 0040 00000000 		.space	64
+  24      00000000 
+  24      00000000 
+  24      00000000 
+  24      00000000 
+  25              		.align	2
+  26              	recent_samps_v:
+  27 0080 00000000 		.space	64
+  27      00000000 
+  27      00000000 
+  27      00000000 
+  27      00000000 
+  28              		.section	.text.canceller_new,"ax",%progbits
+  29              		.align	2
+  30              		.global	canceller_new
+  31              		.thumb
+  32              		.thumb_func
+  33              		.type	canceller_new, %function
+  34              	canceller_new:
+  35              	.LFB0:
+  36              		.file 1 ".\\canceller.c"
+   1:.\canceller.c **** /* ========================================
+   2:.\canceller.c ****  *
+   3:.\canceller.c ****  * Copyright YOUR COMPANY, THE YEAR
+   4:.\canceller.c ****  * All Rights Reserved
+   5:.\canceller.c ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:.\canceller.c ****  *
+   7:.\canceller.c ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:.\canceller.c ****  * WHICH IS THE PROPERTY OF your company.
+   9:.\canceller.c ****  *
+ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\ccXhnitI.s 			page 2
+
+
+  10:.\canceller.c ****  * ========================================
+  11:.\canceller.c **** */
+  12:.\canceller.c **** #include "hs_model.h"                       
+  13:.\canceller.c **** #include "mic_model.h"
+  14:.\canceller.c **** #include "ANC.h"  
+  15:.\canceller.c **** #include "canceller.h"
+  16:.\canceller.c **** #define FILTER_ORDER (16)
+  17:.\canceller.c **** #define FO1 (FILTER_ORDER-1) 
+  18:.\canceller.c **** #define MU (0.001)
+  19:.\canceller.c **** static int recent_samps_in [FILTER_ORDER];
+  20:.\canceller.c **** static int model_coeffs [FILTER_ORDER];
+  21:.\canceller.c **** static int recent_samps_v [FILTER_ORDER];
+  22:.\canceller.c **** 
+  23:.\canceller.c **** void 
+  24:.\canceller.c **** canceller_new(void)
+  25:.\canceller.c **** {
+  37              		.loc 1 25 0
+  38              		.cfi_startproc
+  39              		@ args = 0, pretend = 0, frame = 8
+  40              		@ frame_needed = 1, uses_anonymous_args = 0
+  41              		@ link register save eliminated.
+  42 0000 80B4     		push	{r7}
+  43              		.cfi_def_cfa_offset 4
+  44              		.cfi_offset 7, -4
+  45 0002 83B0     		sub	sp, sp, #12
+  46              		.cfi_def_cfa_offset 16
+  47 0004 00AF     		add	r7, sp, #0
+  48              		.cfi_def_cfa_register 7
+  26:.\canceller.c ****     int i;
+  27:.\canceller.c ****     for (i=0; i<FILTER_ORDER; ++i)
+  49              		.loc 1 27 0
+  50 0006 0023     		movs	r3, #0
+  51 0008 7B60     		str	r3, [r7, #4]
+  52 000a 11E0     		b	.L2
+  53              	.L3:
+  28:.\canceller.c ****     {
+  29:.\canceller.c ****         recent_samps_v [i]=0;
+  54              		.loc 1 29 0 discriminator 2
+  55 000c 0E4B     		ldr	r3, .L4
+  56 000e 7A68     		ldr	r2, [r7, #4]
+  57 0010 0021     		movs	r1, #0
+  58 0012 43F82210 		str	r1, [r3, r2, lsl #2]
+  30:.\canceller.c ****         recent_samps_in [i]=0;
+  59              		.loc 1 30 0 discriminator 2
+  60 0016 0D4B     		ldr	r3, .L4+4
+  61 0018 7A68     		ldr	r2, [r7, #4]
+  62 001a 0021     		movs	r1, #0
+  63 001c 43F82210 		str	r1, [r3, r2, lsl #2]
+  31:.\canceller.c ****         model_coeffs[i]=0;    
+  64              		.loc 1 31 0 discriminator 2
+  65 0020 0B4B     		ldr	r3, .L4+8
+  66 0022 7A68     		ldr	r2, [r7, #4]
+  67 0024 0021     		movs	r1, #0
+  68 0026 43F82210 		str	r1, [r3, r2, lsl #2]
+  27:.\canceller.c ****     for (i=0; i<FILTER_ORDER; ++i)
+  69              		.loc 1 27 0 discriminator 2
+  70 002a 7B68     		ldr	r3, [r7, #4]
+ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\ccXhnitI.s 			page 3
+
+
+  71 002c 0133     		adds	r3, r3, #1
+  72 002e 7B60     		str	r3, [r7, #4]
+  73              	.L2:
+  27:.\canceller.c ****     for (i=0; i<FILTER_ORDER; ++i)
+  74              		.loc 1 27 0 is_stmt 0 discriminator 1
+  75 0030 7B68     		ldr	r3, [r7, #4]
+  76 0032 0F2B     		cmp	r3, #15
+  77 0034 EADD     		ble	.L3
+  32:.\canceller.c ****     }
+  33:.\canceller.c ****     model_coeffs[0]=1;
+  78              		.loc 1 33 0 is_stmt 1
+  79 0036 064B     		ldr	r3, .L4+8
+  80 0038 0122     		movs	r2, #1
+  81 003a 1A60     		str	r2, [r3]
+  34:.\canceller.c **** }
+  82              		.loc 1 34 0
+  83 003c 0C37     		adds	r7, r7, #12
+  84 003e BD46     		mov	sp, r7
+  85              		@ sp needed
+  86 0040 5DF8047B 		ldr	r7, [sp], #4
+  87 0044 7047     		bx	lr
+  88              	.L5:
+  89 0046 00BF     		.align	2
+  90              	.L4:
+  91 0048 80000000 		.word	recent_samps_v
+  92 004c 00000000 		.word	recent_samps_in
+  93 0050 40000000 		.word	model_coeffs
+  94              		.cfi_endproc
+  95              	.LFE0:
+  96              		.size	canceller_new, .-canceller_new
+  97              		.section	.text.canceller_new_sample,"ax",%progbits
+  98              		.align	2
+  99              		.global	canceller_new_sample
+ 100              		.thumb
+ 101              		.thumb_func
+ 102              		.type	canceller_new_sample, %function
+ 103              	canceller_new_sample:
+ 104              	.LFB1:
+  35:.\canceller.c **** int 
+  36:.\canceller.c **** canceller_new_sample(int input_samp)
+  37:.\canceller.c **** {
+ 105              		.loc 1 37 0
+ 106              		.cfi_startproc
+ 107              		@ args = 0, pretend = 0, frame = 24
+ 108              		@ frame_needed = 1, uses_anonymous_args = 0
+ 109 0000 80B5     		push	{r7, lr}
+ 110              		.cfi_def_cfa_offset 8
+ 111              		.cfi_offset 7, -8
+ 112              		.cfi_offset 14, -4
+ 113 0002 86B0     		sub	sp, sp, #24
+ 114              		.cfi_def_cfa_offset 32
+ 115 0004 00AF     		add	r7, sp, #0
+ 116              		.cfi_def_cfa_register 7
+ 117 0006 7860     		str	r0, [r7, #4]
+  38:.\canceller.c ****     //recent_samps_in[FILTER_ORDER - 1];
+  39:.\canceller.c ****     int i;
+  40:.\canceller.c ****     int sum=0;
+ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\ccXhnitI.s 			page 4
+
+
+ 118              		.loc 1 40 0
+ 119 0008 0023     		movs	r3, #0
+ 120 000a 3B61     		str	r3, [r7, #16]
+  41:.\canceller.c ****     int tmp;
+  42:.\canceller.c ****     int v;
+  43:.\canceller.c ****     static int wptr=0;    //circular buffer write pointer, for recent_samps_in
+  44:.\canceller.c ****     recent_samps_in[wptr]= input_samp;
+ 121              		.loc 1 44 0
+ 122 000c 204B     		ldr	r3, .L10
+ 123 000e 1A68     		ldr	r2, [r3]
+ 124 0010 204B     		ldr	r3, .L10+4
+ 125 0012 7968     		ldr	r1, [r7, #4]
+ 126 0014 43F82210 		str	r1, [r3, r2, lsl #2]
+  45:.\canceller.c ****     tmp=hs_model_new_sample(input_samp);
+ 127              		.loc 1 45 0
+ 128 0018 7868     		ldr	r0, [r7, #4]
+ 129 001a FFF7FEFF 		bl	hs_model_new_sample
+ 130 001e F860     		str	r0, [r7, #12]
+  46:.\canceller.c ****     v=mic_model_new_sample(tmp);
+ 131              		.loc 1 46 0
+ 132 0020 F868     		ldr	r0, [r7, #12]
+ 133 0022 FFF7FEFF 		bl	mic_model_new_sample
+ 134 0026 B860     		str	r0, [r7, #8]
+  47:.\canceller.c ****     recent_samps_v[wptr]=v;
+ 135              		.loc 1 47 0
+ 136 0028 194B     		ldr	r3, .L10
+ 137 002a 1A68     		ldr	r2, [r3]
+ 138 002c 1A4B     		ldr	r3, .L10+8
+ 139 002e B968     		ldr	r1, [r7, #8]
+ 140 0030 43F82210 		str	r1, [r3, r2, lsl #2]
+  48:.\canceller.c ****     // into mic_model filter
+  49:.\canceller.c ****               
+  50:.\canceller.c ****     sum=0;
+ 141              		.loc 1 50 0
+ 142 0034 0023     		movs	r3, #0
+ 143 0036 3B61     		str	r3, [r7, #16]
+  51:.\canceller.c **** 
+  52:.\canceller.c ****     for (i=0 ; i<FILTER_ORDER ; ++i)
+ 144              		.loc 1 52 0
+ 145 0038 0023     		movs	r3, #0
+ 146 003a 7B61     		str	r3, [r7, #20]
+ 147 003c 14E0     		b	.L7
+ 148              	.L8:
+  53:.\canceller.c ****         {
+  54:.\canceller.c ****             sum+=recent_samps_in[(wptr-i+FILTER_ORDER)&FO1]*model_coeffs[i];
+ 149              		.loc 1 54 0 discriminator 2
+ 150 003e 144B     		ldr	r3, .L10
+ 151 0040 1A68     		ldr	r2, [r3]
+ 152 0042 7B69     		ldr	r3, [r7, #20]
+ 153 0044 D31A     		subs	r3, r2, r3
+ 154 0046 03F00F02 		and	r2, r3, #15
+ 155 004a 124B     		ldr	r3, .L10+4
+ 156 004c 53F82230 		ldr	r3, [r3, r2, lsl #2]
+ 157 0050 124A     		ldr	r2, .L10+12
+ 158 0052 7969     		ldr	r1, [r7, #20]
+ 159 0054 52F82120 		ldr	r2, [r2, r1, lsl #2]
+ 160 0058 02FB03F3 		mul	r3, r2, r3
+ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\ccXhnitI.s 			page 5
+
+
+ 161 005c 3A69     		ldr	r2, [r7, #16]
+ 162 005e 1344     		add	r3, r3, r2
+ 163 0060 3B61     		str	r3, [r7, #16]
+  52:.\canceller.c ****     for (i=0 ; i<FILTER_ORDER ; ++i)
+ 164              		.loc 1 52 0 discriminator 2
+ 165 0062 7B69     		ldr	r3, [r7, #20]
+ 166 0064 0133     		adds	r3, r3, #1
+ 167 0066 7B61     		str	r3, [r7, #20]
+ 168              	.L7:
+  52:.\canceller.c ****     for (i=0 ; i<FILTER_ORDER ; ++i)
+ 169              		.loc 1 52 0 is_stmt 0 discriminator 1
+ 170 0068 7B69     		ldr	r3, [r7, #20]
+ 171 006a 0F2B     		cmp	r3, #15
+ 172 006c E7DD     		ble	.L8
+  55:.\canceller.c ****         }
+  56:.\canceller.c ****     sum=(sum+FP_ROUND)>>FP_SHIFT;
+ 173              		.loc 1 56 0 is_stmt 1
+ 174 006e 3B69     		ldr	r3, [r7, #16]
+ 175 0070 03F50063 		add	r3, r3, #2048
+ 176 0074 1B13     		asrs	r3, r3, #12
+ 177 0076 3B61     		str	r3, [r7, #16]
+  57:.\canceller.c ****     wptr=(wptr+1)&FO1;
+ 178              		.loc 1 57 0
+ 179 0078 054B     		ldr	r3, .L10
+ 180 007a 1B68     		ldr	r3, [r3]
+ 181 007c 0133     		adds	r3, r3, #1
+ 182 007e 03F00F02 		and	r2, r3, #15
+ 183 0082 034B     		ldr	r3, .L10
+ 184 0084 1A60     		str	r2, [r3]
+  58:.\canceller.c ****     return sum;
+ 185              		.loc 1 58 0
+ 186 0086 3B69     		ldr	r3, [r7, #16]
+  59:.\canceller.c **** }
+ 187              		.loc 1 59 0
+ 188 0088 1846     		mov	r0, r3
+ 189 008a 1837     		adds	r7, r7, #24
+ 190 008c BD46     		mov	sp, r7
+ 191              		@ sp needed
+ 192 008e 80BD     		pop	{r7, pc}
+ 193              	.L11:
+ 194              		.align	2
+ 195              	.L10:
+ 196 0090 C0000000 		.word	wptr.4091
+ 197 0094 00000000 		.word	recent_samps_in
+ 198 0098 80000000 		.word	recent_samps_v
+ 199 009c 40000000 		.word	model_coeffs
+ 200              		.cfi_endproc
+ 201              	.LFE1:
+ 202              		.size	canceller_new_sample, .-canceller_new_sample
+ 203              		.section	.text.canceller_coeff_update,"ax",%progbits
+ 204              		.align	2
+ 205              		.global	canceller_coeff_update
+ 206              		.thumb
+ 207              		.thumb_func
+ 208              		.type	canceller_coeff_update, %function
+ 209              	canceller_coeff_update:
+ 210              	.LFB2:
+ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\ccXhnitI.s 			page 6
+
+
+  60:.\canceller.c **** void
+  61:.\canceller.c **** canceller_coeff_update (int e_)
+  62:.\canceller.c **** {
+ 211              		.loc 1 62 0
+ 212              		.cfi_startproc
+ 213              		@ args = 0, pretend = 0, frame = 24
+ 214              		@ frame_needed = 1, uses_anonymous_args = 0
+ 215              		@ link register save eliminated.
+ 216 0000 80B4     		push	{r7}
+ 217              		.cfi_def_cfa_offset 4
+ 218              		.cfi_offset 7, -4
+ 219 0002 87B0     		sub	sp, sp, #28
+ 220              		.cfi_def_cfa_offset 32
+ 221 0004 00AF     		add	r7, sp, #0
+ 222              		.cfi_def_cfa_register 7
+ 223 0006 7860     		str	r0, [r7, #4]
+  63:.\canceller.c ****     int i;
+  64:.\canceller.c ****     int mu_prime=(MU*(1<<FP_SHIFT)+0.5);     
+ 224              		.loc 1 64 0
+ 225 0008 0423     		movs	r3, #4
+ 226 000a 3B61     		str	r3, [r7, #16]
+  65:.\canceller.c ****     for (i=0 ; i<FILTER_ORDER;++i)
+ 227              		.loc 1 65 0
+ 228 000c 0023     		movs	r3, #0
+ 229 000e 7B61     		str	r3, [r7, #20]
+ 230 0010 1FE0     		b	.L13
+ 231              	.L14:
+ 232              	.LBB2:
+  66:.\canceller.c ****     {
+  67:.\canceller.c ****         int temp;
+  68:.\canceller.c ****         temp = (e_*recent_samps_v[i]+FP_ROUND)>>FP_SHIFT;
+ 233              		.loc 1 68 0 discriminator 2
+ 234 0012 144B     		ldr	r3, .L15
+ 235 0014 7A69     		ldr	r2, [r7, #20]
+ 236 0016 53F82230 		ldr	r3, [r3, r2, lsl #2]
+ 237 001a 7A68     		ldr	r2, [r7, #4]
+ 238 001c 02FB03F3 		mul	r3, r2, r3
+ 239 0020 03F50063 		add	r3, r3, #2048
+ 240 0024 1B13     		asrs	r3, r3, #12
+ 241 0026 FB60     		str	r3, [r7, #12]
+  69:.\canceller.c ****         temp = (mu_prime*temp+FP_ROUND)>>FP_SHIFT;
+ 242              		.loc 1 69 0 discriminator 2
+ 243 0028 3B69     		ldr	r3, [r7, #16]
+ 244 002a FA68     		ldr	r2, [r7, #12]
+ 245 002c 02FB03F3 		mul	r3, r2, r3
+ 246 0030 03F50063 		add	r3, r3, #2048
+ 247 0034 1B13     		asrs	r3, r3, #12
+ 248 0036 FB60     		str	r3, [r7, #12]
+  70:.\canceller.c ****         model_coeffs[i]=model_coeffs[i]-temp;
+ 249              		.loc 1 70 0 discriminator 2
+ 250 0038 0B4B     		ldr	r3, .L15+4
+ 251 003a 7A69     		ldr	r2, [r7, #20]
+ 252 003c 53F82220 		ldr	r2, [r3, r2, lsl #2]
+ 253 0040 FB68     		ldr	r3, [r7, #12]
+ 254 0042 D11A     		subs	r1, r2, r3
+ 255 0044 084B     		ldr	r3, .L15+4
+ 256 0046 7A69     		ldr	r2, [r7, #20]
+ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\ccXhnitI.s 			page 7
+
+
+ 257 0048 43F82210 		str	r1, [r3, r2, lsl #2]
+ 258              	.LBE2:
+  65:.\canceller.c ****     for (i=0 ; i<FILTER_ORDER;++i)
+ 259              		.loc 1 65 0 discriminator 2
+ 260 004c 7B69     		ldr	r3, [r7, #20]
+ 261 004e 0133     		adds	r3, r3, #1
+ 262 0050 7B61     		str	r3, [r7, #20]
+ 263              	.L13:
+  65:.\canceller.c ****     for (i=0 ; i<FILTER_ORDER;++i)
+ 264              		.loc 1 65 0 is_stmt 0 discriminator 1
+ 265 0052 7B69     		ldr	r3, [r7, #20]
+ 266 0054 0F2B     		cmp	r3, #15
+ 267 0056 DCDD     		ble	.L14
+  71:.\canceller.c ****     }
+  72:.\canceller.c **** }
+ 268              		.loc 1 72 0 is_stmt 1
+ 269 0058 1C37     		adds	r7, r7, #28
+ 270 005a BD46     		mov	sp, r7
+ 271              		@ sp needed
+ 272 005c 5DF8047B 		ldr	r7, [sp], #4
+ 273 0060 7047     		bx	lr
+ 274              	.L16:
+ 275 0062 00BF     		.align	2
+ 276              	.L15:
+ 277 0064 80000000 		.word	recent_samps_v
+ 278 0068 40000000 		.word	model_coeffs
+ 279              		.cfi_endproc
+ 280              	.LFE2:
+ 281              		.size	canceller_coeff_update, .-canceller_coeff_update
+ 282              		.bss
+ 283              		.align	2
+ 284              	wptr.4091:
+ 285 00c0 00000000 		.space	4
+ 286              		.text
+ 287              	.Letext0:
+ 288              		.section	.debug_info,"",%progbits
+ 289              	.Ldebug_info0:
+ 290 0000 57010000 		.4byte	0x157
+ 291 0004 0400     		.2byte	0x4
+ 292 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 293 000a 04       		.byte	0x4
+ 294 000b 01       		.uleb128 0x1
+ 295 000c D5000000 		.4byte	.LASF10
+ 296 0010 01       		.byte	0x1
+ 297 0011 56010000 		.4byte	.LASF11
+ 298 0015 42000000 		.4byte	.LASF12
+ 299 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 300 001d 00000000 		.4byte	0
+ 301 0021 00000000 		.4byte	.Ldebug_line0
+ 302 0025 02       		.uleb128 0x2
+ 303 0026 34000000 		.4byte	.LASF1
+ 304 002a 01       		.byte	0x1
+ 305 002b 18       		.byte	0x18
+ 306 002c 00000000 		.4byte	.LFB0
+ 307 0030 54000000 		.4byte	.LFE0-.LFB0
+ 308 0034 01       		.uleb128 0x1
+ 309 0035 9C       		.byte	0x9c
+ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\ccXhnitI.s 			page 8
+
+
+ 310 0036 47000000 		.4byte	0x47
+ 311 003a 03       		.uleb128 0x3
+ 312 003b 6900     		.ascii	"i\000"
+ 313 003d 01       		.byte	0x1
+ 314 003e 1A       		.byte	0x1a
+ 315 003f 47000000 		.4byte	0x47
+ 316 0043 02       		.uleb128 0x2
+ 317 0044 91       		.byte	0x91
+ 318 0045 74       		.sleb128 -12
+ 319 0046 00       		.byte	0
+ 320 0047 04       		.uleb128 0x4
+ 321 0048 04       		.byte	0x4
+ 322 0049 05       		.byte	0x5
+ 323 004a 696E7400 		.ascii	"int\000"
+ 324 004e 05       		.uleb128 0x5
+ 325 004f 1F000000 		.4byte	.LASF13
+ 326 0053 01       		.byte	0x1
+ 327 0054 24       		.byte	0x24
+ 328 0055 47000000 		.4byte	0x47
+ 329 0059 00000000 		.4byte	.LFB1
+ 330 005d A0000000 		.4byte	.LFE1-.LFB1
+ 331 0061 01       		.uleb128 0x1
+ 332 0062 9C       		.byte	0x9c
+ 333 0063 BB000000 		.4byte	0xbb
+ 334 0067 06       		.uleb128 0x6
+ 335 0068 B3000000 		.4byte	.LASF3
+ 336 006c 01       		.byte	0x1
+ 337 006d 24       		.byte	0x24
+ 338 006e 47000000 		.4byte	0x47
+ 339 0072 02       		.uleb128 0x2
+ 340 0073 91       		.byte	0x91
+ 341 0074 64       		.sleb128 -28
+ 342 0075 03       		.uleb128 0x3
+ 343 0076 6900     		.ascii	"i\000"
+ 344 0078 01       		.byte	0x1
+ 345 0079 27       		.byte	0x27
+ 346 007a 47000000 		.4byte	0x47
+ 347 007e 02       		.uleb128 0x2
+ 348 007f 91       		.byte	0x91
+ 349 0080 74       		.sleb128 -12
+ 350 0081 03       		.uleb128 0x3
+ 351 0082 73756D00 		.ascii	"sum\000"
+ 352 0086 01       		.byte	0x1
+ 353 0087 28       		.byte	0x28
+ 354 0088 47000000 		.4byte	0x47
+ 355 008c 02       		.uleb128 0x2
+ 356 008d 91       		.byte	0x91
+ 357 008e 70       		.sleb128 -16
+ 358 008f 03       		.uleb128 0x3
+ 359 0090 746D7000 		.ascii	"tmp\000"
+ 360 0094 01       		.byte	0x1
+ 361 0095 29       		.byte	0x29
+ 362 0096 47000000 		.4byte	0x47
+ 363 009a 02       		.uleb128 0x2
+ 364 009b 91       		.byte	0x91
+ 365 009c 6C       		.sleb128 -20
+ 366 009d 03       		.uleb128 0x3
+ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\ccXhnitI.s 			page 9
+
+
+ 367 009e 7600     		.ascii	"v\000"
+ 368 00a0 01       		.byte	0x1
+ 369 00a1 2A       		.byte	0x2a
+ 370 00a2 47000000 		.4byte	0x47
+ 371 00a6 02       		.uleb128 0x2
+ 372 00a7 91       		.byte	0x91
+ 373 00a8 68       		.sleb128 -24
+ 374 00a9 07       		.uleb128 0x7
+ 375 00aa 51010000 		.4byte	.LASF0
+ 376 00ae 01       		.byte	0x1
+ 377 00af 2B       		.byte	0x2b
+ 378 00b0 47000000 		.4byte	0x47
+ 379 00b4 05       		.uleb128 0x5
+ 380 00b5 03       		.byte	0x3
+ 381 00b6 C0000000 		.4byte	wptr.4091
+ 382 00ba 00       		.byte	0
+ 383 00bb 02       		.uleb128 0x2
+ 384 00bc BE000000 		.4byte	.LASF2
+ 385 00c0 01       		.byte	0x1
+ 386 00c1 3D       		.byte	0x3d
+ 387 00c2 00000000 		.4byte	.LFB2
+ 388 00c6 6C000000 		.4byte	.LFE2-.LFB2
+ 389 00ca 01       		.uleb128 0x1
+ 390 00cb 9C       		.byte	0x9c
+ 391 00cc 10010000 		.4byte	0x110
+ 392 00d0 08       		.uleb128 0x8
+ 393 00d1 655F00   		.ascii	"e_\000"
+ 394 00d4 01       		.byte	0x1
+ 395 00d5 3D       		.byte	0x3d
+ 396 00d6 47000000 		.4byte	0x47
+ 397 00da 02       		.uleb128 0x2
+ 398 00db 91       		.byte	0x91
+ 399 00dc 64       		.sleb128 -28
+ 400 00dd 03       		.uleb128 0x3
+ 401 00de 6900     		.ascii	"i\000"
+ 402 00e0 01       		.byte	0x1
+ 403 00e1 3F       		.byte	0x3f
+ 404 00e2 47000000 		.4byte	0x47
+ 405 00e6 02       		.uleb128 0x2
+ 406 00e7 91       		.byte	0x91
+ 407 00e8 74       		.sleb128 -12
+ 408 00e9 07       		.uleb128 0x7
+ 409 00ea A5000000 		.4byte	.LASF4
+ 410 00ee 01       		.byte	0x1
+ 411 00ef 40       		.byte	0x40
+ 412 00f0 47000000 		.4byte	0x47
+ 413 00f4 02       		.uleb128 0x2
+ 414 00f5 91       		.byte	0x91
+ 415 00f6 70       		.sleb128 -16
+ 416 00f7 09       		.uleb128 0x9
+ 417 00f8 12000000 		.4byte	.LBB2
+ 418 00fc 3A000000 		.4byte	.LBE2-.LBB2
+ 419 0100 07       		.uleb128 0x7
+ 420 0101 AE000000 		.4byte	.LASF5
+ 421 0105 01       		.byte	0x1
+ 422 0106 43       		.byte	0x43
+ 423 0107 47000000 		.4byte	0x47
+ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\ccXhnitI.s 			page 10
+
+
+ 424 010b 02       		.uleb128 0x2
+ 425 010c 91       		.byte	0x91
+ 426 010d 6C       		.sleb128 -20
+ 427 010e 00       		.byte	0
+ 428 010f 00       		.byte	0
+ 429 0110 0A       		.uleb128 0xa
+ 430 0111 47000000 		.4byte	0x47
+ 431 0115 20010000 		.4byte	0x120
+ 432 0119 0B       		.uleb128 0xb
+ 433 011a 20010000 		.4byte	0x120
+ 434 011e 0F       		.byte	0xf
+ 435 011f 00       		.byte	0
+ 436 0120 0C       		.uleb128 0xc
+ 437 0121 04       		.byte	0x4
+ 438 0122 07       		.byte	0x7
+ 439 0123 9C000000 		.4byte	.LASF6
+ 440 0127 07       		.uleb128 0x7
+ 441 0128 0F000000 		.4byte	.LASF7
+ 442 012c 01       		.byte	0x1
+ 443 012d 13       		.byte	0x13
+ 444 012e 10010000 		.4byte	0x110
+ 445 0132 05       		.uleb128 0x5
+ 446 0133 03       		.byte	0x3
+ 447 0134 00000000 		.4byte	recent_samps_in
+ 448 0138 07       		.uleb128 0x7
+ 449 0139 8F000000 		.4byte	.LASF8
+ 450 013d 01       		.byte	0x1
+ 451 013e 14       		.byte	0x14
+ 452 013f 10010000 		.4byte	0x110
+ 453 0143 05       		.uleb128 0x5
+ 454 0144 03       		.byte	0x3
+ 455 0145 40000000 		.4byte	model_coeffs
+ 456 0149 07       		.uleb128 0x7
+ 457 014a 00000000 		.4byte	.LASF9
+ 458 014e 01       		.byte	0x1
+ 459 014f 15       		.byte	0x15
+ 460 0150 10010000 		.4byte	0x110
+ 461 0154 05       		.uleb128 0x5
+ 462 0155 03       		.byte	0x3
+ 463 0156 80000000 		.4byte	recent_samps_v
+ 464 015a 00       		.byte	0
+ 465              		.section	.debug_abbrev,"",%progbits
+ 466              	.Ldebug_abbrev0:
+ 467 0000 01       		.uleb128 0x1
+ 468 0001 11       		.uleb128 0x11
+ 469 0002 01       		.byte	0x1
+ 470 0003 25       		.uleb128 0x25
+ 471 0004 0E       		.uleb128 0xe
+ 472 0005 13       		.uleb128 0x13
+ 473 0006 0B       		.uleb128 0xb
+ 474 0007 03       		.uleb128 0x3
+ 475 0008 0E       		.uleb128 0xe
+ 476 0009 1B       		.uleb128 0x1b
+ 477 000a 0E       		.uleb128 0xe
+ 478 000b 55       		.uleb128 0x55
+ 479 000c 17       		.uleb128 0x17
+ 480 000d 11       		.uleb128 0x11
+ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\ccXhnitI.s 			page 11
+
+
+ 481 000e 01       		.uleb128 0x1
+ 482 000f 10       		.uleb128 0x10
+ 483 0010 17       		.uleb128 0x17
+ 484 0011 00       		.byte	0
+ 485 0012 00       		.byte	0
+ 486 0013 02       		.uleb128 0x2
+ 487 0014 2E       		.uleb128 0x2e
+ 488 0015 01       		.byte	0x1
+ 489 0016 3F       		.uleb128 0x3f
+ 490 0017 19       		.uleb128 0x19
+ 491 0018 03       		.uleb128 0x3
+ 492 0019 0E       		.uleb128 0xe
+ 493 001a 3A       		.uleb128 0x3a
+ 494 001b 0B       		.uleb128 0xb
+ 495 001c 3B       		.uleb128 0x3b
+ 496 001d 0B       		.uleb128 0xb
+ 497 001e 27       		.uleb128 0x27
+ 498 001f 19       		.uleb128 0x19
+ 499 0020 11       		.uleb128 0x11
+ 500 0021 01       		.uleb128 0x1
+ 501 0022 12       		.uleb128 0x12
+ 502 0023 06       		.uleb128 0x6
+ 503 0024 40       		.uleb128 0x40
+ 504 0025 18       		.uleb128 0x18
+ 505 0026 9742     		.uleb128 0x2117
+ 506 0028 19       		.uleb128 0x19
+ 507 0029 01       		.uleb128 0x1
+ 508 002a 13       		.uleb128 0x13
+ 509 002b 00       		.byte	0
+ 510 002c 00       		.byte	0
+ 511 002d 03       		.uleb128 0x3
+ 512 002e 34       		.uleb128 0x34
+ 513 002f 00       		.byte	0
+ 514 0030 03       		.uleb128 0x3
+ 515 0031 08       		.uleb128 0x8
+ 516 0032 3A       		.uleb128 0x3a
+ 517 0033 0B       		.uleb128 0xb
+ 518 0034 3B       		.uleb128 0x3b
+ 519 0035 0B       		.uleb128 0xb
+ 520 0036 49       		.uleb128 0x49
+ 521 0037 13       		.uleb128 0x13
+ 522 0038 02       		.uleb128 0x2
+ 523 0039 18       		.uleb128 0x18
+ 524 003a 00       		.byte	0
+ 525 003b 00       		.byte	0
+ 526 003c 04       		.uleb128 0x4
+ 527 003d 24       		.uleb128 0x24
+ 528 003e 00       		.byte	0
+ 529 003f 0B       		.uleb128 0xb
+ 530 0040 0B       		.uleb128 0xb
+ 531 0041 3E       		.uleb128 0x3e
+ 532 0042 0B       		.uleb128 0xb
+ 533 0043 03       		.uleb128 0x3
+ 534 0044 08       		.uleb128 0x8
+ 535 0045 00       		.byte	0
+ 536 0046 00       		.byte	0
+ 537 0047 05       		.uleb128 0x5
+ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\ccXhnitI.s 			page 12
+
+
+ 538 0048 2E       		.uleb128 0x2e
+ 539 0049 01       		.byte	0x1
+ 540 004a 3F       		.uleb128 0x3f
+ 541 004b 19       		.uleb128 0x19
+ 542 004c 03       		.uleb128 0x3
+ 543 004d 0E       		.uleb128 0xe
+ 544 004e 3A       		.uleb128 0x3a
+ 545 004f 0B       		.uleb128 0xb
+ 546 0050 3B       		.uleb128 0x3b
+ 547 0051 0B       		.uleb128 0xb
+ 548 0052 27       		.uleb128 0x27
+ 549 0053 19       		.uleb128 0x19
+ 550 0054 49       		.uleb128 0x49
+ 551 0055 13       		.uleb128 0x13
+ 552 0056 11       		.uleb128 0x11
+ 553 0057 01       		.uleb128 0x1
+ 554 0058 12       		.uleb128 0x12
+ 555 0059 06       		.uleb128 0x6
+ 556 005a 40       		.uleb128 0x40
+ 557 005b 18       		.uleb128 0x18
+ 558 005c 9642     		.uleb128 0x2116
+ 559 005e 19       		.uleb128 0x19
+ 560 005f 01       		.uleb128 0x1
+ 561 0060 13       		.uleb128 0x13
+ 562 0061 00       		.byte	0
+ 563 0062 00       		.byte	0
+ 564 0063 06       		.uleb128 0x6
+ 565 0064 05       		.uleb128 0x5
+ 566 0065 00       		.byte	0
+ 567 0066 03       		.uleb128 0x3
+ 568 0067 0E       		.uleb128 0xe
+ 569 0068 3A       		.uleb128 0x3a
+ 570 0069 0B       		.uleb128 0xb
+ 571 006a 3B       		.uleb128 0x3b
+ 572 006b 0B       		.uleb128 0xb
+ 573 006c 49       		.uleb128 0x49
+ 574 006d 13       		.uleb128 0x13
+ 575 006e 02       		.uleb128 0x2
+ 576 006f 18       		.uleb128 0x18
+ 577 0070 00       		.byte	0
+ 578 0071 00       		.byte	0
+ 579 0072 07       		.uleb128 0x7
+ 580 0073 34       		.uleb128 0x34
+ 581 0074 00       		.byte	0
+ 582 0075 03       		.uleb128 0x3
+ 583 0076 0E       		.uleb128 0xe
+ 584 0077 3A       		.uleb128 0x3a
+ 585 0078 0B       		.uleb128 0xb
+ 586 0079 3B       		.uleb128 0x3b
+ 587 007a 0B       		.uleb128 0xb
+ 588 007b 49       		.uleb128 0x49
+ 589 007c 13       		.uleb128 0x13
+ 590 007d 02       		.uleb128 0x2
+ 591 007e 18       		.uleb128 0x18
+ 592 007f 00       		.byte	0
+ 593 0080 00       		.byte	0
+ 594 0081 08       		.uleb128 0x8
+ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\ccXhnitI.s 			page 13
+
+
+ 595 0082 05       		.uleb128 0x5
+ 596 0083 00       		.byte	0
+ 597 0084 03       		.uleb128 0x3
+ 598 0085 08       		.uleb128 0x8
+ 599 0086 3A       		.uleb128 0x3a
+ 600 0087 0B       		.uleb128 0xb
+ 601 0088 3B       		.uleb128 0x3b
+ 602 0089 0B       		.uleb128 0xb
+ 603 008a 49       		.uleb128 0x49
+ 604 008b 13       		.uleb128 0x13
+ 605 008c 02       		.uleb128 0x2
+ 606 008d 18       		.uleb128 0x18
+ 607 008e 00       		.byte	0
+ 608 008f 00       		.byte	0
+ 609 0090 09       		.uleb128 0x9
+ 610 0091 0B       		.uleb128 0xb
+ 611 0092 01       		.byte	0x1
+ 612 0093 11       		.uleb128 0x11
+ 613 0094 01       		.uleb128 0x1
+ 614 0095 12       		.uleb128 0x12
+ 615 0096 06       		.uleb128 0x6
+ 616 0097 00       		.byte	0
+ 617 0098 00       		.byte	0
+ 618 0099 0A       		.uleb128 0xa
+ 619 009a 01       		.uleb128 0x1
+ 620 009b 01       		.byte	0x1
+ 621 009c 49       		.uleb128 0x49
+ 622 009d 13       		.uleb128 0x13
+ 623 009e 01       		.uleb128 0x1
+ 624 009f 13       		.uleb128 0x13
+ 625 00a0 00       		.byte	0
+ 626 00a1 00       		.byte	0
+ 627 00a2 0B       		.uleb128 0xb
+ 628 00a3 21       		.uleb128 0x21
+ 629 00a4 00       		.byte	0
+ 630 00a5 49       		.uleb128 0x49
+ 631 00a6 13       		.uleb128 0x13
+ 632 00a7 2F       		.uleb128 0x2f
+ 633 00a8 0B       		.uleb128 0xb
+ 634 00a9 00       		.byte	0
+ 635 00aa 00       		.byte	0
+ 636 00ab 0C       		.uleb128 0xc
+ 637 00ac 24       		.uleb128 0x24
+ 638 00ad 00       		.byte	0
+ 639 00ae 0B       		.uleb128 0xb
+ 640 00af 0B       		.uleb128 0xb
+ 641 00b0 3E       		.uleb128 0x3e
+ 642 00b1 0B       		.uleb128 0xb
+ 643 00b2 03       		.uleb128 0x3
+ 644 00b3 0E       		.uleb128 0xe
+ 645 00b4 00       		.byte	0
+ 646 00b5 00       		.byte	0
+ 647 00b6 00       		.byte	0
+ 648              		.section	.debug_aranges,"",%progbits
+ 649 0000 2C000000 		.4byte	0x2c
+ 650 0004 0200     		.2byte	0x2
+ 651 0006 00000000 		.4byte	.Ldebug_info0
+ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\ccXhnitI.s 			page 14
+
+
+ 652 000a 04       		.byte	0x4
+ 653 000b 00       		.byte	0
+ 654 000c 0000     		.2byte	0
+ 655 000e 0000     		.2byte	0
+ 656 0010 00000000 		.4byte	.LFB0
+ 657 0014 54000000 		.4byte	.LFE0-.LFB0
+ 658 0018 00000000 		.4byte	.LFB1
+ 659 001c A0000000 		.4byte	.LFE1-.LFB1
+ 660 0020 00000000 		.4byte	.LFB2
+ 661 0024 6C000000 		.4byte	.LFE2-.LFB2
+ 662 0028 00000000 		.4byte	0
+ 663 002c 00000000 		.4byte	0
+ 664              		.section	.debug_ranges,"",%progbits
+ 665              	.Ldebug_ranges0:
+ 666 0000 00000000 		.4byte	.LFB0
+ 667 0004 54000000 		.4byte	.LFE0
+ 668 0008 00000000 		.4byte	.LFB1
+ 669 000c A0000000 		.4byte	.LFE1
+ 670 0010 00000000 		.4byte	.LFB2
+ 671 0014 6C000000 		.4byte	.LFE2
+ 672 0018 00000000 		.4byte	0
+ 673 001c 00000000 		.4byte	0
+ 674              		.section	.debug_line,"",%progbits
+ 675              	.Ldebug_line0:
+ 676 0000 B0000000 		.section	.debug_str,"MS",%progbits,1
+ 676      02002400 
+ 676      00000201 
+ 676      FB0E0D00 
+ 676      01010101 
+ 677              	.LASF9:
+ 678 0000 72656365 		.ascii	"recent_samps_v\000"
+ 678      6E745F73 
+ 678      616D7073 
+ 678      5F7600
+ 679              	.LASF7:
+ 680 000f 72656365 		.ascii	"recent_samps_in\000"
+ 680      6E745F73 
+ 680      616D7073 
+ 680      5F696E00 
+ 681              	.LASF13:
+ 682 001f 63616E63 		.ascii	"canceller_new_sample\000"
+ 682      656C6C65 
+ 682      725F6E65 
+ 682      775F7361 
+ 682      6D706C65 
+ 683              	.LASF1:
+ 684 0034 63616E63 		.ascii	"canceller_new\000"
+ 684      656C6C65 
+ 684      725F6E65 
+ 684      7700
+ 685              	.LASF12:
+ 686 0042 433A5C55 		.ascii	"C:\\Users\\shubhamt\\Documents\\PSoC Creator\\WaveG"
+ 686      73657273 
+ 686      5C736875 
+ 686      6268616D 
+ 686      745C446F 
+ 687 0070 656E6572 		.ascii	"enerator1\\WaveGenerator1.cydsn\000"
+ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\ccXhnitI.s 			page 15
+
+
+ 687      61746F72 
+ 687      315C5761 
+ 687      76654765 
+ 687      6E657261 
+ 688              	.LASF8:
+ 689 008f 6D6F6465 		.ascii	"model_coeffs\000"
+ 689      6C5F636F 
+ 689      65666673 
+ 689      00
+ 690              	.LASF6:
+ 691 009c 73697A65 		.ascii	"sizetype\000"
+ 691      74797065 
+ 691      00
+ 692              	.LASF4:
+ 693 00a5 6D755F70 		.ascii	"mu_prime\000"
+ 693      72696D65 
+ 693      00
+ 694              	.LASF5:
+ 695 00ae 74656D70 		.ascii	"temp\000"
+ 695      00
+ 696              	.LASF3:
+ 697 00b3 696E7075 		.ascii	"input_samp\000"
+ 697      745F7361 
+ 697      6D7000
+ 698              	.LASF2:
+ 699 00be 63616E63 		.ascii	"canceller_coeff_update\000"
+ 699      656C6C65 
+ 699      725F636F 
+ 699      6566665F 
+ 699      75706461 
+ 700              	.LASF10:
+ 701 00d5 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 701      4320342E 
+ 701      382E3420 
+ 701      32303134 
+ 701      30353236 
+ 702 0108 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m3 -mthumb -g -O"
+ 702      20726576 
+ 702      6973696F 
+ 702      6E203231 
+ 702      31333538 
+ 703 013b 30202D66 		.ascii	"0 -ffunction-sections\000"
+ 703      66756E63 
+ 703      74696F6E 
+ 703      2D736563 
+ 703      74696F6E 
+ 704              	.LASF0:
+ 705 0151 77707472 		.ascii	"wptr\000"
+ 705      00
+ 706              	.LASF11:
+ 707 0156 2E5C6361 		.ascii	".\\canceller.c\000"
+ 707      6E63656C 
+ 707      6C65722E 
+ 707      6300
+ 708              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br

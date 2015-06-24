@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <blockRegMap version="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://cypress.com/xsd/cyblockregmap cyblockregmap.xsd" xmlns="http://cypress.com/xsd/cyblockregmap">
-  <block name="Pin_3" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="Pin_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="VDAC8_1" BASE="0x0" SIZE="0x0" desc="" visible="true">
+  <block name="Pin_4" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="VDAC8_2_ls" BASE="0x0" SIZE="0x0" desc="" visible="true">
     <block name="viDAC8" BASE="0x0" SIZE="0x0" desc="" visible="true" />
     <block name="ZeroTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
     <block name="ZeroTerminal_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
@@ -115,10 +114,13 @@
       <field name="data" from="7" to="0" access="RW" resetVal="" desc="8 DAC Data bits" />
     </register>
   </block>
+  <block name="Pin_3" BASE="0x0" SIZE="0x0" desc="" visible="true" />
   <block name="cy_boot" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="Pin_4" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="Pin_6" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="Pin_5" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="isr" BASE="0x0" SIZE="0x0" desc="" visible="true" />
   <block name="Pin_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="VDAC8" BASE="0x0" SIZE="0x0" desc="" visible="true">
+  <block name="VDAC8_1_hs" BASE="0x0" SIZE="0x0" desc="" visible="true">
     <block name="viDAC8" BASE="0x0" SIZE="0x0" desc="" visible="true" />
     <block name="ZeroTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
     <block name="ZeroTerminal_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
@@ -231,7 +233,7 @@
       <field name="data" from="7" to="0" access="RW" resetVal="" desc="8 DAC Data bits" />
     </register>
   </block>
-  <block name="isr" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="Pin_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
   <block name="ADC_SAR" BASE="0x0" SIZE="0x0" desc="SAR ADC" visible="true">
     <block name="theACLK" BASE="0x0" SIZE="0x0" desc="" visible="true" />
     <block name="ZeroTerminal_8" BASE="0x0" SIZE="0x0" desc="" visible="true" />

@@ -19,8 +19,8 @@
 Number of clocks: 9
 Clock: ADC_SAR_theACLK          | N/A  | Target: 1.00 MHz   | 
 Clock: ADC_SAR_theACLK(routed)  | N/A  | Target: 1.00 MHz   | 
-Clock: Clock                    | N/A  | Target: 0.02 MHz   | 
-Clock: Clock(routed)            | N/A  | Target: 0.02 MHz   | 
+Clock: Clock                    | N/A  | Target: 0.01 MHz   | 
+Clock: Clock(routed)            | N/A  | Target: 0.01 MHz   | 
 Clock: CyBUS_CLK                | N/A  | Target: 24.00 MHz  | 
 Clock: CyILO                    | N/A  | Target: 0.00 MHz   | 
 Clock: CyIMO                    | N/A  | Target: 3.00 MHz   | 

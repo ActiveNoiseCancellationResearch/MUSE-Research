@@ -1,5 +1,5 @@
 # WaveGenerator1
-# 2015-06-16 15:50:46Z
+# 2015-06-23 20:05:44Z
 
 # IO_0@[IOP=(1)][IoId=(0)] is reserved: SWDDebugEnabled
 dont_use_io iocell 1 0
@@ -11,7 +11,8 @@ set_io "Pin_1(0)" iocell 0 0
 set_io "Pin_2(0)" iocell 0 1
 set_io "Pin_3(0)" iocell 0 2
 set_io "Pin_4(0)" iocell 0 3
+set_io "Pin_5(0)" iocell 0 5
 set_location "\ADC_SAR:ADC_SAR\" sarcell -1 -1 0
 set_io "\ADC_SAR:Bypass(0)\" iocell 0 4
-set_location "\VDAC8:viDAC8\" vidaccell -1 -1 2
-set_location "\VDAC8_1:viDAC8\" vidaccell -1 -1 0
+set_location "\VDAC8_1_hs:viDAC8\" vidaccell -1 -1 2
+set_location "\VDAC8_2_ls:viDAC8\" vidaccell -1 -1 0

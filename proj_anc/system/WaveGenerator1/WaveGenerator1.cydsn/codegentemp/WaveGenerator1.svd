@@ -7,7 +7,7 @@
   <width>32</width>
   <peripherals>
     <peripheral>
-      <name>VDAC8_1</name>
+      <name>VDAC8_2_ls</name>
       <description>No description available</description>
       <baseAddress>0x0</baseAddress>
       <addressBlock>
@@ -550,7 +550,7 @@
       </registers>
     </peripheral>
     <peripheral>
-      <name>VDAC8</name>
+      <name>VDAC8_1_hs</name>
       <description>No description available</description>
       <baseAddress>0x0</baseAddress>
       <addressBlock>

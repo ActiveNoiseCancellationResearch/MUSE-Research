@@ -20,9 +20,9 @@
   <file name="C:\Users\shubhamt\Documents\PSoC Creator\WaveGenerator1\WaveGenerator1.cydsn\codegentemp\cyfitteriar.inc" value="NONE;" />
   <file name="C:\Users\shubhamt\Documents\PSoC Creator\WaveGenerator1\WaveGenerator1.cydsn\codegentemp\cyfitter.h" value="NONE;" />
   <file name="C:\Users\shubhamt\Documents\PSoC Creator\WaveGenerator1\WaveGenerator1.cydsn\codegentemp\cydisabledsheets.h" value="NONE;" />
-  <file name="C:\Users\shubhamt\Documents\PSoC Creator\WaveGenerator1\WaveGenerator1.cydsn\codegentemp\VDAC8.c" value="ARM_C_FILE;VDAC8" />
-  <file name="C:\Users\shubhamt\Documents\PSoC Creator\WaveGenerator1\WaveGenerator1.cydsn\codegentemp\VDAC8.h" value="NONE;VDAC8" />
-  <file name="C:\Users\shubhamt\Documents\PSoC Creator\WaveGenerator1\WaveGenerator1.cydsn\codegentemp\VDAC8_PM.c" value="ARM_C_FILE;VDAC8" />
+  <file name="C:\Users\shubhamt\Documents\PSoC Creator\WaveGenerator1\WaveGenerator1.cydsn\codegentemp\VDAC8_1_hs.c" value="ARM_C_FILE;VDAC8_1_hs" />
+  <file name="C:\Users\shubhamt\Documents\PSoC Creator\WaveGenerator1\WaveGenerator1.cydsn\codegentemp\VDAC8_1_hs.h" value="NONE;VDAC8_1_hs" />
+  <file name="C:\Users\shubhamt\Documents\PSoC Creator\WaveGenerator1\WaveGenerator1.cydsn\codegentemp\VDAC8_1_hs_PM.c" value="ARM_C_FILE;VDAC8_1_hs" />
   <file name="C:\Users\shubhamt\Documents\PSoC Creator\WaveGenerator1\WaveGenerator1.cydsn\codegentemp\Pin_1_aliases.h" value="NONE;Pin_1" />
   <file name="C:\Users\shubhamt\Documents\PSoC Creator\WaveGenerator1\WaveGenerator1.cydsn\codegentemp\Pin_1.c" value="ARM_C_FILE;Pin_1" />
   <file name="C:\Users\shubhamt\Documents\PSoC Creator\WaveGenerator1\WaveGenerator1.cydsn\codegentemp\Pin_1.h" value="NONE;Pin_1" />
@@ -40,12 +40,18 @@
   <file name="C:\Users\shubhamt\Documents\PSoC Creator\WaveGenerator1\WaveGenerator1.cydsn\codegentemp\Pin_3_aliases.h" value="NONE;Pin_3" />
   <file name="C:\Users\shubhamt\Documents\PSoC Creator\WaveGenerator1\WaveGenerator1.cydsn\codegentemp\Pin_3.c" value="ARM_C_FILE;Pin_3" />
   <file name="C:\Users\shubhamt\Documents\PSoC Creator\WaveGenerator1\WaveGenerator1.cydsn\codegentemp\Pin_3.h" value="NONE;Pin_3" />
-  <file name="C:\Users\shubhamt\Documents\PSoC Creator\WaveGenerator1\WaveGenerator1.cydsn\codegentemp\VDAC8_1.c" value="ARM_C_FILE;VDAC8_1" />
-  <file name="C:\Users\shubhamt\Documents\PSoC Creator\WaveGenerator1\WaveGenerator1.cydsn\codegentemp\VDAC8_1.h" value="NONE;VDAC8_1" />
-  <file name="C:\Users\shubhamt\Documents\PSoC Creator\WaveGenerator1\WaveGenerator1.cydsn\codegentemp\VDAC8_1_PM.c" value="ARM_C_FILE;VDAC8_1" />
+  <file name="C:\Users\shubhamt\Documents\PSoC Creator\WaveGenerator1\WaveGenerator1.cydsn\codegentemp\VDAC8_2_ls.c" value="ARM_C_FILE;VDAC8_2_ls" />
+  <file name="C:\Users\shubhamt\Documents\PSoC Creator\WaveGenerator1\WaveGenerator1.cydsn\codegentemp\VDAC8_2_ls.h" value="NONE;VDAC8_2_ls" />
+  <file name="C:\Users\shubhamt\Documents\PSoC Creator\WaveGenerator1\WaveGenerator1.cydsn\codegentemp\VDAC8_2_ls_PM.c" value="ARM_C_FILE;VDAC8_2_ls" />
   <file name="C:\Users\shubhamt\Documents\PSoC Creator\WaveGenerator1\WaveGenerator1.cydsn\codegentemp\Pin_4_aliases.h" value="NONE;Pin_4" />
   <file name="C:\Users\shubhamt\Documents\PSoC Creator\WaveGenerator1\WaveGenerator1.cydsn\codegentemp\Pin_4.c" value="ARM_C_FILE;Pin_4" />
   <file name="C:\Users\shubhamt\Documents\PSoC Creator\WaveGenerator1\WaveGenerator1.cydsn\codegentemp\Pin_4.h" value="NONE;Pin_4" />
+  <file name="C:\Users\shubhamt\Documents\PSoC Creator\WaveGenerator1\WaveGenerator1.cydsn\codegentemp\Pin_5_aliases.h" value="NONE;Pin_5" />
+  <file name="C:\Users\shubhamt\Documents\PSoC Creator\WaveGenerator1\WaveGenerator1.cydsn\codegentemp\Pin_5.c" value="ARM_C_FILE;Pin_5" />
+  <file name="C:\Users\shubhamt\Documents\PSoC Creator\WaveGenerator1\WaveGenerator1.cydsn\codegentemp\Pin_5.h" value="NONE;Pin_5" />
+  <file name="C:\Users\shubhamt\Documents\PSoC Creator\WaveGenerator1\WaveGenerator1.cydsn\codegentemp\Pin_6_aliases.h" value="NONE;Pin_6" />
+  <file name="C:\Users\shubhamt\Documents\PSoC Creator\WaveGenerator1\WaveGenerator1.cydsn\codegentemp\Pin_6.c" value="ARM_C_FILE;Pin_6" />
+  <file name="C:\Users\shubhamt\Documents\PSoC Creator\WaveGenerator1\WaveGenerator1.cydsn\codegentemp\Pin_6.h" value="NONE;Pin_6" />
   <file name="C:\Users\shubhamt\Documents\PSoC Creator\WaveGenerator1\WaveGenerator1.cydsn\codegentemp\ADC_SAR_IRQ.c" value="ARM_C_FILE;ADC_SAR_IRQ" />
   <file name="C:\Users\shubhamt\Documents\PSoC Creator\WaveGenerator1\WaveGenerator1.cydsn\codegentemp\ADC_SAR_IRQ.h" value="NONE;ADC_SAR_IRQ" />
   <file name="C:\Users\shubhamt\Documents\PSoC Creator\WaveGenerator1\WaveGenerator1.cydsn\codegentemp\ADC_SAR_theACLK.c" value="ARM_C_FILE;ADC_SAR_theACLK" />

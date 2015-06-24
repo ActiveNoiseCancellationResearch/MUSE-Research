@@ -23,7 +23,7 @@ hs_model_new(int *coeffs)
     for (i=0; i<FILTER_ORDER; ++i)
     {
        recent_samps [i]=0;
-        model_coeffs[i]=coeffs[i];
+       model_coeffs[i]=coeffs[i];
     }
     
 }
