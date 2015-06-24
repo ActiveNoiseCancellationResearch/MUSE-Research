@@ -5,7 +5,7 @@ if isequal((size(Qi)),(size(ri)))
     di = ri/c;                                 % d is delays in seconds
     ni = round(di/T);                          % discrete time index corresponding to the ith reflection
     max_ni = max(ni);                          % define maximum source distance
-    ra_coeffs = zeros(1,((max_ni)+2));         % init storage
+    ra_coeffs = zeros(1,(max_ni+2));           % init storage             
     for i = 1:size(Qi)
         ra_coeffs(ni(i))= Qi(i)/ri(i);         % fill in non-zero values
     end

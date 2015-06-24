@@ -4,12 +4,13 @@ clc
 
 master_cfg_1;
 
+n_samps = min(100000,numel(ui_data));
 ls_model = ANC_Filter(ls_coeffs);                                       % instantiates a new filter as ls_model
 hs_model = ANC_Filter(hs_coeffs);                                       % instantiates a new filter as hs_model
 mic_model = ANC_Filter(mic_coeffs);
 ra_coeffs = room_acoustics_to_coeffs(Qi, ri, ui_fs);
 ra_model = ANC_Filter(ra_coeffs);                                       % instantiates a new filter as ra_model
-canceller = ANC_Canceller(canc_filter_order, canc_mu, mic_coeffs, hs_coeffs);
+canceller = ANC_Canceller(canc_filter_order, canc_mu, probes_list, n_samps, mic_coeffs, hs_coeffs);
 e = zeros(size(ui_data));
 err = zeros(size(ui_data));
 x__ = zeros(size(ui_data));                                             % initialize each element in the system to an
@@ -18,7 +19,7 @@ y = zeros(size(ui_data));                                               % set to
 c = zeros(size(ui_data));
 d = zeros(size(ui_data));
 e_ = zeros(size(ui_data));
-for n=1:min (50000, size(ui_data))
+for n=1:n_samps
     x__(n) = ls_model.new_sample(ui_data(n));
     x_(n) = ra_model.new_sample(x__(n));
     y(n) = canceller.new_sample(ui_data(n));
