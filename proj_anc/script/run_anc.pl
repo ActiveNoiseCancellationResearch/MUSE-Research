@@ -2,6 +2,7 @@
 
 use strict;
 use warnings;
+use File::Copy;
 
 my $master_cfg_filename;
 my $proj_root;
@@ -13,7 +14,7 @@ my $cfg_filename;
     # Add cfg filepath to the command line argument specifying the cfg filename
     $master_cfg_filename = "..\\model\\cfg\\$ARGV[0]";
     
-    # Pull the %PROJ_ROOT% environment variable (user must set this variable by configuring Windows)
+    # Pull the %PROJ_ANC% environment variable (user must set this variable by configuring Windows)
     $proj_root = $ENV{"PROJ_ANC"};
     
     print( "\n" );
@@ -51,7 +52,18 @@ my $cfg_filename;
             {
                 $cfg_filename = "$cfg_filename.m";
                 print "$cfg_filename\n";
+
+               
             }
         }
     }        
-    
+     # Create new exp folder
+                # Copy cfg file
+                #system('cd';
+                # Move cfg into exp folder
+                $mpath = '/exp';
+                chdir ($mpath);
+                print "\nCurrent Path is $path";
+                #chdir;
+                #$dirname = "nrefls6_rmax1_mu###_fltord150_##sec"
+                #mkdir($dirname, )
