@@ -14,7 +14,7 @@ classdef ANC_Canceller < handle
         probes;
         n_samps;
         norm_LMS;
-        
+        f;
     end
     methods
         function cancel_constructor = ANC_Canceller(filter_order, mu, probes_list, norm, n_samps, mic_coeffs, hs_coeffs)
@@ -31,6 +31,7 @@ classdef ANC_Canceller < handle
             cancel_constructor.probes = zeros(n_samps,numel(probes_list));
             cancel_constructor.current_time = 1;
             cancel_constructor.norm_LMS = norm;
+            cancel_constructor.f = figure;
         end
         function current_output = new_sample(my_canceller,input_samp)
             my_canceller.recent_samps_in(2:end) = my_canceller.recent_samps_in(1:end-1);    % deletes last value in array
@@ -46,9 +47,10 @@ classdef ANC_Canceller < handle
                 rs = my_canceller.recent_samps_v;                                           % Use rs as a convenience variable
                 rs_d2 = rs*rs';                                                             % sum of squares of recent_samps_v vector elements
                 for i = 1:my_canceller.in_filter_order;
-                    my_canceller.model_coeffs(i) = (my_canceller.model_coeffs(i) - my_canceller.in_mu...
-                     * e * my_canceller.recent_samps_v(i))/(0.000001 + rs_d2);
+                    my_canceller.model_coeffs(i) = my_canceller.model_coeffs(i) - my_canceller.in_mu...
+                     * e * (my_canceller.recent_samps_v(i)/(0.000001 + rs_d2));
                 end
+                
             elseif my_canceller.norm_LMS == 0
                 for i = 1:my_canceller.in_filter_order;
                     my_canceller.model_coeffs(i) = my_canceller.model_coeffs(i) - my_canceller.in_mu...
@@ -61,9 +63,12 @@ classdef ANC_Canceller < handle
             my_canceller.current_time = my_canceller.current_time + 1;
         end 
         function plot_probes (my_canceller)
-            f = figure;
+            figure(my_canceller.f);
             plot(my_canceller.probes)
-            saveas(f, 'probes.png')
+            drawnow
+        end
+        function save_probe_plot (my_canceller)
+            saveas(my_canceller.f, 'probes.png')
         end
     end
 end

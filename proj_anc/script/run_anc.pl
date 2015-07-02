@@ -64,9 +64,9 @@ my $cfg_filename;
                 # Copy cfg file
                 #system('cd';
                 # Move cfg into exp folder
-                $mpath = '/exp';
-                chdir ($mpath);
-                print "\nCurrent Path is $path";
+                #$mpath = '/exp';
+                #chdir ($mpath);
+                #print "\nCurrent Path is $path";
                 #chdir;
                 #$dirname = "nrefls6_rmax1_mu###_fltord150_##sec"
                 #mkdir($dirname, )

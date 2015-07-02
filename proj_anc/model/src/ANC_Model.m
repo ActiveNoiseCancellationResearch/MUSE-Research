@@ -39,15 +39,16 @@ for n=1:n_samps
     err(n) = x_(n) + c(n);
     e_(n) = mic_model.new_sample(e(n));
     canceller.coeff_update(e_(n));
-    if mod(n,1000) == 0
+    if mod(n,10000) == 0
         disp(n)
+        plot_probes(canceller);
     end
 end
 
 sse = conv(ones(100,1)/100,err.^2);
 
 audiowrite('output_e.wav',e,ui_fs);                     
-
+figure;
 a = subplot (4,2,1);
 plot(ui_data)
 title('ui_data')
@@ -83,6 +84,7 @@ title('e_')
 saveas(a, 'varietygraph.png')
 
 plot_probes(canceller);
+save_probe_plot(canceller)
 
 
 
