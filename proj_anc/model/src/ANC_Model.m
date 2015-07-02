@@ -2,7 +2,7 @@ close all
 clear
 clc
 
-master_cfg_nrefls6_rmax1_mu0001_fltord150;
+master_cfg_nrefls6_rmax1_mu01_fltord150_norm;
 
 % ui_data = randi([-1,1],50000,1);                                  % for random noise testing
 % ui_fs = 20000;
@@ -18,7 +18,7 @@ hs_model = ANC_Filter(hs_coeffs);                                       % instan
 mic_model = ANC_Filter(mic_coeffs);
 ra_coeffs = room_acoustics_to_coeffs(Qi, ri, ui_fs);
 ra_model = ANC_Filter(ra_coeffs);                                       % instantiates a new filter as ra_model
-canceller = ANC_Canceller(canc_filter_order, canc_mu, probes_list, n_samps, mic_coeffs, hs_coeffs);
+canceller = ANC_Canceller(canc_filter_order, canc_mu, probes_list, norm, n_samps, mic_coeffs, hs_coeffs);
 
 e = zeros(size(ui_data));
 err = zeros(size(ui_data));
