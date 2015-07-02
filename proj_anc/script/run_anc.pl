@@ -48,12 +48,15 @@ my $cfg_filename;
             
             $cfg_filename = $2;
             
+            mkdir ($master_cfg_filename)
+
             if (defined $cfg_filename)
             {
                 $cfg_filename = "$cfg_filename.m";
                 print "$cfg_filename\n";
+                copy("$cfg_filename","$cfg_filename");
+                move("$cfg_filename", "..\\exp\\$master_cfg_filename")
 
-               
             }
         }
     }        
