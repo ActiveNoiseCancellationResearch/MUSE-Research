@@ -2,7 +2,11 @@
 
 use strict;
 use warnings;
+use File::Path;
 use File::Copy;
+use File::Spec;
+
+$ENV{PATH} .= ";C:\\windows\\command".";c:\\windows\\system32".";c:\\winnt\\system32";
 
 my $master_cfg_filename;
 my $proj_root;
@@ -10,9 +14,10 @@ my @split_list;
 my @tmp_arr;
 my $tmp_str;
 my $cfg_filename;
+my $master_cfg_filename_root = $ARGV[0];
 
     # Add cfg filepath to the command line argument specifying the cfg filename
-    $master_cfg_filename = "..\\model\\cfg\\$ARGV[0]";
+    $master_cfg_filename = "..\\model\\cfg\\${master_cfg_filename_root}.m";
     
     # Pull the %PROJ_ANC% environment variable (user must set this variable by configuring Windows)
     $proj_root = $ENV{"PROJ_ANC"};
@@ -26,7 +31,12 @@ my $cfg_filename;
     
     open my $fh, '<', $master_cfg_filename
         or die "Could not open file '$master_cfg_filename' $!";
- 
+    
+    my $exp_subdirectory = "$proj_root\\exp\\$master_cfg_filename_root";
+    
+    # Create subfolder under exp named after the master cfg file 
+    system( "mkdir $exp_subdirectory");
+
     # Step through each line of the master cfg file
     while (<$fh>)
     {
@@ -45,28 +55,22 @@ my $cfg_filename;
             $tmp_arr[0] =~ /(\s*)([\w\._]+)/;
             
             # Append the .m extension, to get the filename
-            
             $cfg_filename = $2;
             
-            mkdir ($master_cfg_filename)
+            
 
             if (defined $cfg_filename)
             {
-                $cfg_filename = "$cfg_filename.m";
-                print "$cfg_filename\n";
-                copy("$cfg_filename","$cfg_filename");
-                move("$cfg_filename", "..\\exp\\$master_cfg_filename")
-
+                $cfg_filename = $proj_root."\\model\\cfg\\"."${cfg_filename}.m";
+                print "\t$cfg_filename\n";
+                
+                # Create subfolder under exp named after the master cfg file 
+                system( "mkdir $exp_subdirectory");
+               
+                # Copy the cfg files into the newly created subfolder
+                copy($cfg_filename, $exp_subdirectory);
+                                
             }
         }
     }        
-     # Create new exp folder
-                # Copy cfg file
-                #system('cd';
-                # Move cfg into exp folder
-                #$mpath = '/exp';
-                #chdir ($mpath);
-                #print "\nCurrent Path is $path";
-                #chdir;
-                #$dirname = "nrefls6_rmax1_mu###_fltord150_##sec"
-                #mkdir($dirname, )
+
