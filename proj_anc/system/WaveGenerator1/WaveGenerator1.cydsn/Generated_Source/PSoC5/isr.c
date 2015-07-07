@@ -1,4 +1,4 @@
-;/*******************************************************************************
+/*******************************************************************************
 * File Name: isr.c  
 * Version 1.70
 *
@@ -31,6 +31,8 @@
 #include "ANC.h"
 #include <stdlib.h>
 extern int16_t *cap_array;
+extern int n;
+extern int wave_table[WAVESIZE];
 /* `#END` */
 
 #ifndef CYINT_IRQ_BASE
@@ -165,8 +167,8 @@ CY_ISR(isr_Interrupt)
     /*  Place your Interrupt code here. */
     /* `#START isr_Interrupt` */
     
-    #define NUM_TONES (1)                         // number of tones to be generated
-    static int n=0;                       // Discrete time index
+    #define NUM_TONES (1)                 // number of tones to be generated
+                           // Discrete time index
     static int wave_idx=0;
     int freqs[] = { 256 };                // Array of tone frequencies, in Hz
     int ampls[] = { 16000 };              // Array of tone amplitudes, C1.0.15, roughly 0.5 for now
@@ -175,7 +177,9 @@ CY_ISR(isr_Interrupt)
     int value;
     int x=0;
     int e_;
-    extern int wave_table[WAVESIZE];
+    int i;
+   
+ 
     Pin_6_Write(n);
 //  for (k = 0 ; k<NUM_TONES ; ++k)
 //  {
@@ -192,10 +196,11 @@ CY_ISR(isr_Interrupt)
 //    x = wave_table[wave_idx];
 //    x=(x)>>5;                             // rounds to an 8 bit number
 //    x=x+128;                              // converts from 2's comp to offset binary
-    VDAC8_2_ls_SetValue(x);  
+//      
     x = rand();   
     //fixed point -1 to 1                   double(x)/2^31(2 billion)
-        
+    VDAC8_2_ls_SetValue(x);
+    
     e_ =  ADC_SAR_GetResult16();          //Set's value to the ADC output (16bit 2's comp value)
         
        
@@ -213,20 +218,18 @@ CY_ISR(isr_Interrupt)
         wave_idx=0;
     }
         
-//    if (n < NUM_SAMPS_TO_CAPTURE)
-//    {
-//        cap_array[n] = e_;
-//    }
-//    else
-//    {
-//    // Add dummy line here, to enable breakpoint
-//    n = n;
-//    }
-    
-    
+    if (n < NUM_SAMPS_TO_CAPTURE)
+    {
+        cap_array[n] = e_;
+        ++n;
+    }
+    else
+    {
+        
+    }
    
     
-    ++n;
+    
     Pin_5_Write(n);
 }        
 
