@@ -1,0 +1,665 @@
+ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\ccN546pv.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"mic_model.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.bss
+  19              		.align	2
+  20              	recent_samps:
+  21 0000 00000000 		.space	64
+  21      00000000 
+  21      00000000 
+  21      00000000 
+  21      00000000 
+  22              		.align	2
+  23              	model_coeffs:
+  24 0040 00000000 		.space	64
+  24      00000000 
+  24      00000000 
+  24      00000000 
+  24      00000000 
+  25              		.section	.text.mic_model_new,"ax",%progbits
+  26              		.align	2
+  27              		.global	mic_model_new
+  28              		.thumb
+  29              		.thumb_func
+  30              		.type	mic_model_new, %function
+  31              	mic_model_new:
+  32              	.LFB0:
+  33              		.file 1 ".\\mic_model.c"
+   1:.\mic_model.c **** /* ========================================
+   2:.\mic_model.c ****  *
+   3:.\mic_model.c ****  * Copyright YOUR COMPANY, THE YEAR
+   4:.\mic_model.c ****  * All Rights Reserved
+   5:.\mic_model.c ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:.\mic_model.c ****  *
+   7:.\mic_model.c ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:.\mic_model.c ****  * WHICH IS THE PROPERTY OF your company.
+   9:.\mic_model.c ****  *
+  10:.\mic_model.c ****  * ========================================
+  11:.\mic_model.c **** */
+  12:.\mic_model.c **** #include "mic_model.h"
+  13:.\mic_model.c **** #include "ANC.h"
+  14:.\mic_model.c **** #define FILTER_ORDER (16)
+  15:.\mic_model.c **** #define FO1 (FILTER_ORDER-1)
+  16:.\mic_model.c **** static int recent_samps [FILTER_ORDER];
+ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\ccN546pv.s 			page 2
+
+
+  17:.\mic_model.c **** static int model_coeffs [FILTER_ORDER];
+  18:.\mic_model.c **** 
+  19:.\mic_model.c **** void 
+  20:.\mic_model.c **** mic_model_new(int *coeffs)
+  21:.\mic_model.c **** {
+  34              		.loc 1 21 0
+  35              		.cfi_startproc
+  36              		@ args = 0, pretend = 0, frame = 16
+  37              		@ frame_needed = 1, uses_anonymous_args = 0
+  38              		@ link register save eliminated.
+  39 0000 80B4     		push	{r7}
+  40              		.cfi_def_cfa_offset 4
+  41              		.cfi_offset 7, -4
+  42 0002 85B0     		sub	sp, sp, #20
+  43              		.cfi_def_cfa_offset 24
+  44 0004 00AF     		add	r7, sp, #0
+  45              		.cfi_def_cfa_register 7
+  46 0006 7860     		str	r0, [r7, #4]
+  22:.\mic_model.c ****     int i;
+  23:.\mic_model.c ****     for (i=0; i<FILTER_ORDER; ++i)
+  47              		.loc 1 23 0
+  48 0008 0023     		movs	r3, #0
+  49 000a FB60     		str	r3, [r7, #12]
+  50 000c 10E0     		b	.L2
+  51              	.L3:
+  24:.\mic_model.c ****     {
+  25:.\mic_model.c ****        recent_samps [i]=0;
+  52              		.loc 1 25 0 discriminator 2
+  53 000e 0C4B     		ldr	r3, .L4
+  54 0010 FA68     		ldr	r2, [r7, #12]
+  55 0012 0021     		movs	r1, #0
+  56 0014 43F82210 		str	r1, [r3, r2, lsl #2]
+  26:.\mic_model.c ****        model_coeffs[i]=coeffs[i];
+  57              		.loc 1 26 0 discriminator 2
+  58 0018 FB68     		ldr	r3, [r7, #12]
+  59 001a 9B00     		lsls	r3, r3, #2
+  60 001c 7A68     		ldr	r2, [r7, #4]
+  61 001e 1344     		add	r3, r3, r2
+  62 0020 1968     		ldr	r1, [r3]
+  63 0022 084B     		ldr	r3, .L4+4
+  64 0024 FA68     		ldr	r2, [r7, #12]
+  65 0026 43F82210 		str	r1, [r3, r2, lsl #2]
+  23:.\mic_model.c ****     for (i=0; i<FILTER_ORDER; ++i)
+  66              		.loc 1 23 0 discriminator 2
+  67 002a FB68     		ldr	r3, [r7, #12]
+  68 002c 0133     		adds	r3, r3, #1
+  69 002e FB60     		str	r3, [r7, #12]
+  70              	.L2:
+  23:.\mic_model.c ****     for (i=0; i<FILTER_ORDER; ++i)
+  71              		.loc 1 23 0 is_stmt 0 discriminator 1
+  72 0030 FB68     		ldr	r3, [r7, #12]
+  73 0032 0F2B     		cmp	r3, #15
+  74 0034 EBDD     		ble	.L3
+  27:.\mic_model.c ****     }
+  28:.\mic_model.c **** }
+  75              		.loc 1 28 0 is_stmt 1
+  76 0036 1437     		adds	r7, r7, #20
+ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\ccN546pv.s 			page 3
+
+
+  77 0038 BD46     		mov	sp, r7
+  78              		@ sp needed
+  79 003a 5DF8047B 		ldr	r7, [sp], #4
+  80 003e 7047     		bx	lr
+  81              	.L5:
+  82              		.align	2
+  83              	.L4:
+  84 0040 00000000 		.word	recent_samps
+  85 0044 40000000 		.word	model_coeffs
+  86              		.cfi_endproc
+  87              	.LFE0:
+  88              		.size	mic_model_new, .-mic_model_new
+  89              		.section	.text.mic_model_new_sample,"ax",%progbits
+  90              		.align	2
+  91              		.global	mic_model_new_sample
+  92              		.thumb
+  93              		.thumb_func
+  94              		.type	mic_model_new_sample, %function
+  95              	mic_model_new_sample:
+  96              	.LFB1:
+  29:.\mic_model.c **** 
+  30:.\mic_model.c **** int
+  31:.\mic_model.c **** mic_model_new_sample (int x)
+  32:.\mic_model.c **** {
+  97              		.loc 1 32 0
+  98              		.cfi_startproc
+  99              		@ args = 0, pretend = 0, frame = 16
+ 100              		@ frame_needed = 1, uses_anonymous_args = 0
+ 101              		@ link register save eliminated.
+ 102 0000 80B4     		push	{r7}
+ 103              		.cfi_def_cfa_offset 4
+ 104              		.cfi_offset 7, -4
+ 105 0002 85B0     		sub	sp, sp, #20
+ 106              		.cfi_def_cfa_offset 24
+ 107 0004 00AF     		add	r7, sp, #0
+ 108              		.cfi_def_cfa_register 7
+ 109 0006 7860     		str	r0, [r7, #4]
+  33:.\mic_model.c ****     int sum=0;
+ 110              		.loc 1 33 0
+ 111 0008 0023     		movs	r3, #0
+ 112 000a FB60     		str	r3, [r7, #12]
+  34:.\mic_model.c ****     int i=0;
+ 113              		.loc 1 34 0
+ 114 000c 0023     		movs	r3, #0
+ 115 000e BB60     		str	r3, [r7, #8]
+  35:.\mic_model.c ****     static int wptr=0;
+  36:.\mic_model.c ****     recent_samps[wptr]=x;
+ 116              		.loc 1 36 0
+ 117 0010 164B     		ldr	r3, .L10
+ 118 0012 1A68     		ldr	r2, [r3]
+ 119 0014 164B     		ldr	r3, .L10+4
+ 120 0016 7968     		ldr	r1, [r7, #4]
+ 121 0018 43F82210 		str	r1, [r3, r2, lsl #2]
+  37:.\mic_model.c ****     for (i=0 ; i<FILTER_ORDER ; ++i)
+ 122              		.loc 1 37 0
+ 123 001c 0023     		movs	r3, #0
+ 124 001e BB60     		str	r3, [r7, #8]
+ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\ccN546pv.s 			page 4
+
+
+ 125 0020 14E0     		b	.L7
+ 126              	.L8:
+  38:.\mic_model.c ****         {
+  39:.\mic_model.c ****             sum+=recent_samps[(wptr-i+FILTER_ORDER)&FO1]*model_coeffs[i];
+ 127              		.loc 1 39 0 discriminator 2
+ 128 0022 124B     		ldr	r3, .L10
+ 129 0024 1A68     		ldr	r2, [r3]
+ 130 0026 BB68     		ldr	r3, [r7, #8]
+ 131 0028 D31A     		subs	r3, r2, r3
+ 132 002a 03F00F02 		and	r2, r3, #15
+ 133 002e 104B     		ldr	r3, .L10+4
+ 134 0030 53F82230 		ldr	r3, [r3, r2, lsl #2]
+ 135 0034 0F4A     		ldr	r2, .L10+8
+ 136 0036 B968     		ldr	r1, [r7, #8]
+ 137 0038 52F82120 		ldr	r2, [r2, r1, lsl #2]
+ 138 003c 02FB03F3 		mul	r3, r2, r3
+ 139 0040 FA68     		ldr	r2, [r7, #12]
+ 140 0042 1344     		add	r3, r3, r2
+ 141 0044 FB60     		str	r3, [r7, #12]
+  37:.\mic_model.c ****     for (i=0 ; i<FILTER_ORDER ; ++i)
+ 142              		.loc 1 37 0 discriminator 2
+ 143 0046 BB68     		ldr	r3, [r7, #8]
+ 144 0048 0133     		adds	r3, r3, #1
+ 145 004a BB60     		str	r3, [r7, #8]
+ 146              	.L7:
+  37:.\mic_model.c ****     for (i=0 ; i<FILTER_ORDER ; ++i)
+ 147              		.loc 1 37 0 is_stmt 0 discriminator 1
+ 148 004c BB68     		ldr	r3, [r7, #8]
+ 149 004e 0F2B     		cmp	r3, #15
+ 150 0050 E7DD     		ble	.L8
+  40:.\mic_model.c ****         }
+  41:.\mic_model.c ****     sum=(sum+FP_ROUND)>>FP_SHIFT;
+ 151              		.loc 1 41 0 is_stmt 1
+ 152 0052 FB68     		ldr	r3, [r7, #12]
+ 153 0054 03F50063 		add	r3, r3, #2048
+ 154 0058 1B13     		asrs	r3, r3, #12
+ 155 005a FB60     		str	r3, [r7, #12]
+  42:.\mic_model.c ****     return sum;        
+ 156              		.loc 1 42 0
+ 157 005c FB68     		ldr	r3, [r7, #12]
+  43:.\mic_model.c ****     wptr=(wptr+1)&FO1;
+  44:.\mic_model.c **** }
+ 158              		.loc 1 44 0
+ 159 005e 1846     		mov	r0, r3
+ 160 0060 1437     		adds	r7, r7, #20
+ 161 0062 BD46     		mov	sp, r7
+ 162              		@ sp needed
+ 163 0064 5DF8047B 		ldr	r7, [sp], #4
+ 164 0068 7047     		bx	lr
+ 165              	.L11:
+ 166 006a 00BF     		.align	2
+ 167              	.L10:
+ 168 006c 80000000 		.word	wptr.4078
+ 169 0070 00000000 		.word	recent_samps
+ 170 0074 40000000 		.word	model_coeffs
+ 171              		.cfi_endproc
+ 172              	.LFE1:
+ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\ccN546pv.s 			page 5
+
+
+ 173              		.size	mic_model_new_sample, .-mic_model_new_sample
+ 174              		.bss
+ 175              		.align	2
+ 176              	wptr.4078:
+ 177 0080 00000000 		.space	4
+ 178              		.text
+ 179              	.Letext0:
+ 180              		.section	.debug_info,"",%progbits
+ 181              	.Ldebug_info0:
+ 182 0000 E9000000 		.4byte	0xe9
+ 183 0004 0400     		.2byte	0x4
+ 184 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 185 000a 04       		.byte	0x4
+ 186 000b 01       		.uleb128 0x1
+ 187 000c A8000000 		.4byte	.LASF5
+ 188 0010 01       		.byte	0x1
+ 189 0011 9A000000 		.4byte	.LASF6
+ 190 0015 07000000 		.4byte	.LASF7
+ 191 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 192 001d 00000000 		.4byte	0
+ 193 0021 00000000 		.4byte	.Ldebug_line0
+ 194 0025 02       		.uleb128 0x2
+ 195 0026 8C000000 		.4byte	.LASF8
+ 196 002a 01       		.byte	0x1
+ 197 002b 14       		.byte	0x14
+ 198 002c 00000000 		.4byte	.LFB0
+ 199 0030 48000000 		.4byte	.LFE0-.LFB0
+ 200 0034 01       		.uleb128 0x1
+ 201 0035 9C       		.byte	0x9c
+ 202 0036 55000000 		.4byte	0x55
+ 203 003a 03       		.uleb128 0x3
+ 204 003b 00000000 		.4byte	.LASF0
+ 205 003f 01       		.byte	0x1
+ 206 0040 14       		.byte	0x14
+ 207 0041 55000000 		.4byte	0x55
+ 208 0045 02       		.uleb128 0x2
+ 209 0046 91       		.byte	0x91
+ 210 0047 6C       		.sleb128 -20
+ 211 0048 04       		.uleb128 0x4
+ 212 0049 6900     		.ascii	"i\000"
+ 213 004b 01       		.byte	0x1
+ 214 004c 16       		.byte	0x16
+ 215 004d 5B000000 		.4byte	0x5b
+ 216 0051 02       		.uleb128 0x2
+ 217 0052 91       		.byte	0x91
+ 218 0053 74       		.sleb128 -12
+ 219 0054 00       		.byte	0
+ 220 0055 05       		.uleb128 0x5
+ 221 0056 04       		.byte	0x4
+ 222 0057 5B000000 		.4byte	0x5b
+ 223 005b 06       		.uleb128 0x6
+ 224 005c 04       		.byte	0x4
+ 225 005d 05       		.byte	0x5
+ 226 005e 696E7400 		.ascii	"int\000"
+ 227 0062 07       		.uleb128 0x7
+ 228 0063 77000000 		.4byte	.LASF9
+ 229 0067 01       		.byte	0x1
+ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\ccN546pv.s 			page 6
+
+
+ 230 0068 1F       		.byte	0x1f
+ 231 0069 5B000000 		.4byte	0x5b
+ 232 006d 00000000 		.4byte	.LFB1
+ 233 0071 78000000 		.4byte	.LFE1-.LFB1
+ 234 0075 01       		.uleb128 0x1
+ 235 0076 9C       		.byte	0x9c
+ 236 0077 B3000000 		.4byte	0xb3
+ 237 007b 08       		.uleb128 0x8
+ 238 007c 7800     		.ascii	"x\000"
+ 239 007e 01       		.byte	0x1
+ 240 007f 1F       		.byte	0x1f
+ 241 0080 5B000000 		.4byte	0x5b
+ 242 0084 02       		.uleb128 0x2
+ 243 0085 91       		.byte	0x91
+ 244 0086 6C       		.sleb128 -20
+ 245 0087 04       		.uleb128 0x4
+ 246 0088 73756D00 		.ascii	"sum\000"
+ 247 008c 01       		.byte	0x1
+ 248 008d 21       		.byte	0x21
+ 249 008e 5B000000 		.4byte	0x5b
+ 250 0092 02       		.uleb128 0x2
+ 251 0093 91       		.byte	0x91
+ 252 0094 74       		.sleb128 -12
+ 253 0095 04       		.uleb128 0x4
+ 254 0096 6900     		.ascii	"i\000"
+ 255 0098 01       		.byte	0x1
+ 256 0099 22       		.byte	0x22
+ 257 009a 5B000000 		.4byte	0x5b
+ 258 009e 02       		.uleb128 0x2
+ 259 009f 91       		.byte	0x91
+ 260 00a0 70       		.sleb128 -16
+ 261 00a1 09       		.uleb128 0x9
+ 262 00a2 24010000 		.4byte	.LASF1
+ 263 00a6 01       		.byte	0x1
+ 264 00a7 23       		.byte	0x23
+ 265 00a8 5B000000 		.4byte	0x5b
+ 266 00ac 05       		.uleb128 0x5
+ 267 00ad 03       		.byte	0x3
+ 268 00ae 80000000 		.4byte	wptr.4078
+ 269 00b2 00       		.byte	0
+ 270 00b3 0A       		.uleb128 0xa
+ 271 00b4 5B000000 		.4byte	0x5b
+ 272 00b8 C3000000 		.4byte	0xc3
+ 273 00bc 0B       		.uleb128 0xb
+ 274 00bd C3000000 		.4byte	0xc3
+ 275 00c1 0F       		.byte	0xf
+ 276 00c2 00       		.byte	0
+ 277 00c3 0C       		.uleb128 0xc
+ 278 00c4 04       		.byte	0x4
+ 279 00c5 07       		.byte	0x7
+ 280 00c6 61000000 		.4byte	.LASF2
+ 281 00ca 09       		.uleb128 0x9
+ 282 00cb 6A000000 		.4byte	.LASF3
+ 283 00cf 01       		.byte	0x1
+ 284 00d0 10       		.byte	0x10
+ 285 00d1 B3000000 		.4byte	0xb3
+ 286 00d5 05       		.uleb128 0x5
+ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\ccN546pv.s 			page 7
+
+
+ 287 00d6 03       		.byte	0x3
+ 288 00d7 00000000 		.4byte	recent_samps
+ 289 00db 09       		.uleb128 0x9
+ 290 00dc 54000000 		.4byte	.LASF4
+ 291 00e0 01       		.byte	0x1
+ 292 00e1 11       		.byte	0x11
+ 293 00e2 B3000000 		.4byte	0xb3
+ 294 00e6 05       		.uleb128 0x5
+ 295 00e7 03       		.byte	0x3
+ 296 00e8 40000000 		.4byte	model_coeffs
+ 297 00ec 00       		.byte	0
+ 298              		.section	.debug_abbrev,"",%progbits
+ 299              	.Ldebug_abbrev0:
+ 300 0000 01       		.uleb128 0x1
+ 301 0001 11       		.uleb128 0x11
+ 302 0002 01       		.byte	0x1
+ 303 0003 25       		.uleb128 0x25
+ 304 0004 0E       		.uleb128 0xe
+ 305 0005 13       		.uleb128 0x13
+ 306 0006 0B       		.uleb128 0xb
+ 307 0007 03       		.uleb128 0x3
+ 308 0008 0E       		.uleb128 0xe
+ 309 0009 1B       		.uleb128 0x1b
+ 310 000a 0E       		.uleb128 0xe
+ 311 000b 55       		.uleb128 0x55
+ 312 000c 17       		.uleb128 0x17
+ 313 000d 11       		.uleb128 0x11
+ 314 000e 01       		.uleb128 0x1
+ 315 000f 10       		.uleb128 0x10
+ 316 0010 17       		.uleb128 0x17
+ 317 0011 00       		.byte	0
+ 318 0012 00       		.byte	0
+ 319 0013 02       		.uleb128 0x2
+ 320 0014 2E       		.uleb128 0x2e
+ 321 0015 01       		.byte	0x1
+ 322 0016 3F       		.uleb128 0x3f
+ 323 0017 19       		.uleb128 0x19
+ 324 0018 03       		.uleb128 0x3
+ 325 0019 0E       		.uleb128 0xe
+ 326 001a 3A       		.uleb128 0x3a
+ 327 001b 0B       		.uleb128 0xb
+ 328 001c 3B       		.uleb128 0x3b
+ 329 001d 0B       		.uleb128 0xb
+ 330 001e 27       		.uleb128 0x27
+ 331 001f 19       		.uleb128 0x19
+ 332 0020 11       		.uleb128 0x11
+ 333 0021 01       		.uleb128 0x1
+ 334 0022 12       		.uleb128 0x12
+ 335 0023 06       		.uleb128 0x6
+ 336 0024 40       		.uleb128 0x40
+ 337 0025 18       		.uleb128 0x18
+ 338 0026 9742     		.uleb128 0x2117
+ 339 0028 19       		.uleb128 0x19
+ 340 0029 01       		.uleb128 0x1
+ 341 002a 13       		.uleb128 0x13
+ 342 002b 00       		.byte	0
+ 343 002c 00       		.byte	0
+ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\ccN546pv.s 			page 8
+
+
+ 344 002d 03       		.uleb128 0x3
+ 345 002e 05       		.uleb128 0x5
+ 346 002f 00       		.byte	0
+ 347 0030 03       		.uleb128 0x3
+ 348 0031 0E       		.uleb128 0xe
+ 349 0032 3A       		.uleb128 0x3a
+ 350 0033 0B       		.uleb128 0xb
+ 351 0034 3B       		.uleb128 0x3b
+ 352 0035 0B       		.uleb128 0xb
+ 353 0036 49       		.uleb128 0x49
+ 354 0037 13       		.uleb128 0x13
+ 355 0038 02       		.uleb128 0x2
+ 356 0039 18       		.uleb128 0x18
+ 357 003a 00       		.byte	0
+ 358 003b 00       		.byte	0
+ 359 003c 04       		.uleb128 0x4
+ 360 003d 34       		.uleb128 0x34
+ 361 003e 00       		.byte	0
+ 362 003f 03       		.uleb128 0x3
+ 363 0040 08       		.uleb128 0x8
+ 364 0041 3A       		.uleb128 0x3a
+ 365 0042 0B       		.uleb128 0xb
+ 366 0043 3B       		.uleb128 0x3b
+ 367 0044 0B       		.uleb128 0xb
+ 368 0045 49       		.uleb128 0x49
+ 369 0046 13       		.uleb128 0x13
+ 370 0047 02       		.uleb128 0x2
+ 371 0048 18       		.uleb128 0x18
+ 372 0049 00       		.byte	0
+ 373 004a 00       		.byte	0
+ 374 004b 05       		.uleb128 0x5
+ 375 004c 0F       		.uleb128 0xf
+ 376 004d 00       		.byte	0
+ 377 004e 0B       		.uleb128 0xb
+ 378 004f 0B       		.uleb128 0xb
+ 379 0050 49       		.uleb128 0x49
+ 380 0051 13       		.uleb128 0x13
+ 381 0052 00       		.byte	0
+ 382 0053 00       		.byte	0
+ 383 0054 06       		.uleb128 0x6
+ 384 0055 24       		.uleb128 0x24
+ 385 0056 00       		.byte	0
+ 386 0057 0B       		.uleb128 0xb
+ 387 0058 0B       		.uleb128 0xb
+ 388 0059 3E       		.uleb128 0x3e
+ 389 005a 0B       		.uleb128 0xb
+ 390 005b 03       		.uleb128 0x3
+ 391 005c 08       		.uleb128 0x8
+ 392 005d 00       		.byte	0
+ 393 005e 00       		.byte	0
+ 394 005f 07       		.uleb128 0x7
+ 395 0060 2E       		.uleb128 0x2e
+ 396 0061 01       		.byte	0x1
+ 397 0062 3F       		.uleb128 0x3f
+ 398 0063 19       		.uleb128 0x19
+ 399 0064 03       		.uleb128 0x3
+ 400 0065 0E       		.uleb128 0xe
+ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\ccN546pv.s 			page 9
+
+
+ 401 0066 3A       		.uleb128 0x3a
+ 402 0067 0B       		.uleb128 0xb
+ 403 0068 3B       		.uleb128 0x3b
+ 404 0069 0B       		.uleb128 0xb
+ 405 006a 27       		.uleb128 0x27
+ 406 006b 19       		.uleb128 0x19
+ 407 006c 49       		.uleb128 0x49
+ 408 006d 13       		.uleb128 0x13
+ 409 006e 11       		.uleb128 0x11
+ 410 006f 01       		.uleb128 0x1
+ 411 0070 12       		.uleb128 0x12
+ 412 0071 06       		.uleb128 0x6
+ 413 0072 40       		.uleb128 0x40
+ 414 0073 18       		.uleb128 0x18
+ 415 0074 9742     		.uleb128 0x2117
+ 416 0076 19       		.uleb128 0x19
+ 417 0077 01       		.uleb128 0x1
+ 418 0078 13       		.uleb128 0x13
+ 419 0079 00       		.byte	0
+ 420 007a 00       		.byte	0
+ 421 007b 08       		.uleb128 0x8
+ 422 007c 05       		.uleb128 0x5
+ 423 007d 00       		.byte	0
+ 424 007e 03       		.uleb128 0x3
+ 425 007f 08       		.uleb128 0x8
+ 426 0080 3A       		.uleb128 0x3a
+ 427 0081 0B       		.uleb128 0xb
+ 428 0082 3B       		.uleb128 0x3b
+ 429 0083 0B       		.uleb128 0xb
+ 430 0084 49       		.uleb128 0x49
+ 431 0085 13       		.uleb128 0x13
+ 432 0086 02       		.uleb128 0x2
+ 433 0087 18       		.uleb128 0x18
+ 434 0088 00       		.byte	0
+ 435 0089 00       		.byte	0
+ 436 008a 09       		.uleb128 0x9
+ 437 008b 34       		.uleb128 0x34
+ 438 008c 00       		.byte	0
+ 439 008d 03       		.uleb128 0x3
+ 440 008e 0E       		.uleb128 0xe
+ 441 008f 3A       		.uleb128 0x3a
+ 442 0090 0B       		.uleb128 0xb
+ 443 0091 3B       		.uleb128 0x3b
+ 444 0092 0B       		.uleb128 0xb
+ 445 0093 49       		.uleb128 0x49
+ 446 0094 13       		.uleb128 0x13
+ 447 0095 02       		.uleb128 0x2
+ 448 0096 18       		.uleb128 0x18
+ 449 0097 00       		.byte	0
+ 450 0098 00       		.byte	0
+ 451 0099 0A       		.uleb128 0xa
+ 452 009a 01       		.uleb128 0x1
+ 453 009b 01       		.byte	0x1
+ 454 009c 49       		.uleb128 0x49
+ 455 009d 13       		.uleb128 0x13
+ 456 009e 01       		.uleb128 0x1
+ 457 009f 13       		.uleb128 0x13
+ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\ccN546pv.s 			page 10
+
+
+ 458 00a0 00       		.byte	0
+ 459 00a1 00       		.byte	0
+ 460 00a2 0B       		.uleb128 0xb
+ 461 00a3 21       		.uleb128 0x21
+ 462 00a4 00       		.byte	0
+ 463 00a5 49       		.uleb128 0x49
+ 464 00a6 13       		.uleb128 0x13
+ 465 00a7 2F       		.uleb128 0x2f
+ 466 00a8 0B       		.uleb128 0xb
+ 467 00a9 00       		.byte	0
+ 468 00aa 00       		.byte	0
+ 469 00ab 0C       		.uleb128 0xc
+ 470 00ac 24       		.uleb128 0x24
+ 471 00ad 00       		.byte	0
+ 472 00ae 0B       		.uleb128 0xb
+ 473 00af 0B       		.uleb128 0xb
+ 474 00b0 3E       		.uleb128 0x3e
+ 475 00b1 0B       		.uleb128 0xb
+ 476 00b2 03       		.uleb128 0x3
+ 477 00b3 0E       		.uleb128 0xe
+ 478 00b4 00       		.byte	0
+ 479 00b5 00       		.byte	0
+ 480 00b6 00       		.byte	0
+ 481              		.section	.debug_aranges,"",%progbits
+ 482 0000 24000000 		.4byte	0x24
+ 483 0004 0200     		.2byte	0x2
+ 484 0006 00000000 		.4byte	.Ldebug_info0
+ 485 000a 04       		.byte	0x4
+ 486 000b 00       		.byte	0
+ 487 000c 0000     		.2byte	0
+ 488 000e 0000     		.2byte	0
+ 489 0010 00000000 		.4byte	.LFB0
+ 490 0014 48000000 		.4byte	.LFE0-.LFB0
+ 491 0018 00000000 		.4byte	.LFB1
+ 492 001c 78000000 		.4byte	.LFE1-.LFB1
+ 493 0020 00000000 		.4byte	0
+ 494 0024 00000000 		.4byte	0
+ 495              		.section	.debug_ranges,"",%progbits
+ 496              	.Ldebug_ranges0:
+ 497 0000 00000000 		.4byte	.LFB0
+ 498 0004 48000000 		.4byte	.LFE0
+ 499 0008 00000000 		.4byte	.LFB1
+ 500 000c 78000000 		.4byte	.LFE1
+ 501 0010 00000000 		.4byte	0
+ 502 0014 00000000 		.4byte	0
+ 503              		.section	.debug_line,"",%progbits
+ 504              	.Ldebug_line0:
+ 505 0000 79000000 		.section	.debug_str,"MS",%progbits,1
+ 505      02002400 
+ 505      00000201 
+ 505      FB0E0D00 
+ 505      01010101 
+ 506              	.LASF0:
+ 507 0000 636F6566 		.ascii	"coeffs\000"
+ 507      667300
+ 508              	.LASF7:
+ 509 0007 433A5C55 		.ascii	"C:\\Users\\shubhamt\\Documents\\PSoC Creator\\WaveG"
+ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\ccN546pv.s 			page 11
+
+
+ 509      73657273 
+ 509      5C736875 
+ 509      6268616D 
+ 509      745C446F 
+ 510 0035 656E6572 		.ascii	"enerator1\\WaveGenerator1.cydsn\000"
+ 510      61746F72 
+ 510      315C5761 
+ 510      76654765 
+ 510      6E657261 
+ 511              	.LASF4:
+ 512 0054 6D6F6465 		.ascii	"model_coeffs\000"
+ 512      6C5F636F 
+ 512      65666673 
+ 512      00
+ 513              	.LASF2:
+ 514 0061 73697A65 		.ascii	"sizetype\000"
+ 514      74797065 
+ 514      00
+ 515              	.LASF3:
+ 516 006a 72656365 		.ascii	"recent_samps\000"
+ 516      6E745F73 
+ 516      616D7073 
+ 516      00
+ 517              	.LASF9:
+ 518 0077 6D69635F 		.ascii	"mic_model_new_sample\000"
+ 518      6D6F6465 
+ 518      6C5F6E65 
+ 518      775F7361 
+ 518      6D706C65 
+ 519              	.LASF8:
+ 520 008c 6D69635F 		.ascii	"mic_model_new\000"
+ 520      6D6F6465 
+ 520      6C5F6E65 
+ 520      7700
+ 521              	.LASF6:
+ 522 009a 2E5C6D69 		.ascii	".\\mic_model.c\000"
+ 522      635F6D6F 
+ 522      64656C2E 
+ 522      6300
+ 523              	.LASF5:
+ 524 00a8 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 524      4320342E 
+ 524      382E3420 
+ 524      32303134 
+ 524      30353236 
+ 525 00db 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m3 -mthumb -g -O"
+ 525      20726576 
+ 525      6973696F 
+ 525      6E203231 
+ 525      31333538 
+ 526 010e 30202D66 		.ascii	"0 -ffunction-sections\000"
+ 526      66756E63 
+ 526      74696F6E 
+ 526      2D736563 
+ 526      74696F6E 
+ 527              	.LASF1:
+ 528 0124 77707472 		.ascii	"wptr\000"
+ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\ccN546pv.s 			page 12
+
+
+ 528      00
+ 529              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br
