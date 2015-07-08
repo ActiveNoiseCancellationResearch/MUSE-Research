@@ -1,0 +1,79 @@
+--------------- Rebuild Started: 07/08/2015 13:17:21 Project: WaveGenerator1, Configuration: ARM GCC 4.8.4 Debug ---------------
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\WaveGenerator1.hex"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\WaveGenerator1.elf"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\WaveGenerator1.map"
+Deleting file ".\WaveGenerator1.cycdx"
+Deleting file ".\WaveGenerator1.svd"
+Deleting file ".\WaveGenerator1.rpt"
+Deleting file ".\WaveGenerator1_timing.html"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\.deps\C_FILE.P"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\.deps\ARM_C_FILE.P"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\.deps\GNU_ARM_ASM_FILE.P"
+cydsfit.exe -.appdatapath "C:\Users\pearlstl\AppData\Local\Cypress Semiconductor\PSoC Creator\3.2" -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -p C:\Users\pearlstl\Documents\MUSE-Research\proj_anc\system\WaveGenerator1\WaveGenerator1.cydsn\WaveGenerator1.cyprj -d CY8C5868AXI-LP035 -s C:\Users\pearlstl\Documents\MUSE-Research\proj_anc\system\WaveGenerator1\WaveGenerator1.cydsn\Generated_Source\PSoC5 -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE
+Elaborating Design...
+ADD: pft.M0035: information: Voltage Reference Information: Vref '1.024V' is connected to terminal 'vminus' of '\ADC_SAR:ADC_SAR\' but no direct hardware connection exists.
+ * C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\ADC_SAR_v3_0\PSoC5\ADC_SAR_v3_0.cysch (Instance:ADC_SAR)
+ * C:\Users\pearlstl\Documents\MUSE-Research\proj_anc\system\WaveGenerator1\WaveGenerator1.cydsn\TopDesign\TopDesign.cysch (Instance:vRef_1)
+HDL Generation ...
+Synthesis ...
+Place and Route ...
+Tech mapping ...
+ADD: pft.M0040: information: The following 1 pin(s) will be assigned a location by the fitter: \ADC_SAR:Bypass(0)\
+Analog Placement ...
+Log: apr.M0058: The analog placement iterative improvement is 47% done. (App=cydsfit)
+Log: apr.M0058: The analog placement iterative improvement is 68% done. (App=cydsfit)
+Analog Routing ...
+Analog Code Generation ...
+Info: apr.M0060: Comparator 'Comparator[1]@[FFB(Comparator,1)]' is powered up by analog subsystem to support an auto-enabled vref. (App=cydsfit)
+Digital Placement ...
+Digital Routing ...
+Bitstream Generation ...
+Static timing analysis ...
+API Generation ...
+Dependency Generation ...
+Clean Temporary Files ...
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_484\Debug/main.lst -g -D DEBUG -Wall -ffunction-sections -O0 -c .\main.c -o .\CortexM3\ARM_GCC_484\Debug\main.o
+.\main.c: In function 'main':
+.\main.c:27:9: warning: unused variable 'string_length' [-Wunused-variable]
+     int string_length;
+         ^
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_484\Debug/canceller.lst -g -D DEBUG -Wall -ffunction-sections -O0 -c .\canceller.c -o .\CortexM3\ARM_GCC_484\Debug\canceller.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_484\Debug/hs_model.lst -g -D DEBUG -Wall -ffunction-sections -O0 -c .\hs_model.c -o .\CortexM3\ARM_GCC_484\Debug\hs_model.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_484\Debug/mic_model.lst -g -D DEBUG -Wall -ffunction-sections -O0 -c .\mic_model.c -o .\CortexM3\ARM_GCC_484\Debug\mic_model.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_484\Debug/cyfitter_cfg.lst -g -D DEBUG -Wall -ffunction-sections -O0 -c .\Generated_Source\PSoC5\cyfitter_cfg.c -o .\CortexM3\ARM_GCC_484\Debug\cyfitter_cfg.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_484\Debug/cymetadata.lst -g -D DEBUG -Wall -ffunction-sections -O0 -c .\Generated_Source\PSoC5\cymetadata.c -o .\CortexM3\ARM_GCC_484\Debug\cymetadata.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_484\Debug/Cm3Start.lst -g -D DEBUG -Wall -ffunction-sections -O0 -c .\Generated_Source\PSoC5\Cm3Start.c -o .\CortexM3\ARM_GCC_484\Debug\Cm3Start.o
+arm-none-eabi-as.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -alh=.\CortexM3\ARM_GCC_484\Debug/CyBootAsmGnu.lst -g -o .\CortexM3\ARM_GCC_484\Debug\CyBootAsmGnu.o .\Generated_Source\PSoC5\CyBootAsmGnu.s
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_484\Debug/CyDmac.lst -g -D DEBUG -Wall -ffunction-sections -O0 -c .\Generated_Source\PSoC5\CyDmac.c -o .\CortexM3\ARM_GCC_484\Debug\CyDmac.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_484\Debug/CyFlash.lst -g -D DEBUG -Wall -ffunction-sections -O0 -c .\Generated_Source\PSoC5\CyFlash.c -o .\CortexM3\ARM_GCC_484\Debug\CyFlash.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_484\Debug/CyLib.lst -g -D DEBUG -Wall -ffunction-sections -O0 -c .\Generated_Source\PSoC5\CyLib.c -o .\CortexM3\ARM_GCC_484\Debug\CyLib.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_484\Debug/cyPm.lst -g -D DEBUG -Wall -ffunction-sections -O0 -c .\Generated_Source\PSoC5\cyPm.c -o .\CortexM3\ARM_GCC_484\Debug\cyPm.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_484\Debug/CySpc.lst -g -D DEBUG -Wall -ffunction-sections -O0 -c .\Generated_Source\PSoC5\CySpc.c -o .\CortexM3\ARM_GCC_484\Debug\CySpc.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_484\Debug/cyutils.lst -g -D DEBUG -Wall -ffunction-sections -O0 -c .\Generated_Source\PSoC5\cyutils.c -o .\CortexM3\ARM_GCC_484\Debug\cyutils.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_484\Debug/Pin_1.lst -g -D DEBUG -Wall -ffunction-sections -O0 -c .\Generated_Source\PSoC5\Pin_1.c -o .\CortexM3\ARM_GCC_484\Debug\Pin_1.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_484\Debug/isr.lst -g -D DEBUG -Wall -ffunction-sections -O0 -c .\Generated_Source\PSoC5\isr.c -o .\CortexM3\ARM_GCC_484\Debug\isr.o
+.\Generated_Source\PSoC5\isr.c: In function 'isr_Interrupt':
+.\Generated_Source\PSoC5\isr.c:180:9: warning: unused variable 'i' [-Wunused-variable]
+     int i;
+         ^
+.\Generated_Source\PSoC5\isr.c:177:9: warning: unused variable 'value' [-Wunused-variable]
+     int value;
+         ^
+.\Generated_Source\PSoC5\isr.c:176:9: warning: unused variable 'k' [-Wunused-variable]
+     int k;
+         ^
+.\Generated_Source\PSoC5\isr.c:175:9: warning: unused variable 'T' [-Wunused-variable]
+     int T       = (1<<20)/20000;          // Samping period, in 1/2^20) seconds //16*1024 (would be nicer)
+         ^
+.\Generated_Source\PSoC5\isr.c:174:9: warning: unused variable 'ampls' [-Wunused-variable]
+     int ampls[] = { 16000 };              // Array of tone amplitudes, C1.0.15, roughly 0.5 for now
+         ^
+.\Generated_Source\PSoC5\isr.c:173:9: warning: unused variable 'freqs' [-Wunused-variable]
+     int freqs[] = { 256 };                // Array of tone frequencies, in Hz
+         ^
+.\Generated_Source\PSoC5\isr.c: At top level:
+.\Generated_Source\PSoC5\isr.c:237:1: error: expected identifier or '(' before '}' token
+ }
+ ^
+The command 'arm-none-eabi-gcc.exe' failed with exit code '1'.
+--------------- Rebuild Failed: 07/08/2015 13:17:59 ---------------

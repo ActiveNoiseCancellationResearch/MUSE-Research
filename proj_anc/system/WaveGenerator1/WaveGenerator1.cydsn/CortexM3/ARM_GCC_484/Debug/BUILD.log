@@ -1,30 +1,41 @@
---------------- Build Started: 07/07/2015 12:16:49 Project: WaveGenerator1, Configuration: ARM GCC 4.8.4 Debug ---------------
+--------------- Build Started: 07/08/2015 13:36:48 Project: WaveGenerator1, Configuration: ARM GCC 4.8.4 Debug ---------------
 The code generation step is up to date.
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_484\Debug/main.lst -g -D DEBUG -Wall -ffunction-sections -O0 -c .\main.c -o .\CortexM3\ARM_GCC_484\Debug\main.o
+.\main.c: In function 'main':
+.\main.c:27:9: warning: unused variable 'length' [-Wunused-variable]
+     int length;
+         ^
+.\main.c:26:9: warning: unused variable 'string_length' [-Wunused-variable]
+     int string_length;
+         ^
+.\main.c:25:13: warning: unused variable 'the_val' [-Wunused-variable]
+     int16_t the_val;
+             ^
+.\main.c:24:11: warning: unused variable 'my_string' [-Wunused-variable]
+     uint8 my_string[16];
+           ^
 arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_484\Debug/isr.lst -g -D DEBUG -Wall -ffunction-sections -O0 -c .\Generated_Source\PSoC5\isr.c -o .\CortexM3\ARM_GCC_484\Debug\isr.o
 .\Generated_Source\PSoC5\isr.c: In function 'isr_Interrupt':
-.\Generated_Source\PSoC5\isr.c:180:9: warning: unused variable 'i' [-Wunused-variable]
-     int i;
-         ^
-.\Generated_Source\PSoC5\isr.c:177:9: warning: unused variable 'value' [-Wunused-variable]
+.\Generated_Source\PSoC5\isr.c:180:9: warning: unused variable 'value' [-Wunused-variable]
      int value;
          ^
-.\Generated_Source\PSoC5\isr.c:176:9: warning: unused variable 'k' [-Wunused-variable]
+.\Generated_Source\PSoC5\isr.c:179:9: warning: unused variable 'k' [-Wunused-variable]
      int k;
          ^
-.\Generated_Source\PSoC5\isr.c:175:9: warning: unused variable 'T' [-Wunused-variable]
+.\Generated_Source\PSoC5\isr.c:178:9: warning: unused variable 'T' [-Wunused-variable]
      int T       = (1<<20)/20000;          // Samping period, in 1/2^20) seconds //16*1024 (would be nicer)
          ^
-.\Generated_Source\PSoC5\isr.c:174:9: warning: unused variable 'ampls' [-Wunused-variable]
+.\Generated_Source\PSoC5\isr.c:177:9: warning: unused variable 'ampls' [-Wunused-variable]
      int ampls[] = { 16000 };              // Array of tone amplitudes, C1.0.15, roughly 0.5 for now
          ^
-.\Generated_Source\PSoC5\isr.c:173:9: warning: unused variable 'freqs' [-Wunused-variable]
+.\Generated_Source\PSoC5\isr.c:176:9: warning: unused variable 'freqs' [-Wunused-variable]
      int freqs[] = { 256 };                // Array of tone frequencies, in Hz
          ^
-arm-none-eabi-ar.exe -rs .\CortexM3\ARM_GCC_484\Debug\WaveGenerator1.a .\CortexM3\ARM_GCC_484\Debug\cyfitter_cfg.o .\CortexM3\ARM_GCC_484\Debug\CyBootAsmGnu.o .\CortexM3\ARM_GCC_484\Debug\CyDmac.o .\CortexM3\ARM_GCC_484\Debug\CyFlash.o .\CortexM3\ARM_GCC_484\Debug\CyLib.o .\CortexM3\ARM_GCC_484\Debug\cyPm.o .\CortexM3\ARM_GCC_484\Debug\CySpc.o .\CortexM3\ARM_GCC_484\Debug\cyutils.o .\CortexM3\ARM_GCC_484\Debug\Pin_1.o .\CortexM3\ARM_GCC_484\Debug\isr.o .\CortexM3\ARM_GCC_484\Debug\Clock.o .\CortexM3\ARM_GCC_484\Debug\Pin_2.o .\CortexM3\ARM_GCC_484\Debug\ADC_SAR.o .\CortexM3\ARM_GCC_484\Debug\ADC_SAR_INT.o .\CortexM3\ARM_GCC_484\Debug\ADC_SAR_PM.o .\CortexM3\ARM_GCC_484\Debug\ADC_SAR_IRQ.o .\CortexM3\ARM_GCC_484\Debug\ADC_SAR_theACLK.o .\CortexM3\ARM_GCC_484\Debug\ADC_SAR_Bypass.o .\CortexM3\ARM_GCC_484\Debug\Pin_4.o .\CortexM3\ARM_GCC_484\Debug\VDAC8_1_hs.o .\CortexM3\ARM_GCC_484\Debug\VDAC8_1_hs_PM.o .\CortexM3\ARM_GCC_484\Debug\VDAC8_2_ls.o .\CortexM3\ARM_GCC_484\Debug\VDAC8_2_ls_PM.o .\CortexM3\ARM_GCC_484\Debug\Pin_5.o .\CortexM3\ARM_GCC_484\Debug\Pin_6.o .\CortexM3\ARM_GCC_484\Debug\UART_1.o .\CortexM3\ARM_GCC_484\Debug\UART_1_PM.o .\CortexM3\ARM_GCC_484\Debug\UART_1_INT.o .\CortexM3\ARM_GCC_484\Debug\UART_1_BOOT.o .\CortexM3\ARM_GCC_484\Debug\UART_1_IntClock.o
+arm-none-eabi-ar.exe -rs .\CortexM3\ARM_GCC_484\Debug\WaveGenerator1.a .\CortexM3\ARM_GCC_484\Debug\cyfitter_cfg.o .\CortexM3\ARM_GCC_484\Debug\CyBootAsmGnu.o .\CortexM3\ARM_GCC_484\Debug\CyDmac.o .\CortexM3\ARM_GCC_484\Debug\CyFlash.o .\CortexM3\ARM_GCC_484\Debug\CyLib.o .\CortexM3\ARM_GCC_484\Debug\cyPm.o .\CortexM3\ARM_GCC_484\Debug\CySpc.o .\CortexM3\ARM_GCC_484\Debug\cyutils.o .\CortexM3\ARM_GCC_484\Debug\Pin_1.o .\CortexM3\ARM_GCC_484\Debug\isr.o .\CortexM3\ARM_GCC_484\Debug\Clock.o .\CortexM3\ARM_GCC_484\Debug\Pin_2.o .\CortexM3\ARM_GCC_484\Debug\ADC_SAR.o .\CortexM3\ARM_GCC_484\Debug\ADC_SAR_INT.o .\CortexM3\ARM_GCC_484\Debug\ADC_SAR_PM.o .\CortexM3\ARM_GCC_484\Debug\ADC_SAR_IRQ.o .\CortexM3\ARM_GCC_484\Debug\ADC_SAR_theACLK.o .\CortexM3\ARM_GCC_484\Debug\ADC_SAR_Bypass.o .\CortexM3\ARM_GCC_484\Debug\Pin_4.o .\CortexM3\ARM_GCC_484\Debug\VDAC8_1_hs.o .\CortexM3\ARM_GCC_484\Debug\VDAC8_1_hs_PM.o .\CortexM3\ARM_GCC_484\Debug\VDAC8_2_ls.o .\CortexM3\ARM_GCC_484\Debug\VDAC8_2_ls_PM.o .\CortexM3\ARM_GCC_484\Debug\UART_1.o .\CortexM3\ARM_GCC_484\Debug\UART_1_PM.o .\CortexM3\ARM_GCC_484\Debug\UART_1_INT.o .\CortexM3\ARM_GCC_484\Debug\UART_1_BOOT.o .\CortexM3\ARM_GCC_484\Debug\UART_1_IntClock.o
 arm-none-eabi-ar.exe: creating .\CortexM3\ARM_GCC_484\Debug\WaveGenerator1.a
 arm-none-eabi-gcc.exe -Wl,--start-group -o .\CortexM3\ARM_GCC_484\Debug\WaveGenerator1.elf .\CortexM3\ARM_GCC_484\Debug\main.o .\CortexM3\ARM_GCC_484\Debug\canceller.o .\CortexM3\ARM_GCC_484\Debug\hs_model.o .\CortexM3\ARM_GCC_484\Debug\mic_model.o .\CortexM3\ARM_GCC_484\Debug\cymetadata.o .\CortexM3\ARM_GCC_484\Debug\Cm3Start.o .\CortexM3\ARM_GCC_484\Debug\WaveGenerator1.a "C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CortexM3\ARM_GCC_484\Debug\CyComponentLibrary.a" -mcpu=cortex-m3 -mthumb -g -ffunction-sections -O0 -l m -Wl,-Map,.\CortexM3\ARM_GCC_484\Debug/WaveGenerator1.map -T Generated_Source\PSoC5\cm3gcc.ld -specs=nano.specs -Wl,--gc-sections -Wl,--end-group
-cyelftool.exe -C "C:\Users\shubhamt\Documents\PSoC Creator\WaveGenerator1\WaveGenerator1.cydsn\CortexM3\ARM_GCC_484\Debug\WaveGenerator1.elf" --flash_row_size 256 --flash_size 262144
-cyelftool.exe -S "C:\Users\shubhamt\Documents\PSoC Creator\WaveGenerator1\WaveGenerator1.cydsn\CortexM3\ARM_GCC_484\Debug\WaveGenerator1.elf"
-Flash used: 14848 of 262144 bytes (5.7 %).
+cyelftool.exe -C C:\Users\pearlstl\Documents\MUSE-Research\proj_anc\system\WaveGenerator1\WaveGenerator1.cydsn\CortexM3\ARM_GCC_484\Debug\WaveGenerator1.elf --flash_row_size 256 --flash_size 262144
+cyelftool.exe -S C:\Users\pearlstl\Documents\MUSE-Research\proj_anc\system\WaveGenerator1\WaveGenerator1.cydsn\CortexM3\ARM_GCC_484\Debug\WaveGenerator1.elf
+Flash used: 14592 of 262144 bytes (5.6 %).
 SRAM used: 61477 of 65536 bytes (93.8 %). Stack: 16384 bytes. Heap: 4096 bytes.
---------------- Build Succeeded: 07/07/2015 12:16:57 ---------------
+--------------- Build Succeeded: 07/08/2015 13:36:52 ---------------

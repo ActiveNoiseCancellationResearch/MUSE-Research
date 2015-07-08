@@ -30,7 +30,10 @@
 #include "canceller.h"
 #include "ANC.h"
 #include <stdlib.h>
-extern int16_t *cap_array;
+#include <stdio.h>
+#include <string.h>
+    
+int16_t cap_array[NUM_SAMPS_TO_CAPTURE];
 extern int n;
 extern int wave_table[WAVESIZE];
 /* `#END` */
@@ -180,7 +183,6 @@ CY_ISR(isr_Interrupt)
     int i;
    
  
-    Pin_6_Write(n);
 //  for (k = 0 ; k<NUM_TONES ; ++k)
 //  {
 //      value = n*T*freqs[k]/(1<<5);
@@ -223,18 +225,25 @@ CY_ISR(isr_Interrupt)
         cap_array[n] = e_;
         ++n;
     }
-    else
+    else if (n == NUM_SAMPS_TO_CAPTURE)
     {
+        int the_val;
+        char my_string[32];
+        int length;
         
+        for(i=0;i<NUM_SAMPS_TO_CAPTURE;++i)
+            {
+                the_val = cap_array[i];
+                sprintf(my_string ,"%d\n", the_val & 0xFFFF);
+                length = strlen(my_string);
+                UART_1_PutArray( (uint8 *) my_string, length); 
+            }
+        
+        ++n;
     }
-   
-    
-    
-    Pin_5_Write(n);
 }        
 
     /* `#END` */
-
 
 
 /*******************************************************************************

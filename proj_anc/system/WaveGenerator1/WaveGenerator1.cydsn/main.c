@@ -14,7 +14,6 @@
 #include "ANC.h"
 #include <stdio.h>
 int wave_table[WAVESIZE]; 
-int16_t cap_array[NUM_SAMPS_TO_CAPTURE];
 int n=0;
 
 int main()
@@ -41,13 +40,7 @@ int main()
     {
         
     }
-    for(i=0;i<NUM_SAMPS_TO_CAPTURE;++i)
-        {
-            the_val = cap_array[i];
-            sprintf((char*) my_string ,"%d\n",the_val&0xFFFF);
-            length = strlen((char*)my_string);
-            UART_1_PutArray(my_string,length); 
-        }
+    
     while(1){}
 }
 /* [] END OF FILE */

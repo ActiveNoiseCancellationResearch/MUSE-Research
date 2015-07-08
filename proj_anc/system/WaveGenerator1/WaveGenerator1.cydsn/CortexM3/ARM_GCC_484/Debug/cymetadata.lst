@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\ccZBqdWS.s 			page 1
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccltdjSm.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\ccZBqdWS.s 			page 1
   55 001f 40       		.byte	64
   56 0020 01       		.byte	1
   57 0021 19       		.byte	25
-ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\ccZBqdWS.s 			page 2
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccltdjSm.s 			page 2
 
 
   58 0022 01       		.byte	1
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\ccZBqdWS.s 			page 1
  112 0058 02       		.byte	2
  113 0059 50       		.byte	80
  114 005a 01       		.byte	1
-ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\ccZBqdWS.s 			page 3
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccltdjSm.s 			page 3
 
 
  115 005b 40       		.byte	64
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\ccZBqdWS.s 			page 1
  169 0091 E0       		.byte	-32
  170 0092 46       		.byte	70
  171 0093 0C       		.byte	12
-ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\ccZBqdWS.s 			page 4
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccltdjSm.s 			page 4
 
 
  172 0094 47       		.byte	71
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\ccZBqdWS.s 			page 1
  226 00ca 98       		.byte	-104
  227 00cb DC       		.byte	-36
  228 00cc 99       		.byte	-103
-ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\ccZBqdWS.s 			page 5
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccltdjSm.s 			page 5
 
 
  229 00cd 2C       		.byte	44
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\ccZBqdWS.s 			page 1
  283 0103 40       		.byte	64
  284 0104 CD       		.byte	-51
  285 0105 20       		.byte	32
-ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\ccZBqdWS.s 			page 6
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccltdjSm.s 			page 6
 
 
  286 0106 CE       		.byte	-50
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\ccZBqdWS.s 			page 1
  340 013c 1D       		.byte	29
  341 013d 40       		.byte	64
  342 013e 1E       		.byte	30
-ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\ccZBqdWS.s 			page 7
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccltdjSm.s 			page 7
 
 
  343 013f 68       		.byte	104
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\ccZBqdWS.s 			page 1
  397 0175 09       		.byte	9
  398 0176 CC       		.byte	-52
  399 0177 0E       		.byte	14
-ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\ccZBqdWS.s 			page 8
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccltdjSm.s 			page 8
 
 
  400 0178 CE       		.byte	-50
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\ccZBqdWS.s 			page 1
  454 01ae A4       		.byte	-92
  455 01af 20       		.byte	32
  456 01b0 30       		.byte	48
-ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\ccZBqdWS.s 			page 9
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccltdjSm.s 			page 9
 
 
  457 01b1 20       		.byte	32
@@ -538,12 +538,12 @@ ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\ccZBqdWS.s 			page 1
  511 01e7 0F       		.byte	15
  512 01e8 10       		.byte	16
  513 01e9 00       		.byte	0
-ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\ccZBqdWS.s 			page 10
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccltdjSm.s 			page 10
 
 
  514 01ea 00       		.byte	0
- 515 01eb 70       		.byte	112
- 516 01ec 70       		.byte	112
+ 515 01eb 10       		.byte	16
+ 516 01ec 10       		.byte	16
  517 01ed 00       		.byte	0
  518 01ee 10       		.byte	16
  519 01ef 00       		.byte	0
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\ccZBqdWS.s 			page 1
  564 0007 01       		.byte	1
  565 0008 00       		.byte	0
  566 0009 00       		.byte	0
-ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\ccZBqdWS.s 			page 11
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccltdjSm.s 			page 11
 
 
  567 000a 00       		.byte	0
@@ -614,43 +614,43 @@ ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\ccZBqdWS.s 			page 1
  577 0006 00000000 		.4byte	.Ldebug_abbrev0
  578 000a 04       		.byte	0x4
  579 000b 01       		.uleb128 0x1
- 580 000c B8000000 		.4byte	.LASF18
+ 580 000c 16010000 		.4byte	.LASF18
  581 0010 01       		.byte	0x1
  582 0011 00000000 		.4byte	.LASF19
- 583 0015 7D010000 		.4byte	.LASF20
+ 583 0015 38000000 		.4byte	.LASF20
  584 0019 00000000 		.4byte	.Ldebug_line0
  585 001d 02       		.uleb128 0x2
  586 001e 01       		.byte	0x1
  587 001f 06       		.byte	0x6
- 588 0020 D9010000 		.4byte	.LASF0
+ 588 0020 EA010000 		.4byte	.LASF0
  589 0024 02       		.uleb128 0x2
  590 0025 01       		.byte	0x1
  591 0026 08       		.byte	0x8
- 592 0027 38000000 		.4byte	.LASF1
+ 592 0027 96000000 		.4byte	.LASF1
  593 002b 02       		.uleb128 0x2
  594 002c 02       		.byte	0x2
  595 002d 05       		.byte	0x5
- 596 002e 73010000 		.4byte	.LASF2
+ 596 002e D1010000 		.4byte	.LASF2
  597 0032 02       		.uleb128 0x2
  598 0033 02       		.byte	0x2
  599 0034 07       		.byte	0x7
- 600 0035 58000000 		.4byte	.LASF3
+ 600 0035 B6000000 		.4byte	.LASF3
  601 0039 02       		.uleb128 0x2
  602 003a 04       		.byte	0x4
  603 003b 05       		.byte	0x5
- 604 003c D0010000 		.4byte	.LASF4
+ 604 003c E1010000 		.4byte	.LASF4
  605 0040 02       		.uleb128 0x2
  606 0041 04       		.byte	0x4
  607 0042 07       		.byte	0x7
- 608 0043 46000000 		.4byte	.LASF5
+ 608 0043 A4000000 		.4byte	.LASF5
  609 0047 02       		.uleb128 0x2
  610 0048 08       		.byte	0x8
  611 0049 05       		.byte	0x5
- 612 004a 60010000 		.4byte	.LASF6
+ 612 004a BE010000 		.4byte	.LASF6
  613 004e 02       		.uleb128 0x2
  614 004f 08       		.byte	0x8
  615 0050 07       		.byte	0x7
- 616 0051 A1000000 		.4byte	.LASF7
+ 616 0051 FF000000 		.4byte	.LASF7
  617 0055 03       		.uleb128 0x3
  618 0056 04       		.byte	0x4
  619 0057 05       		.byte	0x5
@@ -658,12 +658,12 @@ ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\ccZBqdWS.s 			page 1
  621 005c 02       		.uleb128 0x2
  622 005d 04       		.byte	0x4
  623 005e 07       		.byte	0x7
-ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\ccZBqdWS.s 			page 12
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccltdjSm.s 			page 12
 
 
- 624 005f 94000000 		.4byte	.LASF8
+ 624 005f F2000000 		.4byte	.LASF8
  625 0063 04       		.uleb128 0x4
- 626 0064 CA010000 		.4byte	.LASF21
+ 626 0064 DB010000 		.4byte	.LASF21
  627 0068 02       		.byte	0x2
  628 0069 5B       		.byte	0x5b
  629 006a 24000000 		.4byte	0x24
@@ -674,11 +674,11 @@ ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\ccZBqdWS.s 			page 1
  634 0075 02       		.uleb128 0x2
  635 0076 08       		.byte	0x8
  636 0077 04       		.byte	0x4
- 637 0078 6B000000 		.4byte	.LASF10
+ 637 0078 C9000000 		.4byte	.LASF10
  638 007c 02       		.uleb128 0x2
  639 007d 01       		.byte	0x1
  640 007e 08       		.byte	0x8
- 641 007f 6E010000 		.4byte	.LASF11
+ 641 007f CC010000 		.4byte	.LASF11
  642 0083 05       		.uleb128 0x5
  643 0084 63000000 		.4byte	0x63
  644 0088 94000000 		.4byte	0x94
@@ -689,9 +689,9 @@ ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\ccZBqdWS.s 			page 1
  649 0094 02       		.uleb128 0x2
  650 0095 04       		.byte	0x4
  651 0096 07       		.byte	0x7
- 652 0097 57010000 		.4byte	.LASF12
+ 652 0097 B5010000 		.4byte	.LASF12
  653 009b 07       		.uleb128 0x7
- 654 009c 82000000 		.4byte	.LASF13
+ 654 009c E0000000 		.4byte	.LASF13
  655 00a0 01       		.byte	0x1
  656 00a1 1C       		.byte	0x1c
  657 00a2 AC000000 		.4byte	0xac
@@ -708,7 +708,7 @@ ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\ccZBqdWS.s 			page 1
  668 00bf 03       		.byte	0x3
  669 00c0 00       		.byte	0
  670 00c1 07       		.uleb128 0x7
- 671 00c2 72000000 		.4byte	.LASF14
+ 671 00c2 D0000000 		.4byte	.LASF14
  672 00c6 01       		.byte	0x1
  673 00c7 65       		.byte	0x65
  674 00c8 D2000000 		.4byte	0xd2
@@ -718,10 +718,10 @@ ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\ccZBqdWS.s 			page 1
  678 00d2 08       		.uleb128 0x8
  679 00d3 B1000000 		.4byte	0xb1
  680 00d7 07       		.uleb128 0x7
-ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\ccZBqdWS.s 			page 13
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccltdjSm.s 			page 13
 
 
- 681 00d8 49010000 		.4byte	.LASF15
+ 681 00d8 A7010000 		.4byte	.LASF15
  682 00dc 01       		.byte	0x1
  683 00dd 70       		.byte	0x70
  684 00de E8000000 		.4byte	0xe8
@@ -738,7 +738,7 @@ ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\ccZBqdWS.s 			page 1
  695 00fb FF       		.byte	0xff
  696 00fc 00       		.byte	0
  697 00fd 07       		.uleb128 0x7
- 698 00fe 34010000 		.4byte	.LASF16
+ 698 00fe 92010000 		.4byte	.LASF16
  699 0102 01       		.byte	0x1
  700 0103 7B       		.byte	0x7b
  701 0104 0E010000 		.4byte	0x10e
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\ccZBqdWS.s 			page 1
  735 0008 0E       		.uleb128 0xe
  736 0009 1B       		.uleb128 0x1b
  737 000a 0E       		.uleb128 0xe
-ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\ccZBqdWS.s 			page 14
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccltdjSm.s 			page 14
 
 
  738 000b 10       		.uleb128 0x10
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\ccZBqdWS.s 			page 1
  792 0041 05       		.uleb128 0x5
  793 0042 00       		.byte	0
  794 0043 00       		.byte	0
-ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\ccZBqdWS.s 			page 15
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccltdjSm.s 			page 15
 
 
  795 0044 07       		.uleb128 0x7
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\ccZBqdWS.s 			page 1
  843      7465645F 
  843      536F7572 
  843      63655C50 
-ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\ccZBqdWS.s 			page 16
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccltdjSm.s 			page 16
 
 
  844              	.LASF17:
@@ -908,117 +908,117 @@ ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\ccZBqdWS.s 			page 1
  846              	.LASF9:
  847 0032 666C6F61 		.ascii	"float\000"
  847      7400
- 848              	.LASF1:
- 849 0038 756E7369 		.ascii	"unsigned char\000"
- 849      676E6564 
- 849      20636861 
- 849      7200
- 850              	.LASF5:
- 851 0046 6C6F6E67 		.ascii	"long unsigned int\000"
- 851      20756E73 
- 851      69676E65 
- 851      6420696E 
- 851      7400
- 852              	.LASF3:
- 853 0058 73686F72 		.ascii	"short unsigned int\000"
- 853      7420756E 
- 853      7369676E 
- 853      65642069 
- 853      6E7400
- 854              	.LASF10:
- 855 006b 646F7562 		.ascii	"double\000"
- 855      6C6500
- 856              	.LASF14:
- 857 0072 63795F6D 		.ascii	"cy_meta_custnvl\000"
- 857      6574615F 
- 857      63757374 
- 857      6E766C00 
- 858              	.LASF13:
- 859 0082 63795F6D 		.ascii	"cy_meta_configecc\000"
- 859      6574615F 
- 859      636F6E66 
- 859      69676563 
- 859      6300
- 860              	.LASF8:
- 861 0094 756E7369 		.ascii	"unsigned int\000"
- 861      676E6564 
- 861      20696E74 
- 861      00
- 862              	.LASF7:
- 863 00a1 6C6F6E67 		.ascii	"long long unsigned int\000"
- 863      206C6F6E 
- 863      6720756E 
- 863      7369676E 
- 863      65642069 
- 864              	.LASF18:
- 865 00b8 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
- 865      4320342E 
- 865      382E3420 
- 865      32303134 
- 865      30353236 
- 866 00eb 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m3 -mthumb -g -O"
- 866      20726576 
-ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\ccZBqdWS.s 			page 17
+ 848              	.LASF20:
+ 849 0038 433A5C55 		.ascii	"C:\\Users\\pearlstl\\Documents\\MUSE-Research\\proj"
+ 849      73657273 
+ 849      5C706561 
+ 849      726C7374 
+ 849      6C5C446F 
+ 850 0066 5F616E63 		.ascii	"_anc\\system\\WaveGenerator1\\WaveGenerator1.cydsn\000"
+ 850      5C737973 
+ 850      74656D5C 
+ 850      57617665 
+ 850      47656E65 
+ 851              	.LASF1:
+ 852 0096 756E7369 		.ascii	"unsigned char\000"
+ 852      676E6564 
+ 852      20636861 
+ 852      7200
+ 853              	.LASF5:
+ 854 00a4 6C6F6E67 		.ascii	"long unsigned int\000"
+ 854      20756E73 
+ 854      69676E65 
+ 854      6420696E 
+ 854      7400
+ 855              	.LASF3:
+ 856 00b6 73686F72 		.ascii	"short unsigned int\000"
+ 856      7420756E 
+ 856      7369676E 
+ 856      65642069 
+ 856      6E7400
+ 857              	.LASF10:
+ 858 00c9 646F7562 		.ascii	"double\000"
+ 858      6C6500
+ 859              	.LASF14:
+ 860 00d0 63795F6D 		.ascii	"cy_meta_custnvl\000"
+ 860      6574615F 
+ 860      63757374 
+ 860      6E766C00 
+ 861              	.LASF13:
+ 862 00e0 63795F6D 		.ascii	"cy_meta_configecc\000"
+ 862      6574615F 
+ 862      636F6E66 
+ 862      69676563 
+ 862      6300
+ 863              	.LASF8:
+ 864 00f2 756E7369 		.ascii	"unsigned int\000"
+ 864      676E6564 
+ 864      20696E74 
+ 864      00
+ 865              	.LASF7:
+ 866 00ff 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 866      206C6F6E 
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccltdjSm.s 			page 17
 
 
- 866      6973696F 
- 866      6E203231 
- 866      31333538 
- 867 011e 30202D66 		.ascii	"0 -ffunction-sections\000"
- 867      66756E63 
- 867      74696F6E 
- 867      2D736563 
- 867      74696F6E 
- 868              	.LASF16:
- 869 0134 63795F6D 		.ascii	"cy_meta_flashprotect\000"
- 869      6574615F 
- 869      666C6173 
- 869      6870726F 
- 869      74656374 
- 870              	.LASF15:
- 871 0149 63795F6D 		.ascii	"cy_meta_wonvl\000"
- 871      6574615F 
- 871      776F6E76 
- 871      6C00
- 872              	.LASF12:
- 873 0157 73697A65 		.ascii	"sizetype\000"
- 873      74797065 
- 873      00
- 874              	.LASF6:
- 875 0160 6C6F6E67 		.ascii	"long long int\000"
- 875      206C6F6E 
- 875      6720696E 
- 875      7400
- 876              	.LASF11:
- 877 016e 63686172 		.ascii	"char\000"
- 877      00
- 878              	.LASF2:
- 879 0173 73686F72 		.ascii	"short int\000"
- 879      7420696E 
- 879      7400
- 880              	.LASF20:
- 881 017d 433A5C55 		.ascii	"C:\\Users\\shubhamt\\Documents\\PSoC Creator\\WaveG"
- 881      73657273 
- 881      5C736875 
- 881      6268616D 
- 881      745C446F 
- 882 01ab 656E6572 		.ascii	"enerator1\\WaveGenerator1.cydsn\000"
- 882      61746F72 
- 882      315C5761 
- 882      76654765 
- 882      6E657261 
+ 866      6720756E 
+ 866      7369676E 
+ 866      65642069 
+ 867              	.LASF18:
+ 868 0116 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 868      4320342E 
+ 868      382E3420 
+ 868      32303134 
+ 868      30353236 
+ 869 0149 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m3 -mthumb -g -O"
+ 869      20726576 
+ 869      6973696F 
+ 869      6E203231 
+ 869      31333538 
+ 870 017c 30202D66 		.ascii	"0 -ffunction-sections\000"
+ 870      66756E63 
+ 870      74696F6E 
+ 870      2D736563 
+ 870      74696F6E 
+ 871              	.LASF16:
+ 872 0192 63795F6D 		.ascii	"cy_meta_flashprotect\000"
+ 872      6574615F 
+ 872      666C6173 
+ 872      6870726F 
+ 872      74656374 
+ 873              	.LASF15:
+ 874 01a7 63795F6D 		.ascii	"cy_meta_wonvl\000"
+ 874      6574615F 
+ 874      776F6E76 
+ 874      6C00
+ 875              	.LASF12:
+ 876 01b5 73697A65 		.ascii	"sizetype\000"
+ 876      74797065 
+ 876      00
+ 877              	.LASF6:
+ 878 01be 6C6F6E67 		.ascii	"long long int\000"
+ 878      206C6F6E 
+ 878      6720696E 
+ 878      7400
+ 879              	.LASF11:
+ 880 01cc 63686172 		.ascii	"char\000"
+ 880      00
+ 881              	.LASF2:
+ 882 01d1 73686F72 		.ascii	"short int\000"
+ 882      7420696E 
+ 882      7400
  883              	.LASF21:
- 884 01ca 75696E74 		.ascii	"uint8\000"
+ 884 01db 75696E74 		.ascii	"uint8\000"
  884      3800
  885              	.LASF4:
- 886 01d0 6C6F6E67 		.ascii	"long int\000"
+ 886 01e1 6C6F6E67 		.ascii	"long int\000"
  886      20696E74 
  886      00
  887              	.LASF0:
- 888 01d9 7369676E 		.ascii	"signed char\000"
+ 888 01ea 7369676E 		.ascii	"signed char\000"
  888      65642063 
  888      68617200 
-ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\ccZBqdWS.s 			page 18
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccltdjSm.s 			page 18
 
 
  889              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br
