@@ -1,20 +1,20 @@
-# Usage: run_anc <master_cfg_filename>
+# Usage: run_anc <master_cfg_filename> {-f}
 
 use strict;
 use warnings;
 use File::Path;
 use File::Copy;
-use File::Spec;
 
 # Enables command window to be accessed by Perl
-$ENV{PATH} .= ";C:\\windows\\command".";c:\\windows\\system32".";c:\\winnt\\system32";
+$ENV{PATH} .= ";C:\\windows\\command".";c:\\windows\\system32".";c:\\winnt\\system32".";c:\\matlab\\bin";
 
-my $proj_root;
-my @split_list;
-my @tmp_arr;
-my $tmp_str;
-my $cfg_filename;
-my $master_cfg_filename_root = $ARGV[0];
+    my $proj_root;
+    my @split_list;
+    my @tmp_arr;
+    my $tmp_str;
+    my $cfg_filename;
+    my $master_cfg_filename_root = $ARGV[0];
+    my $option = $ARGV[1];
 
     # Add cfg filepath to the command line argument specifying the cfg filename
     my $master_cfg_filename = "..\\model\\cfg\\${master_cfg_filename_root}.m";
@@ -24,7 +24,6 @@ my $master_cfg_filename_root = $ARGV[0];
 
     # Path to copy all cfg and source files to exp directory
     my $exp_subdirectory = "$proj_root\\exp\\$master_cfg_filename_root";
-   
     
     print( "\n" );
     print( "============================================================================\n" );
@@ -36,6 +35,19 @@ my $master_cfg_filename_root = $ARGV[0];
     open (my $fh, '<', $master_cfg_filename)
         or die "Could not open file '$master_cfg_filename' $!";
        
+    if (-e $exp_subdirectory)
+    {
+        if (defined $option && $option eq "-f") 
+        {
+            print("directory exists, overwriting results\n");
+        }
+        else
+        {
+            print("This directory/experiment already exists");
+            die;
+        }
+    }
+
     # Create subfolder under exp named after the master cfg file 
     system( "mkdir $exp_subdirectory");
 
@@ -43,7 +55,7 @@ my $master_cfg_filename_root = $ARGV[0];
     copy($master_cfg_filename, "$exp_subdirectory/master_cfg.m");
     
     # Step through each line of the master cfg file
-    while (<$fh>)
+    while (<$fh>) 
     {
         # Strip out the newline characters
         chomp;
@@ -62,16 +74,10 @@ my $master_cfg_filename_root = $ARGV[0];
             # Append the .m extension, to get the filename
             $cfg_filename = $2;
             
-            
-
             if (defined $cfg_filename)
             {
                 $cfg_filename = $proj_root."\\model\\cfg\\"."${cfg_filename}.m";
-                #print "\t$cfg_filename\n";
-                
-                # Create subfolder under exp named after the master cfg file 
-                system( "mkdir $exp_subdirectory");
-               
+            
                 # Copy the cfg files into the newly created subfolder
                 copy($cfg_filename, $exp_subdirectory);
                                 
@@ -79,26 +85,32 @@ my $master_cfg_filename_root = $ARGV[0];
         }
     }  
     
-    closedir($fh);
+    close($fh);
 
-# Add src filepath to the command line argument specifying the src filename
-my $source_filename = "..\\model\\src\\";
+    # Add src filepath to the command line argument specifying the src filename
+    my $source_dir = "..\\model\\src\\";
 
-    opendir (my $DIR, $source_filename)
-        or die "can't opendir $source_filename: $!";  
+    # Open src directory
+    opendir (my $DIR, $source_dir)
+        or die "can't opendir $source_dir: $!";  
     
-    # All files are read from the source directory that is open
+    # All files are read from the src directory
     my @files = readdir($DIR);
 
     # For each of the files in the directory, they are copied and placed into the exp subdirectory
     foreach my $t (@files)
     {
        # If file is a plain file in the src directory
-       if(-f "$source_filename/$t" ) {
+       if(-f "$source_dir/$t" ) {
           
-          copy ("$source_filename/$t", "$exp_subdirectory/$t");
+          copy ("$source_dir/$t", "$exp_subdirectory/$t");
        }
     }
     closedir($DIR);
-
-
+         
+    # Create new string variable that will be read by the matlab shell
+    # Make sure no spaces in string file or matlab will not ignore anything after space
+    my $matlabcom = "pwd='$exp_subdirectory';cd(pwd);ANC_Model";
+            
+    # Run the ANC_Model file within the new subfolder
+    system("matlab -nosplash -nodesktop -noFigureWindows -r ${matlabcom}");

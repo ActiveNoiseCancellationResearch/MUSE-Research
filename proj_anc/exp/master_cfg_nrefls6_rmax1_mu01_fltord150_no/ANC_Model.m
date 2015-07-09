@@ -11,7 +11,7 @@ master_cfg;
 ui_data = ui_data(:,1);
 [di_data,di_fs] = audioread(strcat(getenv('PROJ_ANC'), '\model\stimulus\', di_filename));  % reading .wav file as desired sound
 di_data = di_data(:,1);
-n_samps = min(660000,numel(ui_data));  
+n_samps = min(50000,numel(ui_data));  
 
 ls_model = ANC_Filter(ls_coeffs);                                       % instantiates a new filter as ls_model
 hs_model = ANC_Filter(hs_coeffs);                                       % instantiates a new filter as hs_model
@@ -86,5 +86,5 @@ saveas(a, 'varietygraph.png')
 plot_probes(canceller);
 save_probe_plot(canceller)
 
-
+quit;
 
