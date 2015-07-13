@@ -30,7 +30,10 @@
 #include "canceller.h"
 #include "ANC.h"
 #include <stdlib.h>
-extern int16_t *cap_array;
+#include <stdio.h>
+#include <string.h>
+    
+uint8 cap_array[NUM_SAMPS_TO_CAPTURE];
 extern int n;
 extern int wave_table[WAVESIZE];
 /* `#END` */
@@ -170,17 +173,16 @@ CY_ISR(isr_Interrupt)
     #define NUM_TONES (1)                 // number of tones to be generated
                            // Discrete time index
     static int wave_idx=0;
-    int freqs[] = { 256 };                // Array of tone frequencies, in Hz
-    int ampls[] = { 16000 };              // Array of tone amplitudes, C1.0.15, roughly 0.5 for now
-    int T       = (1<<20)/20000;          // Samping period, in 1/2^20) seconds //16*1024 (would be nicer)
-    int k;
-    int value;
+//    int freqs[] = { 256 };                // Array of tone frequencies, in Hz
+//    int ampls[] = { 16000 };              // Array of tone amplitudes, C1.0.15, roughly 0.5 for now
+//    int T       = (1<<20)/20000;          // Samping period, in 1/2^20) seconds //16*1024 (would be nicer)
+//    int k;
+//    int value;
     int x=0;
     int e_;
     int i;
    
  
-    Pin_6_Write(n);
 //  for (k = 0 ; k<NUM_TONES ; ++k)
 //  {
 //      value = n*T*freqs[k]/(1<<5);
@@ -190,8 +192,8 @@ CY_ISR(isr_Interrupt)
 //  }
 //            
 //              
-//  x = (x>>4);                           //now a 8bit 2's comp value
-//  x+=128;                               //Offset binary. VDAC wants this
+//    x = (x>>4);                           //now a 8bit 2's comp value
+//    x+=128;                               //Offset binary. VDAC wants this
      
 //    x = wave_table[wave_idx];
 //    x=(x)>>5;                             // rounds to an 8 bit number
@@ -220,17 +222,25 @@ CY_ISR(isr_Interrupt)
         
     if (n < NUM_SAMPS_TO_CAPTURE)
     {
-        cap_array[n] = e_;
+        cap_array[n] = e_>>4;
         ++n;
     }
-    else
+    else if (n == NUM_SAMPS_TO_CAPTURE)
     {
+        int the_val;
+        char my_string[32];
+        int length;
         
+        for(i=0;i<NUM_SAMPS_TO_CAPTURE;++i)
+            {
+                the_val = cap_array[i];
+                sprintf(my_string ,"%d\n", the_val & 0xFFFF);
+                length = strlen(my_string);
+                UART_1_PutArray( (uint8 *) my_string, length); 
+            }
+        
+        ++n;
     }
-   
-    
-    
-    Pin_5_Write(n);
 }        
 
     /* `#END` */

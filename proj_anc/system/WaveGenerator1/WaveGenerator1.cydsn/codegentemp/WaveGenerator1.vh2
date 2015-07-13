@@ -2,7 +2,7 @@
 --	Conversion of WaveGenerator1.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Wed Jul 08 13:23:05 2015
+--	Mon Jul 13 14:14:33 2015
 --
 
 USE cypress.cypress.all;
@@ -57,14 +57,8 @@ SIGNAL \ADC_SAR:Net_207_3\ : bit;
 SIGNAL \ADC_SAR:Net_207_2\ : bit;
 SIGNAL \ADC_SAR:Net_207_1\ : bit;
 SIGNAL \ADC_SAR:Net_207_0\ : bit;
-TERMINAL \ADC_SAR:Net_210\ : bit;
-SIGNAL \ADC_SAR:tmpOE__Bypass_net_0\ : bit;
-SIGNAL \ADC_SAR:tmpFB_0__Bypass_net_0\ : bit;
-SIGNAL \ADC_SAR:tmpIO_0__Bypass_net_0\ : bit;
-TERMINAL \ADC_SAR:tmpSIOVREF__Bypass_net_0\ : bit;
-SIGNAL \ADC_SAR:tmpINTERRUPT_0__Bypass_net_0\ : bit;
-TERMINAL \ADC_SAR:Net_149\ : bit;
 TERMINAL \ADC_SAR:Net_209\ : bit;
+TERMINAL \ADC_SAR:Net_149\ : bit;
 TERMINAL \ADC_SAR:Net_255\ : bit;
 TERMINAL \ADC_SAR:Net_368\ : bit;
 SIGNAL \ADC_SAR:Net_381\ : bit;
@@ -367,7 +361,7 @@ Clock:cy_clock_v1_0
 		id=>"b9b9f0fd-f2db-406b-b922-74c4e3998dd3/696a0979-21fc-4185-bf38-6c79febcde7a",
 		source_clock_id=>"",
 		divisor=>0,
-		period=>"999992000.064",
+		period=>"1000000000",
 		is_direct=>'0',
 		is_digital=>'1')
 	PORT MAP(clock_out=>\ADC_SAR:Net_376\,
@@ -395,76 +389,7 @@ Clock:cy_clock_v1_0
 	GENERIC MAP(sig_width=>1,
 		is_net_join=>'0')
 	PORT MAP(signal1=>\ADC_SAR:Net_215\,
-		signal2=>\ADC_SAR:Net_210\);
-\ADC_SAR:Bypass\:cy_psoc3_pins_v1_10
-	GENERIC MAP(id=>"b9b9f0fd-f2db-406b-b922-74c4e3998dd3/16a808f6-2e13-45b9-bce0-b001c8655113",
-		drive_mode=>"000",
-		ibuf_enabled=>"0",
-		init_dr_st=>"0",
-		input_sync=>"1",
-		input_clk_en=>'0',
-		input_sync_mode=>"0",
-		intr_mode=>"00",
-		invert_in_clock=>'0',
-		invert_in_clock_en=>'0',
-		invert_in_reset=>'0',
-		invert_out_clock=>'0',
-		invert_out_clock_en=>'0',
-		invert_out_reset=>'0',
-		io_voltage=>"",
-		layout_mode=>"CONTIGUOUS",
-		output_conn=>"0",
-		output_sync=>"0",
-		output_clk_en=>'0',
-		output_mode=>"0",
-		output_reset=>'0',
-		output_clock_mode=>"0",
-		oe_sync=>"0",
-		oe_conn=>"0",
-		oe_reset=>'0',
-		pin_aliases=>"",
-		pin_mode=>"A",
-		por_state=>4,
-		sio_group_cnt=>0,
-		sio_hifreq=>"",
-		sio_hyst=>"0",
-		sio_ibuf=>"00000000",
-		sio_info=>"00",
-		sio_obuf=>"00000000",
-		sio_refsel=>"00000000",
-		sio_vtrip=>"00000000",
-		slew_rate=>"0",
-		spanning=>'0',
-		sw_only=>'0',
-		vtrip=>"10",
-		width=>1,
-		port_alias_required=>'0',
-		port_alias_group=>"",
-		use_annotation=>"0",
-		pa_in_clock=>-1,
-		pa_in_clock_en=>-1,
-		pa_in_reset=>-1,
-		pa_out_clock=>-1,
-		pa_out_clock_en=>-1,
-		pa_out_reset=>-1,
-		ovt_needed=>"",
-		ovt_slew_control=>"",
-		ovt_hyst_trim=>"",
-		input_buffer_sel=>"")
-	PORT MAP(oe=>(tmpOE__Pin_1_net_0),
-		y=>(zero),
-		fb=>(\ADC_SAR:tmpFB_0__Bypass_net_0\),
-		analog=>\ADC_SAR:Net_210\,
-		io=>(\ADC_SAR:tmpIO_0__Bypass_net_0\),
-		siovref=>(\ADC_SAR:tmpSIOVREF__Bypass_net_0\),
-		annotation=>(open),
-		in_clock=>zero,
-		in_clock_en=>tmpOE__Pin_1_net_0,
-		in_reset=>zero,
-		out_clock=>zero,
-		out_clock_en=>tmpOE__Pin_1_net_0,
-		out_reset=>zero,
-		interrupt=>\ADC_SAR:tmpINTERRUPT_0__Bypass_net_0\);
+		signal2=>\ADC_SAR:Net_209\);
 \ADC_SAR:cy_analog_virtualmux_1_connect\:cy_connect_v1_0
 	GENERIC MAP(sig_width=>1,
 		is_net_join=>'0')

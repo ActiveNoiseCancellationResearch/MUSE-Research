@@ -13,5 +13,5 @@
 #define FP_SHIFT (12)
 #define FP_ROUND (1<<(FP_SHIFT-1))
 #define WAVESIZE (20)
-#define NUM_SAMPS_TO_CAPTURE (20000)
+#define NUM_SAMPS_TO_CAPTURE (30000)
 /* [] END OF FILE */

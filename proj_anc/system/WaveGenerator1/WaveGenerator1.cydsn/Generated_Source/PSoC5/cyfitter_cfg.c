@@ -133,7 +133,7 @@ CYPACKED typedef struct
 #define cy_cfg_data_table ((const cy_cfg_addrvalue_t CYFAR *)0x48000060u)
 
 /* IOPINS0_0 Address: CYREG_PRT0_DR Size (bytes): 10 */
-#define BS_IOPINS0_0_VAL ((const uint8 CYFAR *)0x480001E8u)
+#define BS_IOPINS0_0_VAL ((const uint8 CYFAR *)0x480001ECu)
 
 
 /*******************************************************************************
@@ -266,12 +266,11 @@ static void AnalogSetDefault(void)
 	CY_SET_XTND_REG8((void CYFAR *)(CYREG_RESET_CR4), (cr4 | 0x03u));
 	CY_SET_XTND_REG8((void CYFAR *)(CYREG_RESET_CR5), (cr5 | 0x03u));
 	CY_SET_XTND_REG16((void CYFAR *)CYREG_PRT0_AMUX, 0x0308u);
-	CY_SET_XTND_REG8((void CYFAR *)CYREG_SAR1_CSR1, 0x80u);
+	CY_SET_XTND_REG8((void CYFAR *)CYREG_SAR0_CSR1, 0x80u);
 	CY_SET_XTND_REG8((void CYFAR *)CYREG_DAC0_SW3, 0x01u);
 	CY_SET_XTND_REG8((void CYFAR *)CYREG_DAC2_SW0, 0x10u);
-	CY_SET_XTND_REG8((void CYFAR *)CYREG_SAR1_SW0, 0x20u);
-	CY_SET_XTND_REG8((void CYFAR *)CYREG_SAR1_SW3, 0x20u);
-	CY_SET_XTND_REG8((void CYFAR *)CYREG_BUS_SW0, 0x20u);
+	CY_SET_XTND_REG8((void CYFAR *)CYREG_SAR0_SW0, 0x20u);
+	CY_SET_XTND_REG8((void CYFAR *)CYREG_SAR0_SW3, 0x20u);
 	CY_SET_XTND_REG8((void CYFAR *)(CYREG_RESET_CR5), (cr5));
 	CY_SET_XTND_REG8((void CYFAR *)(CYREG_RESET_CR4), (cr4));
 	CY_SET_XTND_REG8((void CYFAR *)CYREG_PUMP_CR0, 0x44u);

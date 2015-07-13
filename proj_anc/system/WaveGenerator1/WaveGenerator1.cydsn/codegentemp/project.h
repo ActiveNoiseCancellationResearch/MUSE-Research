@@ -33,8 +33,6 @@
 #include "UART_1.h"
 #include "ADC_SAR_IRQ.h"
 #include "ADC_SAR_theACLK.h"
-#include "ADC_SAR_Bypass_aliases.h"
-#include "ADC_SAR_Bypass.h"
 #include "UART_1_IntClock.h"
 #include "core_cm3_psoc5.h"
 #include "core_cm3.h"

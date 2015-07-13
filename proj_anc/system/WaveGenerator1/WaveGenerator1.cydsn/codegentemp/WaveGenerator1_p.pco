@@ -13,7 +13,7 @@ set_location "\UART_1:BUART:sTX:TxSts\" statusicell 3 4 4
 set_location "\UART_1:BUART:sTX:sCLOCK:TxBitClkGen\" datapathcell 2 4 2 
 set_location "Net_130" macrocell 3 4 0 3
 set_location "\UART_1:BUART:tx_bitclk\" macrocell 2 4 1 2
-set_location "\ADC_SAR:ADC_SAR\" sarcell -1 -1 1
+set_location "\ADC_SAR:ADC_SAR\" sarcell -1 -1 0
 set_location "isr" interrupt -1 -1 1
 set_location "\ADC_SAR:IRQ\" interrupt -1 -1 0
 set_location "ClockBlock" clockblockcell -1 -1 0
@@ -23,4 +23,3 @@ set_location "\VDAC8_2_ls:viDAC8\" vidaccell -1 -1 0
 set_io "Pin_1(0)" iocell 0 0
 set_io "Pin_2(0)" iocell 0 1
 set_io "Pin_4(0)" iocell 0 3
-set_io "\ADC_SAR:Bypass(0)\" iocell 0 2

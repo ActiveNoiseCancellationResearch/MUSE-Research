@@ -33,7 +33,7 @@
 #include <stdio.h>
 #include <string.h>
     
-int16_t cap_array[NUM_SAMPS_TO_CAPTURE];
+uint8 cap_array[NUM_SAMPS_TO_CAPTURE];
 extern int n;
 extern int wave_table[WAVESIZE];
 /* `#END` */
@@ -173,11 +173,11 @@ CY_ISR(isr_Interrupt)
     #define NUM_TONES (1)                 // number of tones to be generated
                            // Discrete time index
     static int wave_idx=0;
-    int freqs[] = { 256 };                // Array of tone frequencies, in Hz
-    int ampls[] = { 16000 };              // Array of tone amplitudes, C1.0.15, roughly 0.5 for now
-    int T       = (1<<20)/20000;          // Samping period, in 1/2^20) seconds //16*1024 (would be nicer)
-    int k;
-    int value;
+//    int freqs[] = { 256 };                // Array of tone frequencies, in Hz
+//    int ampls[] = { 16000 };              // Array of tone amplitudes, C1.0.15, roughly 0.5 for now
+//    int T       = (1<<20)/20000;          // Samping period, in 1/2^20) seconds //16*1024 (would be nicer)
+//    int k;
+//    int value;
     int x=0;
     int e_;
     int i;
@@ -192,14 +192,14 @@ CY_ISR(isr_Interrupt)
 //  }
 //            
 //              
-//  x = (x>>4);                           //now a 8bit 2's comp value
-//  x+=128;                               //Offset binary. VDAC wants this
+//    x = (x>>4);                           //now a 8bit 2's comp value
+//    x+=128;                               //Offset binary. VDAC wants this
      
-//    x = wave_table[wave_idx];
-//    x=(x)>>5;                             // rounds to an 8 bit number
-//    x=x+128;                              // converts from 2's comp to offset binary
+    x = wave_table[wave_idx];
+    x=(x)>>5;                             // rounds to an 8 bit number
+    x=x+128;                              // converts from 2's comp to offset binary
 //      
-    x = rand();   
+//    x = rand();   
     //fixed point -1 to 1                   double(x)/2^31(2 billion)
     VDAC8_2_ls_SetValue(x);
     
@@ -222,7 +222,7 @@ CY_ISR(isr_Interrupt)
         
     if (n < NUM_SAMPS_TO_CAPTURE)
     {
-        cap_array[n] = e_;
+        cap_array[n] = e_>>4;
         ++n;
     }
     else if (n == NUM_SAMPS_TO_CAPTURE)
@@ -244,6 +244,7 @@ CY_ISR(isr_Interrupt)
 }        
 
     /* `#END` */
+
 
 
 /*******************************************************************************

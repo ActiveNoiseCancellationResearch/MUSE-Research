@@ -1,6 +1,6 @@
 -- ======================================================================
 -- WaveGenerator1.ctl generated from WaveGenerator1
--- 07/08/2015 at 13:23
+-- 07/13/2015 at 14:14
 -- This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 -- ======================================================================
 
