@@ -4,32 +4,34 @@ use strict;
 use warnings;
 use File::Path;
 use File::Copy;
+use File::Spec::Functions;
 
 # Enables command window to be accessed by Perl
-$ENV{PATH} .= ";C:\\windows\\command".";c:\\windows\\system32".";c:\\winnt\\system32".";c:\\matlab\\bin";
-
+$ENV{PATH} .= ";C:/windows/command".";c:/windows/system32".";c:/winnt/system32".";c:/matlab/bin";
     my $proj_root;
     my @split_list;
     my @tmp_arr;
     my $tmp_str;
     my $cfg_filename;
     my $master_cfg_filename_root = $ARGV[0];
-    my $mu = $ARGV[1};
+    my $mu = $ARGV[1];
     my $option = $ARGV[2];
+    my $result;
 
     # Add cfg filepath to the command line argument specifying the cfg filename
-    my $master_cfg_filename = "..\\model\\cfg\\${master_cfg_filename_root}.m";
+    my $master_cfg_filename = catfile("../model/cfg","${master_cfg_filename_root}.m");
 
     # Pull the %PROJ_ANC% environment variable (user must set this variable by configuring Windows)
     $proj_root = $ENV{"PROJ_ANC"};
 
-    # Path to copy all cfg and source files to exp directory
-    my $exp_subdirectory = "$proj_root\\exp\\$master_cfg_filename_root";
+   # Path to copy all cfg and source files to exp directory
+    my $exp_subdirectory = catdir($proj_root, "exp", $master_cfg_filename_root);
     
     print( "\n" );
     print( "============================================================================\n" );
-    print( "Master Configuration File is at: ${master_cfg_filename}\n" );
-    print( "Project ROOT is at: ${proj_root}\n" );
+    print( "Master Configuration File is at:    ${master_cfg_filename}\n" );
+    print( "Project ROOT is at:                 ${proj_root}\n" );
+    print( "Experiment subdirectory is at:      ${exp_subdirectory}\n" );
     print( "============================================================================\n" );
     print( "\n" );
     
@@ -40,20 +42,23 @@ $ENV{PATH} .= ";C:\\windows\\command".";c:\\windows\\system32".";c:\\winnt\\syst
     {
         if (defined $option && $option eq "-f") 
         {
-            print("directory exists, overwriting results\n");
+            print("\nDirectory exists, overwriting results\n");
         }
         else
         {
-            print("This directory/experiment already exists");
+            print("\nThis directory/experiment already exists\n");
             die;
         }
     }
 
     # Create subfolder under exp named after the master cfg file 
-    system( "mkdir $exp_subdirectory");
+    my $sys_cmd = "mkdir ${exp_subdirectory}";
+    print( "\nRunning:\n\n${sys_cmd}\n\n   " );
+    system($sys_cmd);
 
     # Copy the master cfg into the newly created subfolder and renaming to standardize the master cfg file
-    copy($master_cfg_filename, "$exp_subdirectory/master_cfg.m");
+    copy($master_cfg_filename, catfile("$exp_subdirectory", "master_cfg.m") )
+        or die "\nFailed to copy master_cfg.m to ${exp_subdirectory}\n";
     
     # Step through each line of the master cfg file
     while (<$fh>) 
@@ -77,10 +82,11 @@ $ENV{PATH} .= ";C:\\windows\\command".";c:\\windows\\system32".";c:\\winnt\\syst
             
             if (defined $cfg_filename)
             {
-                $cfg_filename = $proj_root."\\model\\cfg\\"."${cfg_filename}.m";
+                $cfg_filename = catfile( "$proj_root", "/model/cfg", "${cfg_filename}.m");
             
                 # Copy the cfg files into the newly created subfolder
-                copy($cfg_filename, $exp_subdirectory);
+                copy($cfg_filename, $exp_subdirectory)
+                    or die "\nFailed to copy to ${exp_subdirectory}\n";
                                 
             }
         }
@@ -91,12 +97,12 @@ $ENV{PATH} .= ";C:\\windows\\command".";c:\\windows\\system32".";c:\\winnt\\syst
     open(my $fhh, '>>', $master_cfg_filename)
         or die "Could not open and append  to file '$master_cfg_filename' $!";
 
-    print( "mu = $mu" );
+    say $fhh "mu = $mu";
    
     close($fhh); 
 
     # Add src filepath to the command line argument specifying the src filename
-    my $source_dir = "..\\model\\src\\";
+    my $source_dir = catdir("../model", "src");
 
     # Open src directory
     opendir (my $DIR, $source_dir)
@@ -108,17 +114,24 @@ $ENV{PATH} .= ";C:\\windows\\command".";c:\\windows\\system32".";c:\\winnt\\syst
     # For each of the files in the directory, they are copied and placed into the exp subdirectory
     foreach my $t (@files)
     {
-       # If file is a plain file in the src directory
-       if(-f "$source_dir/$t" ) {
-          
-          copy ("$source_dir/$t", "$exp_subdirectory/$t");
-       }
+        my $src_file;
+        
+        $src_file = catfile( $source_dir, $t );
+        
+        # If file is a plain file in the src directory
+        if(-f $src_file )
+        {
+            copy ($src_file, "$exp_subdirectory");
+        }
     }
     closedir($DIR);
          
     # Create new string variable that will be read by the matlab shell
     # Make sure no spaces in string file or matlab will not ignore anything after space
-    my $matlabcom = "pwd='$exp_subdirectory';cd(pwd);ANC_Model";
+     
+    #    my $matlabcom = "matlab -r "."pwd='$exp_subdirectory';cd(pwd);ANC_Model";
+    my $matlabcom = "matlab -nosplash -nodesktop -noFigureWindows -r "."pwd='$exp_subdirectory';cd(pwd);ANC_Model";
             
     # Run the ANC_Model file within the new subfolder
-    system("matlab -nosplash -nodesktop -noFigureWindows -r ${matlabcom}");
+    print( "\nRunning:\n\n${matlabcom}\n\n   " );
+    system($matlabcom);
