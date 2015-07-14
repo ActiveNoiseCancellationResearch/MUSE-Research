@@ -51,7 +51,7 @@ audiowrite('output_e.wav',e,ui_fs);
 figure;
 a = subplot (4,2,1);
 plot(ui_data)
-title('ui_data')
+title('ui\_data')
 
 subplot (4,2,2);
 plot(e)
@@ -63,7 +63,7 @@ title('sse')
 
 subplot (4,2,4);
 plot(x_)
-title('x_')
+title('x\_')
 
 subplot (4,2,5);
 plot(y)
@@ -79,7 +79,7 @@ title('d')
 
 subplot (4,2,8);
 plot(e_)
-title('e_')
+title('e\_')
 
 saveas(a, 'varietygraph.png')
 
