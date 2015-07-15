@@ -7,5 +7,4 @@ hs_cfg_max05_n6;                                                           % con
 ra_cfg_nrefls6_rmax1;                                                   % config file #1 to set values that are fed into room_acoustics_to_coeffs
 canceller_cfg_mu01_fltord150_no;
 
-
-mu = 0.01
+ canc_mu = 0.1
