@@ -83,7 +83,7 @@ $ENV{PATH} .= ";C:/windows/command".";c:/windows/system32".";c:/winnt/system32".
             if (defined $cfg_filename)
             {
                 $cfg_filename = catfile( "$proj_root", "/model/cfg", "${cfg_filename}.m");
-            
+                print( "\n\nAbout to copy $cfg_filename to $exp_subdirectory \n\n");
                 # Copy the cfg files into the newly created subfolder
                 copy($cfg_filename, $exp_subdirectory)
                     or die "\nFailed to copy to ${exp_subdirectory}\n";
