@@ -8,3 +8,4 @@ ra_cfg_nrefls6_rmax1;                                                   % config
 canceller_cfg_mu01_fltord150_no;
 
 
+mu = 0.01
