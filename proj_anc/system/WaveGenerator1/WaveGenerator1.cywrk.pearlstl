@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="WaveGenerator1\WaveGenerator1\TopDesign">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="WaveGenerator1\WaveGenerator1\Source Files\main.c">
 <ExpandedNodeIds>
 <v>WaveGenerator1</v>
 <v>WaveGenerator1\WaveGenerator1</v>
@@ -23,6 +23,7 @@
 <v>WaveGenerator1\WaveGenerator1\Header Files\ANC.h</v>
 <v>WaveGenerator1\WaveGenerator1\Header Files\canceller.h</v>
 <v>WaveGenerator1\WaveGenerator1\Header Files\hs_model.h</v>
+<v>WaveGenerator1\WaveGenerator1\Header Files\hs_model_coeffs.h</v>
 <v>WaveGenerator1\WaveGenerator1\Header Files\mic_model.h</v>
 <v>WaveGenerator1\WaveGenerator1\Source Files</v>
 <v>WaveGenerator1\WaveGenerator1\Source Files\canceller.c</v>
@@ -35,10 +36,6 @@
 <v>WaveGenerator1\WaveGenerator1\Generated_Source\PSoC5\ADC_SAR\ADC_SAR.h</v>
 <v>WaveGenerator1\WaveGenerator1\Generated_Source\PSoC5\ADC_SAR\ADC_SAR_INT.c</v>
 <v>WaveGenerator1\WaveGenerator1\Generated_Source\PSoC5\ADC_SAR\ADC_SAR_PM.c</v>
-<v>WaveGenerator1\WaveGenerator1\Generated_Source\PSoC5\ADC_SAR_Bypass</v>
-<v>WaveGenerator1\WaveGenerator1\Generated_Source\PSoC5\ADC_SAR_Bypass\ADC_SAR_Bypass.c</v>
-<v>WaveGenerator1\WaveGenerator1\Generated_Source\PSoC5\ADC_SAR_Bypass\ADC_SAR_Bypass.h</v>
-<v>WaveGenerator1\WaveGenerator1\Generated_Source\PSoC5\ADC_SAR_Bypass\ADC_SAR_Bypass_aliases.h</v>
 <v>WaveGenerator1\WaveGenerator1\Generated_Source\PSoC5\ADC_SAR_IRQ</v>
 <v>WaveGenerator1\WaveGenerator1\Generated_Source\PSoC5\ADC_SAR_IRQ\ADC_SAR_IRQ.c</v>
 <v>WaveGenerator1\WaveGenerator1\Generated_Source\PSoC5\ADC_SAR_IRQ\ADC_SAR_IRQ.h</v>
@@ -132,6 +129,7 @@
 <v>WaveGenerator1\WaveGenerator1\Header Files\ANC.h</v>
 <v>WaveGenerator1\WaveGenerator1\Header Files\canceller.h</v>
 <v>WaveGenerator1\WaveGenerator1\Header Files\hs_model.h</v>
+<v>WaveGenerator1\WaveGenerator1\Header Files\hs_model_coeffs.h</v>
 <v>WaveGenerator1\WaveGenerator1\Header Files\mic_model.h</v>
 <v>WaveGenerator1\WaveGenerator1\Source Files</v>
 <v>WaveGenerator1\WaveGenerator1\Source Files\canceller.c</v>
@@ -165,7 +163,6 @@
 <v>WaveGenerator1\WaveGenerator1\CortexM3\ARM_GCC_484\Debug</v>
 <v>WaveGenerator1\WaveGenerator1\CortexM3\ARM_GCC_484\Debug\Listing Files</v>
 <v>WaveGenerator1\WaveGenerator1\CortexM3\ARM_GCC_484\Debug\Listing Files\ADC_SAR.lst</v>
-<v>WaveGenerator1\WaveGenerator1\CortexM3\ARM_GCC_484\Debug\Listing Files\ADC_SAR_Bypass.lst</v>
 <v>WaveGenerator1\WaveGenerator1\CortexM3\ARM_GCC_484\Debug\Listing Files\ADC_SAR_INT.lst</v>
 <v>WaveGenerator1\WaveGenerator1\CortexM3\ARM_GCC_484\Debug\Listing Files\ADC_SAR_IRQ.lst</v>
 <v>WaveGenerator1\WaveGenerator1\CortexM3\ARM_GCC_484\Debug\Listing Files\ADC_SAR_PM.lst</v>
@@ -208,41 +205,8 @@
 <VisibleNodeIds>
 <v>WaveGenerator1</v>
 <v>WaveGenerator1\WaveGenerator1</v>
-<v>WaveGenerator1\WaveGenerator1\CortexM3</v>
-<v>WaveGenerator1\WaveGenerator1\CortexM3\ARM_GCC_484</v>
-<v>WaveGenerator1\WaveGenerator1\CortexM3\ARM_GCC_484\Debug</v>
-<v>WaveGenerator1\WaveGenerator1\CortexM3\ARM_GCC_484\Debug\Listing Files</v>
-<v>WaveGenerator1\WaveGenerator1\CortexM3\ARM_GCC_484\Debug\Listing Files\ADC_SAR.lst</v>
-<v>WaveGenerator1\WaveGenerator1\CortexM3\ARM_GCC_484\Debug\Listing Files\ADC_SAR_Bypass.lst</v>
-<v>WaveGenerator1\WaveGenerator1\CortexM3\ARM_GCC_484\Debug\Listing Files\ADC_SAR_INT.lst</v>
-<v>WaveGenerator1\WaveGenerator1\CortexM3\ARM_GCC_484\Debug\Listing Files\ADC_SAR_IRQ.lst</v>
-<v>WaveGenerator1\WaveGenerator1\CortexM3\ARM_GCC_484\Debug\Listing Files\ADC_SAR_PM.lst</v>
-<v>WaveGenerator1\WaveGenerator1\CortexM3\ARM_GCC_484\Debug\Listing Files\ADC_SAR_theACLK.lst</v>
-<v>WaveGenerator1\WaveGenerator1\CortexM3\ARM_GCC_484\Debug\Listing Files\canceller.lst</v>
-<v>WaveGenerator1\WaveGenerator1\CortexM3\ARM_GCC_484\Debug\Listing Files\Clock.lst</v>
-<v>WaveGenerator1\WaveGenerator1\CortexM3\ARM_GCC_484\Debug\Listing Files\Cm3Start.lst</v>
-<v>WaveGenerator1\WaveGenerator1\CortexM3\ARM_GCC_484\Debug\Listing Files\CyBootAsmGnu.lst</v>
-<v>WaveGenerator1\WaveGenerator1\CortexM3\ARM_GCC_484\Debug\Listing Files\CyDmac.lst</v>
-<v>WaveGenerator1\WaveGenerator1\CortexM3\ARM_GCC_484\Debug\Listing Files\cyfitter_cfg.lst</v>
-<v>WaveGenerator1\WaveGenerator1\CortexM3\ARM_GCC_484\Debug\Listing Files\CyFlash.lst</v>
-<v>WaveGenerator1\WaveGenerator1\CortexM3\ARM_GCC_484\Debug\Listing Files\CyLib.lst</v>
-<v>WaveGenerator1\WaveGenerator1\CortexM3\ARM_GCC_484\Debug\Listing Files\cymetadata.lst</v>
-<v>WaveGenerator1\WaveGenerator1\CortexM3\ARM_GCC_484\Debug\Listing Files\cyPm.lst</v>
-<v>WaveGenerator1\WaveGenerator1\CortexM3\ARM_GCC_484\Debug\Listing Files\CySpc.lst</v>
-<v>WaveGenerator1\WaveGenerator1\CortexM3\ARM_GCC_484\Debug\Listing Files\cyutils.lst</v>
-<v>WaveGenerator1\WaveGenerator1\CortexM3\ARM_GCC_484\Debug\Listing Files\hs_model.lst</v>
-<v>WaveGenerator1\WaveGenerator1\CortexM3\ARM_GCC_484\Debug\Listing Files\isr.lst</v>
-<v>WaveGenerator1\WaveGenerator1\CortexM3\ARM_GCC_484\Debug\Listing Files\main.lst</v>
-<v>WaveGenerator1\WaveGenerator1\CortexM3\ARM_GCC_484\Debug\Listing Files\mic_model.lst</v>
-<v>WaveGenerator1\WaveGenerator1\CortexM3\ARM_GCC_484\Debug\Listing Files\Pin_1.lst</v>
-<v>WaveGenerator1\WaveGenerator1\CortexM3\ARM_GCC_484\Debug\Listing Files\Pin_2.lst</v>
-<v>WaveGenerator1\WaveGenerator1\CortexM3\ARM_GCC_484\Debug\Listing Files\Pin_4.lst</v>
-<v>WaveGenerator1\WaveGenerator1\CortexM3\ARM_GCC_484\Debug\Listing Files\UART_1.lst</v>
-<v>WaveGenerator1\WaveGenerator1\CortexM3\ARM_GCC_484\Debug\Listing Files\UART_1_BOOT.lst</v>
-<v>WaveGenerator1\WaveGenerator1\CortexM3\ARM_GCC_484\Debug\Listing Files\UART_1_INT.lst</v>
-<v>WaveGenerator1\WaveGenerator1\CortexM3\ARM_GCC_484\Debug\Listing Files\UART_1_IntClock.lst</v>
-<v>WaveGenerator1\WaveGenerator1\CortexM3\ARM_GCC_484\Debug\Listing Files\UART_1_PM.lst</v>
-<v>WaveGenerator1\WaveGenerator1\CortexM3\ARM_GCC_484\Debug\Listing Files\VDAC8_1_hs.lst</v>
+<v>WaveGenerator1\WaveGenerator1\WaveGenerator1.rpt</v>
+<v>WaveGenerator1\WaveGenerator1\WaveGenerator1_timing.html</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -293,8 +257,11 @@
 <name v=".\WaveGenerator1.cydsn\main.c" />
 <name v=".\WaveGenerator1.cydsn\TopDesign\TopDesign.cysch" />
 <name v=".\WaveGenerator1.cydsn\Generated_Source\PSoC5\cyfitter_cfg.h" />
-<name v=".\WaveGenerator1.cydsn\Generated_Source\PSoC5\VDAC8_1.h" />
 <name v=".\WaveGenerator1.cydsn\Generated_Source\PSoC5\Cm3Start.c" />
+<name v=".\WaveGenerator1.cydsn\WaveGenerator1.cydwr" />
+<name v=".\WaveGenerator1.cydsn\canceller.c" />
+<name v=".\WaveGenerator1.cydsn\mic_model.c" />
+<name v=".\WaveGenerator1.cydsn\hs_model.c" />
 </OpenDocs>
 <config v="" />
 <AutoUpdate v="true" />

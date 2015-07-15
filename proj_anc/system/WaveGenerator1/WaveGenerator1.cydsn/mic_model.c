@@ -39,8 +39,8 @@ mic_model_new_sample (int x)
             sum+=recent_samps[(wptr-i+FILTER_ORDER)&FO1]*model_coeffs[i];
         }
     sum=(sum+FP_ROUND)>>FP_SHIFT;
-    return sum;        
     wptr=(wptr+1)&FO1;
+    return sum;        
 }
 
 

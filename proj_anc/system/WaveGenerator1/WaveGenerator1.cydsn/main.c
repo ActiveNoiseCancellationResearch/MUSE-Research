@@ -11,9 +11,12 @@
 */
 #include <math.h>
 #include <project.h>
-#include "ANC.h"
 #include <stdio.h>
-int wave_table[WAVESIZE]; 
+#include "ANC.h"
+#include "hs_model.h"
+#include "hs_model_coeffs.h"
+
+int wave_table[WAVESIZE];       // Q20.12 format (signed two's complement, 12 fractional bits)s
 int n=0;
 
 int main()
@@ -29,6 +32,10 @@ int main()
     {
         wave_table[i]=(int)(sin(2.0*3.1416*i/WAVESIZE)*4095); 
     }
+    
+    // The hs_model_coeffs array must be defined in hs_model_coeffs.h !!!
+    hs_model_new( hs_model_coeffs );
+    
     VDAC8_1_hs_Start();
     ADC_SAR_Start();
     VDAC8_2_ls_Start();

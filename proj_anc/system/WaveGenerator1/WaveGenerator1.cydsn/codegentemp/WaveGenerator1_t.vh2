@@ -1,5 +1,5 @@
--- Project:   C:\Users\shubhamt\Documents\PSoC Creator\WaveGenerator1\WaveGenerator1.cydsn\WaveGenerator1.cyprj
--- Generated: 07/13/2015 14:14:45
+-- Project:   C:\Users\pearlstl\Documents\MUSE-Research\proj_anc\system\WaveGenerator1\WaveGenerator1.cydsn\WaveGenerator1.cyprj
+-- Generated: 07/15/2015 11:56:49
 -- PSoC Creator  3.2
 
 ENTITY WaveGenerator1 IS

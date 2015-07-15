@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\cc1qR8PP.s 			page 1
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\cc8oPQGu.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\cc1qR8PP.s 			page 1
   14:.\hs_model.c  **** #define FILTER_ORDER (16)
   15:.\hs_model.c  **** #define FO1 (FILTER_ORDER-1)
   16:.\hs_model.c  **** static int recent_samps [FILTER_ORDER];
-ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\cc1qR8PP.s 			page 2
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\cc8oPQGu.s 			page 2
 
 
   17:.\hs_model.c  **** static int model_coeffs [FILTER_ORDER];
@@ -80,21 +80,22 @@ ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\cc1qR8PP.s 			page 1
   45              		.cfi_def_cfa_register 7
   46 0006 7860     		str	r0, [r7, #4]
   22:.\hs_model.c  ****     int i;
-  23:.\hs_model.c  ****     for (i=0; i<FILTER_ORDER; ++i)
-  47              		.loc 1 23 0
+  23:.\hs_model.c  ****     
+  24:.\hs_model.c  ****     for (i=0; i<FILTER_ORDER; ++i)
+  47              		.loc 1 24 0
   48 0008 0023     		movs	r3, #0
   49 000a FB60     		str	r3, [r7, #12]
   50 000c 10E0     		b	.L2
   51              	.L3:
-  24:.\hs_model.c  ****     {
-  25:.\hs_model.c  ****        recent_samps [i]=0;
-  52              		.loc 1 25 0 discriminator 2
+  25:.\hs_model.c  ****     {
+  26:.\hs_model.c  ****         recent_samps [i]=0;
+  52              		.loc 1 26 0 discriminator 2
   53 000e 0C4B     		ldr	r3, .L4
   54 0010 FA68     		ldr	r2, [r7, #12]
   55 0012 0021     		movs	r1, #0
   56 0014 43F82210 		str	r1, [r3, r2, lsl #2]
-  26:.\hs_model.c  ****        model_coeffs[i]=coeffs[i];
-  57              		.loc 1 26 0 discriminator 2
+  27:.\hs_model.c  ****         model_coeffs[i]=coeffs[i];
+  57              		.loc 1 27 0 discriminator 2
   58 0018 FB68     		ldr	r3, [r7, #12]
   59 001a 9B00     		lsls	r3, r3, #2
   60 001c 7A68     		ldr	r2, [r7, #4]
@@ -103,22 +104,21 @@ ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\cc1qR8PP.s 			page 1
   63 0022 084B     		ldr	r3, .L4+4
   64 0024 FA68     		ldr	r2, [r7, #12]
   65 0026 43F82210 		str	r1, [r3, r2, lsl #2]
-  23:.\hs_model.c  ****     for (i=0; i<FILTER_ORDER; ++i)
-  66              		.loc 1 23 0 discriminator 2
+  24:.\hs_model.c  ****     for (i=0; i<FILTER_ORDER; ++i)
+  66              		.loc 1 24 0 discriminator 2
   67 002a FB68     		ldr	r3, [r7, #12]
   68 002c 0133     		adds	r3, r3, #1
   69 002e FB60     		str	r3, [r7, #12]
   70              	.L2:
-  23:.\hs_model.c  ****     for (i=0; i<FILTER_ORDER; ++i)
-  71              		.loc 1 23 0 is_stmt 0 discriminator 1
+  24:.\hs_model.c  ****     for (i=0; i<FILTER_ORDER; ++i)
+  71              		.loc 1 24 0 is_stmt 0 discriminator 1
   72 0030 FB68     		ldr	r3, [r7, #12]
   73 0032 0F2B     		cmp	r3, #15
   74 0034 EBDD     		ble	.L3
-  27:.\hs_model.c  ****     }
-  28:.\hs_model.c  ****     
+  28:.\hs_model.c  ****     }
   29:.\hs_model.c  **** }
   75              		.loc 1 29 0 is_stmt 1
-ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\cc1qR8PP.s 			page 3
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\cc8oPQGu.s 			page 3
 
 
   76 0036 1437     		adds	r7, r7, #20
@@ -159,510 +159,517 @@ ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\cc1qR8PP.s 			page 1
  107 0004 00AF     		add	r7, sp, #0
  108              		.cfi_def_cfa_register 7
  109 0006 7860     		str	r0, [r7, #4]
-  34:.\hs_model.c  ****     int sum=0;
+  34:.\hs_model.c  ****     int         sum=0;
  110              		.loc 1 34 0
  111 0008 0023     		movs	r3, #0
  112 000a FB60     		str	r3, [r7, #12]
-  35:.\hs_model.c  ****     int i=0;
- 113              		.loc 1 35 0
- 114 000c 0023     		movs	r3, #0
- 115 000e BB60     		str	r3, [r7, #8]
-  36:.\hs_model.c  ****     static int wptr=0;
-  37:.\hs_model.c  ****     recent_samps[wptr]=x;
- 116              		.loc 1 37 0
- 117 0010 164B     		ldr	r3, .L10
- 118 0012 1A68     		ldr	r2, [r3]
- 119 0014 164B     		ldr	r3, .L10+4
- 120 0016 7968     		ldr	r1, [r7, #4]
- 121 0018 43F82210 		str	r1, [r3, r2, lsl #2]
-  38:.\hs_model.c  ****     for (i=0 ; i<FILTER_ORDER ; ++i)
- 122              		.loc 1 38 0
- 123 001c 0023     		movs	r3, #0
-ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\cc1qR8PP.s 			page 4
+  35:.\hs_model.c  ****     int         i;
+  36:.\hs_model.c  ****     static int  wptr=0;
+  37:.\hs_model.c  ****     
+  38:.\hs_model.c  ****     recent_samps[wptr]=x;
+ 113              		.loc 1 38 0
+ 114 000c 194B     		ldr	r3, .L10
+ 115 000e 1A68     		ldr	r2, [r3]
+ 116 0010 194B     		ldr	r3, .L10+4
+ 117 0012 7968     		ldr	r1, [r7, #4]
+ 118 0014 43F82210 		str	r1, [r3, r2, lsl #2]
+  39:.\hs_model.c  ****     
+  40:.\hs_model.c  ****     for (i=0; i<FILTER_ORDER; ++i) 
+ 119              		.loc 1 40 0
+ 120 0018 0023     		movs	r3, #0
+ 121 001a BB60     		str	r3, [r7, #8]
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\cc8oPQGu.s 			page 4
 
 
- 124 001e BB60     		str	r3, [r7, #8]
- 125 0020 14E0     		b	.L7
- 126              	.L8:
-  39:.\hs_model.c  ****         {
-  40:.\hs_model.c  **** 
-  41:.\hs_model.c  ****             sum+=recent_samps[(wptr-i+FILTER_ORDER)&FO1]*model_coeffs[i];
- 127              		.loc 1 41 0 discriminator 2
- 128 0022 124B     		ldr	r3, .L10
- 129 0024 1A68     		ldr	r2, [r3]
- 130 0026 BB68     		ldr	r3, [r7, #8]
- 131 0028 D31A     		subs	r3, r2, r3
- 132 002a 03F00F02 		and	r2, r3, #15
- 133 002e 104B     		ldr	r3, .L10+4
- 134 0030 53F82230 		ldr	r3, [r3, r2, lsl #2]
- 135 0034 0F4A     		ldr	r2, .L10+8
- 136 0036 B968     		ldr	r1, [r7, #8]
- 137 0038 52F82120 		ldr	r2, [r2, r1, lsl #2]
- 138 003c 02FB03F3 		mul	r3, r2, r3
- 139 0040 FA68     		ldr	r2, [r7, #12]
- 140 0042 1344     		add	r3, r3, r2
- 141 0044 FB60     		str	r3, [r7, #12]
-  38:.\hs_model.c  ****     for (i=0 ; i<FILTER_ORDER ; ++i)
- 142              		.loc 1 38 0 discriminator 2
- 143 0046 BB68     		ldr	r3, [r7, #8]
- 144 0048 0133     		adds	r3, r3, #1
- 145 004a BB60     		str	r3, [r7, #8]
- 146              	.L7:
-  38:.\hs_model.c  ****     for (i=0 ; i<FILTER_ORDER ; ++i)
- 147              		.loc 1 38 0 is_stmt 0 discriminator 1
- 148 004c BB68     		ldr	r3, [r7, #8]
- 149 004e 0F2B     		cmp	r3, #15
- 150 0050 E7DD     		ble	.L8
-  42:.\hs_model.c  ****         }
-  43:.\hs_model.c  ****         sum=(sum+FP_ROUND)>>FP_SHIFT;
- 151              		.loc 1 43 0 is_stmt 1
- 152 0052 FB68     		ldr	r3, [r7, #12]
- 153 0054 03F50063 		add	r3, r3, #2048
- 154 0058 1B13     		asrs	r3, r3, #12
- 155 005a FB60     		str	r3, [r7, #12]
-  44:.\hs_model.c  ****         return sum;
- 156              		.loc 1 44 0
- 157 005c FB68     		ldr	r3, [r7, #12]
-  45:.\hs_model.c  ****         
-  46:.\hs_model.c  ****     wptr=(wptr+1)&FO1;
-  47:.\hs_model.c  **** }
- 158              		.loc 1 47 0
- 159 005e 1846     		mov	r0, r3
- 160 0060 1437     		adds	r7, r7, #20
- 161 0062 BD46     		mov	sp, r7
- 162              		@ sp needed
- 163 0064 5DF8047B 		ldr	r7, [sp], #4
- 164 0068 7047     		bx	lr
- 165              	.L11:
- 166 006a 00BF     		.align	2
- 167              	.L10:
- 168 006c 80000000 		.word	wptr.4078
- 169 0070 00000000 		.word	recent_samps
-ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\cc1qR8PP.s 			page 5
+ 122 001c 14E0     		b	.L7
+ 123              	.L8:
+  41:.\hs_model.c  ****     {
+  42:.\hs_model.c  ****         sum+=recent_samps[(wptr-i+FILTER_ORDER)&FO1]*model_coeffs[i];
+ 124              		.loc 1 42 0 discriminator 2
+ 125 001e 154B     		ldr	r3, .L10
+ 126 0020 1A68     		ldr	r2, [r3]
+ 127 0022 BB68     		ldr	r3, [r7, #8]
+ 128 0024 D31A     		subs	r3, r2, r3
+ 129 0026 03F00F02 		and	r2, r3, #15
+ 130 002a 134B     		ldr	r3, .L10+4
+ 131 002c 53F82230 		ldr	r3, [r3, r2, lsl #2]
+ 132 0030 124A     		ldr	r2, .L10+8
+ 133 0032 B968     		ldr	r1, [r7, #8]
+ 134 0034 52F82120 		ldr	r2, [r2, r1, lsl #2]
+ 135 0038 02FB03F3 		mul	r3, r2, r3
+ 136 003c FA68     		ldr	r2, [r7, #12]
+ 137 003e 1344     		add	r3, r3, r2
+ 138 0040 FB60     		str	r3, [r7, #12]
+  40:.\hs_model.c  ****     for (i=0; i<FILTER_ORDER; ++i) 
+ 139              		.loc 1 40 0 discriminator 2
+ 140 0042 BB68     		ldr	r3, [r7, #8]
+ 141 0044 0133     		adds	r3, r3, #1
+ 142 0046 BB60     		str	r3, [r7, #8]
+ 143              	.L7:
+  40:.\hs_model.c  ****     for (i=0; i<FILTER_ORDER; ++i) 
+ 144              		.loc 1 40 0 is_stmt 0 discriminator 1
+ 145 0048 BB68     		ldr	r3, [r7, #8]
+ 146 004a 0F2B     		cmp	r3, #15
+ 147 004c E7DD     		ble	.L8
+  43:.\hs_model.c  ****     }
+  44:.\hs_model.c  **** 
+  45:.\hs_model.c  ****     sum=(sum+FP_ROUND)>>FP_SHIFT;
+ 148              		.loc 1 45 0 is_stmt 1
+ 149 004e FB68     		ldr	r3, [r7, #12]
+ 150 0050 03F50063 		add	r3, r3, #2048
+ 151 0054 1B13     		asrs	r3, r3, #12
+ 152 0056 FB60     		str	r3, [r7, #12]
+  46:.\hs_model.c  ****         
+  47:.\hs_model.c  ****     wptr=(wptr+1)&FO1;
+ 153              		.loc 1 47 0
+ 154 0058 064B     		ldr	r3, .L10
+ 155 005a 1B68     		ldr	r3, [r3]
+ 156 005c 0133     		adds	r3, r3, #1
+ 157 005e 03F00F02 		and	r2, r3, #15
+ 158 0062 044B     		ldr	r3, .L10
+ 159 0064 1A60     		str	r2, [r3]
+  48:.\hs_model.c  **** 
+  49:.\hs_model.c  ****     return sum;
+ 160              		.loc 1 49 0
+ 161 0066 FB68     		ldr	r3, [r7, #12]
+  50:.\hs_model.c  **** }
+ 162              		.loc 1 50 0
+ 163 0068 1846     		mov	r0, r3
+ 164 006a 1437     		adds	r7, r7, #20
+ 165 006c BD46     		mov	sp, r7
+ 166              		@ sp needed
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\cc8oPQGu.s 			page 5
 
 
- 170 0074 40000000 		.word	model_coeffs
- 171              		.cfi_endproc
- 172              	.LFE1:
- 173              		.size	hs_model_new_sample, .-hs_model_new_sample
- 174              		.bss
- 175              		.align	2
- 176              	wptr.4078:
- 177 0080 00000000 		.space	4
- 178              		.text
- 179              	.Letext0:
- 180              		.section	.debug_info,"",%progbits
- 181              	.Ldebug_info0:
- 182 0000 E9000000 		.4byte	0xe9
- 183 0004 0400     		.2byte	0x4
- 184 0006 00000000 		.4byte	.Ldebug_abbrev0
- 185 000a 04       		.byte	0x4
- 186 000b 01       		.uleb128 0x1
- 187 000c A5000000 		.4byte	.LASF5
- 188 0010 01       		.byte	0x1
- 189 0011 10000000 		.4byte	.LASF6
- 190 0015 1D000000 		.4byte	.LASF7
- 191 0019 00000000 		.4byte	.Ldebug_ranges0+0
- 192 001d 00000000 		.4byte	0
- 193 0021 00000000 		.4byte	.Ldebug_line0
- 194 0025 02       		.uleb128 0x2
- 195 0026 98000000 		.4byte	.LASF8
- 196 002a 01       		.byte	0x1
- 197 002b 14       		.byte	0x14
- 198 002c 00000000 		.4byte	.LFB0
- 199 0030 48000000 		.4byte	.LFE0-.LFB0
- 200 0034 01       		.uleb128 0x1
- 201 0035 9C       		.byte	0x9c
- 202 0036 55000000 		.4byte	0x55
- 203 003a 03       		.uleb128 0x3
- 204 003b 00000000 		.4byte	.LASF0
- 205 003f 01       		.byte	0x1
- 206 0040 14       		.byte	0x14
- 207 0041 55000000 		.4byte	0x55
- 208 0045 02       		.uleb128 0x2
- 209 0046 91       		.byte	0x91
- 210 0047 6C       		.sleb128 -20
- 211 0048 04       		.uleb128 0x4
- 212 0049 6900     		.ascii	"i\000"
- 213 004b 01       		.byte	0x1
- 214 004c 16       		.byte	0x16
- 215 004d 5B000000 		.4byte	0x5b
- 216 0051 02       		.uleb128 0x2
- 217 0052 91       		.byte	0x91
- 218 0053 74       		.sleb128 -12
- 219 0054 00       		.byte	0
- 220 0055 05       		.uleb128 0x5
- 221 0056 04       		.byte	0x4
- 222 0057 5B000000 		.4byte	0x5b
- 223 005b 06       		.uleb128 0x6
- 224 005c 04       		.byte	0x4
- 225 005d 05       		.byte	0x5
- 226 005e 696E7400 		.ascii	"int\000"
-ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\cc1qR8PP.s 			page 6
+ 167 006e 5DF8047B 		ldr	r7, [sp], #4
+ 168 0072 7047     		bx	lr
+ 169              	.L11:
+ 170              		.align	2
+ 171              	.L10:
+ 172 0074 80000000 		.word	wptr.4078
+ 173 0078 00000000 		.word	recent_samps
+ 174 007c 40000000 		.word	model_coeffs
+ 175              		.cfi_endproc
+ 176              	.LFE1:
+ 177              		.size	hs_model_new_sample, .-hs_model_new_sample
+ 178              		.bss
+ 179              		.align	2
+ 180              	wptr.4078:
+ 181 0080 00000000 		.space	4
+ 182              		.text
+ 183              	.Letext0:
+ 184              		.section	.debug_info,"",%progbits
+ 185              	.Ldebug_info0:
+ 186 0000 E9000000 		.4byte	0xe9
+ 187 0004 0400     		.2byte	0x4
+ 188 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 189 000a 04       		.byte	0x4
+ 190 000b 01       		.uleb128 0x1
+ 191 000c B6000000 		.4byte	.LASF5
+ 192 0010 01       		.byte	0x1
+ 193 0011 10000000 		.4byte	.LASF6
+ 194 0015 58000000 		.4byte	.LASF7
+ 195 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 196 001d 00000000 		.4byte	0
+ 197 0021 00000000 		.4byte	.Ldebug_line0
+ 198 0025 02       		.uleb128 0x2
+ 199 0026 4B000000 		.4byte	.LASF8
+ 200 002a 01       		.byte	0x1
+ 201 002b 14       		.byte	0x14
+ 202 002c 00000000 		.4byte	.LFB0
+ 203 0030 48000000 		.4byte	.LFE0-.LFB0
+ 204 0034 01       		.uleb128 0x1
+ 205 0035 9C       		.byte	0x9c
+ 206 0036 55000000 		.4byte	0x55
+ 207 003a 03       		.uleb128 0x3
+ 208 003b 00000000 		.4byte	.LASF0
+ 209 003f 01       		.byte	0x1
+ 210 0040 14       		.byte	0x14
+ 211 0041 55000000 		.4byte	0x55
+ 212 0045 02       		.uleb128 0x2
+ 213 0046 91       		.byte	0x91
+ 214 0047 6C       		.sleb128 -20
+ 215 0048 04       		.uleb128 0x4
+ 216 0049 6900     		.ascii	"i\000"
+ 217 004b 01       		.byte	0x1
+ 218 004c 16       		.byte	0x16
+ 219 004d 5B000000 		.4byte	0x5b
+ 220 0051 02       		.uleb128 0x2
+ 221 0052 91       		.byte	0x91
+ 222 0053 74       		.sleb128 -12
+ 223 0054 00       		.byte	0
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\cc8oPQGu.s 			page 6
 
 
- 227 0062 07       		.uleb128 0x7
- 228 0063 84000000 		.4byte	.LASF9
- 229 0067 01       		.byte	0x1
- 230 0068 20       		.byte	0x20
- 231 0069 5B000000 		.4byte	0x5b
- 232 006d 00000000 		.4byte	.LFB1
- 233 0071 78000000 		.4byte	.LFE1-.LFB1
- 234 0075 01       		.uleb128 0x1
- 235 0076 9C       		.byte	0x9c
- 236 0077 B3000000 		.4byte	0xb3
- 237 007b 08       		.uleb128 0x8
- 238 007c 7800     		.ascii	"x\000"
- 239 007e 01       		.byte	0x1
- 240 007f 20       		.byte	0x20
- 241 0080 5B000000 		.4byte	0x5b
- 242 0084 02       		.uleb128 0x2
- 243 0085 91       		.byte	0x91
- 244 0086 6C       		.sleb128 -20
- 245 0087 04       		.uleb128 0x4
- 246 0088 73756D00 		.ascii	"sum\000"
- 247 008c 01       		.byte	0x1
- 248 008d 22       		.byte	0x22
- 249 008e 5B000000 		.4byte	0x5b
- 250 0092 02       		.uleb128 0x2
- 251 0093 91       		.byte	0x91
- 252 0094 74       		.sleb128 -12
- 253 0095 04       		.uleb128 0x4
- 254 0096 6900     		.ascii	"i\000"
- 255 0098 01       		.byte	0x1
- 256 0099 23       		.byte	0x23
- 257 009a 5B000000 		.4byte	0x5b
- 258 009e 02       		.uleb128 0x2
- 259 009f 91       		.byte	0x91
- 260 00a0 70       		.sleb128 -16
- 261 00a1 09       		.uleb128 0x9
- 262 00a2 21010000 		.4byte	.LASF1
- 263 00a6 01       		.byte	0x1
- 264 00a7 24       		.byte	0x24
- 265 00a8 5B000000 		.4byte	0x5b
- 266 00ac 05       		.uleb128 0x5
- 267 00ad 03       		.byte	0x3
- 268 00ae 80000000 		.4byte	wptr.4078
- 269 00b2 00       		.byte	0
- 270 00b3 0A       		.uleb128 0xa
- 271 00b4 5B000000 		.4byte	0x5b
- 272 00b8 C3000000 		.4byte	0xc3
- 273 00bc 0B       		.uleb128 0xb
- 274 00bd C3000000 		.4byte	0xc3
- 275 00c1 0F       		.byte	0xf
- 276 00c2 00       		.byte	0
- 277 00c3 0C       		.uleb128 0xc
- 278 00c4 04       		.byte	0x4
- 279 00c5 07       		.byte	0x7
- 280 00c6 07000000 		.4byte	.LASF2
- 281 00ca 09       		.uleb128 0x9
- 282 00cb 77000000 		.4byte	.LASF3
- 283 00cf 01       		.byte	0x1
-ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\cc1qR8PP.s 			page 7
+ 224 0055 05       		.uleb128 0x5
+ 225 0056 04       		.byte	0x4
+ 226 0057 5B000000 		.4byte	0x5b
+ 227 005b 06       		.uleb128 0x6
+ 228 005c 04       		.byte	0x4
+ 229 005d 05       		.byte	0x5
+ 230 005e 696E7400 		.ascii	"int\000"
+ 231 0062 07       		.uleb128 0x7
+ 232 0063 37000000 		.4byte	.LASF9
+ 233 0067 01       		.byte	0x1
+ 234 0068 20       		.byte	0x20
+ 235 0069 5B000000 		.4byte	0x5b
+ 236 006d 00000000 		.4byte	.LFB1
+ 237 0071 80000000 		.4byte	.LFE1-.LFB1
+ 238 0075 01       		.uleb128 0x1
+ 239 0076 9C       		.byte	0x9c
+ 240 0077 B3000000 		.4byte	0xb3
+ 241 007b 08       		.uleb128 0x8
+ 242 007c 7800     		.ascii	"x\000"
+ 243 007e 01       		.byte	0x1
+ 244 007f 20       		.byte	0x20
+ 245 0080 5B000000 		.4byte	0x5b
+ 246 0084 02       		.uleb128 0x2
+ 247 0085 91       		.byte	0x91
+ 248 0086 6C       		.sleb128 -20
+ 249 0087 04       		.uleb128 0x4
+ 250 0088 73756D00 		.ascii	"sum\000"
+ 251 008c 01       		.byte	0x1
+ 252 008d 22       		.byte	0x22
+ 253 008e 5B000000 		.4byte	0x5b
+ 254 0092 02       		.uleb128 0x2
+ 255 0093 91       		.byte	0x91
+ 256 0094 74       		.sleb128 -12
+ 257 0095 04       		.uleb128 0x4
+ 258 0096 6900     		.ascii	"i\000"
+ 259 0098 01       		.byte	0x1
+ 260 0099 23       		.byte	0x23
+ 261 009a 5B000000 		.4byte	0x5b
+ 262 009e 02       		.uleb128 0x2
+ 263 009f 91       		.byte	0x91
+ 264 00a0 70       		.sleb128 -16
+ 265 00a1 09       		.uleb128 0x9
+ 266 00a2 32010000 		.4byte	.LASF1
+ 267 00a6 01       		.byte	0x1
+ 268 00a7 24       		.byte	0x24
+ 269 00a8 5B000000 		.4byte	0x5b
+ 270 00ac 05       		.uleb128 0x5
+ 271 00ad 03       		.byte	0x3
+ 272 00ae 80000000 		.4byte	wptr.4078
+ 273 00b2 00       		.byte	0
+ 274 00b3 0A       		.uleb128 0xa
+ 275 00b4 5B000000 		.4byte	0x5b
+ 276 00b8 C3000000 		.4byte	0xc3
+ 277 00bc 0B       		.uleb128 0xb
+ 278 00bd C3000000 		.4byte	0xc3
+ 279 00c1 0F       		.byte	0xf
+ 280 00c2 00       		.byte	0
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\cc8oPQGu.s 			page 7
 
 
- 284 00d0 10       		.byte	0x10
- 285 00d1 B3000000 		.4byte	0xb3
- 286 00d5 05       		.uleb128 0x5
- 287 00d6 03       		.byte	0x3
- 288 00d7 00000000 		.4byte	recent_samps
- 289 00db 09       		.uleb128 0x9
- 290 00dc 6A000000 		.4byte	.LASF4
- 291 00e0 01       		.byte	0x1
- 292 00e1 11       		.byte	0x11
- 293 00e2 B3000000 		.4byte	0xb3
- 294 00e6 05       		.uleb128 0x5
- 295 00e7 03       		.byte	0x3
- 296 00e8 40000000 		.4byte	model_coeffs
- 297 00ec 00       		.byte	0
- 298              		.section	.debug_abbrev,"",%progbits
- 299              	.Ldebug_abbrev0:
- 300 0000 01       		.uleb128 0x1
- 301 0001 11       		.uleb128 0x11
- 302 0002 01       		.byte	0x1
- 303 0003 25       		.uleb128 0x25
- 304 0004 0E       		.uleb128 0xe
- 305 0005 13       		.uleb128 0x13
- 306 0006 0B       		.uleb128 0xb
- 307 0007 03       		.uleb128 0x3
- 308 0008 0E       		.uleb128 0xe
- 309 0009 1B       		.uleb128 0x1b
- 310 000a 0E       		.uleb128 0xe
- 311 000b 55       		.uleb128 0x55
- 312 000c 17       		.uleb128 0x17
- 313 000d 11       		.uleb128 0x11
- 314 000e 01       		.uleb128 0x1
- 315 000f 10       		.uleb128 0x10
- 316 0010 17       		.uleb128 0x17
- 317 0011 00       		.byte	0
- 318 0012 00       		.byte	0
- 319 0013 02       		.uleb128 0x2
- 320 0014 2E       		.uleb128 0x2e
- 321 0015 01       		.byte	0x1
- 322 0016 3F       		.uleb128 0x3f
- 323 0017 19       		.uleb128 0x19
- 324 0018 03       		.uleb128 0x3
- 325 0019 0E       		.uleb128 0xe
- 326 001a 3A       		.uleb128 0x3a
- 327 001b 0B       		.uleb128 0xb
- 328 001c 3B       		.uleb128 0x3b
- 329 001d 0B       		.uleb128 0xb
- 330 001e 27       		.uleb128 0x27
- 331 001f 19       		.uleb128 0x19
- 332 0020 11       		.uleb128 0x11
- 333 0021 01       		.uleb128 0x1
- 334 0022 12       		.uleb128 0x12
- 335 0023 06       		.uleb128 0x6
- 336 0024 40       		.uleb128 0x40
- 337 0025 18       		.uleb128 0x18
- 338 0026 9742     		.uleb128 0x2117
- 339 0028 19       		.uleb128 0x19
- 340 0029 01       		.uleb128 0x1
-ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\cc1qR8PP.s 			page 8
+ 281 00c3 0C       		.uleb128 0xc
+ 282 00c4 04       		.byte	0x4
+ 283 00c5 07       		.byte	0x7
+ 284 00c6 07000000 		.4byte	.LASF2
+ 285 00ca 09       		.uleb128 0x9
+ 286 00cb 2A000000 		.4byte	.LASF3
+ 287 00cf 01       		.byte	0x1
+ 288 00d0 10       		.byte	0x10
+ 289 00d1 B3000000 		.4byte	0xb3
+ 290 00d5 05       		.uleb128 0x5
+ 291 00d6 03       		.byte	0x3
+ 292 00d7 00000000 		.4byte	recent_samps
+ 293 00db 09       		.uleb128 0x9
+ 294 00dc 1D000000 		.4byte	.LASF4
+ 295 00e0 01       		.byte	0x1
+ 296 00e1 11       		.byte	0x11
+ 297 00e2 B3000000 		.4byte	0xb3
+ 298 00e6 05       		.uleb128 0x5
+ 299 00e7 03       		.byte	0x3
+ 300 00e8 40000000 		.4byte	model_coeffs
+ 301 00ec 00       		.byte	0
+ 302              		.section	.debug_abbrev,"",%progbits
+ 303              	.Ldebug_abbrev0:
+ 304 0000 01       		.uleb128 0x1
+ 305 0001 11       		.uleb128 0x11
+ 306 0002 01       		.byte	0x1
+ 307 0003 25       		.uleb128 0x25
+ 308 0004 0E       		.uleb128 0xe
+ 309 0005 13       		.uleb128 0x13
+ 310 0006 0B       		.uleb128 0xb
+ 311 0007 03       		.uleb128 0x3
+ 312 0008 0E       		.uleb128 0xe
+ 313 0009 1B       		.uleb128 0x1b
+ 314 000a 0E       		.uleb128 0xe
+ 315 000b 55       		.uleb128 0x55
+ 316 000c 17       		.uleb128 0x17
+ 317 000d 11       		.uleb128 0x11
+ 318 000e 01       		.uleb128 0x1
+ 319 000f 10       		.uleb128 0x10
+ 320 0010 17       		.uleb128 0x17
+ 321 0011 00       		.byte	0
+ 322 0012 00       		.byte	0
+ 323 0013 02       		.uleb128 0x2
+ 324 0014 2E       		.uleb128 0x2e
+ 325 0015 01       		.byte	0x1
+ 326 0016 3F       		.uleb128 0x3f
+ 327 0017 19       		.uleb128 0x19
+ 328 0018 03       		.uleb128 0x3
+ 329 0019 0E       		.uleb128 0xe
+ 330 001a 3A       		.uleb128 0x3a
+ 331 001b 0B       		.uleb128 0xb
+ 332 001c 3B       		.uleb128 0x3b
+ 333 001d 0B       		.uleb128 0xb
+ 334 001e 27       		.uleb128 0x27
+ 335 001f 19       		.uleb128 0x19
+ 336 0020 11       		.uleb128 0x11
+ 337 0021 01       		.uleb128 0x1
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\cc8oPQGu.s 			page 8
 
 
- 341 002a 13       		.uleb128 0x13
- 342 002b 00       		.byte	0
- 343 002c 00       		.byte	0
- 344 002d 03       		.uleb128 0x3
- 345 002e 05       		.uleb128 0x5
- 346 002f 00       		.byte	0
- 347 0030 03       		.uleb128 0x3
- 348 0031 0E       		.uleb128 0xe
- 349 0032 3A       		.uleb128 0x3a
- 350 0033 0B       		.uleb128 0xb
- 351 0034 3B       		.uleb128 0x3b
- 352 0035 0B       		.uleb128 0xb
- 353 0036 49       		.uleb128 0x49
- 354 0037 13       		.uleb128 0x13
- 355 0038 02       		.uleb128 0x2
- 356 0039 18       		.uleb128 0x18
- 357 003a 00       		.byte	0
- 358 003b 00       		.byte	0
- 359 003c 04       		.uleb128 0x4
- 360 003d 34       		.uleb128 0x34
- 361 003e 00       		.byte	0
- 362 003f 03       		.uleb128 0x3
- 363 0040 08       		.uleb128 0x8
- 364 0041 3A       		.uleb128 0x3a
- 365 0042 0B       		.uleb128 0xb
- 366 0043 3B       		.uleb128 0x3b
- 367 0044 0B       		.uleb128 0xb
- 368 0045 49       		.uleb128 0x49
- 369 0046 13       		.uleb128 0x13
- 370 0047 02       		.uleb128 0x2
- 371 0048 18       		.uleb128 0x18
- 372 0049 00       		.byte	0
- 373 004a 00       		.byte	0
- 374 004b 05       		.uleb128 0x5
- 375 004c 0F       		.uleb128 0xf
- 376 004d 00       		.byte	0
- 377 004e 0B       		.uleb128 0xb
- 378 004f 0B       		.uleb128 0xb
- 379 0050 49       		.uleb128 0x49
- 380 0051 13       		.uleb128 0x13
- 381 0052 00       		.byte	0
- 382 0053 00       		.byte	0
- 383 0054 06       		.uleb128 0x6
- 384 0055 24       		.uleb128 0x24
- 385 0056 00       		.byte	0
- 386 0057 0B       		.uleb128 0xb
- 387 0058 0B       		.uleb128 0xb
- 388 0059 3E       		.uleb128 0x3e
- 389 005a 0B       		.uleb128 0xb
- 390 005b 03       		.uleb128 0x3
- 391 005c 08       		.uleb128 0x8
- 392 005d 00       		.byte	0
- 393 005e 00       		.byte	0
- 394 005f 07       		.uleb128 0x7
- 395 0060 2E       		.uleb128 0x2e
- 396 0061 01       		.byte	0x1
- 397 0062 3F       		.uleb128 0x3f
-ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\cc1qR8PP.s 			page 9
+ 338 0022 12       		.uleb128 0x12
+ 339 0023 06       		.uleb128 0x6
+ 340 0024 40       		.uleb128 0x40
+ 341 0025 18       		.uleb128 0x18
+ 342 0026 9742     		.uleb128 0x2117
+ 343 0028 19       		.uleb128 0x19
+ 344 0029 01       		.uleb128 0x1
+ 345 002a 13       		.uleb128 0x13
+ 346 002b 00       		.byte	0
+ 347 002c 00       		.byte	0
+ 348 002d 03       		.uleb128 0x3
+ 349 002e 05       		.uleb128 0x5
+ 350 002f 00       		.byte	0
+ 351 0030 03       		.uleb128 0x3
+ 352 0031 0E       		.uleb128 0xe
+ 353 0032 3A       		.uleb128 0x3a
+ 354 0033 0B       		.uleb128 0xb
+ 355 0034 3B       		.uleb128 0x3b
+ 356 0035 0B       		.uleb128 0xb
+ 357 0036 49       		.uleb128 0x49
+ 358 0037 13       		.uleb128 0x13
+ 359 0038 02       		.uleb128 0x2
+ 360 0039 18       		.uleb128 0x18
+ 361 003a 00       		.byte	0
+ 362 003b 00       		.byte	0
+ 363 003c 04       		.uleb128 0x4
+ 364 003d 34       		.uleb128 0x34
+ 365 003e 00       		.byte	0
+ 366 003f 03       		.uleb128 0x3
+ 367 0040 08       		.uleb128 0x8
+ 368 0041 3A       		.uleb128 0x3a
+ 369 0042 0B       		.uleb128 0xb
+ 370 0043 3B       		.uleb128 0x3b
+ 371 0044 0B       		.uleb128 0xb
+ 372 0045 49       		.uleb128 0x49
+ 373 0046 13       		.uleb128 0x13
+ 374 0047 02       		.uleb128 0x2
+ 375 0048 18       		.uleb128 0x18
+ 376 0049 00       		.byte	0
+ 377 004a 00       		.byte	0
+ 378 004b 05       		.uleb128 0x5
+ 379 004c 0F       		.uleb128 0xf
+ 380 004d 00       		.byte	0
+ 381 004e 0B       		.uleb128 0xb
+ 382 004f 0B       		.uleb128 0xb
+ 383 0050 49       		.uleb128 0x49
+ 384 0051 13       		.uleb128 0x13
+ 385 0052 00       		.byte	0
+ 386 0053 00       		.byte	0
+ 387 0054 06       		.uleb128 0x6
+ 388 0055 24       		.uleb128 0x24
+ 389 0056 00       		.byte	0
+ 390 0057 0B       		.uleb128 0xb
+ 391 0058 0B       		.uleb128 0xb
+ 392 0059 3E       		.uleb128 0x3e
+ 393 005a 0B       		.uleb128 0xb
+ 394 005b 03       		.uleb128 0x3
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\cc8oPQGu.s 			page 9
 
 
- 398 0063 19       		.uleb128 0x19
- 399 0064 03       		.uleb128 0x3
- 400 0065 0E       		.uleb128 0xe
- 401 0066 3A       		.uleb128 0x3a
- 402 0067 0B       		.uleb128 0xb
- 403 0068 3B       		.uleb128 0x3b
- 404 0069 0B       		.uleb128 0xb
- 405 006a 27       		.uleb128 0x27
- 406 006b 19       		.uleb128 0x19
- 407 006c 49       		.uleb128 0x49
- 408 006d 13       		.uleb128 0x13
- 409 006e 11       		.uleb128 0x11
- 410 006f 01       		.uleb128 0x1
- 411 0070 12       		.uleb128 0x12
- 412 0071 06       		.uleb128 0x6
- 413 0072 40       		.uleb128 0x40
- 414 0073 18       		.uleb128 0x18
- 415 0074 9742     		.uleb128 0x2117
- 416 0076 19       		.uleb128 0x19
- 417 0077 01       		.uleb128 0x1
- 418 0078 13       		.uleb128 0x13
- 419 0079 00       		.byte	0
- 420 007a 00       		.byte	0
- 421 007b 08       		.uleb128 0x8
- 422 007c 05       		.uleb128 0x5
- 423 007d 00       		.byte	0
- 424 007e 03       		.uleb128 0x3
- 425 007f 08       		.uleb128 0x8
- 426 0080 3A       		.uleb128 0x3a
- 427 0081 0B       		.uleb128 0xb
- 428 0082 3B       		.uleb128 0x3b
- 429 0083 0B       		.uleb128 0xb
- 430 0084 49       		.uleb128 0x49
- 431 0085 13       		.uleb128 0x13
- 432 0086 02       		.uleb128 0x2
- 433 0087 18       		.uleb128 0x18
- 434 0088 00       		.byte	0
- 435 0089 00       		.byte	0
- 436 008a 09       		.uleb128 0x9
- 437 008b 34       		.uleb128 0x34
- 438 008c 00       		.byte	0
- 439 008d 03       		.uleb128 0x3
- 440 008e 0E       		.uleb128 0xe
- 441 008f 3A       		.uleb128 0x3a
- 442 0090 0B       		.uleb128 0xb
- 443 0091 3B       		.uleb128 0x3b
- 444 0092 0B       		.uleb128 0xb
- 445 0093 49       		.uleb128 0x49
- 446 0094 13       		.uleb128 0x13
- 447 0095 02       		.uleb128 0x2
- 448 0096 18       		.uleb128 0x18
- 449 0097 00       		.byte	0
- 450 0098 00       		.byte	0
- 451 0099 0A       		.uleb128 0xa
- 452 009a 01       		.uleb128 0x1
- 453 009b 01       		.byte	0x1
- 454 009c 49       		.uleb128 0x49
-ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\cc1qR8PP.s 			page 10
+ 395 005c 08       		.uleb128 0x8
+ 396 005d 00       		.byte	0
+ 397 005e 00       		.byte	0
+ 398 005f 07       		.uleb128 0x7
+ 399 0060 2E       		.uleb128 0x2e
+ 400 0061 01       		.byte	0x1
+ 401 0062 3F       		.uleb128 0x3f
+ 402 0063 19       		.uleb128 0x19
+ 403 0064 03       		.uleb128 0x3
+ 404 0065 0E       		.uleb128 0xe
+ 405 0066 3A       		.uleb128 0x3a
+ 406 0067 0B       		.uleb128 0xb
+ 407 0068 3B       		.uleb128 0x3b
+ 408 0069 0B       		.uleb128 0xb
+ 409 006a 27       		.uleb128 0x27
+ 410 006b 19       		.uleb128 0x19
+ 411 006c 49       		.uleb128 0x49
+ 412 006d 13       		.uleb128 0x13
+ 413 006e 11       		.uleb128 0x11
+ 414 006f 01       		.uleb128 0x1
+ 415 0070 12       		.uleb128 0x12
+ 416 0071 06       		.uleb128 0x6
+ 417 0072 40       		.uleb128 0x40
+ 418 0073 18       		.uleb128 0x18
+ 419 0074 9742     		.uleb128 0x2117
+ 420 0076 19       		.uleb128 0x19
+ 421 0077 01       		.uleb128 0x1
+ 422 0078 13       		.uleb128 0x13
+ 423 0079 00       		.byte	0
+ 424 007a 00       		.byte	0
+ 425 007b 08       		.uleb128 0x8
+ 426 007c 05       		.uleb128 0x5
+ 427 007d 00       		.byte	0
+ 428 007e 03       		.uleb128 0x3
+ 429 007f 08       		.uleb128 0x8
+ 430 0080 3A       		.uleb128 0x3a
+ 431 0081 0B       		.uleb128 0xb
+ 432 0082 3B       		.uleb128 0x3b
+ 433 0083 0B       		.uleb128 0xb
+ 434 0084 49       		.uleb128 0x49
+ 435 0085 13       		.uleb128 0x13
+ 436 0086 02       		.uleb128 0x2
+ 437 0087 18       		.uleb128 0x18
+ 438 0088 00       		.byte	0
+ 439 0089 00       		.byte	0
+ 440 008a 09       		.uleb128 0x9
+ 441 008b 34       		.uleb128 0x34
+ 442 008c 00       		.byte	0
+ 443 008d 03       		.uleb128 0x3
+ 444 008e 0E       		.uleb128 0xe
+ 445 008f 3A       		.uleb128 0x3a
+ 446 0090 0B       		.uleb128 0xb
+ 447 0091 3B       		.uleb128 0x3b
+ 448 0092 0B       		.uleb128 0xb
+ 449 0093 49       		.uleb128 0x49
+ 450 0094 13       		.uleb128 0x13
+ 451 0095 02       		.uleb128 0x2
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\cc8oPQGu.s 			page 10
 
 
- 455 009d 13       		.uleb128 0x13
- 456 009e 01       		.uleb128 0x1
- 457 009f 13       		.uleb128 0x13
- 458 00a0 00       		.byte	0
- 459 00a1 00       		.byte	0
- 460 00a2 0B       		.uleb128 0xb
- 461 00a3 21       		.uleb128 0x21
- 462 00a4 00       		.byte	0
- 463 00a5 49       		.uleb128 0x49
- 464 00a6 13       		.uleb128 0x13
- 465 00a7 2F       		.uleb128 0x2f
- 466 00a8 0B       		.uleb128 0xb
- 467 00a9 00       		.byte	0
- 468 00aa 00       		.byte	0
- 469 00ab 0C       		.uleb128 0xc
- 470 00ac 24       		.uleb128 0x24
- 471 00ad 00       		.byte	0
- 472 00ae 0B       		.uleb128 0xb
- 473 00af 0B       		.uleb128 0xb
- 474 00b0 3E       		.uleb128 0x3e
- 475 00b1 0B       		.uleb128 0xb
- 476 00b2 03       		.uleb128 0x3
- 477 00b3 0E       		.uleb128 0xe
- 478 00b4 00       		.byte	0
- 479 00b5 00       		.byte	0
- 480 00b6 00       		.byte	0
- 481              		.section	.debug_aranges,"",%progbits
- 482 0000 24000000 		.4byte	0x24
- 483 0004 0200     		.2byte	0x2
- 484 0006 00000000 		.4byte	.Ldebug_info0
- 485 000a 04       		.byte	0x4
- 486 000b 00       		.byte	0
- 487 000c 0000     		.2byte	0
- 488 000e 0000     		.2byte	0
- 489 0010 00000000 		.4byte	.LFB0
- 490 0014 48000000 		.4byte	.LFE0-.LFB0
- 491 0018 00000000 		.4byte	.LFB1
- 492 001c 78000000 		.4byte	.LFE1-.LFB1
- 493 0020 00000000 		.4byte	0
- 494 0024 00000000 		.4byte	0
- 495              		.section	.debug_ranges,"",%progbits
- 496              	.Ldebug_ranges0:
- 497 0000 00000000 		.4byte	.LFB0
- 498 0004 48000000 		.4byte	.LFE0
- 499 0008 00000000 		.4byte	.LFB1
- 500 000c 78000000 		.4byte	.LFE1
- 501 0010 00000000 		.4byte	0
- 502 0014 00000000 		.4byte	0
- 503              		.section	.debug_line,"",%progbits
- 504              	.Ldebug_line0:
- 505 0000 78000000 		.section	.debug_str,"MS",%progbits,1
- 505      02002300 
- 505      00000201 
- 505      FB0E0D00 
- 505      01010101 
- 506              	.LASF0:
- 507 0000 636F6566 		.ascii	"coeffs\000"
-ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\cc1qR8PP.s 			page 11
+ 452 0096 18       		.uleb128 0x18
+ 453 0097 00       		.byte	0
+ 454 0098 00       		.byte	0
+ 455 0099 0A       		.uleb128 0xa
+ 456 009a 01       		.uleb128 0x1
+ 457 009b 01       		.byte	0x1
+ 458 009c 49       		.uleb128 0x49
+ 459 009d 13       		.uleb128 0x13
+ 460 009e 01       		.uleb128 0x1
+ 461 009f 13       		.uleb128 0x13
+ 462 00a0 00       		.byte	0
+ 463 00a1 00       		.byte	0
+ 464 00a2 0B       		.uleb128 0xb
+ 465 00a3 21       		.uleb128 0x21
+ 466 00a4 00       		.byte	0
+ 467 00a5 49       		.uleb128 0x49
+ 468 00a6 13       		.uleb128 0x13
+ 469 00a7 2F       		.uleb128 0x2f
+ 470 00a8 0B       		.uleb128 0xb
+ 471 00a9 00       		.byte	0
+ 472 00aa 00       		.byte	0
+ 473 00ab 0C       		.uleb128 0xc
+ 474 00ac 24       		.uleb128 0x24
+ 475 00ad 00       		.byte	0
+ 476 00ae 0B       		.uleb128 0xb
+ 477 00af 0B       		.uleb128 0xb
+ 478 00b0 3E       		.uleb128 0x3e
+ 479 00b1 0B       		.uleb128 0xb
+ 480 00b2 03       		.uleb128 0x3
+ 481 00b3 0E       		.uleb128 0xe
+ 482 00b4 00       		.byte	0
+ 483 00b5 00       		.byte	0
+ 484 00b6 00       		.byte	0
+ 485              		.section	.debug_aranges,"",%progbits
+ 486 0000 24000000 		.4byte	0x24
+ 487 0004 0200     		.2byte	0x2
+ 488 0006 00000000 		.4byte	.Ldebug_info0
+ 489 000a 04       		.byte	0x4
+ 490 000b 00       		.byte	0
+ 491 000c 0000     		.2byte	0
+ 492 000e 0000     		.2byte	0
+ 493 0010 00000000 		.4byte	.LFB0
+ 494 0014 48000000 		.4byte	.LFE0-.LFB0
+ 495 0018 00000000 		.4byte	.LFB1
+ 496 001c 80000000 		.4byte	.LFE1-.LFB1
+ 497 0020 00000000 		.4byte	0
+ 498 0024 00000000 		.4byte	0
+ 499              		.section	.debug_ranges,"",%progbits
+ 500              	.Ldebug_ranges0:
+ 501 0000 00000000 		.4byte	.LFB0
+ 502 0004 48000000 		.4byte	.LFE0
+ 503 0008 00000000 		.4byte	.LFB1
+ 504 000c 80000000 		.4byte	.LFE1
+ 505 0010 00000000 		.4byte	0
+ 506 0014 00000000 		.4byte	0
+ 507              		.section	.debug_line,"",%progbits
+ 508              	.Ldebug_line0:
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\cc8oPQGu.s 			page 11
 
 
- 507      667300
- 508              	.LASF2:
- 509 0007 73697A65 		.ascii	"sizetype\000"
- 509      74797065 
- 509      00
- 510              	.LASF6:
- 511 0010 2E5C6873 		.ascii	".\\hs_model.c\000"
- 511      5F6D6F64 
- 511      656C2E63 
- 511      00
- 512              	.LASF7:
- 513 001d 433A5C55 		.ascii	"C:\\Users\\shubhamt\\Documents\\PSoC Creator\\WaveG"
- 513      73657273 
- 513      5C736875 
- 513      6268616D 
- 513      745C446F 
- 514 004b 656E6572 		.ascii	"enerator1\\WaveGenerator1.cydsn\000"
- 514      61746F72 
- 514      315C5761 
- 514      76654765 
- 514      6E657261 
- 515              	.LASF4:
- 516 006a 6D6F6465 		.ascii	"model_coeffs\000"
- 516      6C5F636F 
- 516      65666673 
- 516      00
- 517              	.LASF3:
- 518 0077 72656365 		.ascii	"recent_samps\000"
- 518      6E745F73 
- 518      616D7073 
- 518      00
- 519              	.LASF9:
- 520 0084 68735F6D 		.ascii	"hs_model_new_sample\000"
- 520      6F64656C 
- 520      5F6E6577 
- 520      5F73616D 
- 520      706C6500 
- 521              	.LASF8:
- 522 0098 68735F6D 		.ascii	"hs_model_new\000"
- 522      6F64656C 
- 522      5F6E6577 
- 522      00
- 523              	.LASF5:
- 524 00a5 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
- 524      4320342E 
- 524      382E3420 
- 524      32303134 
- 524      30353236 
- 525 00d8 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m3 -mthumb -g -O"
- 525      20726576 
- 525      6973696F 
- 525      6E203231 
- 525      31333538 
- 526 010b 30202D66 		.ascii	"0 -ffunction-sections\000"
- 526      66756E63 
- 526      74696F6E 
- 526      2D736563 
-ARM GAS  C:\Users\shubhamt\AppData\Local\Temp\cc1qR8PP.s 			page 12
+ 509 0000 78000000 		.section	.debug_str,"MS",%progbits,1
+ 509      02002300 
+ 509      00000201 
+ 509      FB0E0D00 
+ 509      01010101 
+ 510              	.LASF0:
+ 511 0000 636F6566 		.ascii	"coeffs\000"
+ 511      667300
+ 512              	.LASF2:
+ 513 0007 73697A65 		.ascii	"sizetype\000"
+ 513      74797065 
+ 513      00
+ 514              	.LASF6:
+ 515 0010 2E5C6873 		.ascii	".\\hs_model.c\000"
+ 515      5F6D6F64 
+ 515      656C2E63 
+ 515      00
+ 516              	.LASF4:
+ 517 001d 6D6F6465 		.ascii	"model_coeffs\000"
+ 517      6C5F636F 
+ 517      65666673 
+ 517      00
+ 518              	.LASF3:
+ 519 002a 72656365 		.ascii	"recent_samps\000"
+ 519      6E745F73 
+ 519      616D7073 
+ 519      00
+ 520              	.LASF9:
+ 521 0037 68735F6D 		.ascii	"hs_model_new_sample\000"
+ 521      6F64656C 
+ 521      5F6E6577 
+ 521      5F73616D 
+ 521      706C6500 
+ 522              	.LASF8:
+ 523 004b 68735F6D 		.ascii	"hs_model_new\000"
+ 523      6F64656C 
+ 523      5F6E6577 
+ 523      00
+ 524              	.LASF7:
+ 525 0058 433A5C55 		.ascii	"C:\\Users\\pearlstl\\Documents\\MUSE-Research\\proj"
+ 525      73657273 
+ 525      5C706561 
+ 525      726C7374 
+ 525      6C5C446F 
+ 526 0086 5F616E63 		.ascii	"_anc\\system\\WaveGenerator1\\WaveGenerator1.cydsn\000"
+ 526      5C737973 
+ 526      74656D5C 
+ 526      57617665 
+ 526      47656E65 
+ 527              	.LASF5:
+ 528 00b6 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 528      4320342E 
+ 528      382E3420 
+ 528      32303134 
+ 528      30353236 
+ 529 00e9 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m3 -mthumb -g -O"
+ 529      20726576 
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\cc8oPQGu.s 			page 12
 
 
- 526      74696F6E 
- 527              	.LASF1:
- 528 0121 77707472 		.ascii	"wptr\000"
- 528      00
- 529              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br
+ 529      6973696F 
+ 529      6E203231 
+ 529      31333538 
+ 530 011c 30202D66 		.ascii	"0 -ffunction-sections\000"
+ 530      66756E63 
+ 530      74696F6E 
+ 530      2D736563 
+ 530      74696F6E 
+ 531              	.LASF1:
+ 532 0132 77707472 		.ascii	"wptr\000"
+ 532      00
+ 533              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br

@@ -181,6 +181,7 @@ CY_ISR(isr_Interrupt)
     int x=0;
     int e_;
     int i;
+    int y;
    
  
 //  for (k = 0 ; k<NUM_TONES ; ++k)
@@ -196,19 +197,19 @@ CY_ISR(isr_Interrupt)
 //    x+=128;                               //Offset binary. VDAC wants this
      
     x = wave_table[wave_idx];
-    x=(x)>>5;                             // rounds to an 8 bit number
-    x=x+128;                              // converts from 2's comp to offset binary
-//      
+
 //    x = rand();   
-    //fixed point -1 to 1                   double(x)/2^31(2 billion)
-    VDAC8_2_ls_SetValue(x);
+
+    // Convert sine wave from Q20.12 to 8-bit offset binary
+    VDAC8_2_ls_SetValue((x>>5)+128);
     
+    // e_ is 12-bit offset binary, range 0 to 4095
     e_ =  ADC_SAR_GetResult16();          //Set's value to the ADC output (16bit 2's comp value)
         
        
     //canceller code goes here
-    canceller_new_sample (x);
-    canceller_coeff_update (e_);
+    y = canceller_new_sample(x);
+    canceller_coeff_update(e_);
     //end canceller code  
         
     VDAC8_1_hs_SetValue(x);              
