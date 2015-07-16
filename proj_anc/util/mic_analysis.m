@@ -58,10 +58,10 @@ fprintf(psoc,'%s\n','{');
 % prints double precision values
 for i=0:(N-2)
     h = 4096 * w(N-i);
-    fprintf(psoc,'%3d,\n',round(h));
+    fprintf(psoc,'       %3d,\n',round(h));
 end
-h = 4096 * w(1);
-fprintf(psoc,'%3d\n',round(h));
+f = 4096 * w(1);
+fprintf(psoc,'       %3d\n',round(f));
 
 fprintf(psoc,'%s\n','};');
 fprintf(psoc,'%s\n','#endif');
