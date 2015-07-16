@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccJpevoS.s 			page 1
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccgL3RBn.s 			page 1
 
 
    1              		.syntax unified
@@ -22,1007 +22,1035 @@ ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccJpevoS.s 			page 1
   19              		.section	.cyconfigecc,"a",%progbits
   20              		.align	2
   21              		.type	cy_meta_configecc, %object
-  22              		.size	cy_meta_configecc, 504
+  22              		.size	cy_meta_configecc, 532
   23              	cy_meta_configecc:
   24 0000 02       		.byte	2
-  25 0001 5A       		.byte	90
+  25 0001 52       		.byte	82
   26 0002 00       		.byte	0
   27 0003 40       		.byte	64
-  28 0004 01       		.byte	1
-  29 0005 5B       		.byte	91
+  28 0004 02       		.byte	2
+  29 0005 5A       		.byte	90
   30 0006 00       		.byte	0
   31 0007 40       		.byte	64
   32 0008 01       		.byte	1
-  33 0009 64       		.byte	100
+  33 0009 5B       		.byte	91
   34 000a 00       		.byte	0
   35 000b 40       		.byte	64
-  36 000c 5C       		.byte	92
-  37 000d 02       		.byte	2
-  38 000e 01       		.byte	1
+  36 000c 01       		.byte	1
+  37 000d 64       		.byte	100
+  38 000e 00       		.byte	0
   39 000f 40       		.byte	64
-  40 0010 31       		.byte	49
-  41 0011 03       		.byte	3
+  40 0010 5D       		.byte	93
+  41 0011 02       		.byte	2
   42 0012 01       		.byte	1
   43 0013 40       		.byte	64
-  44 0014 03       		.byte	3
-  45 0015 05       		.byte	5
+  44 0014 35       		.byte	53
+  45 0015 03       		.byte	3
   46 0016 01       		.byte	1
   47 0017 40       		.byte	64
-  48 0018 01       		.byte	1
-  49 0019 07       		.byte	7
+  48 0018 03       		.byte	3
+  49 0019 05       		.byte	5
   50 001a 01       		.byte	1
   51 001b 40       		.byte	64
   52 001c 01       		.byte	1
-  53 001d 09       		.byte	9
+  53 001d 07       		.byte	7
   54 001e 01       		.byte	1
   55 001f 40       		.byte	64
-  56 0020 02       		.byte	2
-  57 0021 15       		.byte	21
-ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccJpevoS.s 			page 2
+  56 0020 01       		.byte	1
+  57 0021 09       		.byte	9
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccgL3RBn.s 			page 2
 
 
   58 0022 01       		.byte	1
   59 0023 40       		.byte	64
   60 0024 02       		.byte	2
-  61 0025 1B       		.byte	27
+  61 0025 15       		.byte	21
   62 0026 01       		.byte	1
   63 0027 40       		.byte	64
-  64 0028 03       		.byte	3
-  65 0029 40       		.byte	64
+  64 0028 02       		.byte	2
+  65 0029 1B       		.byte	27
   66 002a 01       		.byte	1
   67 002b 40       		.byte	64
-  68 002c 04       		.byte	4
-  69 002d 41       		.byte	65
+  68 002c 03       		.byte	3
+  69 002d 40       		.byte	64
   70 002e 01       		.byte	1
   71 002f 40       		.byte	64
-  72 0030 03       		.byte	3
-  73 0031 42       		.byte	66
+  72 0030 04       		.byte	4
+  73 0031 41       		.byte	65
   74 0032 01       		.byte	1
   75 0033 40       		.byte	64
   76 0034 03       		.byte	3
-  77 0035 43       		.byte	67
+  77 0035 42       		.byte	66
   78 0036 01       		.byte	1
   79 0037 40       		.byte	64
-  80 0038 02       		.byte	2
-  81 0039 44       		.byte	68
+  80 0038 03       		.byte	3
+  81 0039 43       		.byte	67
   82 003a 01       		.byte	1
   83 003b 40       		.byte	64
-  84 003c 01       		.byte	1
-  85 003d 45       		.byte	69
+  84 003c 02       		.byte	2
+  85 003d 44       		.byte	68
   86 003e 01       		.byte	1
   87 003f 40       		.byte	64
-  88 0040 05       		.byte	5
-  89 0041 46       		.byte	70
+  88 0040 01       		.byte	1
+  89 0041 45       		.byte	69
   90 0042 01       		.byte	1
   91 0043 40       		.byte	64
-  92 0044 07       		.byte	7
-  93 0045 47       		.byte	71
+  92 0044 05       		.byte	5
+  93 0045 46       		.byte	70
   94 0046 01       		.byte	1
   95 0047 40       		.byte	64
-  96 0048 04       		.byte	4
-  97 0049 48       		.byte	72
+  96 0048 07       		.byte	7
+  97 0049 47       		.byte	71
   98 004a 01       		.byte	1
   99 004b 40       		.byte	64
  100 004c 04       		.byte	4
- 101 004d 49       		.byte	73
+ 101 004d 48       		.byte	72
  102 004e 01       		.byte	1
  103 004f 40       		.byte	64
- 104 0050 02       		.byte	2
- 105 0051 4C       		.byte	76
+ 104 0050 04       		.byte	4
+ 105 0051 49       		.byte	73
  106 0052 01       		.byte	1
  107 0053 40       		.byte	64
  108 0054 02       		.byte	2
- 109 0055 4D       		.byte	77
+ 109 0055 4C       		.byte	76
  110 0056 01       		.byte	1
  111 0057 40       		.byte	64
  112 0058 02       		.byte	2
- 113 0059 50       		.byte	80
+ 113 0059 4D       		.byte	77
  114 005a 01       		.byte	1
-ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccJpevoS.s 			page 3
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccgL3RBn.s 			page 3
 
 
  115 005b 40       		.byte	64
- 116 005c 01       		.byte	1
- 117 005d 51       		.byte	81
+ 116 005c 02       		.byte	2
+ 117 005d 50       		.byte	80
  118 005e 01       		.byte	1
  119 005f 40       		.byte	64
- 120 0060 87       		.byte	-121
- 121 0061 01       		.byte	1
- 122 0062 97       		.byte	-105
- 123 0063 01       		.byte	1
- 124 0064 27       		.byte	39
- 125 0065 84       		.byte	-124
- 126 0066 82       		.byte	-126
- 127 0067 0F       		.byte	15
- 128 0068 00       		.byte	0
- 129 0069 13       		.byte	19
- 130 006a 02       		.byte	2
- 131 006b 04       		.byte	4
- 132 006c 06       		.byte	6
- 133 006d 15       		.byte	21
- 134 006e 08       		.byte	8
- 135 006f 40       		.byte	64
- 136 0070 0C       		.byte	12
- 137 0071 13       		.byte	19
- 138 0072 0E       		.byte	14
- 139 0073 0C       		.byte	12
- 140 0074 16       		.byte	22
- 141 0075 08       		.byte	8
- 142 0076 20       		.byte	32
- 143 0077 03       		.byte	3
- 144 0078 22       		.byte	34
- 145 0079 14       		.byte	20
- 146 007a 24       		.byte	36
- 147 007b 0A       		.byte	10
- 148 007c 26       		.byte	38
- 149 007d 14       		.byte	20
- 150 007e 2C       		.byte	44
- 151 007f 20       		.byte	32
- 152 0080 30       		.byte	48
- 153 0081 10       		.byte	16
- 154 0082 32       		.byte	50
- 155 0083 40       		.byte	64
- 156 0084 34       		.byte	52
- 157 0085 20       		.byte	32
- 158 0086 36       		.byte	54
- 159 0087 0F       		.byte	15
- 160 0088 3A       		.byte	58
- 161 0089 80       		.byte	-128
- 162 008a 3E       		.byte	62
- 163 008b 15       		.byte	21
- 164 008c 40       		.byte	64
- 165 008d 46       		.byte	70
- 166 008e 41       		.byte	65
- 167 008f 01       		.byte	1
- 168 0090 45       		.byte	69
- 169 0091 E0       		.byte	-32
- 170 0092 46       		.byte	70
- 171 0093 0C       		.byte	12
-ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccJpevoS.s 			page 4
+ 120 0060 01       		.byte	1
+ 121 0061 51       		.byte	81
+ 122 0062 01       		.byte	1
+ 123 0063 40       		.byte	64
+ 124 0064 01       		.byte	1
+ 125 0065 10       		.byte	16
+ 126 0066 7C       		.byte	124
+ 127 0067 20       		.byte	32
+ 128 0068 87       		.byte	-121
+ 129 0069 01       		.byte	1
+ 130 006a 97       		.byte	-105
+ 131 006b 01       		.byte	1
+ 132 006c 27       		.byte	39
+ 133 006d 84       		.byte	-124
+ 134 006e 83       		.byte	-125
+ 135 006f 0F       		.byte	15
+ 136 0070 00       		.byte	0
+ 137 0071 40       		.byte	64
+ 138 0072 04       		.byte	4
+ 139 0073 20       		.byte	32
+ 140 0074 06       		.byte	6
+ 141 0075 03       		.byte	3
+ 142 0076 0C       		.byte	12
+ 143 0077 11       		.byte	17
+ 144 0078 0E       		.byte	14
+ 145 0079 0E       		.byte	14
+ 146 007a 12       		.byte	18
+ 147 007b 0C       		.byte	12
+ 148 007c 14       		.byte	20
+ 149 007d 0C       		.byte	12
+ 150 007e 16       		.byte	22
+ 151 007f 13       		.byte	19
+ 152 0080 18       		.byte	24
+ 153 0081 11       		.byte	17
+ 154 0082 1A       		.byte	26
+ 155 0083 06       		.byte	6
+ 156 0084 26       		.byte	38
+ 157 0085 08       		.byte	8
+ 158 0086 30       		.byte	48
+ 159 0087 30       		.byte	48
+ 160 0088 32       		.byte	50
+ 161 0089 0F       		.byte	15
+ 162 008a 34       		.byte	52
+ 163 008b 40       		.byte	64
+ 164 008c 38       		.byte	56
+ 165 008d 02       		.byte	2
+ 166 008e 3A       		.byte	58
+ 167 008f 08       		.byte	8
+ 168 0090 3E       		.byte	62
+ 169 0091 10       		.byte	16
+ 170 0092 40       		.byte	64
+ 171 0093 26       		.byte	38
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccgL3RBn.s 			page 4
 
 
- 172 0094 47       		.byte	71
- 173 0095 0B       		.byte	11
- 174 0096 48       		.byte	72
- 175 0097 16       		.byte	22
- 176 0098 49       		.byte	73
- 177 0099 FF       		.byte	-1
- 178 009a 4A       		.byte	74
- 179 009b FF       		.byte	-1
- 180 009c 4B       		.byte	75
- 181 009d FF       		.byte	-1
- 182 009e 4E       		.byte	78
- 183 009f F0       		.byte	-16
- 184 00a0 4F       		.byte	79
- 185 00a1 44       		.byte	68
- 186 00a2 50       		.byte	80
- 187 00a3 0C       		.byte	12
- 188 00a4 54       		.byte	84
- 189 00a5 01       		.byte	1
- 190 00a6 58       		.byte	88
- 191 00a7 04       		.byte	4
- 192 00a8 5A       		.byte	90
- 193 00a9 04       		.byte	4
- 194 00aa 5B       		.byte	91
+ 172 0094 41       		.byte	65
+ 173 0095 04       		.byte	4
+ 174 0096 45       		.byte	69
+ 175 0097 E0       		.byte	-32
+ 176 0098 46       		.byte	70
+ 177 0099 0C       		.byte	12
+ 178 009a 47       		.byte	71
+ 179 009b 0B       		.byte	11
+ 180 009c 48       		.byte	72
+ 181 009d 16       		.byte	22
+ 182 009e 49       		.byte	73
+ 183 009f FF       		.byte	-1
+ 184 00a0 4A       		.byte	74
+ 185 00a1 FF       		.byte	-1
+ 186 00a2 4B       		.byte	75
+ 187 00a3 FF       		.byte	-1
+ 188 00a4 4E       		.byte	78
+ 189 00a5 F0       		.byte	-16
+ 190 00a6 4F       		.byte	79
+ 191 00a7 44       		.byte	68
+ 192 00a8 50       		.byte	80
+ 193 00a9 0C       		.byte	12
+ 194 00aa 58       		.byte	88
  195 00ab 04       		.byte	4
- 196 00ac 5C       		.byte	92
- 197 00ad 01       		.byte	1
- 198 00ae 5D       		.byte	93
- 199 00af 11       		.byte	17
- 200 00b0 5F       		.byte	95
+ 196 00ac 5A       		.byte	90
+ 197 00ad 04       		.byte	4
+ 198 00ae 5C       		.byte	92
+ 199 00af 01       		.byte	1
+ 200 00b0 5D       		.byte	93
  201 00b1 01       		.byte	1
- 202 00b2 66       		.byte	102
- 203 00b3 C0       		.byte	-64
- 204 00b4 6A       		.byte	106
- 205 00b5 40       		.byte	64
- 206 00b6 6B       		.byte	107
- 207 00b7 02       		.byte	2
- 208 00b8 80       		.byte	-128
- 209 00b9 10       		.byte	16
- 210 00ba 82       		.byte	-126
- 211 00bb AC       		.byte	-84
- 212 00bc 85       		.byte	-123
- 213 00bd 80       		.byte	-128
+ 202 00b2 5F       		.byte	95
+ 203 00b3 01       		.byte	1
+ 204 00b4 66       		.byte	102
+ 205 00b5 C0       		.byte	-64
+ 206 00b6 6A       		.byte	106
+ 207 00b7 40       		.byte	64
+ 208 00b8 6B       		.byte	107
+ 209 00b9 02       		.byte	2
+ 210 00ba 83       		.byte	-125
+ 211 00bb 08       		.byte	8
+ 212 00bc 84       		.byte	-124
+ 213 00bd 10       		.byte	16
  214 00be 86       		.byte	-122
- 215 00bf 03       		.byte	3
+ 215 00bf 40       		.byte	64
  216 00c0 87       		.byte	-121
- 217 00c1 13       		.byte	19
- 218 00c2 8A       		.byte	-118
- 219 00c3 20       		.byte	32
- 220 00c4 8C       		.byte	-116
- 221 00c5 0C       		.byte	12
- 222 00c6 8E       		.byte	-114
- 223 00c7 71       		.byte	113
- 224 00c8 97       		.byte	-105
- 225 00c9 0C       		.byte	12
- 226 00ca 98       		.byte	-104
- 227 00cb DC       		.byte	-36
- 228 00cc 99       		.byte	-103
-ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccJpevoS.s 			page 5
+ 217 00c1 55       		.byte	85
+ 218 00c2 88       		.byte	-120
+ 219 00c3 10       		.byte	16
+ 220 00c4 8A       		.byte	-118
+ 221 00c5 AC       		.byte	-84
+ 222 00c6 8C       		.byte	-116
+ 223 00c7 0C       		.byte	12
+ 224 00c8 8D       		.byte	-115
+ 225 00c9 03       		.byte	3
+ 226 00ca 8E       		.byte	-114
+ 227 00cb 71       		.byte	113
+ 228 00cc 8F       		.byte	-113
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccgL3RBn.s 			page 5
 
 
- 229 00cd 2C       		.byte	44
- 230 00ce 9A       		.byte	-102
- 231 00cf 22       		.byte	34
- 232 00d0 9B       		.byte	-101
- 233 00d1 43       		.byte	67
- 234 00d2 9F       		.byte	-97
- 235 00d3 08       		.byte	8
- 236 00d4 A0       		.byte	-96
- 237 00d5 10       		.byte	16
- 238 00d6 A1       		.byte	-95
- 239 00d7 71       		.byte	113
- 240 00d8 A2       		.byte	-94
- 241 00d9 40       		.byte	64
- 242 00da A3       		.byte	-93
- 243 00db 0E       		.byte	14
- 244 00dc A4       		.byte	-92
- 245 00dd 14       		.byte	20
- 246 00de A8       		.byte	-88
- 247 00df 09       		.byte	9
- 248 00e0 AA       		.byte	-86
- 249 00e1 D0       		.byte	-48
- 250 00e2 AD       		.byte	-83
- 251 00e3 71       		.byte	113
- 252 00e4 AF       		.byte	-81
- 253 00e5 06       		.byte	6
- 254 00e6 B0       		.byte	-80
- 255 00e7 E0       		.byte	-32
- 256 00e8 B3       		.byte	-77
- 257 00e9 C0       		.byte	-64
- 258 00ea B4       		.byte	-76
- 259 00eb 1F       		.byte	31
- 260 00ec B5       		.byte	-75
- 261 00ed 0F       		.byte	15
- 262 00ee B7       		.byte	-73
- 263 00ef 30       		.byte	48
- 264 00f0 B9       		.byte	-71
- 265 00f1 88       		.byte	-120
- 266 00f2 BA       		.byte	-70
- 267 00f3 02       		.byte	2
- 268 00f4 BB       		.byte	-69
- 269 00f5 20       		.byte	32
- 270 00f6 BF       		.byte	-65
- 271 00f7 40       		.byte	64
- 272 00f8 C0       		.byte	-64
- 273 00f9 01       		.byte	1
- 274 00fa C5       		.byte	-59
- 275 00fb 40       		.byte	64
- 276 00fc C9       		.byte	-55
- 277 00fd FF       		.byte	-1
- 278 00fe CA       		.byte	-54
- 279 00ff 07       		.byte	7
- 280 0100 CB       		.byte	-53
- 281 0101 FF       		.byte	-1
- 282 0102 CC       		.byte	-52
- 283 0103 40       		.byte	64
- 284 0104 CD       		.byte	-51
- 285 0105 20       		.byte	32
-ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccJpevoS.s 			page 6
+ 229 00cd 44       		.byte	68
+ 230 00ce 94       		.byte	-108
+ 231 00cf DC       		.byte	-36
+ 232 00d0 95       		.byte	-107
+ 233 00d1 80       		.byte	-128
+ 234 00d2 96       		.byte	-106
+ 235 00d3 22       		.byte	34
+ 236 00d4 99       		.byte	-103
+ 237 00d5 73       		.byte	115
+ 238 00d6 9A       		.byte	-102
+ 239 00d7 03       		.byte	3
+ 240 00d8 9B       		.byte	-101
+ 241 00d9 0C       		.byte	12
+ 242 00da 9C       		.byte	-100
+ 243 00db 09       		.byte	9
+ 244 00dc 9E       		.byte	-98
+ 245 00dd D0       		.byte	-48
+ 246 00de A1       		.byte	-95
+ 247 00df 73       		.byte	115
+ 248 00e0 A3       		.byte	-93
+ 249 00e1 04       		.byte	4
+ 250 00e2 A4       		.byte	-92
+ 251 00e3 14       		.byte	20
+ 252 00e4 A9       		.byte	-87
+ 253 00e5 2A       		.byte	42
+ 254 00e6 AA       		.byte	-86
+ 255 00e7 20       		.byte	32
+ 256 00e8 AB       		.byte	-85
+ 257 00e9 44       		.byte	68
+ 258 00ea B0       		.byte	-80
+ 259 00eb E0       		.byte	-32
+ 260 00ec B1       		.byte	-79
+ 261 00ed 40       		.byte	64
+ 262 00ee B3       		.byte	-77
+ 263 00ef 80       		.byte	-128
+ 264 00f0 B4       		.byte	-76
+ 265 00f1 1F       		.byte	31
+ 266 00f2 B5       		.byte	-75
+ 267 00f3 0F       		.byte	15
+ 268 00f4 B7       		.byte	-73
+ 269 00f5 30       		.byte	48
+ 270 00f6 B9       		.byte	-71
+ 271 00f7 80       		.byte	-128
+ 272 00f8 BA       		.byte	-70
+ 273 00f9 02       		.byte	2
+ 274 00fa BB       		.byte	-69
+ 275 00fb 20       		.byte	32
+ 276 00fc BF       		.byte	-65
+ 277 00fd 45       		.byte	69
+ 278 00fe C0       		.byte	-64
+ 279 00ff 01       		.byte	1
+ 280 0100 C6       		.byte	-58
+ 281 0101 40       		.byte	64
+ 282 0102 C9       		.byte	-55
+ 283 0103 FF       		.byte	-1
+ 284 0104 CA       		.byte	-54
+ 285 0105 07       		.byte	7
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccgL3RBn.s 			page 6
 
 
- 286 0106 CE       		.byte	-50
- 287 0107 F0       		.byte	-16
- 288 0108 CF       		.byte	-49
- 289 0109 05       		.byte	5
- 290 010a D0       		.byte	-48
- 291 010b 08       		.byte	8
- 292 010c D8       		.byte	-40
- 293 010d 04       		.byte	4
- 294 010e D9       		.byte	-39
- 295 010f 04       		.byte	4
- 296 0110 DA       		.byte	-38
- 297 0111 04       		.byte	4
- 298 0112 DC       		.byte	-36
- 299 0113 11       		.byte	17
- 300 0114 DD       		.byte	-35
- 301 0115 01       		.byte	1
- 302 0116 DF       		.byte	-33
- 303 0117 01       		.byte	1
- 304 0118 E0       		.byte	-32
- 305 0119 40       		.byte	64
- 306 011a E1       		.byte	-31
- 307 011b A8       		.byte	-88
- 308 011c E2       		.byte	-30
- 309 011d 40       		.byte	64
- 310 011e E3       		.byte	-29
- 311 011f 20       		.byte	32
- 312 0120 00       		.byte	0
- 313 0121 46       		.byte	70
- 314 0122 02       		.byte	2
- 315 0123 04       		.byte	4
- 316 0124 04       		.byte	4
- 317 0125 08       		.byte	8
- 318 0126 05       		.byte	5
- 319 0127 51       		.byte	81
- 320 0128 09       		.byte	9
+ 286 0106 CB       		.byte	-53
+ 287 0107 FF       		.byte	-1
+ 288 0108 CC       		.byte	-52
+ 289 0109 40       		.byte	64
+ 290 010a CD       		.byte	-51
+ 291 010b 20       		.byte	32
+ 292 010c CE       		.byte	-50
+ 293 010d F0       		.byte	-16
+ 294 010e CF       		.byte	-49
+ 295 010f 05       		.byte	5
+ 296 0110 D0       		.byte	-48
+ 297 0111 08       		.byte	8
+ 298 0112 D4       		.byte	-44
+ 299 0113 01       		.byte	1
+ 300 0114 D8       		.byte	-40
+ 301 0115 04       		.byte	4
+ 302 0116 D9       		.byte	-39
+ 303 0117 04       		.byte	4
+ 304 0118 DA       		.byte	-38
+ 305 0119 04       		.byte	4
+ 306 011a DB       		.byte	-37
+ 307 011b 04       		.byte	4
+ 308 011c DC       		.byte	-36
+ 309 011d 11       		.byte	17
+ 310 011e DD       		.byte	-35
+ 311 011f 11       		.byte	17
+ 312 0120 DF       		.byte	-33
+ 313 0121 01       		.byte	1
+ 314 0122 E0       		.byte	-32
+ 315 0123 40       		.byte	64
+ 316 0124 E1       		.byte	-31
+ 317 0125 A8       		.byte	-88
+ 318 0126 E2       		.byte	-30
+ 319 0127 40       		.byte	64
+ 320 0128 E3       		.byte	-29
  321 0129 20       		.byte	32
- 322 012a 0F       		.byte	15
- 323 012b 10       		.byte	16
- 324 012c 10       		.byte	16
- 325 012d 80       		.byte	-128
- 326 012e 11       		.byte	17
- 327 012f 08       		.byte	8
- 328 0130 12       		.byte	18
- 329 0131 08       		.byte	8
- 330 0132 14       		.byte	20
- 331 0133 02       		.byte	2
- 332 0134 16       		.byte	22
- 333 0135 80       		.byte	-128
- 334 0136 17       		.byte	23
- 335 0137 08       		.byte	8
- 336 0138 18       		.byte	24
- 337 0139 44       		.byte	68
- 338 013a 19       		.byte	25
- 339 013b 11       		.byte	17
- 340 013c 1C       		.byte	28
- 341 013d 02       		.byte	2
- 342 013e 1D       		.byte	29
-ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccJpevoS.s 			page 7
+ 322 012a 00       		.byte	0
+ 323 012b 40       		.byte	64
+ 324 012c 02       		.byte	2
+ 325 012d 14       		.byte	20
+ 326 012e 04       		.byte	4
+ 327 012f 48       		.byte	72
+ 328 0130 05       		.byte	5
+ 329 0131 02       		.byte	2
+ 330 0132 09       		.byte	9
+ 331 0133 08       		.byte	8
+ 332 0134 0A       		.byte	10
+ 333 0135 08       		.byte	8
+ 334 0136 0B       		.byte	11
+ 335 0137 02       		.byte	2
+ 336 0138 0D       		.byte	13
+ 337 0139 28       		.byte	40
+ 338 013a 0E       		.byte	14
+ 339 013b 40       		.byte	64
+ 340 013c 10       		.byte	16
+ 341 013d 08       		.byte	8
+ 342 013e 11       		.byte	17
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccgL3RBn.s 			page 7
 
 
- 343 013f 40       		.byte	64
- 344 0140 1E       		.byte	30
- 345 0141 64       		.byte	100
- 346 0142 20       		.byte	32
- 347 0143 01       		.byte	1
- 348 0144 21       		.byte	33
- 349 0145 20       		.byte	32
- 350 0146 22       		.byte	34
- 351 0147 0C       		.byte	12
- 352 0148 23       		.byte	35
- 353 0149 18       		.byte	24
- 354 014a 29       		.byte	41
- 355 014b 41       		.byte	65
- 356 014c 2A       		.byte	42
- 357 014d 42       		.byte	66
- 358 014e 30       		.byte	48
- 359 014f 80       		.byte	-128
- 360 0150 31       		.byte	49
+ 343 013f 08       		.byte	8
+ 344 0140 16       		.byte	22
+ 345 0141 10       		.byte	16
+ 346 0142 18       		.byte	24
+ 347 0143 40       		.byte	64
+ 348 0144 19       		.byte	25
+ 349 0145 01       		.byte	1
+ 350 0146 1A       		.byte	26
+ 351 0147 08       		.byte	8
+ 352 0148 1D       		.byte	29
+ 353 0149 08       		.byte	8
+ 354 014a 1E       		.byte	30
+ 355 014b 44       		.byte	68
+ 356 014c 1F       		.byte	31
+ 357 014d 09       		.byte	9
+ 358 014e 20       		.byte	32
+ 359 014f 01       		.byte	1
+ 360 0150 21       		.byte	33
  361 0151 20       		.byte	32
- 362 0152 32       		.byte	50
- 363 0153 04       		.byte	4
- 364 0154 38       		.byte	56
- 365 0155 08       		.byte	8
- 366 0156 40       		.byte	64
+ 362 0152 23       		.byte	35
+ 363 0153 A0       		.byte	-96
+ 364 0154 28       		.byte	40
+ 365 0155 80       		.byte	-128
+ 366 0156 29       		.byte	41
  367 0157 01       		.byte	1
- 368 0158 46       		.byte	70
- 369 0159 42       		.byte	66
- 370 015a 48       		.byte	72
- 371 015b 80       		.byte	-128
- 372 015c 4C       		.byte	76
+ 368 0158 2B       		.byte	43
+ 369 0159 08       		.byte	8
+ 370 015a 31       		.byte	49
+ 371 015b 20       		.byte	32
+ 372 015c 32       		.byte	50
  373 015d 04       		.byte	4
- 374 015e 4D       		.byte	77
- 375 015f 01       		.byte	1
- 376 0160 50       		.byte	80
- 377 0161 04       		.byte	4
- 378 0162 52       		.byte	82
- 379 0163 04       		.byte	4
- 380 0164 55       		.byte	85
- 381 0165 04       		.byte	4
- 382 0166 56       		.byte	86
+ 374 015e 38       		.byte	56
+ 375 015f 08       		.byte	8
+ 376 0160 3A       		.byte	58
+ 377 0161 40       		.byte	64
+ 378 0162 3B       		.byte	59
+ 379 0163 02       		.byte	2
+ 380 0164 40       		.byte	64
+ 381 0165 01       		.byte	1
+ 382 0166 44       		.byte	68
  383 0167 80       		.byte	-128
- 384 0168 5C       		.byte	92
- 385 0169 02       		.byte	2
- 386 016a 5D       		.byte	93
- 387 016b 01       		.byte	1
- 388 016c 5E       		.byte	94
- 389 016d 44       		.byte	68
- 390 016e 5F       		.byte	95
- 391 016f 20       		.byte	32
- 392 0170 C0       		.byte	-64
- 393 0171 FF       		.byte	-1
- 394 0172 C2       		.byte	-62
- 395 0173 22       		.byte	34
- 396 0174 C4       		.byte	-60
- 397 0175 BE       		.byte	-66
- 398 0176 CA       		.byte	-54
- 399 0177 09       		.byte	9
-ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccJpevoS.s 			page 8
+ 384 0168 45       		.byte	69
+ 385 0169 20       		.byte	32
+ 386 016a 46       		.byte	70
+ 387 016b 04       		.byte	4
+ 388 016c 4C       		.byte	76
+ 389 016d 04       		.byte	4
+ 390 016e 4D       		.byte	77
+ 391 016f 02       		.byte	2
+ 392 0170 50       		.byte	80
+ 393 0171 0C       		.byte	12
+ 394 0172 52       		.byte	82
+ 395 0173 10       		.byte	16
+ 396 0174 55       		.byte	85
+ 397 0175 04       		.byte	4
+ 398 0176 56       		.byte	86
+ 399 0177 40       		.byte	64
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccgL3RBn.s 			page 8
 
 
- 400 0178 CC       		.byte	-52
- 401 0179 0E       		.byte	14
- 402 017a CE       		.byte	-50
- 403 017b 02       		.byte	2
- 404 017c D0       		.byte	-48
- 405 017d 98       		.byte	-104
- 406 017e D2       		.byte	-46
- 407 017f 20       		.byte	32
- 408 0180 D6       		.byte	-42
- 409 0181 F0       		.byte	-16
- 410 0182 B2       		.byte	-78
- 411 0183 90       		.byte	-112
- 412 0184 B3       		.byte	-77
- 413 0185 20       		.byte	32
- 414 0186 EA       		.byte	-22
- 415 0187 80       		.byte	-128
- 416 0188 EE       		.byte	-18
- 417 0189 04       		.byte	4
- 418 018a EE       		.byte	-18
- 419 018b 04       		.byte	4
- 420 018c E8       		.byte	-24
- 421 018d 01       		.byte	1
- 422 018e EC       		.byte	-20
- 423 018f 08       		.byte	8
- 424 0190 E8       		.byte	-24
- 425 0191 01       		.byte	1
- 426 0192 EC       		.byte	-20
- 427 0193 08       		.byte	8
- 428 0194 33       		.byte	51
+ 400 0178 57       		.byte	87
+ 401 0179 80       		.byte	-128
+ 402 017a 58       		.byte	88
+ 403 017b 20       		.byte	32
+ 404 017c 59       		.byte	89
+ 405 017d 02       		.byte	2
+ 406 017e 5A       		.byte	90
+ 407 017f 04       		.byte	4
+ 408 0180 5B       		.byte	91
+ 409 0181 80       		.byte	-128
+ 410 0182 C0       		.byte	-64
+ 411 0183 B7       		.byte	-73
+ 412 0184 C2       		.byte	-62
+ 413 0185 77       		.byte	119
+ 414 0186 C4       		.byte	-60
+ 415 0187 26       		.byte	38
+ 416 0188 CA       		.byte	-54
+ 417 0189 05       		.byte	5
+ 418 018a CC       		.byte	-52
+ 419 018b 06       		.byte	6
+ 420 018c CE       		.byte	-50
+ 421 018d 0B       		.byte	11
+ 422 018e D0       		.byte	-48
+ 423 018f A8       		.byte	-88
+ 424 0190 D2       		.byte	-46
+ 425 0191 20       		.byte	32
+ 426 0192 D6       		.byte	-42
+ 427 0193 0F       		.byte	15
+ 428 0194 B0       		.byte	-80
  429 0195 20       		.byte	32
- 430 0196 37       		.byte	55
- 431 0197 80       		.byte	-128
- 432 0198 CC       		.byte	-52
- 433 0199 30       		.byte	48
- 434 019a 63       		.byte	99
- 435 019b 02       		.byte	2
- 436 019c 9F       		.byte	-97
- 437 019d 80       		.byte	-128
- 438 019e A7       		.byte	-89
- 439 019f 20       		.byte	32
- 440 01a0 D6       		.byte	-42
- 441 01a1 40       		.byte	64
- 442 01a2 9F       		.byte	-97
- 443 01a3 80       		.byte	-128
- 444 01a4 A7       		.byte	-89
- 445 01a5 20       		.byte	32
- 446 01a6 B3       		.byte	-77
- 447 01a7 01       		.byte	1
- 448 01a8 9F       		.byte	-97
+ 430 0196 B3       		.byte	-77
+ 431 0197 A0       		.byte	-96
+ 432 0198 EE       		.byte	-18
+ 433 0199 20       		.byte	32
+ 434 019a EE       		.byte	-18
+ 435 019b 04       		.byte	4
+ 436 019c EE       		.byte	-18
+ 437 019d 04       		.byte	4
+ 438 019e E8       		.byte	-24
+ 439 019f 01       		.byte	1
+ 440 01a0 EC       		.byte	-20
+ 441 01a1 08       		.byte	8
+ 442 01a2 E8       		.byte	-24
+ 443 01a3 01       		.byte	1
+ 444 01a4 EC       		.byte	-20
+ 445 01a5 08       		.byte	8
+ 446 01a6 33       		.byte	51
+ 447 01a7 20       		.byte	32
+ 448 01a8 37       		.byte	55
  449 01a9 80       		.byte	-128
- 450 01aa AB       		.byte	-85
- 451 01ab 20       		.byte	32
- 452 01ac EE       		.byte	-18
- 453 01ad 20       		.byte	32
- 454 01ae 30       		.byte	48
- 455 01af 10       		.byte	16
- 456 01b0 CC       		.byte	-52
-ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccJpevoS.s 			page 9
+ 450 01aa CC       		.byte	-52
+ 451 01ab 30       		.byte	48
+ 452 01ac 62       		.byte	98
+ 453 01ad 02       		.byte	2
+ 454 01ae 9F       		.byte	-97
+ 455 01af 80       		.byte	-128
+ 456 01b0 A7       		.byte	-89
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccgL3RBn.s 			page 9
 
 
- 457 01b1 08       		.byte	8
- 458 01b2 9C       		.byte	-100
- 459 01b3 10       		.byte	16
- 460 01b4 1B       		.byte	27
- 461 01b5 04       		.byte	4
- 462 01b6 30       		.byte	48
- 463 01b7 10       		.byte	16
- 464 01b8 9C       		.byte	-100
- 465 01b9 10       		.byte	16
- 466 01ba C6       		.byte	-58
- 467 01bb 08       		.byte	8
- 468 01bc CC       		.byte	-52
- 469 01bd 08       		.byte	8
- 470 01be 41       		.byte	65
- 471 01bf 02       		.byte	2
- 472 01c0 44       		.byte	68
+ 457 01b1 20       		.byte	32
+ 458 01b2 D8       		.byte	-40
+ 459 01b3 40       		.byte	64
+ 460 01b4 9F       		.byte	-97
+ 461 01b5 80       		.byte	-128
+ 462 01b6 A7       		.byte	-89
+ 463 01b7 20       		.byte	32
+ 464 01b8 B2       		.byte	-78
+ 465 01b9 02       		.byte	2
+ 466 01ba 9F       		.byte	-97
+ 467 01bb 80       		.byte	-128
+ 468 01bc AB       		.byte	-85
+ 469 01bd 20       		.byte	32
+ 470 01be EE       		.byte	-18
+ 471 01bf 20       		.byte	32
+ 472 01c0 30       		.byte	48
  473 01c1 10       		.byte	16
- 474 01c2 45       		.byte	69
- 475 01c3 02       		.byte	2
- 476 01c4 46       		.byte	70
- 477 01c5 02       		.byte	2
- 478 01c6 9C       		.byte	-100
- 479 01c7 10       		.byte	16
- 480 01c8 AB       		.byte	-85
- 481 01c9 04       		.byte	4
- 482 01ca D0       		.byte	-48
- 483 01cb 06       		.byte	6
- 484 01cc 26       		.byte	38
- 485 01cd 80       		.byte	-128
- 486 01ce 27       		.byte	39
- 487 01cf 80       		.byte	-128
- 488 01d0 9F       		.byte	-97
- 489 01d1 80       		.byte	-128
- 490 01d2 C8       		.byte	-56
- 491 01d3 A0       		.byte	-96
- 492 01d4 AB       		.byte	-85
- 493 01d5 80       		.byte	-128
- 494 01d6 AE       		.byte	-82
- 495 01d7 80       		.byte	-128
- 496 01d8 E8       		.byte	-24
- 497 01d9 80       		.byte	-128
- 498 01da EC       		.byte	-20
- 499 01db 10       		.byte	16
- 500 01dc 9E       		.byte	-98
- 501 01dd 02       		.byte	2
- 502 01de A5       		.byte	-91
- 503 01df 02       		.byte	2
- 504 01e0 A9       		.byte	-87
- 505 01e1 02       		.byte	2
- 506 01e2 AE       		.byte	-82
- 507 01e3 02       		.byte	2
- 508 01e4 00       		.byte	0
- 509 01e5 02       		.byte	2
- 510 01e6 08       		.byte	8
- 511 01e7 02       		.byte	2
- 512 01e8 00       		.byte	0
- 513 01e9 0F       		.byte	15
-ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccJpevoS.s 			page 10
+ 474 01c2 CC       		.byte	-52
+ 475 01c3 08       		.byte	8
+ 476 01c4 9C       		.byte	-100
+ 477 01c5 10       		.byte	16
+ 478 01c6 1B       		.byte	27
+ 479 01c7 04       		.byte	4
+ 480 01c8 30       		.byte	48
+ 481 01c9 10       		.byte	16
+ 482 01ca 9C       		.byte	-100
+ 483 01cb 10       		.byte	16
+ 484 01cc C6       		.byte	-58
+ 485 01cd 08       		.byte	8
+ 486 01ce CC       		.byte	-52
+ 487 01cf 08       		.byte	8
+ 488 01d0 41       		.byte	65
+ 489 01d1 02       		.byte	2
+ 490 01d2 44       		.byte	68
+ 491 01d3 10       		.byte	16
+ 492 01d4 45       		.byte	69
+ 493 01d5 02       		.byte	2
+ 494 01d6 46       		.byte	70
+ 495 01d7 02       		.byte	2
+ 496 01d8 9C       		.byte	-100
+ 497 01d9 10       		.byte	16
+ 498 01da AB       		.byte	-85
+ 499 01db 04       		.byte	4
+ 500 01dc D0       		.byte	-48
+ 501 01dd 06       		.byte	6
+ 502 01de 26       		.byte	38
+ 503 01df 80       		.byte	-128
+ 504 01e0 27       		.byte	39
+ 505 01e1 80       		.byte	-128
+ 506 01e2 9F       		.byte	-97
+ 507 01e3 80       		.byte	-128
+ 508 01e4 C8       		.byte	-56
+ 509 01e5 A0       		.byte	-96
+ 510 01e6 AB       		.byte	-85
+ 511 01e7 80       		.byte	-128
+ 512 01e8 AE       		.byte	-82
+ 513 01e9 80       		.byte	-128
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccgL3RBn.s 			page 10
 
 
- 514 01ea 00       		.byte	0
- 515 01eb 00       		.byte	0
- 516 01ec 10       		.byte	16
- 517 01ed 00       		.byte	0
- 518 01ee 00       		.byte	0
- 519 01ef 10       		.byte	16
- 520 01f0 10       		.byte	16
- 521 01f1 00       		.byte	0
- 522 01f2 10       		.byte	16
- 523 01f3 00       		.byte	0
- 524 01f4 0B       		.byte	11
- 525 01f5 00       		.byte	0
+ 514 01ea E8       		.byte	-24
+ 515 01eb 80       		.byte	-128
+ 516 01ec EC       		.byte	-20
+ 517 01ed 10       		.byte	16
+ 518 01ee 9E       		.byte	-98
+ 519 01ef 02       		.byte	2
+ 520 01f0 A5       		.byte	-91
+ 521 01f1 02       		.byte	2
+ 522 01f2 A9       		.byte	-87
+ 523 01f3 02       		.byte	2
+ 524 01f4 AE       		.byte	-82
+ 525 01f5 02       		.byte	2
  526 01f6 00       		.byte	0
- 527 01f7 00       		.byte	0
- 528              		.global	cy_meta_custnvl
- 529              		.section	.cycustnvl,"a",%progbits
- 530              		.align	2
- 531              		.type	cy_meta_custnvl, %object
- 532              		.size	cy_meta_custnvl, 4
- 533              	cy_meta_custnvl:
- 534 0000 00       		.byte	0
- 535 0001 00       		.byte	0
- 536 0002 40       		.byte	64
- 537 0003 05       		.byte	5
- 538              		.global	cy_meta_wonvl
- 539              		.section	.cywolatch,"a",%progbits
- 540              		.align	2
- 541              		.type	cy_meta_wonvl, %object
- 542              		.size	cy_meta_wonvl, 4
- 543              	cy_meta_wonvl:
- 544 0000 BC       		.byte	-68
- 545 0001 90       		.byte	-112
- 546 0002 AC       		.byte	-84
- 547 0003 AF       		.byte	-81
- 548              		.global	cy_meta_flashprotect
- 549              		.section	.cyflashprotect,"a",%progbits
- 550              		.align	2
- 551              		.type	cy_meta_flashprotect, %object
- 552              		.size	cy_meta_flashprotect, 256
- 553              	cy_meta_flashprotect:
- 554 0000 00000000 		.space	256
- 554      00000000 
- 554      00000000 
- 554      00000000 
- 554      00000000 
- 555              		.global	cy_metadata
- 556              		.section	.cymeta,"a",%progbits
- 557              		.align	2
- 558              		.type	cy_metadata, %object
- 559              		.size	cy_metadata, 12
- 560              	cy_metadata:
- 561 0000 00       		.byte	0
- 562 0001 01       		.byte	1
- 563 0002 2E       		.byte	46
- 564 0003 12       		.byte	18
- 565 0004 30       		.byte	48
- 566 0005 69       		.byte	105
-ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccJpevoS.s 			page 11
+ 527 01f7 02       		.byte	2
+ 528 01f8 08       		.byte	8
+ 529 01f9 02       		.byte	2
+ 530 01fa 00       		.byte	0
+ 531 01fb 0F       		.byte	15
+ 532 01fc 10       		.byte	16
+ 533 01fd 00       		.byte	0
+ 534 01fe 00       		.byte	0
+ 535 01ff 10       		.byte	16
+ 536 0200 10       		.byte	16
+ 537 0201 00       		.byte	0
+ 538 0202 10       		.byte	16
+ 539 0203 00       		.byte	0
+ 540 0204 0B       		.byte	11
+ 541 0205 00       		.byte	0
+ 542 0206 00       		.byte	0
+ 543 0207 00       		.byte	0
+ 544 0208 20       		.byte	32
+ 545 0209 00       		.byte	0
+ 546 020a 00       		.byte	0
+ 547 020b 20       		.byte	32
+ 548 020c 00       		.byte	0
+ 549 020d 00       		.byte	0
+ 550 020e 00       		.byte	0
+ 551 020f 00       		.byte	0
+ 552 0210 00       		.byte	0
+ 553 0211 00       		.byte	0
+ 554 0212 00       		.byte	0
+ 555 0213 00       		.byte	0
+ 556              		.global	cy_meta_custnvl
+ 557              		.section	.cycustnvl,"a",%progbits
+ 558              		.align	2
+ 559              		.type	cy_meta_custnvl, %object
+ 560              		.size	cy_meta_custnvl, 4
+ 561              	cy_meta_custnvl:
+ 562 0000 00       		.byte	0
+ 563 0001 00       		.byte	0
+ 564 0002 40       		.byte	64
+ 565 0003 05       		.byte	5
+ 566              		.global	cy_meta_wonvl
+ 567              		.section	.cywolatch,"a",%progbits
+ 568              		.align	2
+ 569              		.type	cy_meta_wonvl, %object
+ 570              		.size	cy_meta_wonvl, 4
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccgL3RBn.s 			page 11
 
 
- 567 0006 00       		.byte	0
- 568 0007 01       		.byte	1
- 569 0008 00       		.byte	0
- 570 0009 00       		.byte	0
- 571 000a 00       		.byte	0
- 572 000b 00       		.byte	0
- 573              		.text
- 574              	.Letext0:
- 575              		.file 1 ".\\Generated_Source\\PSoC5\\cymetadata.c"
- 576              		.file 2 ".\\Generated_Source\\PSoC5\\cytypes.h"
- 577              		.section	.debug_info,"",%progbits
- 578              	.Ldebug_info0:
- 579 0000 36010000 		.4byte	0x136
- 580 0004 0400     		.2byte	0x4
- 581 0006 00000000 		.4byte	.Ldebug_abbrev0
- 582 000a 04       		.byte	0x4
- 583 000b 01       		.uleb128 0x1
- 584 000c 16010000 		.4byte	.LASF18
- 585 0010 01       		.byte	0x1
- 586 0011 00000000 		.4byte	.LASF19
- 587 0015 38000000 		.4byte	.LASF20
- 588 0019 00000000 		.4byte	.Ldebug_line0
- 589 001d 02       		.uleb128 0x2
- 590 001e 01       		.byte	0x1
- 591 001f 06       		.byte	0x6
- 592 0020 EA010000 		.4byte	.LASF0
- 593 0024 02       		.uleb128 0x2
- 594 0025 01       		.byte	0x1
- 595 0026 08       		.byte	0x8
- 596 0027 96000000 		.4byte	.LASF1
- 597 002b 02       		.uleb128 0x2
- 598 002c 02       		.byte	0x2
- 599 002d 05       		.byte	0x5
- 600 002e D1010000 		.4byte	.LASF2
- 601 0032 02       		.uleb128 0x2
- 602 0033 02       		.byte	0x2
- 603 0034 07       		.byte	0x7
- 604 0035 B6000000 		.4byte	.LASF3
- 605 0039 02       		.uleb128 0x2
- 606 003a 04       		.byte	0x4
- 607 003b 05       		.byte	0x5
- 608 003c E1010000 		.4byte	.LASF4
- 609 0040 02       		.uleb128 0x2
- 610 0041 04       		.byte	0x4
- 611 0042 07       		.byte	0x7
- 612 0043 A4000000 		.4byte	.LASF5
- 613 0047 02       		.uleb128 0x2
- 614 0048 08       		.byte	0x8
- 615 0049 05       		.byte	0x5
- 616 004a BE010000 		.4byte	.LASF6
- 617 004e 02       		.uleb128 0x2
- 618 004f 08       		.byte	0x8
- 619 0050 07       		.byte	0x7
- 620 0051 FF000000 		.4byte	.LASF7
- 621 0055 03       		.uleb128 0x3
- 622 0056 04       		.byte	0x4
- 623 0057 05       		.byte	0x5
-ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccJpevoS.s 			page 12
+ 571              	cy_meta_wonvl:
+ 572 0000 BC       		.byte	-68
+ 573 0001 90       		.byte	-112
+ 574 0002 AC       		.byte	-84
+ 575 0003 AF       		.byte	-81
+ 576              		.global	cy_meta_flashprotect
+ 577              		.section	.cyflashprotect,"a",%progbits
+ 578              		.align	2
+ 579              		.type	cy_meta_flashprotect, %object
+ 580              		.size	cy_meta_flashprotect, 256
+ 581              	cy_meta_flashprotect:
+ 582 0000 00000000 		.space	256
+ 582      00000000 
+ 582      00000000 
+ 582      00000000 
+ 582      00000000 
+ 583              		.global	cy_metadata
+ 584              		.section	.cymeta,"a",%progbits
+ 585              		.align	2
+ 586              		.type	cy_metadata, %object
+ 587              		.size	cy_metadata, 12
+ 588              	cy_metadata:
+ 589 0000 00       		.byte	0
+ 590 0001 01       		.byte	1
+ 591 0002 2E       		.byte	46
+ 592 0003 12       		.byte	18
+ 593 0004 30       		.byte	48
+ 594 0005 69       		.byte	105
+ 595 0006 00       		.byte	0
+ 596 0007 01       		.byte	1
+ 597 0008 00       		.byte	0
+ 598 0009 00       		.byte	0
+ 599 000a 00       		.byte	0
+ 600 000b 00       		.byte	0
+ 601              		.text
+ 602              	.Letext0:
+ 603              		.file 1 ".\\Generated_Source\\PSoC5\\cymetadata.c"
+ 604              		.file 2 ".\\Generated_Source\\PSoC5\\cytypes.h"
+ 605              		.section	.debug_info,"",%progbits
+ 606              	.Ldebug_info0:
+ 607 0000 36010000 		.4byte	0x136
+ 608 0004 0400     		.2byte	0x4
+ 609 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 610 000a 04       		.byte	0x4
+ 611 000b 01       		.uleb128 0x1
+ 612 000c 16010000 		.4byte	.LASF18
+ 613 0010 01       		.byte	0x1
+ 614 0011 00000000 		.4byte	.LASF19
+ 615 0015 38000000 		.4byte	.LASF20
+ 616 0019 00000000 		.4byte	.Ldebug_line0
+ 617 001d 02       		.uleb128 0x2
+ 618 001e 01       		.byte	0x1
+ 619 001f 06       		.byte	0x6
+ 620 0020 EA010000 		.4byte	.LASF0
+ 621 0024 02       		.uleb128 0x2
+ 622 0025 01       		.byte	0x1
+ 623 0026 08       		.byte	0x8
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccgL3RBn.s 			page 12
 
 
- 624 0058 696E7400 		.ascii	"int\000"
- 625 005c 02       		.uleb128 0x2
- 626 005d 04       		.byte	0x4
- 627 005e 07       		.byte	0x7
- 628 005f F2000000 		.4byte	.LASF8
- 629 0063 04       		.uleb128 0x4
- 630 0064 DB010000 		.4byte	.LASF21
- 631 0068 02       		.byte	0x2
- 632 0069 5B       		.byte	0x5b
- 633 006a 24000000 		.4byte	0x24
- 634 006e 02       		.uleb128 0x2
- 635 006f 04       		.byte	0x4
- 636 0070 04       		.byte	0x4
- 637 0071 32000000 		.4byte	.LASF9
- 638 0075 02       		.uleb128 0x2
- 639 0076 08       		.byte	0x8
- 640 0077 04       		.byte	0x4
- 641 0078 C9000000 		.4byte	.LASF10
- 642 007c 02       		.uleb128 0x2
- 643 007d 01       		.byte	0x1
- 644 007e 08       		.byte	0x8
- 645 007f CC010000 		.4byte	.LASF11
- 646 0083 05       		.uleb128 0x5
- 647 0084 63000000 		.4byte	0x63
- 648 0088 94000000 		.4byte	0x94
- 649 008c 06       		.uleb128 0x6
- 650 008d 94000000 		.4byte	0x94
- 651 0091 F701     		.2byte	0x1f7
- 652 0093 00       		.byte	0
- 653 0094 02       		.uleb128 0x2
- 654 0095 04       		.byte	0x4
- 655 0096 07       		.byte	0x7
- 656 0097 B5010000 		.4byte	.LASF12
- 657 009b 07       		.uleb128 0x7
- 658 009c E0000000 		.4byte	.LASF13
- 659 00a0 01       		.byte	0x1
- 660 00a1 1C       		.byte	0x1c
- 661 00a2 AC000000 		.4byte	0xac
- 662 00a6 05       		.uleb128 0x5
- 663 00a7 03       		.byte	0x3
- 664 00a8 00000000 		.4byte	cy_meta_configecc
- 665 00ac 08       		.uleb128 0x8
- 666 00ad 83000000 		.4byte	0x83
- 667 00b1 05       		.uleb128 0x5
- 668 00b2 63000000 		.4byte	0x63
- 669 00b6 C1000000 		.4byte	0xc1
- 670 00ba 09       		.uleb128 0x9
- 671 00bb 94000000 		.4byte	0x94
- 672 00bf 03       		.byte	0x3
- 673 00c0 00       		.byte	0
- 674 00c1 07       		.uleb128 0x7
- 675 00c2 D0000000 		.4byte	.LASF14
- 676 00c6 01       		.byte	0x1
- 677 00c7 65       		.byte	0x65
- 678 00c8 D2000000 		.4byte	0xd2
- 679 00cc 05       		.uleb128 0x5
- 680 00cd 03       		.byte	0x3
-ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccJpevoS.s 			page 13
+ 624 0027 96000000 		.4byte	.LASF1
+ 625 002b 02       		.uleb128 0x2
+ 626 002c 02       		.byte	0x2
+ 627 002d 05       		.byte	0x5
+ 628 002e D1010000 		.4byte	.LASF2
+ 629 0032 02       		.uleb128 0x2
+ 630 0033 02       		.byte	0x2
+ 631 0034 07       		.byte	0x7
+ 632 0035 B6000000 		.4byte	.LASF3
+ 633 0039 02       		.uleb128 0x2
+ 634 003a 04       		.byte	0x4
+ 635 003b 05       		.byte	0x5
+ 636 003c E1010000 		.4byte	.LASF4
+ 637 0040 02       		.uleb128 0x2
+ 638 0041 04       		.byte	0x4
+ 639 0042 07       		.byte	0x7
+ 640 0043 A4000000 		.4byte	.LASF5
+ 641 0047 02       		.uleb128 0x2
+ 642 0048 08       		.byte	0x8
+ 643 0049 05       		.byte	0x5
+ 644 004a BE010000 		.4byte	.LASF6
+ 645 004e 02       		.uleb128 0x2
+ 646 004f 08       		.byte	0x8
+ 647 0050 07       		.byte	0x7
+ 648 0051 FF000000 		.4byte	.LASF7
+ 649 0055 03       		.uleb128 0x3
+ 650 0056 04       		.byte	0x4
+ 651 0057 05       		.byte	0x5
+ 652 0058 696E7400 		.ascii	"int\000"
+ 653 005c 02       		.uleb128 0x2
+ 654 005d 04       		.byte	0x4
+ 655 005e 07       		.byte	0x7
+ 656 005f F2000000 		.4byte	.LASF8
+ 657 0063 04       		.uleb128 0x4
+ 658 0064 DB010000 		.4byte	.LASF21
+ 659 0068 02       		.byte	0x2
+ 660 0069 5B       		.byte	0x5b
+ 661 006a 24000000 		.4byte	0x24
+ 662 006e 02       		.uleb128 0x2
+ 663 006f 04       		.byte	0x4
+ 664 0070 04       		.byte	0x4
+ 665 0071 32000000 		.4byte	.LASF9
+ 666 0075 02       		.uleb128 0x2
+ 667 0076 08       		.byte	0x8
+ 668 0077 04       		.byte	0x4
+ 669 0078 C9000000 		.4byte	.LASF10
+ 670 007c 02       		.uleb128 0x2
+ 671 007d 01       		.byte	0x1
+ 672 007e 08       		.byte	0x8
+ 673 007f CC010000 		.4byte	.LASF11
+ 674 0083 05       		.uleb128 0x5
+ 675 0084 63000000 		.4byte	0x63
+ 676 0088 94000000 		.4byte	0x94
+ 677 008c 06       		.uleb128 0x6
+ 678 008d 94000000 		.4byte	0x94
+ 679 0091 1302     		.2byte	0x213
+ 680 0093 00       		.byte	0
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccgL3RBn.s 			page 13
 
 
- 681 00ce 00000000 		.4byte	cy_meta_custnvl
- 682 00d2 08       		.uleb128 0x8
- 683 00d3 B1000000 		.4byte	0xb1
- 684 00d7 07       		.uleb128 0x7
- 685 00d8 A7010000 		.4byte	.LASF15
- 686 00dc 01       		.byte	0x1
- 687 00dd 70       		.byte	0x70
- 688 00de E8000000 		.4byte	0xe8
- 689 00e2 05       		.uleb128 0x5
- 690 00e3 03       		.byte	0x3
- 691 00e4 00000000 		.4byte	cy_meta_wonvl
- 692 00e8 08       		.uleb128 0x8
- 693 00e9 B1000000 		.4byte	0xb1
- 694 00ed 05       		.uleb128 0x5
- 695 00ee 63000000 		.4byte	0x63
- 696 00f2 FD000000 		.4byte	0xfd
- 697 00f6 09       		.uleb128 0x9
- 698 00f7 94000000 		.4byte	0x94
- 699 00fb FF       		.byte	0xff
- 700 00fc 00       		.byte	0
- 701 00fd 07       		.uleb128 0x7
- 702 00fe 92010000 		.4byte	.LASF16
- 703 0102 01       		.byte	0x1
- 704 0103 7B       		.byte	0x7b
- 705 0104 0E010000 		.4byte	0x10e
- 706 0108 05       		.uleb128 0x5
- 707 0109 03       		.byte	0x3
- 708 010a 00000000 		.4byte	cy_meta_flashprotect
- 709 010e 08       		.uleb128 0x8
- 710 010f ED000000 		.4byte	0xed
- 711 0113 05       		.uleb128 0x5
- 712 0114 63000000 		.4byte	0x63
- 713 0118 23010000 		.4byte	0x123
- 714 011c 09       		.uleb128 0x9
- 715 011d 94000000 		.4byte	0x94
- 716 0121 0B       		.byte	0xb
- 717 0122 00       		.byte	0
- 718 0123 07       		.uleb128 0x7
- 719 0124 26000000 		.4byte	.LASF17
- 720 0128 01       		.byte	0x1
- 721 0129 A5       		.byte	0xa5
- 722 012a 34010000 		.4byte	0x134
- 723 012e 05       		.uleb128 0x5
- 724 012f 03       		.byte	0x3
- 725 0130 00000000 		.4byte	cy_metadata
- 726 0134 08       		.uleb128 0x8
- 727 0135 13010000 		.4byte	0x113
- 728 0139 00       		.byte	0
- 729              		.section	.debug_abbrev,"",%progbits
- 730              	.Ldebug_abbrev0:
- 731 0000 01       		.uleb128 0x1
- 732 0001 11       		.uleb128 0x11
- 733 0002 01       		.byte	0x1
- 734 0003 25       		.uleb128 0x25
- 735 0004 0E       		.uleb128 0xe
- 736 0005 13       		.uleb128 0x13
- 737 0006 0B       		.uleb128 0xb
-ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccJpevoS.s 			page 14
+ 681 0094 02       		.uleb128 0x2
+ 682 0095 04       		.byte	0x4
+ 683 0096 07       		.byte	0x7
+ 684 0097 B5010000 		.4byte	.LASF12
+ 685 009b 07       		.uleb128 0x7
+ 686 009c E0000000 		.4byte	.LASF13
+ 687 00a0 01       		.byte	0x1
+ 688 00a1 1C       		.byte	0x1c
+ 689 00a2 AC000000 		.4byte	0xac
+ 690 00a6 05       		.uleb128 0x5
+ 691 00a7 03       		.byte	0x3
+ 692 00a8 00000000 		.4byte	cy_meta_configecc
+ 693 00ac 08       		.uleb128 0x8
+ 694 00ad 83000000 		.4byte	0x83
+ 695 00b1 05       		.uleb128 0x5
+ 696 00b2 63000000 		.4byte	0x63
+ 697 00b6 C1000000 		.4byte	0xc1
+ 698 00ba 09       		.uleb128 0x9
+ 699 00bb 94000000 		.4byte	0x94
+ 700 00bf 03       		.byte	0x3
+ 701 00c0 00       		.byte	0
+ 702 00c1 07       		.uleb128 0x7
+ 703 00c2 D0000000 		.4byte	.LASF14
+ 704 00c6 01       		.byte	0x1
+ 705 00c7 69       		.byte	0x69
+ 706 00c8 D2000000 		.4byte	0xd2
+ 707 00cc 05       		.uleb128 0x5
+ 708 00cd 03       		.byte	0x3
+ 709 00ce 00000000 		.4byte	cy_meta_custnvl
+ 710 00d2 08       		.uleb128 0x8
+ 711 00d3 B1000000 		.4byte	0xb1
+ 712 00d7 07       		.uleb128 0x7
+ 713 00d8 A7010000 		.4byte	.LASF15
+ 714 00dc 01       		.byte	0x1
+ 715 00dd 74       		.byte	0x74
+ 716 00de E8000000 		.4byte	0xe8
+ 717 00e2 05       		.uleb128 0x5
+ 718 00e3 03       		.byte	0x3
+ 719 00e4 00000000 		.4byte	cy_meta_wonvl
+ 720 00e8 08       		.uleb128 0x8
+ 721 00e9 B1000000 		.4byte	0xb1
+ 722 00ed 05       		.uleb128 0x5
+ 723 00ee 63000000 		.4byte	0x63
+ 724 00f2 FD000000 		.4byte	0xfd
+ 725 00f6 09       		.uleb128 0x9
+ 726 00f7 94000000 		.4byte	0x94
+ 727 00fb FF       		.byte	0xff
+ 728 00fc 00       		.byte	0
+ 729 00fd 07       		.uleb128 0x7
+ 730 00fe 92010000 		.4byte	.LASF16
+ 731 0102 01       		.byte	0x1
+ 732 0103 7F       		.byte	0x7f
+ 733 0104 0E010000 		.4byte	0x10e
+ 734 0108 05       		.uleb128 0x5
+ 735 0109 03       		.byte	0x3
+ 736 010a 00000000 		.4byte	cy_meta_flashprotect
+ 737 010e 08       		.uleb128 0x8
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccgL3RBn.s 			page 14
 
 
- 738 0007 03       		.uleb128 0x3
- 739 0008 0E       		.uleb128 0xe
- 740 0009 1B       		.uleb128 0x1b
- 741 000a 0E       		.uleb128 0xe
- 742 000b 10       		.uleb128 0x10
- 743 000c 17       		.uleb128 0x17
- 744 000d 00       		.byte	0
- 745 000e 00       		.byte	0
- 746 000f 02       		.uleb128 0x2
- 747 0010 24       		.uleb128 0x24
- 748 0011 00       		.byte	0
- 749 0012 0B       		.uleb128 0xb
- 750 0013 0B       		.uleb128 0xb
- 751 0014 3E       		.uleb128 0x3e
- 752 0015 0B       		.uleb128 0xb
- 753 0016 03       		.uleb128 0x3
- 754 0017 0E       		.uleb128 0xe
- 755 0018 00       		.byte	0
- 756 0019 00       		.byte	0
- 757 001a 03       		.uleb128 0x3
- 758 001b 24       		.uleb128 0x24
- 759 001c 00       		.byte	0
- 760 001d 0B       		.uleb128 0xb
- 761 001e 0B       		.uleb128 0xb
- 762 001f 3E       		.uleb128 0x3e
- 763 0020 0B       		.uleb128 0xb
- 764 0021 03       		.uleb128 0x3
- 765 0022 08       		.uleb128 0x8
- 766 0023 00       		.byte	0
- 767 0024 00       		.byte	0
- 768 0025 04       		.uleb128 0x4
- 769 0026 16       		.uleb128 0x16
- 770 0027 00       		.byte	0
- 771 0028 03       		.uleb128 0x3
- 772 0029 0E       		.uleb128 0xe
- 773 002a 3A       		.uleb128 0x3a
- 774 002b 0B       		.uleb128 0xb
- 775 002c 3B       		.uleb128 0x3b
- 776 002d 0B       		.uleb128 0xb
- 777 002e 49       		.uleb128 0x49
- 778 002f 13       		.uleb128 0x13
- 779 0030 00       		.byte	0
- 780 0031 00       		.byte	0
- 781 0032 05       		.uleb128 0x5
- 782 0033 01       		.uleb128 0x1
- 783 0034 01       		.byte	0x1
- 784 0035 49       		.uleb128 0x49
- 785 0036 13       		.uleb128 0x13
- 786 0037 01       		.uleb128 0x1
- 787 0038 13       		.uleb128 0x13
- 788 0039 00       		.byte	0
- 789 003a 00       		.byte	0
- 790 003b 06       		.uleb128 0x6
- 791 003c 21       		.uleb128 0x21
- 792 003d 00       		.byte	0
- 793 003e 49       		.uleb128 0x49
- 794 003f 13       		.uleb128 0x13
-ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccJpevoS.s 			page 15
+ 738 010f ED000000 		.4byte	0xed
+ 739 0113 05       		.uleb128 0x5
+ 740 0114 63000000 		.4byte	0x63
+ 741 0118 23010000 		.4byte	0x123
+ 742 011c 09       		.uleb128 0x9
+ 743 011d 94000000 		.4byte	0x94
+ 744 0121 0B       		.byte	0xb
+ 745 0122 00       		.byte	0
+ 746 0123 07       		.uleb128 0x7
+ 747 0124 26000000 		.4byte	.LASF17
+ 748 0128 01       		.byte	0x1
+ 749 0129 A9       		.byte	0xa9
+ 750 012a 34010000 		.4byte	0x134
+ 751 012e 05       		.uleb128 0x5
+ 752 012f 03       		.byte	0x3
+ 753 0130 00000000 		.4byte	cy_metadata
+ 754 0134 08       		.uleb128 0x8
+ 755 0135 13010000 		.4byte	0x113
+ 756 0139 00       		.byte	0
+ 757              		.section	.debug_abbrev,"",%progbits
+ 758              	.Ldebug_abbrev0:
+ 759 0000 01       		.uleb128 0x1
+ 760 0001 11       		.uleb128 0x11
+ 761 0002 01       		.byte	0x1
+ 762 0003 25       		.uleb128 0x25
+ 763 0004 0E       		.uleb128 0xe
+ 764 0005 13       		.uleb128 0x13
+ 765 0006 0B       		.uleb128 0xb
+ 766 0007 03       		.uleb128 0x3
+ 767 0008 0E       		.uleb128 0xe
+ 768 0009 1B       		.uleb128 0x1b
+ 769 000a 0E       		.uleb128 0xe
+ 770 000b 10       		.uleb128 0x10
+ 771 000c 17       		.uleb128 0x17
+ 772 000d 00       		.byte	0
+ 773 000e 00       		.byte	0
+ 774 000f 02       		.uleb128 0x2
+ 775 0010 24       		.uleb128 0x24
+ 776 0011 00       		.byte	0
+ 777 0012 0B       		.uleb128 0xb
+ 778 0013 0B       		.uleb128 0xb
+ 779 0014 3E       		.uleb128 0x3e
+ 780 0015 0B       		.uleb128 0xb
+ 781 0016 03       		.uleb128 0x3
+ 782 0017 0E       		.uleb128 0xe
+ 783 0018 00       		.byte	0
+ 784 0019 00       		.byte	0
+ 785 001a 03       		.uleb128 0x3
+ 786 001b 24       		.uleb128 0x24
+ 787 001c 00       		.byte	0
+ 788 001d 0B       		.uleb128 0xb
+ 789 001e 0B       		.uleb128 0xb
+ 790 001f 3E       		.uleb128 0x3e
+ 791 0020 0B       		.uleb128 0xb
+ 792 0021 03       		.uleb128 0x3
+ 793 0022 08       		.uleb128 0x8
+ 794 0023 00       		.byte	0
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccgL3RBn.s 			page 15
 
 
- 795 0040 2F       		.uleb128 0x2f
- 796 0041 05       		.uleb128 0x5
- 797 0042 00       		.byte	0
- 798 0043 00       		.byte	0
- 799 0044 07       		.uleb128 0x7
- 800 0045 34       		.uleb128 0x34
- 801 0046 00       		.byte	0
- 802 0047 03       		.uleb128 0x3
- 803 0048 0E       		.uleb128 0xe
- 804 0049 3A       		.uleb128 0x3a
- 805 004a 0B       		.uleb128 0xb
- 806 004b 3B       		.uleb128 0x3b
- 807 004c 0B       		.uleb128 0xb
- 808 004d 49       		.uleb128 0x49
- 809 004e 13       		.uleb128 0x13
- 810 004f 3F       		.uleb128 0x3f
- 811 0050 19       		.uleb128 0x19
- 812 0051 02       		.uleb128 0x2
- 813 0052 18       		.uleb128 0x18
- 814 0053 00       		.byte	0
- 815 0054 00       		.byte	0
- 816 0055 08       		.uleb128 0x8
- 817 0056 26       		.uleb128 0x26
- 818 0057 00       		.byte	0
- 819 0058 49       		.uleb128 0x49
- 820 0059 13       		.uleb128 0x13
- 821 005a 00       		.byte	0
- 822 005b 00       		.byte	0
- 823 005c 09       		.uleb128 0x9
- 824 005d 21       		.uleb128 0x21
- 825 005e 00       		.byte	0
- 826 005f 49       		.uleb128 0x49
- 827 0060 13       		.uleb128 0x13
- 828 0061 2F       		.uleb128 0x2f
- 829 0062 0B       		.uleb128 0xb
- 830 0063 00       		.byte	0
- 831 0064 00       		.byte	0
- 832 0065 00       		.byte	0
- 833              		.section	.debug_aranges,"",%progbits
- 834 0000 14000000 		.4byte	0x14
- 835 0004 0200     		.2byte	0x2
- 836 0006 00000000 		.4byte	.Ldebug_info0
- 837 000a 04       		.byte	0x4
- 838 000b 00       		.byte	0
- 839 000c 0000     		.2byte	0
- 840 000e 0000     		.2byte	0
- 841 0010 00000000 		.4byte	0
- 842 0014 00000000 		.4byte	0
- 843              		.section	.debug_line,"",%progbits
- 844              	.Ldebug_line0:
- 845 0000 4F000000 		.section	.debug_str,"MS",%progbits,1
- 845      02004900 
- 845      00000201 
- 845      FB0E0D00 
- 845      01010101 
- 846              	.LASF19:
- 847 0000 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\cymetadata.c\000"
-ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccJpevoS.s 			page 16
+ 795 0024 00       		.byte	0
+ 796 0025 04       		.uleb128 0x4
+ 797 0026 16       		.uleb128 0x16
+ 798 0027 00       		.byte	0
+ 799 0028 03       		.uleb128 0x3
+ 800 0029 0E       		.uleb128 0xe
+ 801 002a 3A       		.uleb128 0x3a
+ 802 002b 0B       		.uleb128 0xb
+ 803 002c 3B       		.uleb128 0x3b
+ 804 002d 0B       		.uleb128 0xb
+ 805 002e 49       		.uleb128 0x49
+ 806 002f 13       		.uleb128 0x13
+ 807 0030 00       		.byte	0
+ 808 0031 00       		.byte	0
+ 809 0032 05       		.uleb128 0x5
+ 810 0033 01       		.uleb128 0x1
+ 811 0034 01       		.byte	0x1
+ 812 0035 49       		.uleb128 0x49
+ 813 0036 13       		.uleb128 0x13
+ 814 0037 01       		.uleb128 0x1
+ 815 0038 13       		.uleb128 0x13
+ 816 0039 00       		.byte	0
+ 817 003a 00       		.byte	0
+ 818 003b 06       		.uleb128 0x6
+ 819 003c 21       		.uleb128 0x21
+ 820 003d 00       		.byte	0
+ 821 003e 49       		.uleb128 0x49
+ 822 003f 13       		.uleb128 0x13
+ 823 0040 2F       		.uleb128 0x2f
+ 824 0041 05       		.uleb128 0x5
+ 825 0042 00       		.byte	0
+ 826 0043 00       		.byte	0
+ 827 0044 07       		.uleb128 0x7
+ 828 0045 34       		.uleb128 0x34
+ 829 0046 00       		.byte	0
+ 830 0047 03       		.uleb128 0x3
+ 831 0048 0E       		.uleb128 0xe
+ 832 0049 3A       		.uleb128 0x3a
+ 833 004a 0B       		.uleb128 0xb
+ 834 004b 3B       		.uleb128 0x3b
+ 835 004c 0B       		.uleb128 0xb
+ 836 004d 49       		.uleb128 0x49
+ 837 004e 13       		.uleb128 0x13
+ 838 004f 3F       		.uleb128 0x3f
+ 839 0050 19       		.uleb128 0x19
+ 840 0051 02       		.uleb128 0x2
+ 841 0052 18       		.uleb128 0x18
+ 842 0053 00       		.byte	0
+ 843 0054 00       		.byte	0
+ 844 0055 08       		.uleb128 0x8
+ 845 0056 26       		.uleb128 0x26
+ 846 0057 00       		.byte	0
+ 847 0058 49       		.uleb128 0x49
+ 848 0059 13       		.uleb128 0x13
+ 849 005a 00       		.byte	0
+ 850 005b 00       		.byte	0
+ 851 005c 09       		.uleb128 0x9
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccgL3RBn.s 			page 16
 
 
- 847      6E657261 
- 847      7465645F 
- 847      536F7572 
- 847      63655C50 
- 848              	.LASF17:
- 849 0026 63795F6D 		.ascii	"cy_metadata\000"
- 849      65746164 
- 849      61746100 
- 850              	.LASF9:
- 851 0032 666C6F61 		.ascii	"float\000"
- 851      7400
- 852              	.LASF20:
- 853 0038 433A5C55 		.ascii	"C:\\Users\\pearlstl\\Documents\\MUSE-Research\\proj"
- 853      73657273 
- 853      5C706561 
- 853      726C7374 
- 853      6C5C446F 
- 854 0066 5F616E63 		.ascii	"_anc\\system\\WaveGenerator1\\WaveGenerator1.cydsn\000"
- 854      5C737973 
- 854      74656D5C 
- 854      57617665 
- 854      47656E65 
- 855              	.LASF1:
- 856 0096 756E7369 		.ascii	"unsigned char\000"
- 856      676E6564 
- 856      20636861 
- 856      7200
- 857              	.LASF5:
- 858 00a4 6C6F6E67 		.ascii	"long unsigned int\000"
- 858      20756E73 
- 858      69676E65 
- 858      6420696E 
- 858      7400
- 859              	.LASF3:
- 860 00b6 73686F72 		.ascii	"short unsigned int\000"
- 860      7420756E 
- 860      7369676E 
- 860      65642069 
- 860      6E7400
- 861              	.LASF10:
- 862 00c9 646F7562 		.ascii	"double\000"
- 862      6C6500
- 863              	.LASF14:
- 864 00d0 63795F6D 		.ascii	"cy_meta_custnvl\000"
- 864      6574615F 
- 864      63757374 
- 864      6E766C00 
- 865              	.LASF13:
- 866 00e0 63795F6D 		.ascii	"cy_meta_configecc\000"
- 866      6574615F 
- 866      636F6E66 
- 866      69676563 
- 866      6300
- 867              	.LASF8:
- 868 00f2 756E7369 		.ascii	"unsigned int\000"
- 868      676E6564 
- 868      20696E74 
-ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccJpevoS.s 			page 17
+ 852 005d 21       		.uleb128 0x21
+ 853 005e 00       		.byte	0
+ 854 005f 49       		.uleb128 0x49
+ 855 0060 13       		.uleb128 0x13
+ 856 0061 2F       		.uleb128 0x2f
+ 857 0062 0B       		.uleb128 0xb
+ 858 0063 00       		.byte	0
+ 859 0064 00       		.byte	0
+ 860 0065 00       		.byte	0
+ 861              		.section	.debug_aranges,"",%progbits
+ 862 0000 14000000 		.4byte	0x14
+ 863 0004 0200     		.2byte	0x2
+ 864 0006 00000000 		.4byte	.Ldebug_info0
+ 865 000a 04       		.byte	0x4
+ 866 000b 00       		.byte	0
+ 867 000c 0000     		.2byte	0
+ 868 000e 0000     		.2byte	0
+ 869 0010 00000000 		.4byte	0
+ 870 0014 00000000 		.4byte	0
+ 871              		.section	.debug_line,"",%progbits
+ 872              	.Ldebug_line0:
+ 873 0000 4F000000 		.section	.debug_str,"MS",%progbits,1
+ 873      02004900 
+ 873      00000201 
+ 873      FB0E0D00 
+ 873      01010101 
+ 874              	.LASF19:
+ 875 0000 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\cymetadata.c\000"
+ 875      6E657261 
+ 875      7465645F 
+ 875      536F7572 
+ 875      63655C50 
+ 876              	.LASF17:
+ 877 0026 63795F6D 		.ascii	"cy_metadata\000"
+ 877      65746164 
+ 877      61746100 
+ 878              	.LASF9:
+ 879 0032 666C6F61 		.ascii	"float\000"
+ 879      7400
+ 880              	.LASF20:
+ 881 0038 433A5C55 		.ascii	"C:\\Users\\pearlstl\\Documents\\MUSE-Research\\proj"
+ 881      73657273 
+ 881      5C706561 
+ 881      726C7374 
+ 881      6C5C446F 
+ 882 0066 5F616E63 		.ascii	"_anc\\system\\WaveGenerator1\\WaveGenerator1.cydsn\000"
+ 882      5C737973 
+ 882      74656D5C 
+ 882      57617665 
+ 882      47656E65 
+ 883              	.LASF1:
+ 884 0096 756E7369 		.ascii	"unsigned char\000"
+ 884      676E6564 
+ 884      20636861 
+ 884      7200
+ 885              	.LASF5:
+ 886 00a4 6C6F6E67 		.ascii	"long unsigned int\000"
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccgL3RBn.s 			page 17
 
 
- 868      00
- 869              	.LASF7:
- 870 00ff 6C6F6E67 		.ascii	"long long unsigned int\000"
- 870      206C6F6E 
- 870      6720756E 
- 870      7369676E 
- 870      65642069 
- 871              	.LASF18:
- 872 0116 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
- 872      4320342E 
- 872      382E3420 
- 872      32303134 
- 872      30353236 
- 873 0149 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m3 -mthumb -g -O"
- 873      20726576 
- 873      6973696F 
- 873      6E203231 
- 873      31333538 
- 874 017c 30202D66 		.ascii	"0 -ffunction-sections\000"
- 874      66756E63 
- 874      74696F6E 
- 874      2D736563 
- 874      74696F6E 
- 875              	.LASF16:
- 876 0192 63795F6D 		.ascii	"cy_meta_flashprotect\000"
- 876      6574615F 
- 876      666C6173 
- 876      6870726F 
- 876      74656374 
- 877              	.LASF15:
- 878 01a7 63795F6D 		.ascii	"cy_meta_wonvl\000"
- 878      6574615F 
- 878      776F6E76 
- 878      6C00
- 879              	.LASF12:
- 880 01b5 73697A65 		.ascii	"sizetype\000"
- 880      74797065 
- 880      00
- 881              	.LASF6:
- 882 01be 6C6F6E67 		.ascii	"long long int\000"
- 882      206C6F6E 
- 882      6720696E 
- 882      7400
- 883              	.LASF11:
- 884 01cc 63686172 		.ascii	"char\000"
- 884      00
- 885              	.LASF2:
- 886 01d1 73686F72 		.ascii	"short int\000"
- 886      7420696E 
+ 886      20756E73 
+ 886      69676E65 
+ 886      6420696E 
  886      7400
- 887              	.LASF21:
- 888 01db 75696E74 		.ascii	"uint8\000"
- 888      3800
- 889              	.LASF4:
- 890 01e1 6C6F6E67 		.ascii	"long int\000"
- 890      20696E74 
- 890      00
-ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccJpevoS.s 			page 18
+ 887              	.LASF3:
+ 888 00b6 73686F72 		.ascii	"short unsigned int\000"
+ 888      7420756E 
+ 888      7369676E 
+ 888      65642069 
+ 888      6E7400
+ 889              	.LASF10:
+ 890 00c9 646F7562 		.ascii	"double\000"
+ 890      6C6500
+ 891              	.LASF14:
+ 892 00d0 63795F6D 		.ascii	"cy_meta_custnvl\000"
+ 892      6574615F 
+ 892      63757374 
+ 892      6E766C00 
+ 893              	.LASF13:
+ 894 00e0 63795F6D 		.ascii	"cy_meta_configecc\000"
+ 894      6574615F 
+ 894      636F6E66 
+ 894      69676563 
+ 894      6300
+ 895              	.LASF8:
+ 896 00f2 756E7369 		.ascii	"unsigned int\000"
+ 896      676E6564 
+ 896      20696E74 
+ 896      00
+ 897              	.LASF7:
+ 898 00ff 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 898      206C6F6E 
+ 898      6720756E 
+ 898      7369676E 
+ 898      65642069 
+ 899              	.LASF18:
+ 900 0116 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 900      4320342E 
+ 900      382E3420 
+ 900      32303134 
+ 900      30353236 
+ 901 0149 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m3 -mthumb -g -O"
+ 901      20726576 
+ 901      6973696F 
+ 901      6E203231 
+ 901      31333538 
+ 902 017c 30202D66 		.ascii	"0 -ffunction-sections\000"
+ 902      66756E63 
+ 902      74696F6E 
+ 902      2D736563 
+ 902      74696F6E 
+ 903              	.LASF16:
+ 904 0192 63795F6D 		.ascii	"cy_meta_flashprotect\000"
+ 904      6574615F 
+ 904      666C6173 
+ 904      6870726F 
+ 904      74656374 
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccgL3RBn.s 			page 18
 
 
- 891              	.LASF0:
- 892 01ea 7369676E 		.ascii	"signed char\000"
- 892      65642063 
- 892      68617200 
- 893              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br
+ 905              	.LASF15:
+ 906 01a7 63795F6D 		.ascii	"cy_meta_wonvl\000"
+ 906      6574615F 
+ 906      776F6E76 
+ 906      6C00
+ 907              	.LASF12:
+ 908 01b5 73697A65 		.ascii	"sizetype\000"
+ 908      74797065 
+ 908      00
+ 909              	.LASF6:
+ 910 01be 6C6F6E67 		.ascii	"long long int\000"
+ 910      206C6F6E 
+ 910      6720696E 
+ 910      7400
+ 911              	.LASF11:
+ 912 01cc 63686172 		.ascii	"char\000"
+ 912      00
+ 913              	.LASF2:
+ 914 01d1 73686F72 		.ascii	"short int\000"
+ 914      7420696E 
+ 914      7400
+ 915              	.LASF21:
+ 916 01db 75696E74 		.ascii	"uint8\000"
+ 916      3800
+ 917              	.LASF4:
+ 918 01e1 6C6F6E67 		.ascii	"long int\000"
+ 918      20696E74 
+ 918      00
+ 919              	.LASF0:
+ 920 01ea 7369676E 		.ascii	"signed char\000"
+ 920      65642063 
+ 920      68617200 
+ 921              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br

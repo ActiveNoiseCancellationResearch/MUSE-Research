@@ -1,5 +1,5 @@
-C:\Users\pearlstl\Documents\MUSE-Research\proj_anc\system\WaveGenerator1\WaveGenerator1.cydsn\WaveGenerator1.cyprj|b0c95e67-7d61-4bad-94e2-486779f934ea
-C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|7a28bcc0-3d55-4038-9b72-60cccc706404
-C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|16c4ed06-69a4-48c8-9aa4-d267046cb26c
-C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|ea5ba5dd-1413-4a80-b508-4adbc5e7c5b6
-C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|e6c12465-fe82-485d-8021-bdf5f8b44086
+C:\Users\pearlstl\Documents\MUSE-Research\proj_anc\system\WaveGenerator1\WaveGenerator1.cydsn\WaveGenerator1.cyprj|bb49e87c-22b3-4efb-aa2e-a2a87925a536
+C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|e5bbd74e-5094-4312-b3a0-ae5b6f696e22
+C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|a7a750bb-9bd5-46d2-b9da-58270f7dd5c4
+C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|e5d7b262-ce3e-4292-9f79-8ed80d6c65e3
+C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|7583d971-185a-454c-add7-c8f960177b39

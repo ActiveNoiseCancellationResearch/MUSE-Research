@@ -48,6 +48,9 @@
   <file name="C:\Users\pearlstl\Documents\MUSE-Research\proj_anc\system\WaveGenerator1\WaveGenerator1.cydsn\codegentemp\UART_1_PM.c" value="ARM_C_FILE;UART_1" />
   <file name="C:\Users\pearlstl\Documents\MUSE-Research\proj_anc\system\WaveGenerator1\WaveGenerator1.cydsn\codegentemp\UART_1_INT.c" value="ARM_C_FILE;UART_1" />
   <file name="C:\Users\pearlstl\Documents\MUSE-Research\proj_anc\system\WaveGenerator1\WaveGenerator1.cydsn\codegentemp\UART_1_BOOT.c" value="ARM_C_FILE;UART_1" />
+  <file name="C:\Users\pearlstl\Documents\MUSE-Research\proj_anc\system\WaveGenerator1\WaveGenerator1.cydsn\codegentemp\SW3_aliases.h" value="NONE;SW3" />
+  <file name="C:\Users\pearlstl\Documents\MUSE-Research\proj_anc\system\WaveGenerator1\WaveGenerator1.cydsn\codegentemp\SW3.c" value="ARM_C_FILE;SW3" />
+  <file name="C:\Users\pearlstl\Documents\MUSE-Research\proj_anc\system\WaveGenerator1\WaveGenerator1.cydsn\codegentemp\SW3.h" value="NONE;SW3" />
   <file name="C:\Users\pearlstl\Documents\MUSE-Research\proj_anc\system\WaveGenerator1\WaveGenerator1.cydsn\codegentemp\ADC_SAR_IRQ.c" value="ARM_C_FILE;ADC_SAR_IRQ" />
   <file name="C:\Users\pearlstl\Documents\MUSE-Research\proj_anc\system\WaveGenerator1\WaveGenerator1.cydsn\codegentemp\ADC_SAR_IRQ.h" value="NONE;ADC_SAR_IRQ" />
   <file name="C:\Users\pearlstl\Documents\MUSE-Research\proj_anc\system\WaveGenerator1\WaveGenerator1.cydsn\codegentemp\ADC_SAR_theACLK.c" value="ARM_C_FILE;ADC_SAR_theACLK" />

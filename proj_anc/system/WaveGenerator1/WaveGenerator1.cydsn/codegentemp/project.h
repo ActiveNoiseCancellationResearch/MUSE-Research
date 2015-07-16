@@ -31,6 +31,8 @@
 #include "Pin_4_aliases.h"
 #include "Pin_4.h"
 #include "UART_1.h"
+#include "SW3_aliases.h"
+#include "SW3.h"
 #include "ADC_SAR_IRQ.h"
 #include "ADC_SAR_theACLK.h"
 #include "UART_1_IntClock.h"

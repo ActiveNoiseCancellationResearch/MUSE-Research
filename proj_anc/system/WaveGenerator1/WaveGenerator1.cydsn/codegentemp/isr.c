@@ -32,10 +32,27 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-    
+
+// Uncomment one of the following 3 modes:
+//
+// This mode puts full-scale sine waves out on both DACSs, to HS and LS outputs
+//#define MODE_CALIBRATE
+//
+// Normal operation of the active noise canceller (with sine-wave undesired signal)
+#define MODE_CANCELLER
+//
+// This mode puts out random data onto LS output, captures MIC input, and sends to host via serial port
+//#define MODE_CHARACTERIZE
+
+#ifdef MODE_CHARACTERIZE
 uint8 cap_array[NUM_SAMPS_TO_CAPTURE];
 extern int n;
+#endif
+
+#ifndef MODE_CALIBRATE
 extern int wave_table[WAVESIZE];
+#endif
+
 /* `#END` */
 
 #ifndef CYINT_IRQ_BASE
@@ -172,55 +189,51 @@ CY_ISR(isr_Interrupt)
     
     #define NUM_TONES (1)                 // number of tones to be generated
                            // Discrete time index
+
+#ifndef MODE_CHARACTERIZE    
     static int wave_idx=0;
-//    int freqs[] = { 256 };                // Array of tone frequencies, in Hz
-//    int ampls[] = { 16000 };              // Array of tone amplitudes, C1.0.15, roughly 0.5 for now
-//    int T       = (1<<20)/20000;          // Samping period, in 1/2^20) seconds //16*1024 (would be nicer)
-//    int k;
-//    int value;
+#endif
+
     int x=0;
     int e_;
-    int i;
     int y;
-   
- 
-//  for (k = 0 ; k<NUM_TONES ; ++k)
-//  {
-//      value = n*T*freqs[k]/(1<<5);
-//      value=value&0x7fff;
-//      value=(value*ampls[k])>>15;
-//      x+=value;                         //15 bit unsigned number
-//  }
-//            
-//              
-//    x = (x>>4);                           //now a 8bit 2's comp value
-//    x+=128;                               //Offset binary. VDAC wants this
-     
-    x = wave_table[wave_idx];
 
-//    x = rand();   
+#ifndef MODE_CHARACTERIZE
+     x = wave_table[wave_idx];
 
     // Convert sine wave from Q20.12 to 8-bit offset binary
     VDAC8_2_ls_SetValue((x>>5)+128);
-    
+
+    // Advance to next sample in wave  table
+    ++wave_idx;
+    if (wave_idx == WAVESIZE) wave_idx=0;
+#else
+    x = rand();   
+
+    VDAC8_2_ls_SetValue(x & 0xFF);
+#endif
+
     // e_ is 12-bit offset binary, range 0 to 4095
     e_ =  ADC_SAR_GetResult16();          //Set's value to the ADC output (16bit 2's comp value)
         
-       
+#ifdef MODE_CANCELLER       
     //canceller code goes here
-    y = canceller_new_sample(x);
-    canceller_coeff_update(e_);
+    y = (canceller_new_sample(x) + (1<<4)) >> 5;   // Get signed value, 7 fractional bits (8 bits total)
+    if (y > 127)  y =  127;
+    if (y < -128) y = -128;
+    
+    // Convert value to offset binary
+    VDAC8_1_hs_SetValue(y + 128);              
+
+    canceller_coeff_update(e_ - 2048);
     //end canceller code  
-        
-    VDAC8_1_hs_SetValue(x);              
-       
-    ++wave_idx;
-        
-    if (wave_idx == WAVESIZE)
-    {
-        wave_idx=0;
-    }
-        
+#else
+#ifdef MODE_CALIBRATE
+    VDAC8_1_hs_SetValue((x>>5)+128);
+#endif
+#endif
+
+#ifdef MODE_CHARACTERIZE
     if (n < NUM_SAMPS_TO_CAPTURE)
     {
         cap_array[n] = e_>>4;
@@ -231,17 +244,19 @@ CY_ISR(isr_Interrupt)
         int the_val;
         char my_string[32];
         int length;
+        int i;
         
         for(i=0;i<NUM_SAMPS_TO_CAPTURE;++i)
-            {
-                the_val = cap_array[i];
-                sprintf(my_string ,"%d\n", the_val & 0xFFFF);
-                length = strlen(my_string);
-                UART_1_PutArray( (uint8 *) my_string, length); 
-            }
-        
+        {
+            the_val = cap_array[i];
+            sprintf(my_string ,"%d\n", the_val & 0xFFFF);
+            length = strlen(my_string);
+            UART_1_PutArray( (uint8 *) my_string, length); 
+        }
         ++n;
     }
+#endif
+
 }        
 
     /* `#END` */

@@ -39,12 +39,12 @@ hs_model_new_sample (int x)
     
     for (i=0; i<FILTER_ORDER; ++i) 
     {
-        sum+=recent_samps[(wptr-i+FILTER_ORDER)&FO1]*model_coeffs[i];
+        sum += (recent_samps[(wptr - i + FILTER_ORDER) & FO1] * model_coeffs[i]);
     }
 
-    sum=(sum+FP_ROUND)>>FP_SHIFT;
+    sum = (sum + FP_ROUND) >> FP_SHIFT;
         
-    wptr=(wptr+1)&FO1;
+    wptr = (wptr + 1) & FO1;
 
     return sum;
 }

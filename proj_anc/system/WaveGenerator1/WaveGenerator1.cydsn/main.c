@@ -15,6 +15,7 @@
 #include "ANC.h"
 #include "hs_model.h"
 #include "hs_model_coeffs.h"
+#include "canceller.h"
 
 int wave_table[WAVESIZE];       // Q20.12 format (signed two's complement, 12 fractional bits)s
 int n=0;
@@ -35,6 +36,7 @@ int main()
     
     // The hs_model_coeffs array must be defined in hs_model_coeffs.h !!!
     hs_model_new( hs_model_coeffs );
+    canceller_new();
     
     VDAC8_1_hs_Start();
     ADC_SAR_Start();

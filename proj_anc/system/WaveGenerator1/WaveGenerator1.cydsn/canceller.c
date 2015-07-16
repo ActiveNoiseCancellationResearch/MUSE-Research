@@ -9,6 +9,10 @@
  *
  * ========================================
 */
+#include <stdio.h>
+#include <UART_1.h>
+#include <SW3.h>
+
 #include "hs_model.h"                       
 #include "mic_model.h"
 #include "ANC.h"  
@@ -16,12 +20,14 @@
 
 #define FILTER_ORDER (16)
 #define FO1 (FILTER_ORDER-1) 
-#define MU (0.001)
+#define MU (0.01)
 #define MU_Q20_12 ( (int) (MU * (1<<FP_SHIFT) + 0.5) )
 
-static int recent_samps_in [FILTER_ORDER];
-static int model_coeffs [FILTER_ORDER];
-static int recent_samps_v [FILTER_ORDER];
+static int recent_samps_in[FILTER_ORDER];
+static int recent_samps_v[FILTER_ORDER];
+static int recent_samps_e[FILTER_ORDER];
+static int model_coeffs[FILTER_ORDER];
+
 static int wptr;                            //circular buffer write pointer, for recent_samps_in
 
 void 
@@ -30,9 +36,10 @@ canceller_new(void)
     int i;
     for (i=0; i<FILTER_ORDER; ++i)
     {
-        recent_samps_v [i]=0;
-        recent_samps_in [i]=0;
-        model_coeffs[i]=0;    
+        recent_samps_in[i]  = 0;
+        recent_samps_v[i]   = 0;
+        recent_samps_e[i]   = 0;
+        model_coeffs[i]     = 0;    
     }
     model_coeffs[0]=1;
     
@@ -66,7 +73,61 @@ canceller_new_sample(int input_samp)
     }
 
     sum=(sum+FP_ROUND)>>FP_SHIFT;
-    
+
+    // For debug, print the state of the canceller
+    if (SW3_Read() == 0)
+    {
+        int     i;
+        char    my_string[256];
+        
+        // recent_samps_in
+        sprintf(my_string ,"recent_samps_in:\n");           UART_1_PutArray( (uint8 *) my_string, strlen(my_string)); 
+        sprintf(my_string ,"\n");                           UART_1_PutArray( (uint8 *) my_string, strlen(my_string)); 
+        for (i = 0; i < 16; ++i)
+        {
+            sprintf(my_string ,"   [%2d] %5d\n", i, recent_samps_in[(wptr - i + FILTER_ORDER) & FO1] );  UART_1_PutArray( (uint8 *) my_string, strlen(my_string)); 
+        }
+        sprintf(my_string ,"\n");                           UART_1_PutArray( (uint8 *) my_string, strlen(my_string)); 
+        sprintf(my_string ,"\n");                           UART_1_PutArray( (uint8 *) my_string, strlen(my_string)); 
+        //////////////
+
+        // recent_samps_v
+        sprintf(my_string ,"recent_samps_v:\n");            UART_1_PutArray( (uint8 *) my_string, strlen(my_string)); 
+        sprintf(my_string ,"\n");                           UART_1_PutArray( (uint8 *) my_string, strlen(my_string)); 
+        for (i = 0; i < 16; ++i)
+        {
+            sprintf(my_string ,"   [%2d] %5d\n", i, recent_samps_v[(wptr - i + FILTER_ORDER) & FO1] );  UART_1_PutArray( (uint8 *) my_string, strlen(my_string)); 
+        }
+        sprintf(my_string ,"\n");                           UART_1_PutArray( (uint8 *) my_string, strlen(my_string)); 
+        sprintf(my_string ,"\n");                           UART_1_PutArray( (uint8 *) my_string, strlen(my_string)); 
+        //////////////
+
+        // recent_samps_e
+        sprintf(my_string ,"recent_samps_e:\n");            UART_1_PutArray( (uint8 *) my_string, strlen(my_string)); 
+        sprintf(my_string ,"\n");                           UART_1_PutArray( (uint8 *) my_string, strlen(my_string)); 
+        for (i = 0; i < 16; ++i)
+        {
+            sprintf(my_string ,"   [%2d] %5d\n", i, recent_samps_e[(wptr - i + FILTER_ORDER) & FO1] );  UART_1_PutArray( (uint8 *) my_string, strlen(my_string)); 
+        }
+        sprintf(my_string ,"\n");                           UART_1_PutArray( (uint8 *) my_string, strlen(my_string)); 
+        sprintf(my_string ,"\n");                           UART_1_PutArray( (uint8 *) my_string, strlen(my_string)); 
+        //////////////
+
+        // model_coeffs
+        sprintf(my_string ,"model_coeffs:\n");              UART_1_PutArray( (uint8 *) my_string, strlen(my_string)); 
+        sprintf(my_string ,"\n");                           UART_1_PutArray( (uint8 *) my_string, strlen(my_string)); 
+        for (i = 0; i < 16; ++i)
+        {
+            sprintf(my_string ,"   [%2d] %5d\n", i, model_coeffs[i] );  UART_1_PutArray( (uint8 *) my_string, strlen(my_string)); 
+        }
+        sprintf(my_string ,"\n");                           UART_1_PutArray( (uint8 *) my_string, strlen(my_string)); 
+        sprintf(my_string ,"\n");                           UART_1_PutArray( (uint8 *) my_string, strlen(my_string)); 
+        //////////////
+        
+        CyDelay(1000);
+        sprintf(my_string ,"===========================================================\n");            UART_1_PutArray( (uint8 *) my_string, strlen(my_string)); 
+        sprintf(my_string ,"===========================================================\n");            UART_1_PutArray( (uint8 *) my_string, strlen(my_string)); 
+    }
     wptr=(wptr+1)&FO1;
     
     return sum;
@@ -78,6 +139,8 @@ canceller_coeff_update (int e_)
 {
     int i;
 
+    recent_samps_e[wptr] = e_;
+    
     for (i=0 ; i<FILTER_ORDER;++i)
     {
         int temp;

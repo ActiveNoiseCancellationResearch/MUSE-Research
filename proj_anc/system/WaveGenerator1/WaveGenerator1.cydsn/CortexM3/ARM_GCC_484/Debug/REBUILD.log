@@ -1,4 +1,4 @@
---------------- Rebuild Started: 07/13/2015 14:14:08 Project: WaveGenerator1, Configuration: ARM GCC 4.8.4 Debug ---------------
+--------------- Rebuild Started: 07/16/2015 19:45:10 Project: WaveGenerator1, Configuration: ARM GCC 4.8.4 Debug ---------------
 Deleting file ".\CortexM3\ARM_GCC_484\Debug\main.o"
 Deleting file ".\CortexM3\ARM_GCC_484\Debug\canceller.o"
 Deleting file ".\CortexM3\ARM_GCC_484\Debug\hs_model.o"
@@ -32,6 +32,7 @@ Deleting file ".\CortexM3\ARM_GCC_484\Debug\UART_1_PM.o"
 Deleting file ".\CortexM3\ARM_GCC_484\Debug\UART_1_INT.o"
 Deleting file ".\CortexM3\ARM_GCC_484\Debug\UART_1_BOOT.o"
 Deleting file ".\CortexM3\ARM_GCC_484\Debug\UART_1_IntClock.o"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\SW3.o"
 Deleting file ".\CortexM3\ARM_GCC_484\Debug\WaveGenerator1.hex"
 Deleting file ".\CortexM3\ARM_GCC_484\Debug\WaveGenerator1.elf"
 Deleting file ".\CortexM3\ARM_GCC_484\Debug\WaveGenerator1.map"
@@ -41,15 +42,16 @@ Deleting file ".\WaveGenerator1.rpt"
 Deleting file ".\WaveGenerator1_timing.html"
 Deleting file ".\CortexM3\ARM_GCC_484\Debug\.deps\C_FILE.P"
 Deleting file ".\CortexM3\ARM_GCC_484\Debug\.deps\ARM_C_FILE.P"
-cydsfit.exe -.appdatapath "C:\Users\shubhamt\AppData\Local\Cypress Semiconductor\PSoC Creator\3.2" -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -p "C:\Users\shubhamt\Documents\PSoC Creator\WaveGenerator1\WaveGenerator1.cydsn\WaveGenerator1.cyprj" -d CY8C5868AXI-LP035 -s "C:\Users\shubhamt\Documents\PSoC Creator\WaveGenerator1\WaveGenerator1.cydsn\Generated_Source\PSoC5" -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\.deps\GNU_ARM_ASM_FILE.P"
+cydsfit.exe -.appdatapath "C:\Users\pearlstl\AppData\Local\Cypress Semiconductor\PSoC Creator\3.2" -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -p C:\Users\pearlstl\Documents\MUSE-Research\proj_anc\system\WaveGenerator1\WaveGenerator1.cydsn\WaveGenerator1.cyprj -d CY8C5868AXI-LP035 -s C:\Users\pearlstl\Documents\MUSE-Research\proj_anc\system\WaveGenerator1\WaveGenerator1.cydsn\Generated_Source\PSoC5 -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE
 Elaborating Design...
 HDL Generation ...
 Synthesis ...
 Place and Route ...
 Tech mapping ...
 Analog Placement ...
-Log: apr.M0058: The analog placement iterative improvement is 42% done. (App=cydsfit)
-Log: apr.M0058: The analog placement iterative improvement is 100% done. (App=cydsfit)
+Log: apr.M0058: The analog placement iterative improvement is 33% done. (App=cydsfit)
+Log: apr.M0058: The analog placement iterative improvement is 58% done. (App=cydsfit)
 Analog Routing ...
 Analog Code Generation ...
 Digital Placement ...
@@ -62,21 +64,20 @@ Clean Temporary Files ...
 arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_484\Debug/main.lst -g -D DEBUG -Wall -ffunction-sections -O0 -c .\main.c -o .\CortexM3\ARM_GCC_484\Debug\main.o
 arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_484\Debug/canceller.lst -g -D DEBUG -Wall -ffunction-sections -O0 -c .\canceller.c -o .\CortexM3\ARM_GCC_484\Debug\canceller.o
 arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_484\Debug/hs_model.lst -g -D DEBUG -Wall -ffunction-sections -O0 -c .\hs_model.c -o .\CortexM3\ARM_GCC_484\Debug\hs_model.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_484\Debug/mic_model.lst -g -D DEBUG -Wall -ffunction-sections -O0 -c .\mic_model.c -o .\CortexM3\ARM_GCC_484\Debug\mic_model.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_484\Debug/cyfitter_cfg.lst -g -D DEBUG -Wall -ffunction-sections -O0 -c .\Generated_Source\PSoC5\cyfitter_cfg.c -o .\CortexM3\ARM_GCC_484\Debug\cyfitter_cfg.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_484\Debug/cymetadata.lst -g -D DEBUG -Wall -ffunction-sections -O0 -c .\Generated_Source\PSoC5\cymetadata.c -o .\CortexM3\ARM_GCC_484\Debug\cymetadata.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_484\Debug/Cm3Start.lst -g -D DEBUG -Wall -ffunction-sections -O0 -c .\Generated_Source\PSoC5\Cm3Start.c -o .\CortexM3\ARM_GCC_484\Debug\Cm3Start.o
-arm-none-eabi-as.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -alh=.\CortexM3\ARM_GCC_484\Debug/CyBootAsmGnu.lst -g -o .\CortexM3\ARM_GCC_484\Debug\CyBootAsmGnu.o .\Generated_Source\PSoC5\CyBootAsmGnu.s
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_484\Debug/CyDmac.lst -g -D DEBUG -Wall -ffunction-sections -O0 -c .\Generated_Source\PSoC5\CyDmac.c -o .\CortexM3\ARM_GCC_484\Debug\CyDmac.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_484\Debug/CyFlash.lst -g -D DEBUG -Wall -ffunction-sections -O0 -c .\Generated_Source\PSoC5\CyFlash.c -o .\CortexM3\ARM_GCC_484\Debug\CyFlash.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_484\Debug/CyLib.lst -g -D DEBUG -Wall -ffunction-sections -O0 -c .\Generated_Source\PSoC5\CyLib.c -o .\CortexM3\ARM_GCC_484\Debug\CyLib.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_484\Debug/cyPm.lst -g -D DEBUG -Wall -ffunction-sections -O0 -c .\Generated_Source\PSoC5\cyPm.c -o .\CortexM3\ARM_GCC_484\Debug\cyPm.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_484\Debug/CySpc.lst -g -D DEBUG -Wall -ffunction-sections -O0 -c .\Generated_Source\PSoC5\CySpc.c -o .\CortexM3\ARM_GCC_484\Debug\CySpc.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_484\Debug/cyutils.lst -g -D DEBUG -Wall -ffunction-sections -O0 -c .\Generated_Source\PSoC5\cyutils.c -o .\CortexM3\ARM_GCC_484\Debug\cyutils.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_484\Debug/Pin_1.lst -g -D DEBUG -Wall -ffunction-sections -O0 -c .\Generated_Source\PSoC5\Pin_1.c -o .\CortexM3\ARM_GCC_484\Debug\Pin_1.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_484\Debug/isr.lst -g -D DEBUG -Wall -ffunction-sections -O0 -c .\Generated_Source\PSoC5\isr.c -o .\CortexM3\ARM_GCC_484\Debug\isr.o
-.\Generated_Source\PSoC5\isr.c:247:1: error: expected identifier or '(' before '}' token
- }
- ^
+.\hs_model.c: In function 'hs_model_new_sample':
+.\hs_model.c:15:22: error: called object 'i' is not a function or function pointer
+ #define FILTER_ORDER (16)
+                      ^
+.\hs_model.c:43:41: note: in expansion of macro 'FILTER_ORDER'
+         sum += (recent_samps[(wptr - i  FILTER_ORDER) & FO1] * model_coeffs[i]);
+                                         ^
+.\hs_model.c:36:17: note: declared here
+     int         i;
+                 ^
+In file included from .\hs_model.c:13:0:
+.\hs_model.c: At top level:
+.\hs_model_coeffs.h:4:12: warning: 'hs_model_coeffs' defined but not used [-Wunused-variable]
+ static int hs_model_coeffs[]=
+            ^
 The command 'arm-none-eabi-gcc.exe' failed with exit code '1'.
---------------- Rebuild Failed: 07/13/2015 14:15:10 ---------------
+--------------- Rebuild Failed: 07/16/2015 19:45:53 ---------------
