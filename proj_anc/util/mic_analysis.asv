@@ -51,10 +51,6 @@ psoc = fopen('hs_model_coeffs.h','w');
 
 fprintf(psoc,'%s\n','#ifndef HS_MODEL_COEFFS_H');
 fprintf(psoc,'%s\n','#define HS_MODEL_COEFFS_H');
-fprintf(psoc,'%s\n','');
-fprintf(psoc,'%s\n','static int hs_model_coeffs[]=');
-fprintf(psoc,'%s\n','{');
-
 % prints double precision values
 for i=0:(N-2)
     h = 4096 * w(N-i);
@@ -63,10 +59,10 @@ end
 h = 4096 * w(1);
 fprintf(psoc,'%3d\n',round(h));
 
-fprintf(psoc,'%s\n','};');
-fprintf(psoc,'%s\n','#endif');
-
 fclose(psoc);
+
+
+
 
 
 

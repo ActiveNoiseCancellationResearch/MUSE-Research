@@ -45,41 +45,46 @@ for n=1:n_samps
     end
 end
 
-sse = conv(ones(100,1)/100,err.^2);
+mse = conv(ones(100,1)/100,err.^2);
 
 audiowrite('output_e.wav',e,ui_fs);                     
 figure;
+
 a = subplot (4,2,1);
 plot(ui_data)
-title('ui\_data')
+title('Undesired input data')
+ylim([-1 1]);
 
 subplot (4,2,2);
-plot(e)
-title('e')
+plot(sqrt(mse))
+title('RMS Error')
 
 subplot (4,2,3);
-plot(sse)
-title('sse')
+plot(d)
+title('Desired Signal')
+ylim([-1 1]);
 
 subplot (4,2,4);
-plot(x_)
-title('x\_')
+plot(y)
+title('Canceller Output')
 
 subplot (4,2,5);
-plot(y)
-title('y')
+plot(e)
+title('Waveform Heard by Listener')
+ylim([-1 1]);
 
 subplot (4,2,6);
 plot(c)
 title('c')
 
 subplot (4,2,7);
-plot(d)
-title('d')
+plot(x_)
+title('Undesired Signal at the Listener')
+ylim([-1 1]);
 
 subplot (4,2,8);
 plot(e_)
-title('e\_')
+title('Measured Sound Fed To Canceller (Mic Output)')
 
 saveas(a, 'varietygraph.png')
 

@@ -25,7 +25,7 @@ $ENV{PATH} .= ";C:/windows/command".";c:/windows/system32".";c:/winnt/system32".
     $proj_root = $ENV{"PROJ_ANC"};
 
    # Path to copy all cfg and source files to exp directory
-    my $exp_subdirectory = catdir($proj_root, "exp", $master_cfg_filename_root."_".$mu);
+    my $exp_subdirectory = catdir($proj_root, "exp", $master_cfg_filename_root."_mu".$mu);
     
     print( "\n" );
     print( "============================================================================\n" );
