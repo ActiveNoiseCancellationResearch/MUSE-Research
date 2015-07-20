@@ -8,3 +8,4 @@ ra_cfg_nrefls6_rmax2;                                                   % config
 canceller_cfg_mu01_fltord150_no;
 
 
+ canc_mu = 0

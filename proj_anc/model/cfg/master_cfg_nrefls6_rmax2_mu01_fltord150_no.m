@@ -1,6 +1,6 @@
 
-ui_cfg_1;                                                           % Reads undesired input data into array ui_data
-di_cfg_1;
+ui_cfg_15;                                                           % Reads undesired input data into array ui_data
+di_cfg_15;
 mic_cfg_max1_n2;
 ls_cfg_max1_n2;                                                           % config file #1 for loudspeaker, sets array coeffs
 hs_cfg_max1_n2;                                                           % config file #1 for headphone, sets array coeffs
