@@ -131,8 +131,8 @@ $ENV{PATH} .= ";C:/windows/command".";c:/windows/system32".";c:/winnt/system32".
     # Create new string variable that will be read by the matlab shell
     # Make sure no spaces in string file or matlab will not ignore anything after space
      
-    #    my $matlabcom = "matlab -r "."pwd='$exp_subdirectory';cd(pwd);ANC_Model";
-    my $matlabcom = "matlab -nosplash -nodesktop -noFigureWindows -r "."pwd='$exp_subdirectory';cd(pwd);ANC_Model";
+    my $matlabcom = "matlab -r "."pwd='$exp_subdirectory';cd(pwd);ANC_Model";
+    # my $matlabcom = "matlab -nosplash -nodesktop -noFigureWindows -r "."pwd='$exp_subdirectory';cd(pwd);ANC_Model";
             
     # Run the ANC_Model file within the new subfolder
     print( "\nRunning:\n\n${matlabcom}\n\n   " );
