@@ -46,8 +46,8 @@ for n=1:n_samps
 end
 
 mse = conv(ones(100,1)/100,err.^2);
-
-audiowrite('output_e.wav',e,ui_fs);                     
+max_e = max(abs(e));
+audiowrite('output_e.wav',e/max_e,ui_fs);                     
 figure;
 
 a = subplot (4,2,1);
