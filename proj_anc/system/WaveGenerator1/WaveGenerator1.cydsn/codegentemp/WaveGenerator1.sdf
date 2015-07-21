@@ -1,6 +1,6 @@
 (DELAYFILE
  (SDFVERSION "IEEE 1497 4.0")
- (DATE "2015-07-16T23:45:32Z")
+ (DATE "2015-07-20T15:37:41Z")
  (DESIGN "WaveGenerator1")
  (VENDOR "Cypress Semiconductor")
  (PROGRAM "PSoC Creator")
@@ -81,7 +81,9 @@
     (INTERCONNECT ClockBlock.dclk_glb_1 \\UART_1\:BUART\:tx_state_1\\.clock_0 (0.000:0.000:0.000))
     (INTERCONNECT ClockBlock.dclk_glb_1 \\UART_1\:BUART\:tx_state_2\\.clock_0 (0.000:0.000:0.000))
     (INTERCONNECT ClockBlock.dclk_glb_1 \\UART_1\:BUART\:txn\\.clock_0 (0.000:0.000:0.000))
+    (INTERCONNECT End_isr\(0\)_PAD End_isr\(0\).pad_in (0.000:0.000:0.000))
     (INTERCONNECT SW3\(0\)_PAD SW3\(0\).pad_in (0.000:0.000:0.000))
+    (INTERCONNECT Start_isr\(0\)_PAD Start_isr\(0\).pad_in (0.000:0.000:0.000))
     (INTERCONNECT Tx_1\(0\).pad_out Tx_1\(0\)_PAD (0.000:0.000:0.000))
     (INTERCONNECT Tx_1\(0\)_PAD Tx_1\(0\).pad_in (0.000:0.000:0.000))
    )

@@ -198,6 +198,9 @@ CY_ISR(isr_Interrupt)
     int e_;
     int y;
 
+    Start_isr_Write(1);
+    Start_isr_Write(0);
+
 #ifndef MODE_CHARACTERIZE
      x = wave_table[wave_idx];
 
@@ -256,7 +259,8 @@ CY_ISR(isr_Interrupt)
         ++n;
     }
 #endif
-
+    End_isr_Write(1);
+    End_isr_Write(0);
 }        
 
     /* `#END` */

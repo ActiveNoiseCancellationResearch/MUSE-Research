@@ -49,7 +49,7 @@ uint8 cap_array[NUM_SAMPS_TO_CAPTURE];
 extern int n;
 #endif
 
-#ifndef MODE_CALIBRATE
+#ifndef MODE_CHARACTERIZE
 extern int wave_table[WAVESIZE];
 #endif
 
@@ -187,22 +187,35 @@ CY_ISR(isr_Interrupt)
     /*  Place your Interrupt code here. */
     /* `#START isr_Interrupt` */
     
-    #define NUM_TONES (1)                 // number of tones to be generated
+#define DC_EST_NUM_SAMPS_LOG2   (12)
+#define DC_EST_NUM_SAMPS        (1 << DC_EST_NUM_SAMPS_LOG2)
+    
                            // Discrete time index
 
+    int x=0;
+    static int dc_count = 0;
+    static int dc_sum = 0;
+    
 #ifndef MODE_CHARACTERIZE    
     static int wave_idx=0;
 #endif
 
-    int x=0;
+#ifdef MODE_CANCELLER
     int e_;
     int y;
+#endif
+
+//    Start_isr_Write(1);
+//    Start_isr_Write(0);
 
 #ifndef MODE_CHARACTERIZE
      x = wave_table[wave_idx];
 
-    // Convert sine wave from Q20.12 to 8-bit offset binary
-    VDAC8_2_ls_SetValue((x>>5)+128);
+    if (dc_count == DC_EST_NUM_SAMPS)
+    {
+        // Convert sine wave from Q20.12 to 8-bit offset binary
+        VDAC8_2_ls_SetValue((x>>5)+128);
+    }
 
     // Advance to next sample in wave  table
     ++wave_idx;
@@ -213,19 +226,34 @@ CY_ISR(isr_Interrupt)
     VDAC8_2_ls_SetValue(x & 0xFF);
 #endif
 
+#ifdef MODE_CANCELLER       
+    //canceller code goes here
     // e_ is 12-bit offset binary, range 0 to 4095
     e_ =  ADC_SAR_GetResult16();          //Set's value to the ADC output (16bit 2's comp value)
         
-#ifdef MODE_CANCELLER       
-    //canceller code goes here
     y = (canceller_new_sample(x) + (1<<4)) >> 5;   // Get signed value, 7 fractional bits (8 bits total)
     if (y > 127)  y =  127;
     if (y < -128) y = -128;
     
     // Convert value to offset binary
-    VDAC8_1_hs_SetValue(y + 128);              
+    if (dc_count == DC_EST_NUM_SAMPS)
+    {
+        VDAC8_1_hs_SetValue(y + 128);              
+    }
+    else
+    {
+        dc_sum += e_;
+        
+        ++dc_count;
+        
+        if (dc_count == DC_EST_NUM_SAMPS)
+        {
+            // Normalize to use as DC estimate
+            dc_sum = (dc_sum + (1 << (DC_EST_NUM_SAMPS_LOG2-1)))>>DC_EST_NUM_SAMPS_LOG2;
+        }
+    }
 
-    canceller_coeff_update(e_ - 2048);
+    canceller_coeff_update(e_ - dc_sum);
     //end canceller code  
 #else
 #ifdef MODE_CALIBRATE
@@ -256,7 +284,8 @@ CY_ISR(isr_Interrupt)
         ++n;
     }
 #endif
-
+//    End_isr_Write(1);
+//    End_isr_Write(0);
 }        
 
     /* `#END` */

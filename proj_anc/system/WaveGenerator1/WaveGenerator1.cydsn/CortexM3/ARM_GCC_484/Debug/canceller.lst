@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccrvKg6P.s 			page 1
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccUrdpib.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccrvKg6P.s 			page 1
   39              		.type	canceller_new, %function
   40              	canceller_new:
   41              	.LFB0:
-ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccrvKg6P.s 			page 2
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccUrdpib.s 			page 2
 
 
   42              		.file 1 ".\\canceller.c"
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccrvKg6P.s 			page 1
   59              	.L3:
   38:.\canceller.c ****     {
   39:.\canceller.c ****         recent_samps_in[i]  = 0;
-ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccrvKg6P.s 			page 3
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccUrdpib.s 			page 3
 
 
   60              		.loc 1 39 0 discriminator 2
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccrvKg6P.s 			page 1
  104 0056 00BF     		.align	2
  105              	.L4:
  106 0058 00000000 		.word	recent_samps_in
-ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccrvKg6P.s 			page 4
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccUrdpib.s 			page 4
 
 
  107 005c 40000000 		.word	recent_samps_v
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccrvKg6P.s 			page 1
  137              		.thumb
  138              		.thumb_func
  139              		.type	canceller_new_sample, %function
-ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccrvKg6P.s 			page 5
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccUrdpib.s 			page 5
 
 
  140              	canceller_new_sample:
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccrvKg6P.s 			page 1
   66:.\canceller.c ****     
   67:.\canceller.c ****     recent_samps_v[wptr]=v;
  176              		.loc 1 67 0
-ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccrvKg6P.s 			page 6
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccUrdpib.s 			page 6
 
 
  177 0032 A74B     		ldr	r3, .L19
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccrvKg6P.s 			page 1
   78:.\canceller.c ****     if (SW3_Read() == 0)
  219              		.loc 1 78 0
  220 009a FFF7FEFF 		bl	SW3_Read
-ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccrvKg6P.s 			page 7
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccUrdpib.s 			page 7
 
 
  221 009e 0346     		mov	r3, r0
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccrvKg6P.s 			page 1
  265 0104 D31A     		subs	r3, r2, r3
  266 0106 03F00F02 		and	r2, r3, #15
  267 010a 724B     		ldr	r3, .L19+4
-ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccrvKg6P.s 			page 8
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccUrdpib.s 			page 8
 
 
  268 010c 53F82230 		ldr	r3, [r3, r2, lsl #2]
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccrvKg6P.s 			page 1
  317 018c FFF7FEFF 		bl	UART_1_PutArray
   92:.\canceller.c ****         //////////////
   93:.\canceller.c **** 
-ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccrvKg6P.s 			page 9
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccUrdpib.s 			page 9
 
 
   94:.\canceller.c ****         // recent_samps_v
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccrvKg6P.s 			page 1
  366 0206 FFF7FEFF 		bl	sprintf
  367 020a 07F10C03 		add	r3, r7, #12
  368 020e 1846     		mov	r0, r3
-ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccrvKg6P.s 			page 10
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccUrdpib.s 			page 10
 
 
  369 0210 FFF7FEFF 		bl	strlen
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccrvKg6P.s 			page 1
  414 0280 1446     		mov	r4, r2
  415 0282 1D46     		mov	r5, r3
  416 0284 0FCD     		ldmia	r5!, {r0, r1, r2, r3}
-ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccrvKg6P.s 			page 11
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccUrdpib.s 			page 11
 
 
  417 0286 0FC4     		stmia	r4!, {r0, r1, r2, r3}
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccrvKg6P.s 			page 1
  467 0308 1046     		mov	r0, r2
  468 030a 7E49     		ldr	r1, .L21+8
  469 030c D7F81421 		ldr	r2, [r7, #276]
-ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccrvKg6P.s 			page 12
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccUrdpib.s 			page 12
 
 
  470 0310 FFF7FEFF 		bl	sprintf
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccrvKg6P.s 			page 1
  515              		.loc 1 117 0
  516 0384 07F10C02 		add	r2, r7, #12
  517 0388 5F4B     		ldr	r3, .L21+12
-ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccrvKg6P.s 			page 13
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccUrdpib.s 			page 13
 
 
  518 038a 1446     		mov	r4, r2
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccrvKg6P.s 			page 1
  568 040a 1946     		mov	r1, r3
  569 040c FFF7FEFF 		bl	UART_1_PutArray
  119:.\canceller.c ****         for (i = 0; i < 16; ++i)
-ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccrvKg6P.s 			page 14
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccUrdpib.s 			page 14
 
 
  570              		.loc 1 119 0 discriminator 2
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccrvKg6P.s 			page 1
  616 047e 0FC4     		stmia	r4!, {r0, r1, r2, r3}
  617 0480 0FCD     		ldmia	r5!, {r0, r1, r2, r3}
  618 0482 0FC4     		stmia	r4!, {r0, r1, r2, r3}
-ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccrvKg6P.s 			page 15
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccUrdpib.s 			page 15
 
 
  619 0484 95E80F00 		ldmia	r5, {r0, r1, r2, r3}
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccrvKg6P.s 			page 1
  667 04f2 07F59077 		add	r7, r7, #288
  668 04f6 BD46     		mov	sp, r7
  669              		@ sp needed
-ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccrvKg6P.s 			page 16
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccUrdpib.s 			page 16
 
 
  670 04f8 B0BD     		pop	{r4, r5, r7, pc}
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccrvKg6P.s 			page 1
  714              	.L25:
  715              	.LBB3:
  145:.\canceller.c ****     {
-ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccrvKg6P.s 			page 17
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccUrdpib.s 			page 17
 
 
  146:.\canceller.c ****         int temp;
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccrvKg6P.s 			page 1
  754              	.L24:
  144:.\canceller.c ****     for (i=0 ; i<FILTER_ORDER;++i)
  755              		.loc 1 144 0 is_stmt 0 discriminator 1
-ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccrvKg6P.s 			page 18
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccUrdpib.s 			page 18
 
 
  756 006a FB68     		ldr	r3, [r7, #12]
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccrvKg6P.s 			page 1
  808 0041 02       		.uleb128 0x2
  809 0042 02       		.byte	0x2
  810 0043 05       		.byte	0x5
-ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccrvKg6P.s 			page 19
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccUrdpib.s 			page 19
 
 
  811 0044 BE010000 		.4byte	.LASF3
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccrvKg6P.s 			page 1
  865 00ab 24       		.byte	0x24
  866 00ac 2C000000 		.4byte	0x2c
  867 00b0 02       		.uleb128 0x2
-ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccrvKg6P.s 			page 20
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccUrdpib.s 			page 20
 
 
  868 00b1 91       		.byte	0x91
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccrvKg6P.s 			page 1
  922 0111 A6000000 		.4byte	.LBB2
  923 0115 38040000 		.4byte	.LBE2-.LBB2
  924 0119 06       		.uleb128 0x6
-ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccrvKg6P.s 			page 21
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccUrdpib.s 			page 21
 
 
  925 011a 6900     		.ascii	"i\000"
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccrvKg6P.s 			page 1
  979 0182 01       		.byte	0x1
  980 0183 92       		.byte	0x92
  981 0184 2C000000 		.4byte	0x2c
-ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccrvKg6P.s 			page 22
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccUrdpib.s 			page 22
 
 
  982 0188 02       		.uleb128 0x2
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccrvKg6P.s 			page 1
  1036              	.Ldebug_abbrev0:
  1037 0000 01       		.uleb128 0x1
  1038 0001 11       		.uleb128 0x11
-ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccrvKg6P.s 			page 23
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccUrdpib.s 			page 23
 
 
  1039 0002 01       		.byte	0x1
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccrvKg6P.s 			page 1
  1093 0038 01       		.byte	0x1
  1094 0039 3F       		.uleb128 0x3f
  1095 003a 19       		.uleb128 0x19
-ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccrvKg6P.s 			page 24
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccUrdpib.s 			page 24
 
 
  1096 003b 03       		.uleb128 0x3
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccrvKg6P.s 			page 1
  1150 0072 40       		.uleb128 0x40
  1151 0073 18       		.uleb128 0x18
  1152 0074 9642     		.uleb128 0x2116
-ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccrvKg6P.s 			page 25
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccUrdpib.s 			page 25
 
 
  1153 0076 19       		.uleb128 0x19
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccrvKg6P.s 			page 1
  1207 00ac 21       		.uleb128 0x21
  1208 00ad 00       		.byte	0
  1209 00ae 49       		.uleb128 0x49
-ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccrvKg6P.s 			page 26
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccUrdpib.s 			page 26
 
 
  1210 00af 13       		.uleb128 0x13
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccrvKg6P.s 			page 1
  1260              	.LASF19:
  1261 0000 72656365 		.ascii	"recent_samps_v\000"
  1261      6E745F73 
-ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccrvKg6P.s 			page 27
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccUrdpib.s 			page 27
 
 
  1261      616D7073 
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccrvKg6P.s 			page 1
  1280      3800
  1281              	.LASF21:
  1282 012d 6D6F6465 		.ascii	"model_coeffs\000"
-ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccrvKg6P.s 			page 28
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccUrdpib.s 			page 28
 
 
  1282      6C5F636F 
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccrvKg6P.s 			page 1
  1306 01c8 63616E63 		.ascii	"canceller_new_sample\000"
  1306      656C6C65 
  1306      725F6E65 
-ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccrvKg6P.s 			page 29
+ARM GAS  C:\Users\pearlstl\AppData\Local\Temp\ccUrdpib.s 			page 29
 
 
  1306      775F7361 

@@ -124,6 +124,12 @@
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\SW3_aliases.h</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\SW3.c</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\SW3.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\Start_isr_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\Start_isr.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\Start_isr.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\End_isr_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\End_isr.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\End_isr.h</File>
         </Files>
       </Folder>
       <Folder BuildType="STRICT" Path="C:\Users\pearlstl\Documents\MUSE-Research\proj_anc\system\WaveGenerator1\WaveGenerator1.cydsn\Export\ARM_GCC_Generic">
