@@ -17,7 +17,16 @@ $ENV{PATH} .= ";C:/windows/command".";c:/windows/system32".";c:/winnt/system32".
     my $mu = $ARGV[1];
     my $option = $ARGV[2];
     my $result;
-     
+    my $n_args;
+    
+    $n_args = @ARGV;
+    # Check for proper usage
+    if ($n_args < 2 || $n_args > 3)
+    {
+        print("\nn_args = ${n_args}, Usage: run_anc <master_cfg_filename> <mu> [-f]\n\n");
+        die;
+    }
+    
     # Add cfg filepath to the command line argument specifying the cfg filename
     my $master_cfg_filename = catfile("../model/cfg","${master_cfg_filename_root}.m");
 
