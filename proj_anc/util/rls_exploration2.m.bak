@@ -1,0 +1,37 @@
+clear all
+close all
+
+order = 1000;
+lambda = 0.999;
+
+ui_filename = '5 symphony 15 sec.wav';
+[ui_data,ui_fs] = audioread(strcat(getenv('PROJ_ANC'), '\model\stimulus\', ui_filename));  % reading .wav file as undesired sound
+ui_data = ui_data(:,1);
+
+n_samps = min(20000,numel(ui_data));  
+
+for log_ord=1:12
+
+    order = round(2^log_ord);
+    
+    P = eye(order);
+    R = 0.0 * eye(order);
+    Rfull = 0.0 * eye(order);
+    
+    pause on
+    
+    
+    for n=1:n_samps
+    
+        x=ui_data(n:n+order-1);
+        
+        Rfull = Rfull + x * x';
+
+        if (mod(n,10000) == 0)
+            fprintf('.');
+        end
+    end
+
+    fprintf( '\n\norder=%d, cond(R)=%5.2g\n', order, cond(Rfull) )
+
+end

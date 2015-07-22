@@ -5,8 +5,4 @@ ls_cfg_max1_n2;                                                           % conf
 hs_cfg_max1_n2;                                                           % config file #1 for headphone, sets array coeffs
 ra_cfg_nrefls6_rmax2;                                                   % config file #1 to set values that are fed into room_acoustics_to_coeffs
 canceller_cfg_fltord150_no;
-<<<<<<< HEAD
-=======
-
-
->>>>>>> origin/master
+ canc_mu = 0.0005
