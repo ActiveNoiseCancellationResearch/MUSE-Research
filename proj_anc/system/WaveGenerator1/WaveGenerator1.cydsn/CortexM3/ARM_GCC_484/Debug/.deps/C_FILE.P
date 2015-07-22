@@ -34,3 +34,11 @@ C:/Users/pearlstl/Documents/MUSE-Research/proj_anc/system/WaveGenerator1/WaveGen
 
 C:/Users/pearlstl/Documents/MUSE-Research/proj_anc/system/WaveGenerator1/WaveGenerator1.cydsn/mic_model.h : 
 
+C:/Users/pearlstl/Documents/MUSE-Research/proj_anc/system/WaveGenerator1/WaveGenerator1.cydsn/CortexM3/ARM_GCC_484/Debug/hs_model.o : C:/Users/pearlstl/Documents/MUSE-Research/proj_anc/system/WaveGenerator1/WaveGenerator1.cydsn/ANC.h C:/Users/pearlstl/Documents/MUSE-Research/proj_anc/system/WaveGenerator1/WaveGenerator1.cydsn/hs_model.c C:/Users/pearlstl/Documents/MUSE-Research/proj_anc/system/WaveGenerator1/WaveGenerator1.cydsn/hs_model.h 
+
+C:/Users/pearlstl/Documents/MUSE-Research/proj_anc/system/WaveGenerator1/WaveGenerator1.cydsn/hs_model.c : 
+
+C:/Users/pearlstl/Documents/MUSE-Research/proj_anc/system/WaveGenerator1/WaveGenerator1.cydsn/CortexM3/ARM_GCC_484/Debug/mic_model.o : C:/Users/pearlstl/Documents/MUSE-Research/proj_anc/system/WaveGenerator1/WaveGenerator1.cydsn/ANC.h C:/Users/pearlstl/Documents/MUSE-Research/proj_anc/system/WaveGenerator1/WaveGenerator1.cydsn/mic_model.c C:/Users/pearlstl/Documents/MUSE-Research/proj_anc/system/WaveGenerator1/WaveGenerator1.cydsn/mic_model.h 
+
+C:/Users/pearlstl/Documents/MUSE-Research/proj_anc/system/WaveGenerator1/WaveGenerator1.cydsn/mic_model.c : 
+
