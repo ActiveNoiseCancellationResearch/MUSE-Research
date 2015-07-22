@@ -47,7 +47,7 @@ end
 
 mse = conv(ones(100,1)/100,err.^2);
 
-audiowrite('output_e.wav',e/abs(max(e)),ui_fs);                     
+audiowrite('output_e.wav',e,ui_fs);                     
 figure;
 
 a = subplot (4,2,1);
