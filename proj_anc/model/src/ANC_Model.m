@@ -51,33 +51,39 @@ audiowrite('output_e.wav',e/abs(max(e)),ui_fs);
 figure;
 
 a = subplot (4,2,1);
-plot(ui_data/(max(abs(ui_data))))
-title('Undesired input data')
+plot(ui_data)
+title('Undesired Input Reference Data')
 ylim([-1 1]);
-
-subplot (4,2,2);
-plot(sqrt(mse))
-title('RMS Error')
 
 subplot (4,2,3);
 plot(d)
 title('Desired Signal')
 ylim([-1 1]);
 
-subplot (4,2,4);
-plot(y)
-title('Canceller Output')
-
 subplot (4,2,5);
 plot(e)
 title('Waveform Heard by Listener')
 ylim([-1 1]);
 
-
 subplot (4,2,7);
-plot(x_(max(abs(x_))))
-title('Undesired Signal at the Listener')
+plot(x_)
+title('Undesired at Listener w/o ANC')
+ylim([-2 2]);
+
+subplot (4,2,2);
+plot(sqrt(mse))
+title('RMS Error')
+
+subplot (4,2,4);
+plot(y)
+title('Canceller Output')
+
+subplot (4,2,8);
+plot(err)
+title('Net Undesired Signal at the Listener with ANC')
 ylim([-1 1]);
+
+
 
 saveas(a, 'varietygraph.png')
 
