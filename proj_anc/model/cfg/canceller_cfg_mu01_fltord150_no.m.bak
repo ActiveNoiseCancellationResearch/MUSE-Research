@@ -1,3 +1,0 @@
-canc_filter_order = 150; 
-probes_list = [1, 13, 26, 51, 102, 115, 128];
-norm = 0;

@@ -41,17 +41,17 @@ for n=1:n_samps
     canceller.coeff_update(e_(n));
     if mod(n,10000) == 0
         disp(n)
-        %plot_probes(canceller);
+        plot_probes(canceller);
     end
 end
 
 mse = conv(ones(100,1)/100,err.^2);
 
-audiowrite('output_e.wav',e,ui_fs);                     
+audiowrite('output_e.wav',e/abs(max(e)),ui_fs);                     
 figure;
 
 a = subplot (4,2,1);
-plot(ui_data)
+plot(ui_data/(max(abs(ui_data))))
 title('Undesired input data')
 ylim([-1 1]);
 
@@ -73,23 +73,16 @@ plot(e)
 title('Waveform Heard by Listener')
 ylim([-1 1]);
 
-subplot (4,2,6);
-plot(c)
-title('c')
 
 subplot (4,2,7);
-plot(x_)
+plot(x_(max(abs(x_))))
 title('Undesired Signal at the Listener')
 ylim([-1 1]);
-
-subplot (4,2,8);
-plot(e_)
-title('Measured Sound Fed To Canceller (Mic Output)')
 
 saveas(a, 'varietygraph.png')
 
 plot_probes(canceller);
 save_probe_plot(canceller)
 
-%quit;
+quit;
 
