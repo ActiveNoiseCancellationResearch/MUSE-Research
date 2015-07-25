@@ -75,7 +75,7 @@ $ENV{PATH} .= ";C:/windows/command".";c:/windows/system32".";c:/winnt/system32".
     # Open the master_cfg file and append the mu value to the end of the file
     open(my $fh1, '>>', $concat_to_master)
         or die "Could not open and append  to file '$master_cfg_filename' $!";
-    print $fh1 " canc_mu = $mu";
+    print $fh1 "canc_mu = $mu";
     close($fh1);
    
     # Step through each line of the master cfg file
